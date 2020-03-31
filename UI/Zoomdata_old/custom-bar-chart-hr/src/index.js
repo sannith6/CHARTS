@@ -1,3 +1,4 @@
+looker.plugins.visualizations.add({
 import './index.css';
 
 /**
@@ -155,3 +156,5 @@ controller.resize = function(newWidth, newHeight) {
     mycustomchart.style.height = `${document.getElementById('neBarGraph').offsetHeight - 20}px`;
     mycustomchart.style.width = `${document.getElementById('neBarGraph').offsetWidth - 20}px`;
   }
+  
+})
