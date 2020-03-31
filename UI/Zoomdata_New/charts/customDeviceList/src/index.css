@@ -1,0 +1,139 @@
+/* put your styles in this file */
+
+.chart-containerTable {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    white-space:normal !important;
+  }
+  
+  .removeBorderRadius{
+    border-radius: 0 !important;
+    padding: 0px;
+  }
+  
+
+  .tableStyle thead > tr > th{
+  text-align:center;
+  padding: 9px;
+  position: sticky;
+  z-index: 100;
+  top: -1px;
+  background-color: #e9ebef;
+  }
+  
+  .tableStyle tr > td{
+  border-bottom: 1px solid #ebebeb
+  } 
+  
+  .tableStyle tr:nth-child(odd) {background-color: #fbfbfb}
+  
+  
+  .tableStyle tbody > tr > td{
+  text-align:center;
+  padding: 5px;
+  }
+  
+  /* ****Modal CSS**** */
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  /* Shodan Style */
+  
+  .shodanText{
+    font-size: 15px;
+  }
+  
+  .modal-header{
+    text-decoration: underline;
+    text-align: center;
+    padding: 18px !important;
+    font-size:18px
+  }
+  
+  /* menu */
+  
+  .contextMenulist{
+  position: relative;
+  color: blue;
+  cursor: pointer;
+  }
+  
+  .menu{
+    width: 115px;
+    height: 50px;
+    position: absolute;
+    top: 100%;
+    z-index: 10001;
+    display: none;
+    top: 33px;
+    padding: 5px 0px;
+    margin-left:-20px;
+    list-style: none;
+    background-color: #ffff;
+    border: 1px solid #cacdcf;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+    background-clip: padding-box;
+  }
+  
+  .menu:after{
+  content: '';
+  border: 7px solid transparent;
+  border-bottom: 8px solid #E5E5E5;
+  position: absolute;
+  top: -15px;
+  left: 48%;
+  }
+  
+  .menu > li > a {
+  display: block;
+  padding: 3px 10px;
+  clear: both;
+  font-weight: normal;
+  line-height: 20px;
+  color: #333;
+  white-space: nowrap;
+  text-decoration:none;
+  text-align: left;
+  }
+  
+  #selectLinked:hover,#selectLinked.highlight {
+  text-decoration: none;
+  background-color: #E5E5E5;
+  }
+  
+  .inputdiv{
+    margin: 20px 0px 20px 10px;
+  }
+  
+  .universal{
+    padding: 7px !important;
+    outline: none;
+  }
+  
+  table thead tr th {
+    background-color: #258cca;
+    position: sticky;
+    /* z-index: 100; */
+    top: 0;
+  }
+  
+  /* Tabs css */
+  
+  .menu li{
+    margin: 0px !important;
+  }

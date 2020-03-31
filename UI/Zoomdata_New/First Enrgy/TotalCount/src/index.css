@@ -1,0 +1,92 @@
+.chart-container {
+    width: 100%;
+    position: relative;
+    top: -4px;
+}
+
+.name-of-chart {
+    grid-column: span 2;
+    text-align: left;
+}
+
+.today-count-container {
+    text-align: left;
+    grid-row: auto;
+    grid-column: 1;
+}
+
+.today-total-count-text {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+.today-total-count-total {
+    font-size: 60px;
+    line-height: 3rem;
+}
+
+.today-subtext {
+    font-size: 1rem;
+}
+
+.chart-descriptor-text {
+        font-weight: bold;
+        font-size: 27px !important;
+    line-height: 20px;
+}
+
+.yesterday-count-container {
+    text-align: center;
+}
+
+.label-deactivated {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    text-transform: uppercase;
+}
+.zdView-Widget {
+        padding: 22px 5px;
+}
+.today-total-text {
+        font-size: 14px !important;
+        margin-bottom: 4px;
+    color: #8d8d8d;
+    font-weight: 600;
+}
+
+.today-total-count-text {
+            font-size: 12px;
+    font-weight: bold;
+    color: grey;
+}
+.widgetBody {
+        padding-top: 0 !important;
+
+}
+
+.today-total-count-total {
+        font-weight: bold;
+        display: inline-block;
+        margin-right: 10px;
+}
+.arrow-down {
+color: '#619628';
+text-align: right;
+    line-height: 15px;
+    font-weight: bold;
+}
+.arrow-up {
+color: '#cc3727';
+text-align: right;
+    line-height: 15px;
+    font-weight: bold;
+}
+.chart-descriptor-text {
+        font-size: 2rem;
+}
+.udpate-container {
+        display: inline-block;
+}
+.widgetLabel {
+display: none !important;
+}

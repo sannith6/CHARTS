@@ -1,0 +1,390 @@
+@font-face {
+  font-family: 'Muli';
+  src: local('Muli-Regular.ttf'), url('../fonts/Muli/Muli-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Muli-Bold.ttf'), url('../fonts/Muli/Muli-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Muli';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Muli-Italic.ttf'), url('../fonts/Muli/Muli-Italic.ttf');
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: local('Raleway-Regular.ttf'), url('../fonts/Raleway/Raleway-Regular.ttf');
+}
+
+
+/* minimal styling for the demo */
+body {
+  font-family: Muli;
+}
+.container {
+  margin: 20px auto;
+}
+h2#title {
+  padding: 0px 5px;
+  font-family: Raleway;
+  font-size: 24px;
+  height: 34px;
+  line-height: 34px;
+  margin: 0 0 20px;
+}
+.clearfix {
+  clear: both;
+}
+#kl-container {
+  min-height: 580px;
+}
+.lhs {
+  /* make relative so things like tooltips work */
+  position: relative;
+}
+.rhs {
+  margin-left: 20px;
+}
+
+@media (min-width: 1200px) {
+  .lhs {
+    width: 790px;
+  }
+}
+
+.textinset {
+  padding: 10px, 10px;
+  height: 526px;
+}
+
+#details {
+  position: absolute;
+  z-index:9001;
+  display:none;
+  margin-left: 0px;
+  margin-top: 0px;
+}
+
+#editLabel {
+  z-index:9001;
+  font-family: Ubuntu, Arial, Helvetica, sans-serif;
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  display: none;
+}
+
+#applemenumask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:none;
+  display:none;
+}
+
+#calloutmenu {
+  /*float: left;*/
+
+  position: absolute;
+  display: none;
+  left:10;
+  padding: 0;
+  margin: 0;
+  z-index: 9002;
+}
+
+.alert {
+  border-radius: 0;
+}
+
+/* We demand consistency across buttons */
+button,
+input[type="button"],
+.btn,
+.btn-kl,
+.btn-kl.active,
+.navbar .btn-navbar,
+.navbar .btn-navbar:focus,
+.btn-group .btn.active {
+  color: white;
+  text-shadow: none;
+  background-image: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0 !important;
+  background-color: #739bd4;
+  border: solid 1px #739bd4;
+  padding: 8px 16px;
+}
+
+button:focus,
+input[type="button"]:focus,
+.btn:focus,
+.btn-kl:focus {
+  color: white;
+  background-color: #739bd4;
+  outline: none;
+}
+
+button:hover,
+input[type="button"]:hover,
+.btn:hover,
+.btn-kl:hover,
+.btn-group .btn.active:hover {
+  background-color: #739bd4;
+  border-color: #739bd4;
+  color: white;
+}
+
+button[disabled],button.disabled,
+input[type="button"][disabled], input[type="button"].disabled,
+.btn-kl.disabled, .btn.disabled, .btn[disabled],
+button.disabled:hover, button[disabled]:hover, button.disabled:hover
+input[type="button"].disabled:hover, input[type="button"][disabled]:hover
+.btn.disabled:hover,
+.btn-kl.disabled:hover {
+  cursor: default;
+  border: solid 1px #cacdcf;
+  background-color: #eeeeef;
+  color: #959b9f;
+  opacity: 1;
+}
+
+.btn-large {
+  padding: 12px 20px;
+}
+
+.btn-group .btn {
+  background-color: #a9a9a9;
+  border-color: #a9a9a9;
+}
+
+.btn-group>.btn:first-child,
+.btn-group>.btn:last-child {
+  border-radius: 0 !important; /* override bootstrap */
+}
+
+input[type="text"] {
+  margin-top: 8px;
+  padding: 8px 6px;
+}
+
+input[type="search"],
+input[type="text"],
+select {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+select:focus {
+    border: 1px solid #009968;
+    outline: unset;
+}
+
+.triangle-border {
+  position:relative;
+  padding:15px;
+  margin:1em 0 3em;
+  border:2px solid rgb(145, 146, 149);
+  background:rgba(255, 255, 255, 0.85);
+  /* css3 */
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  border-radius:10px;
+
+  -moz-box-shadow: 2px 2px 2px #666;
+  -webkit-box-shadow: 2px 2px 2px #666;
+  box-shadow: 2px 2px 2px #666;
+
+  font-size: 14px;
+
+}
+
+.triangle-border ul  {
+  width: auto;
+  padding: 0;
+  margin: 0;
+  float: left;
+}
+
+.triangle-border li  {
+  list-style: none;
+  background: none;
+}
+
+.triangle-border a { outline: none; }
+
+.triangle-border li a:link, .triangle-border li a:visited {
+  font-family: Ubuntu, Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  display: block;
+  color: #262626;
+  padding: 5px 14px 6px;
+  text-decoration: none;
+  text-shadow: 0px 1px 1px #fff;
+  margin: 1px;
+}
+
+.triangle-border li a:hover  {
+  cursor: pointer;
+  color: #fff;
+  text-shadow: 0px -1px 1px #444;
+  background-color: rgba(114, 179, 0, 0.85);
+}
+
+.triangle-border li:first-child a, .triangle-border ul {
+  -moz-border-radius-topleft: 8px;
+  -moz-border-radius-topright: 8px;
+  -webkit-border-top-left-radius: 8px;
+  -webkit-border-top-right-radius: 8px;
+}
+
+.triangle-border li:last-child a, .triangle-border ul {
+  -moz-border-radius-bottomleft: 8px;
+  -moz-border-radius-bottomright: 8px;
+  -webkit-border-bottom-left-radius: 8px;
+  -webkit-border-bottom-right-radius: 8px;
+}
+
+.triangle-border:before {
+    content:"";
+    position:absolute;
+    bottom:-20px; /* value = - border-top-width - border-bottom-width */
+    left:40px; /* controls horizontal position */
+    border-width:20px 20px 0;
+    border-style:solid;
+    border-color:#00AEEA transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+/* creates the smaller  triangle */
+.triangle-border:after {
+    content:"";
+    position:absolute;
+    bottom:-13px; /* value = - border-top-width - border-bottom-width */
+    left:47px; /* value = (:before left) + (:before border-left) - (:after border-left) */
+    border-width:13px 13px 0;
+    border-style:solid;
+    border-color:#fff transparent;
+    /* reduce the damage in FF3.0 */
+    display:block;
+    width:0;
+}
+
+/* Variant : for left positioned triangle
+------------------------------------------ */
+
+.triangle-border.left {
+    margin-left:30px;
+}
+
+/* creates the larger triangle */
+.triangle-border.left:before {
+    top:10px; /* controls vertical position */
+    bottom:auto;
+    left:-15px; /* value = - border-left-width - border-right-width */
+    border-width:8px 15px 8px 0;
+    border-color:transparent rgb(145, 146, 149);
+}
+
+/* creates the smaller  triangle */
+.triangle-border.left:after {
+    top:12px; /* value = (:before top) + (:before border-top) - (:after border-top) */
+    bottom:auto;
+    left:-12px; /* value = - border-left-width - border-right-width */
+    border-width:6px 12px 6px 0;
+    border-color:transparent #fff;
+}
+
+
+i.icon-chevron-down,
+i.icon-circle-arrow-left,
+i.icon-circle-arrow-right,
+i.icon-plus-sign,
+i.icon-search,
+i.icon-resize-full  {
+  background-image: url(images/glyphicons-halflings.png);
+}
+
+
+.framework-fieldset input, .framework-fieldset .btn.btn-kl {
+  float: left;
+}
+
+.framework-fieldset .btn.btn-kl {
+  clear:left;
+}
+
+.popover {
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #2d3741;
+  padding: 0px;
+}
+
+.popover-title {
+  background-color: #2d3741;
+  color: white;
+  border-bottom: none;
+  border-radius: 0;
+}
+
+.popover.right {
+  margin-left: 20px;
+}
+.popover.left {
+  margin-right: 20px;
+}
+.popover.top {
+  margin-bottom: 20px;
+}
+.popover.bottom {
+  margin-top: 20px;
+}
+
+.popover.right .arrow {
+  border-right-color: #2d3741;
+}
+.popover.left .arrow {
+  border-left-color: #2d3741;
+}
+.popover.top .arrow {
+  border-top-color: #2d3741;
+}
+.popover.bottom .arrow {
+  border-bottom-color: #2d3741;
+}
+
+.tooltip-inner {
+    background-color: #2d3741;
+    border-radius: 0;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: #2d3741;
+}
+
+.tooltip.left .tooltip-arrow {
+    border-left-color: #2d3741;
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #2d3741;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #2d3741;
+}

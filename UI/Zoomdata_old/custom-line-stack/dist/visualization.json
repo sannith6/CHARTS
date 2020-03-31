@@ -1,0 +1,60 @@
+{
+  "name": "custom-line-stack",
+  "enabled": true,
+  "controls": [
+    "Configure",
+    "ConfigureRaw",
+    "Download",
+    "Filters",
+    "Info",
+    "Sort",
+    "Undo"
+  ],
+  "objectFieldTypes": [
+    "TIME",
+    "NUMBER",
+    "MONEY",
+    "ATTRIBUTE",
+    "INTEGER"
+  ],
+  "variables": [
+    {
+      "name": "Chart Name",
+      "type": "string",
+      "descr": "",
+      "defaultValue": "",
+      "colorMetric": false,
+      "colorNumb": 0,
+      "required": false
+    },
+    {
+      "name": "Chart Description",
+      "type": "string",
+      "descr": "",
+      "defaultValue": "",
+      "colorMetric": false,
+      "colorNumb": 0,
+      "required": false
+    },
+    {
+      "colorMetric": false,
+      "colorNumb": 0,
+      "defaultValue": [],
+      "descr": "",
+      "name": "netListall",
+      "required": false,
+      "attributeType": [
+        "ATTRIBUTE",
+        "MONEY",
+        "INTEGER",
+        "NUMBER"
+      ],
+      "config": {
+        "groupLevel": 1,
+        "limit": 250
+      },
+      "type": "ungroupedList"
+    }
+  ],
+  "templateType": "UBER_BARS"
+}

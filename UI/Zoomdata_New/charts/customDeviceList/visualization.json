@@ -1,0 +1,42 @@
+{
+  "name": "customDeviceList",
+  "enabled": true,
+  "controls": [
+    "Filters",
+    "Sort",
+    "Undo",
+    "Download",
+    "Bookmark",
+    "Share",
+    "Info"
+  ],
+  "objectFieldTypes": [
+    "TIME",
+    "NUMBER",
+    "MONEY",
+    "ATTRIBUTE",
+    "INTEGER"
+  ],
+  "variables": [
+    {
+      "colorMetric": false,
+      "colorNumb": 0,
+      "defaultValue": [],
+      "descr": "listall",
+      "name": "listall",
+      "required": false,
+      "attributeType": [
+        "ATTRIBUTE",
+        "MONEY",
+        "INTEGER",
+        "NUMBER"
+      ],
+      "config": {
+        "groupLevel": 1,
+        "limit": 250
+      },
+      "type": "ungroupedList"
+    }
+  ],
+  "templateType": "UBER_BARS"
+}

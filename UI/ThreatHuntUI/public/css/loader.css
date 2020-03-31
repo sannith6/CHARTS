@@ -1,0 +1,50 @@
+
+  .loader {
+    /* display: none; */
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    height: 50px;
+    width: 50px;
+  }
+  
+  .dot {
+    height: 8px;
+    width: 8px;
+    background-color: #6298DA;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 4px);
+    transform-origin: 5px 30px;
+    animation: rotate 1.5s infinite;
+  }
+  
+  @keyframes rotate {
+    from {
+      transform: rotateZ(0);
+    }
+    to {
+      transform: rotateZ(360deg);
+    }
+  }
+  
+  .d2 {
+    animation-delay: 0.1s;
+    opacity: .9;
+  }
+  
+  .d3 {
+    animation-delay: 0.2s;
+    opacity: .8;
+  }
+  
+  .d4 {
+    animation-delay: 0.3s;
+    opacity: .7;
+  }
+  
+  .d5 {
+    animation-delay: 0.4s;
+    opacity: .6;
+  }
