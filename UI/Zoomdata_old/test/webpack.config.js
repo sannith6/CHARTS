@@ -5,7 +5,7 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 var webpackConfig = {
   mode: 'production',
   entry: {
-    custom_bar: './src/index.js'
+    index: './src/index.js'
   },
   output: {
     filename: "[name].js",
