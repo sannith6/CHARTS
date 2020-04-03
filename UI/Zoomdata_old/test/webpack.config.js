@@ -5,7 +5,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 var webpackConfig = {
   mode: 'production',
   entry: {
-    index: './src/index.js'
+    index: './src/hello_world/index.js',
+    bar: './src/looker/app.js'
   },
   output: {
     filename: "[name].js",
