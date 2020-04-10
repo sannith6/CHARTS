@@ -1,3 +1,4 @@
+looker.plugins.visualizations.add({
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
@@ -33,3 +34,4 @@ chart.cursor = new am4charts.XYCursor();
 let scrollbarX = new am4charts.XYChartScrollbar();
 scrollbarX.series.push(series);
 chart.scrollbarX = scrollbarX;
+})

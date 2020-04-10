@@ -6,7 +6,7 @@ var webpackConfig = {
   mode: 'production',
   entry: {
     index: './src/hello_world/index.js',
-    bar: './src/looker/chord.ts'
+    demo: './src/webpack-demo/index.js'
   },
   output: {
     filename: "[name].js",
