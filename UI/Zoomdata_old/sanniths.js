@@ -52,7 +52,7 @@ looker.plugins.visualizations.add({
 
 
 
-	let chart = am4core.create("chartdiv", am4plugins_timeline.SerpentineChart);
+	let chart = am4core.create("amContainer", am4plugins_timeline.SerpentineChart);
 	chart.curveContainer.padding(50, 20, 50, 20);
 	chart.levelCount = 4;
 	chart.yAxisRadius = am4core.percent(25);
