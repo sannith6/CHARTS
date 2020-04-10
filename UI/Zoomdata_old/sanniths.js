@@ -12,7 +12,23 @@ am4core.useTheme(am4themes_dark);
 
 looker.plugins.visualizations.add({
   create: function(element, config) {
+	  
+	  element.innerHTML = `
+      <style>
+		body { background-color: #30303d; color: #fff; }
+				  .sannith {
+				  width: 100%;
+				  height: 600px;
+				}
+
+				.demo-theme-dark .demo-background {
+				  background: #000;
+}
+        
+      </style>
+    `;
     this.container = element.appendChild(document.createElement("div"));
+	this.container.className = "sannith";
     this.container.id = 'amContainer';
   },
 
@@ -39,7 +55,7 @@ looker.plugins.visualizations.add({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
-			color:'#000',
+			color:'#9400D3',
 			task: row[userid].value,
         });
     }
