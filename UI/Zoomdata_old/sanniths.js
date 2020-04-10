@@ -161,13 +161,12 @@ looker.plugins.visualizations.add({
 	eventSeries.dataFields.dateX = "eventDate";
 	eventSeries.dataFields.categoryY = "category";
 	eventSeries.data = [
-		{ category: "", eventDate: "2019-01-15", letter: "A", description: "Something happened here" },
-		{ category: "", eventDate: "2019-01-23", letter: "B", description: "Something happened here" },
-		{ category: "", eventDate: "2019-02-10", letter: "C", description: "Something happened here" },
-		{ category: "", eventDate: "2019-02-29", letter: "D", description: "Something happened here" },
-		{ category: "", eventDate: "2019-03-06", letter: "E", description: "Something happened here" },
-		{ category: "", eventDate: "2019-03-12", letter: "F", description: "Something happened here" },
-		{ category: "", eventDate: "2019-03-22", letter: "G", description: "Something happened here" }];
+		{ category: "", eventDate: "2020-03-05", letter: "A", description: "Something happened here" },
+		{ category: "", eventDate: "2020-03-10", letter: "B", description: "Something happened here" },
+		{ category: "", eventDate: "2020-03-15", letter: "C", description: "Something happened here" },
+		{ category: "", eventDate: "2020-03-20", letter: "D", description: "Something happened here" },
+		{ category: "", eventDate: "2020-03-25", letter: "E", description: "Something happened here" },
+		{ category: "", eventDate: "2020-03-30", letter: "F", description: "Something happened here" },];
 	eventSeries.strokeOpacity = 0;
 
 	let flagBullet = eventSeries.bullets.push(new am4plugins_bullets.FlagBullet())
