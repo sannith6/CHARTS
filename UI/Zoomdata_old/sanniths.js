@@ -15,10 +15,15 @@ looker.plugins.visualizations.add({
 	  
 	  element.innerHTML = `
       <style>
+		body { background-color: #30303d; color: #fff; }
 				  .sannith {
 				  width: 100%;
 				  height: 600px;
 				}
+
+				.demo-theme-dark .demo-background {
+				  background: #fff;
+}
         
       </style>
     `;
@@ -41,7 +46,8 @@ looker.plugins.visualizations.add({
     end_date = config.query_fields.dimensions[1].name;
 	dst_name = config.query_fields.dimensions[2].name;
 	userid = config.query_fields.dimensions[3].name;
-    
+	
+    console.log('start_date', config)
 	
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
@@ -73,7 +79,6 @@ looker.plugins.visualizations.add({
 	chart.yAxisInnerRadius = am4core.percent(-25);
 	chart.maskBullets = false;
 
-//	let colorSet = new am4core.ColorSet();
 	colorSet.saturation = 0.5;
 
 	chart.data = amData;
