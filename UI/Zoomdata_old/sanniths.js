@@ -16,7 +16,7 @@ looker.plugins.visualizations.add({
 	  element.innerHTML = `
       <style>
 		body { background-color: #30303d; color: #fff; }
-				  .htmlnith {
+				  .sannith {
 				  width: 100%;
 				  height: 600px;
 				}
@@ -27,13 +27,12 @@ looker.plugins.visualizations.add({
         
       </style>
     `;
-	element.innerHTML = "<h1>Ready to render!</h1>";
     this.container = element.appendChild(document.createElement("div"));
-	this.container.className = "htmlnith";
+	this.container.className = "sannith";
     this.container.id = 'amContainer';
   },
 
-  updateAsync: function(data, element, config, queryResponse, details, doneRendering, done) {
+  updateAsync: function(data, element, config, queryResponse, details, doneRendering, event) {
     // Clear any errors from previous updates:
     this.clearErrors();
 
@@ -52,33 +51,30 @@ looker.plugins.visualizations.add({
 	//userid = config.query_fields.dimensions[3].name;
 	
 	
-	//var cell = data[queryResponse.fields.dimensions[0].name];
- 		//var cellElement = myBuildElementFunction(cell);
- 		//cellElement.onclick = function(event) {
- 			//LookerCharts.Utils.openDrillMenu({
- 				//links: cell.links,
- 				//event: event
- 			//});
- 		//};
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
 	var html = "";
 	var colorSet = new am4core.ColorSet();
     for (var i = 0; i < data.length; i++) {
 		row = data[i];
-		var cell = row[queryResponse.fields.dimensions[0].name];
-			html = LookerCharts.Utils.htmlForCell(cell);
+		var cell = data[queryResponse.fields.dimensions[0].name];
+ 		var cellElement = myBuildElementFunction(cell);
+		cellElement.onclick = function(event) {
+ 			LookerCharts.Utils.openDrillMenu({
+ 				links: cell.links,
+ 				event: event
+ 			});
+ 		};
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
 			color: colorSet.next() ,
-			task: html,
+			task: cellElement,
         });
     }
 	
 
-	element.innerHTML = html;
 	
 	
 	console.log('amChart data', amData)
