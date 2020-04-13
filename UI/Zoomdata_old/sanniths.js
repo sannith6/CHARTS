@@ -62,9 +62,11 @@ looker.plugins.visualizations.add({
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
 	var colorSet = new am4core.ColorSet();
+	var cell = data[queryResponse.fields.dimensions[3].name];
+	var cellElement = myBuildElementFunction(cell);
+	cellElement.onclick = function(event) {LookerCharts.Utils.openDrillMenu({links: cell.links, event: event});};
     for (var i = 0; i < data.length; i++) {
-		var cell = i[queryResponse.fields.dimensions[3].name];
-		var cellElement = myBuildElementFunction(cell);
+		
 	    
 		row = data[i];
         amData.push({
@@ -75,7 +77,7 @@ looker.plugins.visualizations.add({
 			task: cellElement,
         });
     }
-	cellElement.onclick = function(event) {LookerCharts.Utils.openDrillMenu({links: cell.links, event: event});};
+	
 
 	//element.innerHTML = html;
 	//doneRendering()
