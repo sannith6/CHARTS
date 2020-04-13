@@ -64,17 +64,18 @@ looker.plugins.visualizations.add({
 	var colorSet = new am4core.ColorSet();
     for (var i = 0; i < data.length; i++) {
 		var cell = i[queryResponse.fields.dimensions[3].name];
-		//html = LookerCharts.Utils.htmlForCell(cell);
-		var cellElement = myBuildElementFunction(cell);
+		html = LookerCharts.Utils.htmlForCell(cell);
+		
 		row = data[i];
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
 			color: colorSet.next() ,
-			task: cellElement,
+			task: html,
         });
     }
+	var cellElement = myBuildElementFunction(cell);
 	cellElement.onclick = function(event) {
 	LookerCharts.Utils.openDrillMenu({
 		links: cell.links,
