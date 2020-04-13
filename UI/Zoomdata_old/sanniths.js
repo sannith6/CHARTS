@@ -69,7 +69,7 @@ looker.plugins.visualizations.add({
 			html += LookerCharts.Utils.htmlForCell(cell);
 		}
 		element.innerHTML = html;
-		doneRendering()
+
 	
 	
 	console.log('amChart data', amData)
