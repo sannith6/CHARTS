@@ -50,9 +50,9 @@ looker.plugins.visualizations.add({
 	
     // build data array for the chart, by iterating over the Looker data object
     let amData = [];
-	let colorSet = new am4core.ColorSet();
+	
     for (let i = 0; i < data.length; i++) {
-        
+		let colorSet = new am4core.ColorSet();
 		row = data[i];
         amData.push({
             category: row[dst_name].value,
