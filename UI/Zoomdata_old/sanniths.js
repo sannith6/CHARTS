@@ -45,19 +45,20 @@ looker.plugins.visualizations.add({
     start_date = config.query_fields.dimensions[0].name;
     end_date = config.query_fields.dimensions[1].name;
 	dst_name = config.query_fields.dimensions[2].name;
-	userid = config.query_fields.dimensions[2].name;
+	userid = config.query_fields.dimensions[3].name;
     
 	
     // build data array for the chart, by iterating over the Looker data object
     let amData = [];
+	let colorSet = new am4core.ColorSet();
     for (let i = 0; i < data.length; i++) {
-        let colorSet = new am4core.ColorSet();
+        
 		row = data[i];
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
-			color: colorSet.next() ,
+			color: colorSet.next(i) ,
 			task: row[userid].value,
         });
     }
