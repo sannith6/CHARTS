@@ -71,7 +71,7 @@ looker.plugins.visualizations.add({
 			var cell = row[queryResponse.fields.dimensions[3].name];
 			html += LookerCharts.Utils.htmlForCell(cell);
 		}
-	
+	element.innerHTML = html;
 	console.log('amChart data', amData)
 
 
