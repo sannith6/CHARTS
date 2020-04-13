@@ -66,9 +66,9 @@ looker.plugins.visualizations.add({
     }
 	
 
-	for (var row in data) {
- 	foreach(row in data) {
- 		var cell = data[queryResponse.fields.dimensions[3].name];
+	for (var i = 0; i < data.length; i++) {
+        row = data[i];		
+ 		var cell = row[queryResponse.fields.dimensions[3].name];
  		var cellElement = myBuildElementFunction(cell);
  		cellElement.onclick = function(element) {
  			LookerCharts.Utils.openDrillMenu({
@@ -76,7 +76,7 @@ looker.plugins.visualizations.add({
  				event: element
  			});
  		};
- 	}
+ 	
  }
 	
 	console.log('amChart data', amData)
