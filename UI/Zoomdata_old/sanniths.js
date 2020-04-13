@@ -49,14 +49,15 @@ looker.plugins.visualizations.add({
     end_date = config.query_fields.dimensions[1].name;
 	dst_name = config.query_fields.dimensions[2].name;
 	//userid = config.query_fields.dimensions[3].name;
-	var cell = queryResponse.fields.dimensions[3].name;
-	html = LookerCharts.Utils.htmlForCell(cell);
-	element.innerHTML = html;
+	
+	
+	
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
 	var colorSet = new am4core.ColorSet();
     for (var i = 0; i < data.length; i++) {
-		
+		var cell = i[queryResponse.fields.dimensions[3].name];
+		html = LookerCharts.Utils.htmlForCell(cell);
 		row = data[i];
         amData.push({
             category: row[dst_name].value,
@@ -69,7 +70,7 @@ looker.plugins.visualizations.add({
 	
 	
 
-	
+	element.innerHTML = html;
 	
 	console.log('amChart data', amData)
 
