@@ -49,7 +49,7 @@ looker.plugins.visualizations.add({
     end_date = config.query_fields.dimensions[1].name;
 	dst_name = config.query_fields.dimensions[2].name;
 	//userid = config.query_fields.dimensions[3].name;
-	var cell = row[queryResponse.fields.dimensions[3].name];
+	var cell = queryResponse.fields.dimensions[3].name;
 	html = LookerCharts.Utils.htmlForCell(cell);
 	element.innerHTML = html;
     // build data array for the chart, by iterating over the Looker data object
