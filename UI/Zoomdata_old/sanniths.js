@@ -40,6 +40,13 @@ looker.plugins.visualizations.add({
     console.log('updateAsync() data', data)
     console.log('updateAsync() config', config)
     console.log('updateAsync() queryResponse', queryResponse)
+	
+	var html = "";
+		for(var row of data) {
+			var cell = row[queryResponse.fields.dimensions[3].name];
+			html = LookerCharts.Utils.htmlForCell(cell);
+		}
+		element.innerHTML = html;
 
     // get the names of the first dimension and measure available in data
     start_date = config.query_fields.dimensions[0].name;
@@ -63,12 +70,7 @@ looker.plugins.visualizations.add({
         });
     }
 	
-	var html = "";
-		for(var row of data) {
-			var cell = row[queryResponse.fields.dimensions[3].name];
-			html += LookerCharts.Utils.htmlForCell(cell);
-		}
-		element.innerHTML = html;
+	
 
 	
 	
