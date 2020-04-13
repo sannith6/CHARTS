@@ -47,7 +47,6 @@ looker.plugins.visualizations.add({
 	dst_name = config.query_fields.dimensions[2].name;
 	userid = config.query_fields.dimensions[3].name;
 	
-    console.log('start_date', config)
 	
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
@@ -116,7 +115,7 @@ looker.plugins.visualizations.add({
 
 	let series = chart.series.push(new am4plugins_timeline.CurveColumnSeries());
 	series.columns.template.height = am4core.percent(20);
-	series.columns.template.tooltipText = "{task}: [bold]{openDateX}[/] - [bold]{dateX}[/]";
+	//series.columns.template.tooltipText = "{task}: [bold]{openDateX}[/] - [bold]{dateX}[/]";
 
 	series.dataFields.openDateX = "start";
 	series.dataFields.dateX = "end";
@@ -159,7 +158,7 @@ looker.plugins.visualizations.add({
 	imageBullet2.image = new am4core.Image();
 	imageBullet2.image.propertyFields.href = "image2";
 
-
+    console.log(minDate(row[start_date].value),config);
 	let eventSeries = chart.series.push(new am4plugins_timeline.CurveLineSeries());
 	eventSeries.dataFields.dateX = "eventDate";
 	eventSeries.dataFields.categoryY = "category";
