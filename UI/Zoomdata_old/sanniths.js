@@ -27,7 +27,6 @@ looker.plugins.visualizations.add({
         
       </style>
     `;
-	element.innerHTML = html;
     this.container = element.appendChild(document.createElement("div"));
 	this.container.className = "sannith";
     this.container.id = 'amContainer';
@@ -49,23 +48,20 @@ looker.plugins.visualizations.add({
     start_date = config.query_fields.dimensions[0].name;
     end_date = config.query_fields.dimensions[1].name;
 	dst_name = config.query_fields.dimensions[2].name;
-	//userid = config.query_fields.dimensions[3].name;
+	userid = config.query_fields.dimensions[3].name;
 	
 	
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
-	var html = "";
 	var colorSet = new am4core.ColorSet();
     for (var i = 0; i < data.length; i++) {
 		row = data[i];
-		var cell = row[queryResponse.fields.dimensions[3].name];
-		html = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
 			color: colorSet.next() ,
-			task: html,
+			task: row[userid].value,
         });
     }
 	
