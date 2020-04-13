@@ -66,8 +66,8 @@ looker.plugins.visualizations.add({
     }
 	
 
-	for (let row in data) {
- 	foreach(let row in data) {
+	for (var row in data) {
+ 	foreach(row in data) {
  		var cell = data[queryResponse.fields.dimensions[3].name];
  		var cellElement = myBuildElementFunction(cell);
  		cellElement.onclick = function(element) {
