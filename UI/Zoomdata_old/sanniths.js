@@ -61,23 +61,23 @@ looker.plugins.visualizations.add({
  		//};
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
-	var html = "";
+	var san = "";
 	var colorSet = new am4core.ColorSet();
     for (var i = 0; i < data.length; i++) {
 		row = data[i];
 		var cell = row[queryResponse.fields.dimensions[0].name];
-			html = LookerCharts.Utils.htmlForCell(cell);
+			san = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
 			color: colorSet.next() ,
-			task: html,
+			task: san,
         });
     }
 	
 
-	element.innerHTML = html;
+	element.innerHTML = san;
 	doneRendering()
 	
 	console.log('amChart data', amData)
