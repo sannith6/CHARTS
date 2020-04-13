@@ -163,8 +163,8 @@ looker.plugins.visualizations.add({
 	eventSeries.dataFields.dateX = "eventDate";
 	eventSeries.dataFields.categoryY = "category";
 	eventSeries.data = [
-		{ category: "", eventDate: openDateX, letter: "", description: "" },
-		{ category: "", eventDate: dateX, letter: "", description: "" }];
+		{ category: "", eventDate: "", letter: "", description: "" },
+		{ category: "", eventDate: "",dateX, letter: "", description: "" }];
 	eventSeries.strokeOpacity = 0;
 
 	//let flagBullet = eventSeries.bullets.push(new am4plugins_bullets.FlagBullet())
@@ -185,7 +185,8 @@ looker.plugins.visualizations.add({
 	cursor.lineX.strokeOpacity = 1;
 
 	dateAxis.renderer.tooltipLocation2 = 0;
-	categoryAxis.cursorTooltipEnabled = true;
+	categoryAxis.cursorTooltipEnabled = false;
+	categoryAxis.cursorTooltipText.disabled = true;
 
 	done();
 }
