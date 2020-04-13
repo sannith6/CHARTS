@@ -27,6 +27,7 @@ looker.plugins.visualizations.add({
         
       </style>
     `;
+	element.innerHTML = "<h1>Ready to render!</h1>";
     this.container = element.appendChild(document.createElement("div"));
 	this.container.className = "htmlnith";
     this.container.id = 'amContainer';
@@ -77,7 +78,7 @@ looker.plugins.visualizations.add({
     }
 	
 
-	//element.innerHTML = html;
+	element.innerHTML = html;
 	
 	
 	console.log('amChart data', amData)
