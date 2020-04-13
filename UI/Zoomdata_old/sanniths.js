@@ -89,7 +89,7 @@ looker.plugins.visualizations.add({
 	let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
 	categoryAxis.dataFields.category = "category";
 	categoryAxis.renderer.grid.template.disabled = true;
-	//categoryAxis.renderer.labels.template.paddingRight = 25;
+	categoryAxis.renderer.labels.template.paddingRight = 25;
 	categoryAxis.renderer.minGridDistance = 10;
 	categoryAxis.renderer.innerRadius = -60;
 	categoryAxis.renderer.radius = 60;
@@ -158,22 +158,19 @@ looker.plugins.visualizations.add({
 	imageBullet2.image = new am4core.Image();
 	imageBullet2.image.propertyFields.href = "image2";
 
-    console.log(minDate.row[start_date].value,config);
+    console.log(row[start_date].value,config);
 	let eventSeries = chart.series.push(new am4plugins_timeline.CurveLineSeries());
 	eventSeries.dataFields.dateX = "eventDate";
 	eventSeries.dataFields.categoryY = "category";
 	eventSeries.data = [
-		{ category: "", eventDate: "2020-03-26 00", letter: "", description: "" },
-		{ category: "", eventDate: "2020-03-26 06", letter: "", description: "" },
-		{ category: "", eventDate: "2020-03-26 12", letter: "", description: "" },
-		{ category: "", eventDate: "2020-03-26 18", letter: "", description: "" },
-		{ category: "", eventDate: "2020-03-26 24", letter: "", description: "" }];
+		{ category: "", eventDate: openDateX, letter: "", description: "" },
+		{ category: "", eventDate: dateX, letter: "", description: "" }];
 	eventSeries.strokeOpacity = 0;
 
-	let flagBullet = eventSeries.bullets.push(new am4plugins_bullets.FlagBullet())
-	flagBullet.label.propertyFields.text = "letter";
-	flagBullet.locationX = 0;
-	flagBullet.tooltipText = "{description}";
+	//let flagBullet = eventSeries.bullets.push(new am4plugins_bullets.FlagBullet())
+	//flagBullet.label.propertyFields.text = "letter";
+	//flagBullet.locationX = 0;
+	//flagBullet.tooltipText = "{description}";
 
 	chart.scrollbarX = new am4core.Scrollbar();
 	chart.scrollbarX.align = "center"
@@ -188,7 +185,7 @@ looker.plugins.visualizations.add({
 	cursor.lineX.strokeOpacity = 1;
 
 	dateAxis.renderer.tooltipLocation2 = 0;
-	categoryAxis.cursorTooltipEnabled = false;
+	categoryAxis.cursorTooltipEnabled = true;
 
 	done();
 }
