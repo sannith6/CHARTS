@@ -56,7 +56,7 @@ looker.plugins.visualizations.add({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
-			color: colorSet.next(); ,
+			color: colorSet.next() ,
 			task: row[userid].value,
         });
     }
