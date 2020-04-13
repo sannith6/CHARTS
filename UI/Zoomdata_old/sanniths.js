@@ -22,7 +22,7 @@ looker.plugins.visualizations.add({
 				}
 
 				.demo-theme-dark .demo-background {
-				  background: #fff;
+				  background: #FFFFFF;
 }
         
       </style>
