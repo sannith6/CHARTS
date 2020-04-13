@@ -164,7 +164,7 @@ looker.plugins.visualizations.add({
 	eventSeries.dataFields.dateX = "eventDate";
 	eventSeries.dataFields.categoryY = "category";
 	eventSeries.data = [
-		{ category: "", eventDate: "2020-03-26 00", letter: "", description: "" },
+		{ category: "", eventDate: "2020-03-26 12", letter: "", description: "" },
 		{ category: "", eventDate: "2020-03-26 23", letter: "", description: "" }];
 	eventSeries.strokeOpacity = 0;
 
