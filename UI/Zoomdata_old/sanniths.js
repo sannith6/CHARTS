@@ -15,7 +15,6 @@ looker.plugins.visualizations.add({
 	  
 	  element.innerHTML = `
       <style>
-		body { background-color: #fffcfd; color: #fff; }
 				  .sannith {
 				  width: 100%;
 				  height: 600px;
