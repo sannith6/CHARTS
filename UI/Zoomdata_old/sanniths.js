@@ -93,6 +93,7 @@ looker.plugins.visualizations.add({
 	categoryAxis.renderer.minGridDistance = 10;
 	categoryAxis.renderer.innerRadius = -60;
 	categoryAxis.renderer.radius = 60;
+	categoryAxis.labelsEnabled = false;
 
 	let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
 	dateAxis.renderer.minGridDistance = 70;
@@ -164,7 +165,7 @@ looker.plugins.visualizations.add({
 	eventSeries.dataFields.categoryY = "category";
 	eventSeries.data = [
 		{ category: "", eventDate: "", letter: "", description: "" },
-		{ category: "", eventDate: "",dateX, letter: "", description: "" }];
+		{ category: "", eventDate: "", letter: "", description: "" }];
 	eventSeries.strokeOpacity = 0;
 
 	//let flagBullet = eventSeries.bullets.push(new am4plugins_bullets.FlagBullet())
@@ -186,7 +187,6 @@ looker.plugins.visualizations.add({
 
 	dateAxis.renderer.tooltipLocation2 = 0;
 	categoryAxis.cursorTooltipEnabled = false;
-	categoryAxis.cursorTooltipText.disabled = true;
 
 	done();
 }
