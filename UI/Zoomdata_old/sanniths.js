@@ -41,20 +41,17 @@ looker.plugins.visualizations.add({
     console.log('updateAsync() config', config)
     console.log('updateAsync() queryResponse', queryResponse)
 	
-	var html = "";
-		for(var row of data) {
-			var cell = row[queryResponse.fields.dimensions[3].name];
-			html = LookerCharts.Utils.htmlForCell(cell);
-		}
-		element.innerHTML = html;
+	
+		
 
     // get the names of the first dimension and measure available in data
     start_date = config.query_fields.dimensions[0].name;
     end_date = config.query_fields.dimensions[1].name;
 	dst_name = config.query_fields.dimensions[2].name;
-	userid = config.query_fields.dimensions[3].name;
-	
-	
+	//userid = config.query_fields.dimensions[3].name;
+	cell = row[queryResponse.fields.dimensions[3].name];
+	html = LookerCharts.Utils.htmlForCell(cell);
+	element.innerHTML = html;
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
 	var colorSet = new am4core.ColorSet();
@@ -66,7 +63,7 @@ looker.plugins.visualizations.add({
 			start: row[start_date].value,
 			end : row[end_date].value,
 			color: colorSet.next() ,
-			task: row[userid].value,
+			task: html,
         });
     }
 	
