@@ -78,7 +78,7 @@ looker.plugins.visualizations.add({
 	chart.yAxisInnerRadius = am4core.percent(-25);
 	chart.maskBullets = false;
 
-	let colorSet = new am4core.ColorSet();
+//	let colorSet = new am4core.ColorSet();
 	colorSet.saturation = 0.5;
 
 	chart.data = amData;
