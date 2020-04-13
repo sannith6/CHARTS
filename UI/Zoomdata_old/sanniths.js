@@ -80,8 +80,8 @@ looker.plugins.visualizations.add({
 
 	chart.data = amData;
 
-	chart.dateFormatter.dateFormat = "yyyy-MM-dd";
-	chart.dateFormatter.inputDateFormat = "yyyy-MM-dd";
+	chart.dateFormatter.dateFormat = "yyyy-MM-dd HH";
+	chart.dateFormatter.inputDateFormat = "yyyy-MM-dd HH";
 	chart.fontSize = 11;
 
 	let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
@@ -94,7 +94,7 @@ looker.plugins.visualizations.add({
 
 	let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
 	dateAxis.renderer.minGridDistance = 70;
-	dateAxis.baseInterval = { count: 1, timeUnit: "day" };
+	dateAxis.baseInterval = { count: 1, timeUnit: "hour" };
 	dateAxis.renderer.tooltipLocation = 0;
 	dateAxis.startLocation = -0.5;
 	dateAxis.renderer.line.strokeDasharray = "1,4";
