@@ -65,7 +65,13 @@ looker.plugins.visualizations.add({
     for (var i = 0; i < data.length; i++) {
 		var cell = i[queryResponse.fields.dimensions[3].name];
 		html = LookerCharts.Utils.htmlForCell(cell);
-		
+		var cellElement = myBuildElementFunction(cell);
+	    cellElement.onclick = function(event) {
+	    LookerCharts.Utils.openDrillMenu({
+		  links: cell.links,
+		  event: event
+	  });
+	};
 		row = data[i];
         amData.push({
             category: row[dst_name].value,
@@ -75,13 +81,7 @@ looker.plugins.visualizations.add({
 			task: html,
         });
     }
-	var cellElement = myBuildElementFunction(cell);
-	cellElement.onclick = function(event) {
-	LookerCharts.Utils.openDrillMenu({
-		links: cell.links,
-		event: event
-	});
-	};
+	
 
 	//element.innerHTML = html;
 	//doneRendering()
