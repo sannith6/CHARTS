@@ -27,12 +27,13 @@ looker.plugins.visualizations.add({
         
       </style>
     `;
+	element.innerHTML = html;
     this.container = element.appendChild(document.createElement("div"));
 	this.container.className = "sannith";
     this.container.id = 'amContainer';
   },
 
-  updateAsync: function(data, element, config, queryResponse, details, doneRendering, event) {
+  updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Clear any errors from previous updates:
     this.clearErrors();
 
@@ -58,19 +59,13 @@ looker.plugins.visualizations.add({
     for (var i = 0; i < data.length; i++) {
 		row = data[i];
 		var cell = row[queryResponse.fields.dimensions[0].name];
- 		var cellElement = myBuildElementFunction(cell);
-		cellElement.onclick = function(event) {
- 			LookerCharts.Utils.openDrillMenu({
- 				links: cell.links,
- 				event: event
- 			});
- 		};
+		html += LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
 			color: colorSet.next() ,
-			task: cellElement,
+			task: html,
         });
     }
 	
