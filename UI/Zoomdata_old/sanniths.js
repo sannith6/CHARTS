@@ -51,27 +51,39 @@ looker.plugins.visualizations.add({
 	//userid = config.query_fields.dimensions[3].name;
 	
 	
-	
+	//var cell = data[queryResponse.fields.dimensions[0].name];
+ 		//var cellElement = myBuildElementFunction(cell);
+ 		//cellElement.onclick = function(event) {
+ 			//LookerCharts.Utils.openDrillMenu({
+ 				//links: cell.links,
+ 				//event: event
+ 			//});
+ 		//};
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
 	var colorSet = new am4core.ColorSet();
     for (var i = 0; i < data.length; i++) {
 		var cell = i[queryResponse.fields.dimensions[3].name];
-		html = LookerCharts.Utils.htmlForCell(cell);
+		//html = LookerCharts.Utils.htmlForCell(cell);
+		var cellElement = myBuildElementFunction(cell);
 		row = data[i];
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
 			color: colorSet.next() ,
-			task: html,
+			task: cellElement,
         });
     }
-	
-	
+	cellElement.onclick = function(event) {
+	LookerCharts.Utils.openDrillMenu({
+		links: cell.links,
+		event: event
+	});
+	};
 
-	element.innerHTML = html;
-	doneRendering()
+	//element.innerHTML = html;
+	//doneRendering()
 	
 	console.log('amChart data', amData)
 
