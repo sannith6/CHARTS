@@ -16,7 +16,7 @@ looker.plugins.visualizations.add({
 	  element.innerHTML = `
       <style>
 		body { background-color: #30303d; color: #fff; }
-				  .sannith {
+				  .htmlnith {
 				  width: 100%;
 				  height: 600px;
 				}
@@ -28,7 +28,7 @@ looker.plugins.visualizations.add({
       </style>
     `;
     this.container = element.appendChild(document.createElement("div"));
-	this.container.className = "sannith";
+	this.container.className = "htmlnith";
     this.container.id = 'amContainer';
   },
 
@@ -61,23 +61,23 @@ looker.plugins.visualizations.add({
  		//};
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
-	var san = "";
+	var html = "";
 	var colorSet = new am4core.ColorSet();
     for (var i = 0; i < data.length; i++) {
 		row = data[i];
 		var cell = row[queryResponse.fields.dimensions[0].name];
-			san = LookerCharts.Utils.htmlForCell(cell);
+			html = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
 			color: colorSet.next() ,
-			task: san,
+			task: html,
         });
     }
 	
 
-	element.innerHTML = san;
+	element.innerHTML = .html;
 	doneRendering()
 	
 	console.log('amChart data', amData)
