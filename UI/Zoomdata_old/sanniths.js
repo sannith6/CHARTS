@@ -57,7 +57,7 @@ looker.plugins.visualizations.add({
 	var colorSet = new am4core.ColorSet();
     for (var i = 0; i < data.length; i++) {
 		row = data[i];
-		var cell = data[queryResponse.fields.dimensions[0].name];
+		var cell = row[queryResponse.fields.dimensions[0].name];
  		var cellElement = myBuildElementFunction(cell);
 		cellElement.onclick = function(event) {
  			LookerCharts.Utils.openDrillMenu({
