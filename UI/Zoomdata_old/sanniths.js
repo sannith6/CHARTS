@@ -78,7 +78,7 @@ looker.plugins.visualizations.add({
 	
 
 	//element.innerHTML = html;
-	doneRendering()
+	
 	
 	console.log('amChart data', amData)
 
@@ -202,6 +202,6 @@ looker.plugins.visualizations.add({
 	dateAxis.renderer.tooltipLocation2 = 0;
 	categoryAxis.cursorTooltipEnabled = false;
 
-	done();
+	doneRendering();
 }
 })
