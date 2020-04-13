@@ -63,19 +63,13 @@ looker.plugins.visualizations.add({
         });
     }
 	
-	for (var row in data) {
- 	foreach(var row in data) {
- 		var cell = data[queryResponse.fields.dimensions[0].name];
- 		var cellElement = myBuildElementFunction(cell);
- 		cellElement.onclick = function(event) {
- 			LookerCharts.Utils.openDrillMenu({
- 				links: cell.links,
- 				event: event
- 			});
- 		};
- 		// ... more visualization stuff...
- 	}
- }
+	var html = "";
+		for(var row of data) {
+			var cell = row[queryResponse.fields.dimensions[3].name];
+			html += LookerCharts.Utils.htmlForCell(cell);
+		}
+		element.innerHTML = html;
+		doneRendering()
 	
 	
 	console.log('amChart data', amData)
