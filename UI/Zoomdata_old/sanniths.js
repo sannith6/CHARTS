@@ -20,10 +20,6 @@ looker.plugins.visualizations.add({
 				  width: 100%;
 				  height: 600px;
 				}
-
-				.demo-theme-dark .demo-background {
-				  background: #FFFFFF;
-}
         
       </style>
     `;
