@@ -32,7 +32,7 @@ looker.plugins.visualizations.add({
     this.container.id = 'amContainer';
   },
 
-  updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
+  updateAsync: function(data, element, config, queryResponse, details, doneRendering, done) {
     // Clear any errors from previous updates:
     this.clearErrors();
 
@@ -78,7 +78,7 @@ looker.plugins.visualizations.add({
 	
 
 	element.innerHTML = html;
-	//doneRendering()
+	doneRendering()
 	
 	console.log('amChart data', amData)
 
@@ -202,6 +202,6 @@ looker.plugins.visualizations.add({
 	dateAxis.renderer.tooltipLocation2 = 0;
 	categoryAxis.cursorTooltipEnabled = false;
 
-	doneRendering();
+	done();
 }
 })
