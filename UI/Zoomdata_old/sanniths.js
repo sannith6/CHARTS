@@ -49,16 +49,16 @@ looker.plugins.visualizations.add({
     
 	
     // build data array for the chart, by iterating over the Looker data object
-    let amData = [];
-	
-    for (let i = 0; i < data.length; i++) {
-		let colorSet = new am4core.ColorSet();
+    var amData = [];
+	var colorSet = new am4core.ColorSet();
+    for (var i = 0; i < data.length; i++) {
+		
 		row = data[i];
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
-			color: colorSet.next(i) ,
+			color: colorSet.next() ,
 			task: row[userid].value,
         });
     }
