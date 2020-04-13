@@ -89,7 +89,7 @@ looker.plugins.visualizations.add({
 	let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
 	categoryAxis.dataFields.category = "category";
 	categoryAxis.renderer.grid.template.disabled = true;
-	categoryAxis.renderer.labels.template.paddingRight = 25;
+	//categoryAxis.renderer.labels.template.paddingRight = 25;
 	categoryAxis.renderer.minGridDistance = 10;
 	categoryAxis.renderer.innerRadius = -60;
 	categoryAxis.renderer.radius = 60;
@@ -115,7 +115,7 @@ looker.plugins.visualizations.add({
 
 	let series = chart.series.push(new am4plugins_timeline.CurveColumnSeries());
 	series.columns.template.height = am4core.percent(20);
-	//series.columns.template.tooltipText = "{task}: [bold]{openDateX}[/] - [bold]{dateX}[/]";
+	series.columns.template.tooltipText = "{task}: [bold]{openDateX}[/] - [bold]{dateX}[/]";
 
 	series.dataFields.openDateX = "start";
 	series.dataFields.dateX = "end";
@@ -158,7 +158,7 @@ looker.plugins.visualizations.add({
 	imageBullet2.image = new am4core.Image();
 	imageBullet2.image.propertyFields.href = "image2";
 
-    console.log(minDate(row[start_date].value),config);
+    console.log(minDate.row[start_date].value,config);
 	let eventSeries = chart.series.push(new am4plugins_timeline.CurveLineSeries());
 	eventSeries.dataFields.dateX = "eventDate";
 	eventSeries.dataFields.categoryY = "category";
