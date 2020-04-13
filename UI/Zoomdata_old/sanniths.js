@@ -32,7 +32,7 @@ looker.plugins.visualizations.add({
     this.container.id = 'amContainer';
   },
 
-  updateAsync: function(data, element, config, queryResponse, details, done) {
+  updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Clear any errors from previous updates:
     this.clearErrors();
 
@@ -62,24 +62,21 @@ looker.plugins.visualizations.add({
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
 	var colorSet = new am4core.ColorSet();
-	var cell = data[queryResponse.fields.dimensions[3].name];
-	var cellElement = myBuildElementFunction(cell);
-	cellElement.onclick = function(event) {LookerCharts.Utils.openDrillMenu({links: cell.links, event: event});};
     for (var i = 0; i < data.length; i++) {
-		
-	    
 		row = data[i];
+		var cell = row[queryResponse.fields.dimensions[0].name];
+			html = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
 			color: colorSet.next() ,
-			task: cellElement,
+			task: html,
         });
     }
 	
 
-	//element.innerHTML = html;
+	element.innerHTML = html;
 	//doneRendering()
 	
 	console.log('amChart data', amData)
@@ -204,6 +201,6 @@ looker.plugins.visualizations.add({
 	dateAxis.renderer.tooltipLocation2 = 0;
 	categoryAxis.cursorTooltipEnabled = false;
 
-	done();
+	doneRendering();
 }
 })
