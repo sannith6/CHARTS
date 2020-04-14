@@ -30,6 +30,7 @@ looker.plugins.visualizations.add({
     this.container = element.appendChild(document.createElement("div"));
 	this.container.className = "sannith";
     this.container.id = 'amContainer';
+	this._textElement = container.appendChild(document.createElement("div"));
   },
 
   updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
@@ -52,12 +53,10 @@ looker.plugins.visualizations.add({
 	
 	
     // build data array for the chart, by iterating over the Looker data object
-	var html = '';
     var amData = [];
 	var colorSet = new am4core.ColorSet();
     for(var row of data) {
 		var cell = row[queryResponse.fields.dimensions[3].name]
-		html = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
@@ -68,7 +67,9 @@ looker.plugins.visualizations.add({
         });
 		
     }
-	
+	this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(cell);
+	this._textElement.className = "html";
+	element.innerHTML = html;
 	
 	console.log('amChart data', amData)
 
