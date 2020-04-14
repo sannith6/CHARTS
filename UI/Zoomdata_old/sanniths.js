@@ -66,15 +66,15 @@ looker.plugins.visualizations.add({
 			end : row[end_date].value,
 			color: colorSet.next() ,
 			//task: row[userid].value,
-			task: xyz
+			task: cell
         });
 		
     }
 	
-	xyz.onclick = function(event) {
+	xyz.onclick = function(element) {
  			LookerCharts.Utils.openDrillMenu({
  				links: cell.links,
- 				event: event
+ 				event: element
  			});
  		};
 
