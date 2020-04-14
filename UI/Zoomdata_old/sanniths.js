@@ -52,10 +52,11 @@ looker.plugins.visualizations.add({
 	
 	
     // build data array for the chart, by iterating over the Looker data object
+	var html = '';
     var amData = [];
 	var colorSet = new am4core.ColorSet();
-    for (var i = 0; i < data.length; i++) {
-		row = data[i];
+    for(var row of data) {
+		
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
@@ -64,16 +65,10 @@ looker.plugins.visualizations.add({
 			//task: row[userid].value,
 			task: row[queryResponse.fields.dimensions[3].name]
         });
+		html = LookerCharts.Utils.htmlForCell(task);
     }
 	
-    
-	var html = [];
-		for(var row of data) {
-			var cell = row[queryResponse.fields.dimensions[3].name];
-			html = LookerCharts.Utils.htmlForCell(cell);
-		}
-	console.log('cell', html)
-	console.log('html', html)
+	
 	console.log('amChart data', amData)
 
 
@@ -167,7 +162,7 @@ looker.plugins.visualizations.add({
 	imageBullet2.image = new am4core.Image();
 	imageBullet2.image.propertyFields.href = "image2";
 
-    console.log(row[start_date].value,config);
+   
 	let eventSeries = chart.series.push(new am4plugins_timeline.CurveLineSeries());
 	eventSeries.dataFields.dateX = "eventDate";
 	eventSeries.dataFields.categoryY = "category";
