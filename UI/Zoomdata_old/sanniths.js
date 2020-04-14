@@ -59,14 +59,14 @@ looker.plugins.visualizations.add({
 	var colorSet = new am4core.ColorSet();
     for(var row of data) {
 		var cell = row[queryResponse.fields.dimensions[3].name]
-		//xyz = LookerCharts.Utils.htmlForCell(cell);
+		xyz = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
 			end : row[end_date].value,
 			color: colorSet.next() ,
 			//task: row[userid].value,
-			task: cell
+			task: xyz
         });
 		
     }
