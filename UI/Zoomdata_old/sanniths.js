@@ -12,6 +12,7 @@ am4core.useTheme(am4themes_dark);
 
 looker.plugins.visualizations.add({
   create: function(element, config) {
+	  element.innerHTML = "<h1>Ready to render!</h1>";
 	  
 	  element.innerHTML = `
       <style>
@@ -30,6 +31,8 @@ looker.plugins.visualizations.add({
     this.container = element.appendChild(document.createElement("div"));
 	this.container.className = "sannith";
     this.container.id = 'amContainer';
+	
+	//this.container = element.appendChild(document.createElement("div"));
 	
   },
 
@@ -56,8 +59,9 @@ looker.plugins.visualizations.add({
     var amData = [];
 	var colorSet = new am4core.ColorSet();
     for(var row of data) {
+		var xyz = "";
 		var cell = row[queryResponse.fields.dimensions[3].name]
-		html = LookerCharts.Utils.htmlForCell(cell);
+		xyz = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
@@ -69,7 +73,7 @@ looker.plugins.visualizations.add({
 		
     }
 	
-	//element.innerHTML = html;
+	element.innerHTML = xyz;
 	
 	console.log('amChart data', amData)
 
