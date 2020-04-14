@@ -71,7 +71,7 @@ looker.plugins.visualizations.add({
 		
     }
 	
-	xyz.onclick = function(element) {
+	task.onclick = function(element) {
  			LookerCharts.Utils.openDrillMenu({
  				links: cell.links,
  				event: element
