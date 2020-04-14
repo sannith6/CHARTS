@@ -71,13 +71,7 @@ looker.plugins.visualizations.add({
 		
     }
 	
-	xyz.onclick = function(element) {
- 			LookerCharts.Utils.openDrillMenu({
- 				links: cell.links,
- 				event: element
- 			});
- 		};
-
+	element.innerHTML = xyz;
 	
 	console.log('amChart data', amData)
 
