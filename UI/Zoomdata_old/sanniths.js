@@ -69,7 +69,7 @@ looker.plugins.visualizations.add({
 		
     }
 	
-	element.innerHTML = html;
+	//element.innerHTML = html;
 	
 	console.log('amChart data', amData)
 
