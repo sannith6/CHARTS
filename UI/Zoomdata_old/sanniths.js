@@ -57,7 +57,7 @@ looker.plugins.visualizations.add({
 	var colorSet = new am4core.ColorSet();
     for(var row of data) {
 		var cell = row[queryResponse.fields.dimensions[3].name]
-		html = LookerCharts.Utils.htmlForCell(task);
+		html = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             category: row[dst_name].value,
 			start: row[start_date].value,
