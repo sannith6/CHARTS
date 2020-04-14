@@ -61,18 +61,19 @@ looker.plugins.visualizations.add({
 			start: row[start_date].value,
 			end : row[end_date].value,
 			color: colorSet.next() ,
-			task: row[userid].value,
+			//task: row[userid].value,
+			task: row[queryResponse.fields.dimensions[3].name]
         });
     }
 	
-
-	var html = "";
+    
+	var html = [];
 		for(var row of data) {
 			var cell = row[queryResponse.fields.dimensions[3].name];
 			html = LookerCharts.Utils.htmlForCell(cell);
 		}
-	console.log(cell)
-	console.log(html)
+	console.log('cell', html)
+	console.log('html', html)
 	console.log('amChart data', amData)
 
 
