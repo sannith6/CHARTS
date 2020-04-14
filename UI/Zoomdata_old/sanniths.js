@@ -71,6 +71,7 @@ looker.plugins.visualizations.add({
 		
     }
 	this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(cell);
+	element.innerHTML = LookerCharts.Utils.htmlForCell(cell);
 
 	//element.innerHTML = xyz;
 	
