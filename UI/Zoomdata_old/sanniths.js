@@ -66,10 +66,10 @@ looker.plugins.visualizations.add({
 			//task: row[userid].value,
 			task: cell
         });
-		element.innerHTML = html;
+		
     }
 	
-	
+	element.innerHTML = html;
 	
 	console.log('amChart data', amData)
 
