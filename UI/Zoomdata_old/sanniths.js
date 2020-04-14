@@ -66,12 +66,12 @@ looker.plugins.visualizations.add({
 			end : row[end_date].value,
 			color: colorSet.next() ,
 			//task: row[userid].value,
-			task: cell
+			task: cell.value
         });
 		
     }
 	
-	task.onclick = function(element) {
+	cell.onclick = function(element) {
  			LookerCharts.Utils.openDrillMenu({
  				links: cell.links,
  				event: element
@@ -129,7 +129,7 @@ looker.plugins.visualizations.add({
 
 	let series = chart.series.push(new am4plugins_timeline.CurveColumnSeries());
 	series.columns.template.height = am4core.percent(20);
-	series.columns.template.tooltipText = "{task.value}: [bold]{openDateX}[/] - [bold]{dateX}[/]";
+	series.columns.template.tooltipText = "{task}: [bold]{openDateX}[/] - [bold]{dateX}[/]";
 
 	series.dataFields.openDateX = "start";
 	series.dataFields.dateX = "end";
