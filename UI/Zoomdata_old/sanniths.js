@@ -29,7 +29,7 @@ looker.plugins.visualizations.add({
     var container = element.appendChild(document.createElement("div"));
 	container.className = "sannith";
     container.id = 'amContainer';
-	this._textElement = container.appendChild(document.createElement("div"));
+	
 
 	//this.container = element.appendChild(document.createElement("div"));
 	
@@ -71,7 +71,13 @@ looker.plugins.visualizations.add({
 		
     }
 	
-	element.innerHTML = xyz;
+	xyz.onclick = function(event) {
+ 			LookerCharts.Utils.openDrillMenu({
+ 				links: cell.links,
+ 				event: event
+ 			});
+ 		};
+
 	
 	console.log('amChart data', amData)
 
