@@ -123,7 +123,10 @@ looker.plugins.visualizations.add({
 
 	let series = chart.series.push(new am4plugins_timeline.CurveColumnSeries());
 	series.columns.template.height = am4core.percent(20);
-	series.columns.template.tooltipText = "{task}: [bold]{openDateX}[/] - [bold]{dateX}[/]";
+	//series.columns.template.tooltipText = "{task}: [bold]{openDateX}[/] - [bold]{dateX}[/]";
+	series.columns.template.tooltipHTML = '{task}: <b>{openDateX}:00</b> - <b>{dateX}:00</b>';
+        series.tooltip.label.interactionsEnabled = true;
+        series.tooltip.keepTargetHover = true;
 
 	series.dataFields.openDateX = "start";
 	series.dataFields.dateX = "end";
