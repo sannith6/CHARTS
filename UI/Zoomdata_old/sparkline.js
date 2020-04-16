@@ -75,7 +75,7 @@
 
 		d3.json("amData", function(json) {
 
-					jsonData = json;
+					jsonamData = json;
 
 					json.forEach(function(d) {
 					  d.value = Math.round((+d.value + 0.00001) * 1000) / 1000;
