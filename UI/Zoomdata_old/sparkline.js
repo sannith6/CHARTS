@@ -62,7 +62,7 @@
 			amData.push({
 						year: row[event_date].value,
 						value: row[risk_score].value,
-						states : row[name].value,
+						state : row[name].value,
 					});
 					
 				}
@@ -73,7 +73,7 @@
 			.x(function(d){return xScale(d.year);})
 			.y(function(d){return yScale(d.value);});
 
-		d3.json("amData", function(json) {
+		d3.json(amData, function(json) {
 
 					jsonData = json;
 
