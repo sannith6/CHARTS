@@ -43,7 +43,7 @@
 			
 		  },
 
-		updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
+		updateAsync: function(data, element, config, queryResponse, details, done) {
 			// Clear any errors from previous updates:
 			this.clearErrors();
 
@@ -205,5 +205,6 @@
 
 				  return table;
 		};
+		done();
 		}
 		})
