@@ -73,7 +73,7 @@
 			.x(function(d){return xScale(d.year);})
 			.y(function(d){return yScale(d.value);});
 
-
+                    json = Data;
 					Data.forEach(function(d) {
 					  d.value = Math.round((+d.value + 0.00001) * 1000) / 1000;
 					  d.year = +d.year;
