@@ -86,6 +86,8 @@
 						.map(json);
 
 					var yearstring = Object.keys(nestyr);
+					
+					console.log("date",yearstring)
 
 					// //////////////////////////
 					var width = 200, height = 25;
@@ -121,7 +123,7 @@
 				yearstring.unshift("State");
 				yearstring.push("Sparkline");
 
-				updateGraph(amData);
+				updateGraph(Data);
 
 				// render the table(s)
 				tabulate(tableData, yearstring);
@@ -129,7 +131,7 @@
 		 // close json
 
 
-		function updateGraph(amData) {
+		function updateGraph(Data) {
 
 		// add years for select indicator
 			var nestyr = d3.nest()
@@ -158,13 +160,13 @@
 					// append the header row
 					thead.append('tr')
 					  .selectAll('th')
-					  .amData(columns).enter()
+					  .Data(columns).enter()
 					  .append('th')
 						.text(function (column) { return column; });
 
 					// create a row for each object in the data
 					var rows = tbody.selectAll('tr')
-					  .amData(newData)
+					  .Data(newData)
 					  .enter()
 					  .append('tr');
 
@@ -174,7 +176,7 @@
 
 					// create a cell in each row for each column
 					var cells = rows.selectAll('td')
-					  .amData(function (row) {
+					  .Data(function (row) {
 						return columns.map(function (column) {
 						  return {column: column, value: row[column]};
 						});
@@ -186,7 +188,7 @@
 
 							rows.selectAll("td.Sparkline")
 													.selectAll(".spark")
-													.amData(function(d,i){ return [type[i]]; })
+													.Data(function(d,i){ return [type[i]]; })
 													.enter()
 										.append("svg")
 										.attr("class", "spark")
