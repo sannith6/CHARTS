@@ -58,7 +58,6 @@
 			
 			
 			var amData = [];
-			var colorSet = new am4core.ColorSet();
 			for(var row of data) {
 			amData.push({
 						year: row[event_date].value,
@@ -68,7 +67,7 @@
 					
 				}
 				
-			console.log('amChart data', amData)
+			console.log(amData)
 
 		var line = d3.svg.line()
 			.x(function(d){return xScale(d.year);})
