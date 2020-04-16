@@ -52,17 +52,19 @@
 			console.log('updateAsync() config', config)
 			console.log('updateAsync() queryResponse', queryResponse)
 
+            score = config.query_fields.dimensions[2].name; 
             event = config.query_fields.dimensions[0].name;
 			name = config.query_fields.dimensions[1].name;
-			score = config.query_fields.dimensions[2].name;
+			
 			
 			
 			var Data = [];
 			for(var row of data) {
 			Data.push({
 						value : row[score].value,
-						state : row[name].value,
 						year : row[event].value,
+						state : row[name].value,
+						
 					});
 					
 				}
