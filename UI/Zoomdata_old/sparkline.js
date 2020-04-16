@@ -126,7 +126,7 @@
 				// render the table(s)
 				tabulate(tableData, yearstring);
 
-		}); // close json
+		 // close json
 
 
 		function updateGraph(amData) {
