@@ -52,13 +52,29 @@
 			console.log('updateAsync() config', config)
 			console.log('updateAsync() queryResponse', queryResponse)
 
-
+            event_date = config.query_fields.dimensions[0].name;
+			name = config.query_fields.dimensions[1].name;
+			risk_score = config.query_fields.dimensions[2].name;
+			
+			
+			var amData = [];
+			var colorSet = new am4core.ColorSet();
+			for(var row of data) {
+			amData.push({
+						year: row[event_date].value,
+						value: row[risk_score].value,
+						states : row[name].value,
+					});
+					
+				}
+				
+			console.log('amChart data', amData)
 
 		var line = d3.svg.line()
 			.x(function(d){return xScale(d.year);})
 			.y(function(d){return yScale(d.value);});
 
-		d3.json("data.json", function(json) {
+		d3.json("amData", function(json) {
 
 					jsonData = json;
 
@@ -109,7 +125,7 @@
 				yearstring.unshift("State");
 				yearstring.push("Sparkline");
 
-				updateGraph(data);
+				updateGraph(amData);
 
 				// render the table(s)
 				tabulate(tableData, yearstring);
@@ -117,7 +133,7 @@
 		}); // close json
 
 
-		function updateGraph(data) {
+		function updateGraph(amData) {
 
 		// add years for select indicator
 			var nestyr = d3.nest()
@@ -146,13 +162,13 @@
 					// append the header row
 					thead.append('tr')
 					  .selectAll('th')
-					  .data(columns).enter()
+					  .amData(columns).enter()
 					  .append('th')
 						.text(function (column) { return column; });
 
 					// create a row for each object in the data
 					var rows = tbody.selectAll('tr')
-					  .data(newData)
+					  .amData(newData)
 					  .enter()
 					  .append('tr');
 
@@ -162,7 +178,7 @@
 
 					// create a cell in each row for each column
 					var cells = rows.selectAll('td')
-					  .data(function (row) {
+					  .amData(function (row) {
 						return columns.map(function (column) {
 						  return {column: column, value: row[column]};
 						});
@@ -174,7 +190,7 @@
 
 							rows.selectAll("td.Sparkline")
 													.selectAll(".spark")
-													.data(function(d,i){ return [type[i]]; })
+													.amData(function(d,i){ return [type[i]]; })
 													.enter()
 										.append("svg")
 										.attr("class", "spark")
