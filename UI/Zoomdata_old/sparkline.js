@@ -57,9 +57,9 @@
 			risk_score = config.query_fields.measures[0].name;
 			
 			
-			var amData = [];
+			var Data = [];
 			for(var row of data) {
-			amData.push({
+			Data.push({
 						year: row[event_date].value,
 						value: row[risk_score].value,
 						state : row[name].value,
@@ -67,15 +67,15 @@
 					
 				}
 				
-			console.log('looker data',amData)
+			console.log('looker data',Data)
 
 		var line = d3.svg.line()
 			.x(function(d){return xScale(d.year);})
 			.y(function(d){return yScale(d.value);});
 
-		 function(json) {
+		data(Data, function(json) {
 
-					amData = json;
+					jsonData = json;
 
 					json.forEach(function(d) {
 					  d.value = Math.round((+d.value + 0.00001) * 1000) / 1000;
@@ -129,7 +129,7 @@
 				// render the table(s)
 				tabulate(tableData, yearstring);
 
-		}; // close json
+		}); // close json
 
 
 		function updateGraph(amData) {
