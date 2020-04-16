@@ -57,7 +57,7 @@
 			risk_score = config.query_fields.measures[0].name;
 			
 			
-			var amData = [];
+			var amData.json = [];
 			for(var row of data) {
 			amData.push({
 						year: row[event_date].value,
@@ -73,7 +73,7 @@
 			.x(function(d){return xScale(d.year);})
 			.y(function(d){return yScale(d.value);});
 
-		d3.json(amData, function(json) {
+		d3.json("amData.json", function(json) {
 
 					jsonData = json;
 
