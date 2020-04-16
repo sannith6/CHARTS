@@ -54,7 +54,7 @@
 
             event_date = config.query_fields.dimensions[0].name;
 			name = config.query_fields.dimensions[1].name;
-			risk_score = config.query_fields.dimensions[2].name;
+			risk_score = config.query_fields.measures[0].name;
 			
 			
 			var amData = [];
@@ -67,7 +67,7 @@
 					
 				}
 				
-			console.log(amData)
+			console.log('looker data',amData)
 
 		var line = d3.svg.line()
 			.x(function(d){return xScale(d.year);})
