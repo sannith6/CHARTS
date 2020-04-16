@@ -54,7 +54,7 @@
 
             event_date = config.query_fields.dimensions[0].name;
 			name = config.query_fields.dimensions[1].name;
-			risk_score = config.query_fields.measures[0].name;
+			risk_score = config.query_fields.dimensions[2].name;
 			
 			
 			var Data = [];
