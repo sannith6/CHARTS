@@ -77,7 +77,7 @@
 
 					jsonData = json;
 
-					json.forEach(function(d) {
+					json.foreach(function(d) {
 					  d.value = Math.round((+d.value + 0.00001) * 1000) / 1000;
 					  d.year = +d.year;
 					});
