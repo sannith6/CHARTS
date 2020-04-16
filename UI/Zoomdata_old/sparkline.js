@@ -73,9 +73,9 @@
 			.x(function(d){return xScale(d.year);})
 			.y(function(d){return yScale(d.value);});
 
-		d3.json("amData", function(json) {
+		 function(json) {
 
-					jsonamData = json;
+					amData = json;
 
 					json.forEach(function(d) {
 					  d.value = Math.round((+d.value + 0.00001) * 1000) / 1000;
@@ -129,7 +129,7 @@
 				// render the table(s)
 				tabulate(tableData, yearstring);
 
-		}); // close json
+		}; // close json
 
 
 		function updateGraph(amData) {
