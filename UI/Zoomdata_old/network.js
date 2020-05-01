@@ -40,16 +40,23 @@ looker.plugins.visualizations.add({
     // build data array for the chart, by iterating over the Looker data object
     var amData = [];
 	//var colorSet = new am4core.ColorSet();
-    for(var row of data) {
-		//var cell = row[queryResponse.fields.dimensions[3].name]
-		//xyz = LookerCharts.Utils.htmlForCell(cell);
-        amData.push({
-            name: row[user_name].value,
-            children: [{name: 'Berry'}, {name: 'Dried Fruit'}, {name: 'Other Fruit'}, {name: 'Citrus Fruit'}]
-        });
-		
+    var groupedByuserid = {};
+	for (var key in data) {
+		var user = data[key].user_name;  
+		if (!groupedByuserid[user]) {
+			groupedByuserid[user] = [];
+		}
+		groupedByuserid[user].push(data[key]);
 	}
+	cosole.log('groupby data',groupedByuserid)
+        //amData.push({
+         //   name: row[user_name].value,
+         //   children: [{name: 'Berry'}, {name: 'Dried Fruit'}, {name: 'Other Fruit'}, {name: 'Citrus Fruit'}]
+        //});
+		
+	//}
 	//element.innerHTML = xyz;
+	
 	
 	console.log('amChart data', amData)
 	
