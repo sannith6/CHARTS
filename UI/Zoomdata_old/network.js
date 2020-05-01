@@ -48,7 +48,7 @@ looker.plugins.visualizations.add({
 		}
 		groupedByuserid[user].push(data[key]);
 	}
-	console.log('groupby data',groupedByuserid)
+	console.log('groupby data',groupedByuserid[user].push(data[key]))
         //amData.push({
          //   name: row[user_name].value,
          //   children: [{name: 'Berry'}, {name: 'Dried Fruit'}, {name: 'Other Fruit'}, {name: 'Citrus Fruit'}]
