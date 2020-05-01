@@ -44,7 +44,7 @@ looker.plugins.visualizations.add({
 		//xyz = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             name: row[user_name].value,
-            children: [{name: 'Berry',} {name: 'Dried Fruit',}, {name: 'Other Fruit',}, {name: 'Citrus Fruit',}]
+            children: [{name: 'Berry'}, {name: 'Dried Fruit'}, {name: 'Other Fruit'}, {name: 'Citrus Fruit'}]
         });
 		
 	}
