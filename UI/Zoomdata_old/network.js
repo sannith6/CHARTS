@@ -46,18 +46,20 @@ looker.plugins.visualizations.add({
     return objectsByKeyValue;
   }, {});
   
-    const groupByBrand = groupBy('user_name');
+    const groupByname = groupBy('user_name');
+	const groupByid = groupBy('login_id');
 	
 	
     console.log('groupby',groupByBrand)
 	
 	console.log(
   JSON.stringify({
-    carsByBrand: groupByBrand(data)
+    name: groupByname(data),
+	id : groupByid(data)
   }, null, 2)
 );
 	
-	console.log('amChart data', amData)
+	//console.log('amChart data', amData)
 	
 	
 	
