@@ -36,21 +36,21 @@
 		user_name = config.query_fields.dimensions[0].name;
 		login_id = config.query_fields.dimensions[1].name;
 		
-		var amData = [];
+		amData1 = [];
 		//var colorSet = new am4core.ColorSet();
 		for(var row of data) {
 			//var cell = row[queryResponse.fields.dimensions[3].name]
 			//xyz = LookerCharts.Utils.htmlForCell(cell);
-			amData.push({
+			amData1.push({
 				name: row[user_name].value,
 			  children: [{name: 'Black Tea', value: 1}, { name: 'Floral',value: 1}]
 			});
 			
 		}
 		
-		
+			console.log('amChart data', amData1)
 	   
-		console.log('amChart data', amData)
+		
 		
 		let groups = Object.create(null);
 
@@ -78,7 +78,8 @@
 	chart.legend = new am4charts.Legend();
 
 	let amData = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries())
-
+	
+	amData.data = amData1;
 
 
 	amData.dataFields.linkWith = "linkWith";
