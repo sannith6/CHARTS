@@ -50,7 +50,7 @@ looker.plugins.visualizations.add({
 	const groupByid = groupBy('login_id');
 	
 	
-    console.log('groupby',groupByBrand)
+    console.log('groupby',groupByname)
 	
 	console.log(
   JSON.stringify({
