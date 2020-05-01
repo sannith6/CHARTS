@@ -63,7 +63,6 @@ let networkSeries = chart.series.push(new am4plugins_forceDirected.ForceDirected
 
 
 networkSeries.dataFields.linkWith = "linkWith";
-networkSeries.dataFields.name = "name";
 networkSeries.dataFields.id = "name";
 networkSeries.dataFields.value = 1;
 networkSeries.dataFields.children = "children";
