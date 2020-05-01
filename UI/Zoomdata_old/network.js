@@ -36,27 +36,26 @@ looker.plugins.visualizations.add({
 	user_name = config.query_fields.dimensions[0].name;
     login_id = config.query_fields.dimensions[1].name;
 	
+	console.log('username',user_name)
 	
-    // build data array for the chart, by iterating over the Looker data object
-    var amData = [groupedByuserid];
-	//var colorSet = new am4core.ColorSet();
-    var groupedByuserid = {};
-	for (var row in data) {
-		var user = row[user_name].value;  
-		if (!groupedByuserid[user]) {
-			groupedByuserid[user] = [];
-		}
-		groupedByuserid[user].push(data[row]);
-	}
-	console.log('groupby data',groupedByuserid)
-        //amData.push({
-         //   name: row[user_name].value,
-         //   children: [{name: 'Berry'}, {name: 'Dried Fruit'}, {name: 'Other Fruit'}, {name: 'Citrus Fruit'}]
-        //});
-		
-	//}
-	//element.innerHTML = xyz;
 	
+    const groupBy = key => array =>
+  array.reduce((objectsByKeyValue, obj) => {
+    const value = obj[key];
+    objectsByKeyValue[value] = (objectsByKeyValue[value] || []).concat(obj);
+    return objectsByKeyValue;
+  }, {});
+  
+    const groupByBrand = groupBy(user_name);
+	
+	
+    console.log('groupby',groupByBrand)
+	
+	console.log(
+  JSON.stringify({
+    carsByBrand: groupByBrand(user_name)
+  }, null, 2)
+);
 	
 	console.log('amChart data', amData)
 	
