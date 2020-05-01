@@ -59,7 +59,7 @@
 			groups[item.user_name] = [];
 		}
 
-		groups[item.Level].push({
+		groups[item.user_name].push({
 			login_id: item.login_id
 		});
 	});
