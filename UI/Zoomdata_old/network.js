@@ -11,7 +11,7 @@ looker.plugins.visualizations.add({
   create: function(element, config) {
 	  element.innerHTML = `
       <style>
-		#amContainer {
+		.sannith {
 		  width: 100%;
 		  max-width: 100%;
 		height:550px;
@@ -21,6 +21,7 @@ looker.plugins.visualizations.add({
 
     var container = element.appendChild(document.createElement("div"));
     container.id = 'amContainer';
+	container.className = "sannith";
   },
  
   updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
