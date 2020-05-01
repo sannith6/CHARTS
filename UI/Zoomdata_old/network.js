@@ -38,17 +38,17 @@ looker.plugins.visualizations.add({
 	
 	
     // build data array for the chart, by iterating over the Looker data object
-    var amData = [];
+    var amData = [groupedByuserid];
 	//var colorSet = new am4core.ColorSet();
     var groupedByuserid = {};
-	for (var key in data) {
-		var user = data[key].user_name;  
+	for (var row in data) {
+		var user = row[user_name].value;  
 		if (!groupedByuserid[user]) {
 			groupedByuserid[user] = [];
 		}
-		groupedByuserid[user].push(data[key]);
+		groupedByuserid[user].push(data[row]);
 	}
-	console.log('groupby data',groupedByuserid[user].push(data[key]))
+	console.log('groupby data',groupedByuserid)
         //amData.push({
          //   name: row[user_name].value,
          //   children: [{name: 'Berry'}, {name: 'Dried Fruit'}, {name: 'Other Fruit'}, {name: 'Citrus Fruit'}]
