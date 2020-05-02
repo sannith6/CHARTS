@@ -43,7 +43,7 @@ looker.plugins.visualizations.add({
 		//xyz = LookerCharts.Utils.htmlForCell(cell);
 		amData1.push({
 			names: row[user_name].value,
-		  child: row[login_id].value
+		  child: row[login_id].value,"value" = 1
 		});
 		
 	}
@@ -82,16 +82,16 @@ amData.data = result;
 amData.dataFields.linkWith = "linkWith";
 amData.dataFields.name = "name";
 amData.dataFields.id = "name";
-amData.dataFields.value = 5;
+amData.dataFields.value = "value";
 amData.dataFields.children = "children";
 
 amData.nodes.template.tooltipText = "{name}";
-amData.nodes.template.fillOpacity = 5;
+amData.nodes.template.fillOpacity = 1;
 
 amData.nodes.template.label.text = "{name}"
 amData.fontSize = 8;
 amData.maxLevels = 2;
-amData.maxRadius = am4core.percent(10);
+amData.maxRadius = am4core.percent(6);
 amData.manyBodyStrength = -16;
 amData.nodes.template.label.hideOversized = true;
 amData.nodes.template.label.truncate = true;
