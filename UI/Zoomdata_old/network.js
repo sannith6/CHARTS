@@ -82,7 +82,7 @@ amData.data = result;
 amData.dataFields.linkWith = "linkWith";
 amData.dataFields.name = "name";
 amData.dataFields.id = "name";
-amData.dataFields.value = "value";
+amData.dataFields.value = 1;
 amData.dataFields.children = "children";
 
 amData.nodes.template.tooltipText = "{name}";
