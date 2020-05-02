@@ -86,12 +86,12 @@ amData.dataFields.value = 5;
 amData.dataFields.children = "children";
 
 amData.nodes.template.tooltipText = "{name}";
-amData.nodes.template.fillOpacity = 1;
+amData.nodes.template.fillOpacity = 5;
 
-//amData.nodes.template.label.text = "{name}"
+amData.nodes.template.label.text = "{name}"
 amData.fontSize = 8;
 amData.maxLevels = 2;
-amData.maxRadius = am4core.percent(6);
+amData.maxRadius = am4core.percent(10);
 amData.manyBodyStrength = -16;
 amData.nodes.template.label.hideOversized = true;
 amData.nodes.template.label.truncate = true;
