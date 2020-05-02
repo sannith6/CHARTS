@@ -66,7 +66,7 @@ amData1.forEach(item => {
 
 let result =
 	Object.entries(groups)
-  .map(({[name, children]) => ({name, [children]}));
+   .map(([name, children]) => ({[name]: children}));
 		
   console.log('test result',result)
    
