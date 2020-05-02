@@ -43,7 +43,7 @@
 			//xyz = LookerCharts.Utils.htmlForCell(cell);
 			amData1.push({
 				names: row[user_name].value,
-			  name: row[login_id].value
+			  child: row[login_id].value
 			});
 			
 		}
@@ -58,7 +58,7 @@
 		}
 
 		groups[item.names].push({
-			name: item.name
+			name: item.child
 		});
 	});
 
