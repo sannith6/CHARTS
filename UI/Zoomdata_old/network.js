@@ -43,7 +43,7 @@ looker.plugins.visualizations.add({
 		//xyz = LookerCharts.Utils.htmlForCell(cell);
 		amData1.push({
 			names: row[user_name].value,
-		  child: row[login_id].value,"value" = 1
+		  child: row[login_id].value,value: 1
 		});
 		
 	}
