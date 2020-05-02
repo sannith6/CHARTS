@@ -82,19 +82,20 @@ amData.data = result;
 amData.dataFields.linkWith = "linkWith";
 amData.dataFields.name = "name";
 amData.dataFields.id = "name";
-amData.dataFields.value = 1;
+amData.dataFields.value = 5;
 amData.dataFields.children = "children";
 
 amData.nodes.template.tooltipText = "{name}";
 amData.nodes.template.fillOpacity = 1;
 
-amData.nodes.template.label.text = "{name}"
+//amData.nodes.template.label.text = "{name}"
 amData.fontSize = 8;
 amData.maxLevels = 2;
 amData.maxRadius = am4core.percent(6);
 amData.manyBodyStrength = -16;
 amData.nodes.template.label.hideOversized = true;
 amData.nodes.template.label.truncate = true;
+chart.legend.markers.template.disabled = true;
 doneRendering();
 }
 })
