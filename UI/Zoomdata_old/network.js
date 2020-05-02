@@ -89,7 +89,7 @@ amData.dataFields.children = "children";
 amData.nodes.template.tooltipHTML = "{name}";
 amData.nodes.template.fillOpacity = 1;
 
-amData.nodes.template.label.Text = "{name}"
+amData.nodes.template.label.text = "{name}"
 amData.tooltip.label.interactionsEnabled = true;
 amData.tooltip.keepTargetHover = true;
 amData.fontSize = 8;
