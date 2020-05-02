@@ -43,7 +43,8 @@ looker.plugins.visualizations.add({
 		//xyz = LookerCharts.Utils.htmlForCell(cell);
 		amData1.push({
 			names: row[user_name].value,
-		  child: row[login_id].value,value: 1
+		  child: row[login_id].value,
+		  value: 1
 		});
 		
 	}
@@ -58,13 +59,14 @@ amData1.forEach(item => {
 	}
 
 	groups[item.names].push({
-		name: item.child
+		name: item.child,
+		value: item.value
 	});
 });
 
 let result =
 	Object.entries(groups)
-		.map(([name, children]) => ({name, children}));
+  .map(([name, [children,value]]) => ({name, children,value}));
 		
   console.log('test result',result)
    
