@@ -86,10 +86,10 @@ amData.dataFields.id = "name";
 amData.dataFields.value = "value";
 amData.dataFields.children = "children";
 
-amData.nodes.template.tooltipHTML = "{name}";
+amData.nodes.template.tooltipText = "{name}";
 amData.nodes.template.fillOpacity = 1;
 
-amData.nodes.template.label.text = "{name}"
+amData.nodes.template.label.HTML = "{name}"
 amData.fontSize = 8;
 amData.maxLevels = 2;
 amData.maxRadius = am4core.percent(6);
