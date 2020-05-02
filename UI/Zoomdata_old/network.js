@@ -76,7 +76,7 @@
 
 	let amData = chart.series.push(new am4plugins_forceDirected.ForceDirectedSeries())
 	
-	amData.data = amData1;
+	amData.data = result;
 
 
 	amData.dataFields.linkWith = "linkWith";
