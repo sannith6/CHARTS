@@ -52,7 +52,7 @@
 			
 			let groups = Object.create(null);
 
-	data.forEach(item => {
+	amData1.forEach(item => {
 		if (!groups[item.name]) {
 			groups[item.name] = [];
 		}
