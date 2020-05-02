@@ -95,7 +95,7 @@
 		amData.manyBodyStrength = -16;
 		amData.nodes.template.label.hideOversized = true;
 		amData.nodes.template.label.truncate = true;
-	    chart.legend.markers.template.disabled = true;
+	    //chart.legend.markers.template.disabled = true;
 		doneRendering();
 		}
 		})
