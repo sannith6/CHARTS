@@ -59,18 +59,16 @@ amData1.forEach(item => {
 	}
 
 	groups[item.names].push({
-		name: item.child,
-		value: item.value
+		name: item.child,item.value
 	});
 });
 
 let result =
 	Object.entries(groups)
-  .map(([name, [children,value]]) => ({name, children,value}));
+  .map((name, [children]) => ({name, children}));
 		
   console.log('test result',result)
    
-
 
 	
 let chart = am4core.create("amContainer", am4plugins_forceDirected.ForceDirectedTree);
