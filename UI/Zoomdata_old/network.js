@@ -86,7 +86,7 @@
 		amData.dataFields.children = "children";
 
 		amData.nodes.template.tooltipText = "{name}";
-		amData.nodes.template.fillOpacity = "value";
+		amData.nodes.template.fillOpacity = 2;
 
 		amData.nodes.template.label.text = "{name}"
 		amData.fontSize = 8;
