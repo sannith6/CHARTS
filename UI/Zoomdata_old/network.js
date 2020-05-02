@@ -39,11 +39,11 @@ looker.plugins.visualizations.add({
 	amData1 = [];
 	//var colorSet = new am4core.ColorSet();
 	for(var row of data) {
-		//var cell = row[queryResponse.fields.dimensions[3].name]
-		//xyz = LookerCharts.Utils.htmlForCell(cell);
+		var cell = row[queryResponse.fields.dimensions[1].name]
+		xyz = LookerCharts.Utils.htmlForCell(cell);
 		amData1.push({
 			names: row[user_name].value,
-		  child: row[login_id].value,
+		  child: xyz,
 		  value: 1
 		});
 		
