@@ -49,28 +49,25 @@
 		}
 		
 			console.log('amChart data', amData1)
-	   
-		
-		
-		let groups = Object.create(null);
+			
+			let groups = Object.create(null);
 
 	data.forEach(item => {
-		if (!groups[item.user_name]) {
-			groups[item.user_name] = [];
+		if (!groups[item.name]) {
+			groups[item.name] = [];
 		}
 
-		groups[item.user_name].push({
-			login_id: item.login_id
+		groups[item.name].push({
+			children: item.children
 		});
 	});
 
-
-
 	let result =
 		Object.entries(groups)
-			.map(([k, v]) => ({[k]: v}));
+			.map(([k, v]) => ({k, v}));
 			
-	console.log('testdata',result)
+	  console.log('test result',result)
+	   
 
 
 		
