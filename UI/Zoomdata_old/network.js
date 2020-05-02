@@ -59,7 +59,8 @@ amData1.forEach(item => {
 	}
 
 	groups[item.names].push({
-		name: item.child,item.value
+		name: item.child,
+		value: item.value
 	});
 });
 
