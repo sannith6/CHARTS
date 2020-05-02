@@ -42,8 +42,8 @@
 			//var cell = row[queryResponse.fields.dimensions[3].name]
 			//xyz = LookerCharts.Utils.htmlForCell(cell);
 			amData1.push({
-				name: row[user_name].value,
-			  children: row[login_id].value
+				names: row[user_name].value,
+			  name: row[login_id].value
 			});
 			
 		}
@@ -53,18 +53,18 @@
 			let groups = Object.create(null);
 
 	amData1.forEach(item => {
-		if (!groups[item.name]) {
-			groups[item.name] = [];
+		if (!groups[item.names]) {
+			groups[item.names] = [];
 		}
 
-		groups[item.name].push({
-			children: item.children
+		groups[item.names].push({
+			name: item.name
 		});
 	});
 
 	let result =
 		Object.entries(groups)
-			.map(([k, v]) => ({k, v}));
+			.map(([k, v]) => ({name, children}));
 			
 	  console.log('test result',result)
 	   
