@@ -100,7 +100,7 @@ amData.dataFields.children = "children";
 amData.nodes.template.tooltipHTML = '{name}:{start} - {end}';
 amData.nodes.template.fillOpacity = 1;
 
-amData.nodes.template.label.htmlOutput = "{name}"
+amData.nodes.template.label.html = "{name}"
 amData.nodes.template.ignoreFormatting = true;
 amData.tooltip.label.interactionsEnabled = true;
 amData.tooltip.keepTargetHover = true;
