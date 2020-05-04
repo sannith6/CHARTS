@@ -35,6 +35,8 @@ looker.plugins.visualizations.add({
 	
 	user_name = config.query_fields.dimensions[0].name;
 	login_id = config.query_fields.dimensions[1].name;
+    ips = config.query_fields.dimensions[2].name;
+
 	
 	amData1 = [];
 	//var colorSet = new am4core.ColorSet();
@@ -44,7 +46,8 @@ looker.plugins.visualizations.add({
 		amData1.push({
 			names: row[user_name].value,
 		  child: xyz,
-		  value: 1
+		  value: 1,
+		  ips: row[ips].value,
 		});
 		
 	}
