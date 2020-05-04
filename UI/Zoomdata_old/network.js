@@ -100,13 +100,13 @@ amData.dataFields.children = "children";
 amData.nodes.template.tooltipHTML = '{name}:{start} - {end}';
 amData.nodes.template.fillOpacity = 1;
 
-amData.nodes.template.label.html = "{name}"
+amData.nodes.template.label.htmlOutput = "{name}"
 amData.nodes.template.ignoreFormatting = true;
 amData.tooltip.label.interactionsEnabled = true;
 amData.tooltip.keepTargetHover = true;
-amData.fontSize = 8;
+amData.fontSize = 5;
 amData.maxLevels = 2;
-amData.maxRadius = am4core.percent(6);
+amData.maxRadius = am4core.percent(10);
 amData.manyBodyStrength = -16;
 amData.nodes.template.label.hideOversized = true;
 amData.nodes.template.label.truncate = true;
