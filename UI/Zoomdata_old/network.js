@@ -35,7 +35,9 @@ looker.plugins.visualizations.add({
 	
 	user_name = config.query_fields.dimensions[0].name;
 	login_id = config.query_fields.dimensions[1].name;
-    ips = config.query_fields.dimensions[2].name;
+    //ips = config.query_fields.dimensions[2].name;
+    //start_date = config.query_fields.dimensions[3].name;
+    //end_date = config.query_fields.dimensions[4].name;
 
 	
 	amData1 = [];
@@ -46,8 +48,8 @@ looker.plugins.visualizations.add({
 		amData1.push({
 			names: row[user_name].value,
 		  child: xyz,
-		  value: 1,
-		  ips: row[ips].value,
+		  value: 1
+		  //ips: row[ips].value
 		});
 		
 	}
@@ -92,7 +94,7 @@ amData.dataFields.children = "children";
   amData.nodes.template.tooltipHTML = "{name}";
 amData.nodes.template.fillOpacity = 1;
 
-  amData.nodes.template.label.text = "{name}"
+  amData.nodes.template.label.HTML = "{name}"
 amData.tooltip.label.interactionsEnabled = true;
 amData.tooltip.keepTargetHover = true;
 amData.fontSize = 8;
