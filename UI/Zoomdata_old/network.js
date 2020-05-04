@@ -51,13 +51,10 @@ looker.plugins.visualizations.add({
 		  value: 1,
 		  ips: row[ips].value
 		});
-		
 	
 		
 	}
 	
-	    let qwerty = ({amData1.name,amData1.child:[{amData1.ips}],amData1.value});
-        console.log('rechange', qwerty)
 
 		console.log('amChart data', amData1)
 		
