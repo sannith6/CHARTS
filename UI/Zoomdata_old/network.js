@@ -35,7 +35,7 @@ looker.plugins.visualizations.add({
 	
 	user_name = config.query_fields.dimensions[0].name;
 	login_id = config.query_fields.dimensions[1].name;
-    //ips = config.query_fields.dimensions[2].name;
+    ips = config.query_fields.dimensions[2].name;
     //start_date = config.query_fields.dimensions[3].name;
     //end_date = config.query_fields.dimensions[4].name;
 
@@ -48,12 +48,17 @@ looker.plugins.visualizations.add({
 		amData1.push({
 			names: row[user_name].value,
 		  child: xyz,
-		  value: 1
-		  //ips: row[ips].value
+		  value: 1,
+		  ips: row[ips].value
 		});
+		
+	
 		
 	}
 	
+	    let qwerty = ({amData1.name,amData1.child:[{amData1.ips}],amData1.value});
+        console.log('rechange', qwerty)
+
 		console.log('amChart data', amData1)
 		
 		let groups = Object.create(null);
@@ -62,6 +67,7 @@ amData1.forEach(item => {
 	if (!groups[item.names]) {
 		groups[item.names] = [];
 	}
+
 
 	groups[item.names].push({
 		name: item.child,
