@@ -97,7 +97,7 @@ amData.dataFields.id = "name";
 amData.dataFields.value = "value";
 amData.dataFields.children = "children";
 
-  amData.nodes.template.tooltipHTML = '{name}: <b>{start}:00</b> - <b>{end}:00</b>';
+  amData.nodes.template.tooltipHTML = '{name}: <b>{start}</b> - <b>{end}</b>';
 amData.nodes.template.fillOpacity = 1;
 
   amData.nodes.template.label.text = "{name}"
