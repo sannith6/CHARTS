@@ -36,8 +36,8 @@ looker.plugins.visualizations.add({
 	user_name = config.query_fields.dimensions[0].name;
 	login_id = config.query_fields.dimensions[1].name;
     //ips = config.query_fields.dimensions[2].name;
-    //start_date = config.query_fields.dimensions[3].name;
-    //end_date = config.query_fields.dimensions[4].name;
+    start_date = config.query_fields.dimensions[2].name;
+    end_date = config.query_fields.dimensions[3].name;
 
 	
 	amData1 = [];
@@ -48,8 +48,9 @@ looker.plugins.visualizations.add({
 		amData1.push({
 			names: row[user_name].value,
 		  child: xyz,
-		  value: 1
-		  //ips: row[ips].value
+		  value: 1,
+		  start: row[start_date].value,
+		  end:row[end_date].value
 		});
 	
 		
@@ -68,7 +69,9 @@ amData1.forEach(item => {
 
 	groups[item.names].push({
 		name: item.child,
-		value: item.value
+		value: item.value,
+		start: item.start,
+		end: item.end
 	});
 });
 
@@ -94,7 +97,7 @@ amData.dataFields.id = "name";
 amData.dataFields.value = "value";
 amData.dataFields.children = "children";
 
-  amData.nodes.template.tooltipHTML = "{name}";
+  amData.nodes.template.tooltipHTML = '{name}: <b>{start}:00</b> - <b>{end}:00</b>';
 amData.nodes.template.fillOpacity = 1;
 
   amData.nodes.template.label.text = "{name}"
