@@ -84,7 +84,7 @@ let bullet = series.bullets.push(new am4core.Circle());
 bullet.fill = am4core.color("#ff0000");
 bullet.propertyFields.fill = "color";
 bullet.strokeOpacity = 0;
-bullet.strokeWidth = 20;
+bullet.strokeWidth = 10;
 bullet.fillOpacity = 0.5;
 bullet.stroke = am4core.color("#ffffff");
 bullet.hiddenState.properties.opacity = 0;
@@ -94,7 +94,7 @@ let outline = chart.plotContainer.createChild(am4core.Circle);
 outline.fillOpacity = 0;
 outline.strokeOpacity = 0.8;
 outline.stroke = am4core.color("#ff0000");
-outline.strokeWidth = 2;
+outline.strokeWidth = 10;
 outline.hide(0);
 
 let blurFilter = new am4core.BlurFilter();
