@@ -51,7 +51,7 @@ var colorSet = new am4core.ColorSet();
 for(var row of data) {
 	amData.push({
 		title: row[id].value,
-		color: colorSet.next().brighten(-0.2) ,
+		color: colorSet.next(5).brighten(-0.2) ,
 		x: row[x].value,
 		y : row[y].value,
 		value: row[z].value
