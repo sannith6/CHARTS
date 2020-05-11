@@ -42,7 +42,7 @@ console.log('updateAsync() queryResponse', queryResponse)
 id = config.query_fields.dimensions[0].name;
 x = config.query_fields.measures[0].name;
 y = config.query_fields.measures[1].name;
-value = config.query_fields.measures[2].name;
+z = config.query_fields.measures[2].name;
 
 
 // build data array for the chart, by iterating over the Looker data object
@@ -50,11 +50,11 @@ var amData = [];
 var colorSet = new am4core.ColorSet();
 for(var row of data) {
 	amData.push({
-		title: row[title].value,
+		title: row[id].value,
 		color: colorSet.next() ,
 		x: row[x].value,
 		y : row[y].value,
-		value: row[value].value
+		value: row[z].value
 		
 	});
 	
