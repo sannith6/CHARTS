@@ -47,11 +47,11 @@ z = config.query_fields.measures[2].name;
 
 // build data array for the chart, by iterating over the Looker data object
 var amData = [];
-var colorSet = new am4core.ColorSet({brighten});
+var colorSet = new am4core.ColorSet();
 for(var row of data) {
 	amData.push({
 		title: row[id].value,
-		color: colorSet.next() ,
+		color: colorSet.next().brighten(1) ,
 		x: row[x].value,
 		y : row[y].value,
 		value: row[z].value
