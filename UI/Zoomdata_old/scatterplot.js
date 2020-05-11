@@ -61,16 +61,8 @@ for(var row of data) {
 }
 console.log('amChart data', amData)
 
-var container = element.appendChild(document.createElement("div"));
-container.className = "sannith";
-container.id = 'amContainer';
 
-
-//this.container = element.appendChild(document.createElement("div"));
-
-},
-
-let chart = am4core.create("chartdiv", am4charts.XYChart);
+let chart = am4core.create("amContainer", am4charts.XYChart);
 
 let valueAxisX = chart.xAxes.push(new am4charts.ValueAxis());
 valueAxisX.renderer.ticks.template.disabled = true;
