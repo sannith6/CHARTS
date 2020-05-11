@@ -40,9 +40,9 @@ console.log('updateAsync() queryResponse', queryResponse)
 
 // get the names of the first dimension and measure available in data
 id = config.query_fields.dimensions[0].name;
-x = config.query_fields.dimensions[1].name;
-y = config.query_fields.dimensions[2].name;
-value = config.query_fields.dimensions[3].name;
+x = config.query_fields.measures[0].name;
+y = config.query_fields.measures[1].name;
+value = config.query_fields.measures[2].name;
 
 
 // build data array for the chart, by iterating over the Looker data object
