@@ -51,7 +51,7 @@ var colorSet = new am4core.ColorSet();
 for(var row of data) {
 	amData.push({
 		title: row[id].value,
-		color: colorSet.next().brighten(0) ,
+		color: colorSet.next().brighten(-0.2) ,
 		x: row[x].value,
 		y : row[y].value,
 		value: row[z].value
@@ -84,7 +84,7 @@ let bullet = series.bullets.push(new am4core.Circle());
 bullet.fill = am4core.color("#ff0000");
 bullet.propertyFields.fill = "color";
 bullet.strokeOpacity = 0;
-bullet.strokeWidth = 10;
+bullet.strokeWidth = 5;
 bullet.fillOpacity = 0.5;
 bullet.stroke = am4core.color("#ffffff");
 bullet.hiddenState.properties.opacity = 0;
@@ -94,7 +94,7 @@ let outline = chart.plotContainer.createChild(am4core.Circle);
 outline.fillOpacity = 0;
 outline.strokeOpacity = 0.8;
 outline.stroke = am4core.color("#ff0000");
-outline.strokeWidth = 10;
+outline.strokeWidth = 2;
 outline.hide(0);
 
 let blurFilter = new am4core.BlurFilter();
