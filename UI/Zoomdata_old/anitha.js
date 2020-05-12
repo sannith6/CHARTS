@@ -241,16 +241,11 @@ looker.plugins.visualizations.add({
 
 		console.log('reducedData >> ', reducedDataSource)
 		console.log(typeof(reducedDataSource));
-		for (const [reducedDataSource, count] of entries) {
-			  console.log(`${count}`);
-			}
-		// for (let key in reducedDataSource) { 
-			// if (reducedDataSource.hasOwnProperty(key)) 
-				// { 
-					// value = reducedDataSource[key]; 
-					// console.log(value); 
-				// } 
-			// } 
+		
+		for (var value of reducedDataSource.values()) {
+		  console.log(value)
+		}
+		
 		// reducedDataSource.map((item, index) => {
 		  // response.push({
 			
