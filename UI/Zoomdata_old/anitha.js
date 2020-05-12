@@ -121,8 +121,8 @@ looker.plugins.visualizations.add({
 		xyz = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             date: row[date].value,
-			name: row[name].value
-			score: row[score].value,
+			name: row[name].value,
+			score: row[score].value
 			
         });
 		
