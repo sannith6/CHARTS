@@ -14,21 +14,84 @@ looker.plugins.visualizations.add({
   create: function(element, config) {
 	  element.innerHTML = `
       <style>
-		body { background-color: #30303d; color: #fff; }
-				  .sannith {
-				  width: 100%;
-				  height: 600px;
-				}
-
-				.demo-theme-dark .demo-background {
-				  background: #fff;
+		.chart-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    white-space: pre;
 }
+
+.table-row {
+    background: #f5f5f5;
+}
+
+.chart-container {
+    white-space: normal !important;
+}
+
+/* menu */
+
+.contextMenulist{
+    position: relative;
+    color: blue;
+    cursor: pointer;
+    }
+    
+    .menu{
+      position: absolute;
+      top: 100%;
+      z-index: 10001;
+      display: none;
+      top: 33px;
+      padding: 5px 0px;
+      margin-left:20px;
+      list-style: none;
+      background-color: #ffff;
+      border: 1px solid #cacdcf;
+      -webkit-background-clip: padding-box;
+      -moz-background-clip: padding;
+      background-clip: padding-box;
+    }
+    
+    .menu:after{
+    content: '';
+    border: 7px solid transparent;
+    border-bottom: 8px solid #E5E5E5;
+    position: absolute;
+    top: -15px;
+    left: 48%;
+    }
+    
+    .menu > li > a {
+    display: block;
+    padding: 3px 10px;
+    clear: both;
+    font-weight: normal;
+    line-height: 20px;
+    color: #333;
+    white-space: nowrap;
+    text-decoration:none;
+    text-align: left;
+    }
+    
+    #selectLinked:hover,#selectLinked.highlight {
+    text-decoration: none;
+    background-color: #E5E5E5;
+    }
+
         
       </style>
     `;
-    var container = element.appendChild(document.createElement("div"));
-	container.className = "sannith";
-    container.id = 'amContainer';
+    // var container = element.appendChild(document.createElement("div"));
+	// container.className = "sannith";
+    // container.id = 'amContainer';
+	
+	
+	var chartContainer = document.createElement('div');
+	chartContainer.classList.add('chart-container');
+	controller.element.appendChild(chartContainer);
+
 	
 
 	//this.container = element.appendChild(document.createElement("div"));
@@ -45,7 +108,115 @@ looker.plugins.visualizations.add({
     console.log('updateAsync() queryResponse', queryResponse)
 	
 	
-		
+	function chartChart(response) {
+	  var echarts = require('echarts');
+	  response.map((data, i) => {
+		var neCustomchart = document.createElement('div');
+		neCustomchart.style.height = '80px';
+		neCustomchart.style.width = '80px';
+		neCustomchart.style.position = 'absolute';
+		neCustomchart.style.bottom = '0px'
+
+		// initialize echarts instance with prepared DOM
+		var neChart = echarts.init(neCustomchart);
+		neChart.setOption({
+		  xAxis: {
+			type: 'category',
+			data: data.SPARKLINE.date,
+			show: false
+		  },
+		  yAxis: {
+			type: 'value',
+			show: false
+		  },
+		  series: [{
+			data: data.SPARKLINE.score,
+			type: 'line',
+			symbolSize: 0
+		  }],
+		  color: '#a5c78a',
+		  height: 25,
+		  width: '80%'
+		});
+		document.getElementById(`graph${i}`).appendChild(neCustomchart)
+	  })
+	}
+	
+	function createChartTable(response) {
+  // console.log(response, "chartResponse")
+  // var echarts = require('echarts');
+	  if (response.length !== 0) {
+
+		var headers = ''
+		var clickableTD = ["IP ADDRESS"]
+		var SparklineTd = ["SPARKLINE"]
+
+		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important">${k}</th>`))
+
+		headers += `<th style="text-align:center !important">SPARKLINE</th>`
+
+		var body = ''
+		response.map((k, i) => {
+		  body += `<tr id="row${i}" style="border:8px solid #f2f3f7">`
+
+		  Object.keys(k).map((m) => {
+			if (clickableTD.includes(m)) {
+			  !SparklineTd.includes(m) && (body += `<td class="contextMenulist">${contextMenu(m, k[m])}${k[m]}</td>`)
+			}
+			else {
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important">${k[m]}</td>`)
+			}
+		  })
+
+		  body += `<td style="padding: 4px; position: relative;" id="graph${i}"></td>`
+		  body += '</tr>'
+		})
+
+
+		var view = `
+			   <div>
+					<table class="table tabeldash" id="usertable_id" style="margin-top:20px">
+						<thead style="background-color: #dadee7;color: black;">
+							<tr class="tableHead">
+							${headers}
+							</tr>
+						</thead>
+						<tbody class="tableBody">
+							${body}
+						</tbody>
+					</table>     
+				</div>
+	`
+
+		chartContainer.innerHTML = view
+		chartChart(response)
+		addOnClickHandler()
+	  }
+	}
+
+	controller.update = data => {
+	  console.log("DATA >>>>", JSON.stringify(data))
+	  if (data.length > 0) {
+		var reducedDataSource = data
+		var response = []
+
+		console.log('reducedData >> ', reducedDataSource)
+		reducedDataSource.map((item, index) => {
+		  response.push({
+			"IP ADDRESS": item[1],
+			"SPARKLINE": {
+			  "date": item[0].split(','),
+			  "score": item[2].split(',').map(s => parseInt(s))
+			},
+			"AVERAGE SCORE": Math.round(item[3]),
+		  })
+		})
+
+		createChartTable(response)
+	  }
+	};
+
+	
 
     // // get the names of the first dimension and measure available in data
     // start_date = config.query_fields.dimensions[0].name;
