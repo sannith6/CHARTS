@@ -243,8 +243,14 @@ looker.plugins.visualizations.add({
 		console.log(typeof(reducedDataSource));
 		reducedDataSource.map((item, index) => {
 		  response.push({
-			
-			"IP ADDRESS": item[1][name]
+			for (let key in reducedDataSource) { 
+                if (reducedDataSource.hasOwnProperty(key)) 
+                { 
+                    value = reducedDataSource[key]; 
+                    console.log(value); 
+                } 
+            } 
+			// "IP ADDRESS": item[1][itd_threat_entity.name]
 			// "SPARKLINE": {
 			  // "date": item[0].split(','),
 			  // "score": item[2].split(',').map(s => parseInt(s))
