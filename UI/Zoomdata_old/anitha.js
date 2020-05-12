@@ -250,7 +250,7 @@ looker.plugins.visualizations.add({
 			// "AVERAGE SCORE": Math.round(item[3]),
 		  })
 		})
-
+		console.log('response data is------------',response);
 		createChartTable(response)
 	  }
 	
