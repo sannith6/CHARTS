@@ -241,8 +241,9 @@ looker.plugins.visualizations.add({
 
 		console.log('reducedData >> ', reducedDataSource)
 		console.log(typeof(reducedDataSource));
-		var values = Object.values(reducedDataSource)
-		console.log(values)
+		for (const [reducedDataSource, count] of entries) {
+			  console.log(`${count}`);
+			}
 		// for (let key in reducedDataSource) { 
 			// if (reducedDataSource.hasOwnProperty(key)) 
 				// { 
