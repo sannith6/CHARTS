@@ -241,13 +241,15 @@ looker.plugins.visualizations.add({
 
 		console.log('reducedData >> ', reducedDataSource)
 		console.log(typeof(reducedDataSource));
-		for (let key in reducedDataSource) { 
-			if (reducedDataSource.hasOwnProperty(key)) 
-				{ 
-					value = reducedDataSource[key]; 
-					console.log(value); 
-				} 
-			} 
+		var values = Object.values(reducedDataSource)
+		console.log(values)
+		// for (let key in reducedDataSource) { 
+			// if (reducedDataSource.hasOwnProperty(key)) 
+				// { 
+					// value = reducedDataSource[key]; 
+					// console.log(value); 
+				// } 
+			// } 
 		// reducedDataSource.map((item, index) => {
 		  // response.push({
 			
