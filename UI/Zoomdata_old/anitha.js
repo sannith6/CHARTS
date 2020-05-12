@@ -108,6 +108,32 @@ looker.plugins.visualizations.add({
     console.log('updateAsync() queryResponse', queryResponse)
 	
 	
+	name = config.query_fields.dimensions[0].name;
+    scores = config.query_fields.dimensions[1].name;
+	// dst_name = config.query_fields.dimensions[2].name;
+	// userid = config.query_fields.dimensions[3].name;
+	
+	console.log(name);
+	console.log(scores);
+	
+	
+	// var amData = [];
+	// // var colorSet = new am4core.ColorSet();
+    // for(var row of data) {
+		// var cell = row[queryResponse.fields.dimensions[1].name]
+		// xyz = LookerCharts.Utils.htmlForCell(cell);
+        // amData.push({
+            // category: row[scores].value,
+			// start: row[start_date].value,
+			// end : row[end_date].value,
+			// color: colorSet.next() ,
+			// //task: row[userid].value,
+			// task: xyz
+        // });
+		
+    // }
+	
+	
 	function chartChart(response) {
 	  var echarts = require('echarts');
 	  response.map((data, i) => {
@@ -194,7 +220,7 @@ looker.plugins.visualizations.add({
 	  }
 	}
 
-	controller.update = data => {
+	
 	  console.log("DATA >>>>", JSON.stringify(data))
 	  if (data.length > 0) {
 		var reducedDataSource = data
@@ -214,7 +240,7 @@ looker.plugins.visualizations.add({
 
 		createChartTable(response)
 	  }
-	};
+	
 
 	
 
