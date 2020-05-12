@@ -88,9 +88,9 @@ looker.plugins.visualizations.add({
     // container.id = 'amContainer';
 	
 	
-	var chartContainer = document.createElement('div');
-	chartContainer.classList.add('chart-container');
-	controller.element.appendChild(chartContainer);
+	var chartContainer = element.appendChild(document.createElement("div"));
+	chartContainer.className = 'chart-container';
+	chartContainer.id = 'chartContainer';
 
 	
 
@@ -108,8 +108,9 @@ looker.plugins.visualizations.add({
     console.log('updateAsync() queryResponse', queryResponse)
 	
 	
-	name = config.query_fields.dimensions[0].name;
-    scores = config.query_fields.dimensions[1].name;
+	date = config.query_fields.dimensions[0].name;
+    name = config.query_fields.dimensions[1].name;
+	score = config.query_fields.dimensions[2].name;
 	// dst_name = config.query_fields.dimensions[2].name;
 	// userid = config.query_fields.dimensions[3].name;
 	
