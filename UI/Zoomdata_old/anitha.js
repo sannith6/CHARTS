@@ -2,48 +2,29 @@
 
 // Test the imports:
 
-console.log(am4core)
-console.log(am4themes_animated)
-console.log(am4themes_dark)
+// console.log(am4core)
+// console.log(am4themes_animated)
+// console.log(am4themes_dark)
 
-am4core.useTheme(am4themes_animated);
-am4core.useTheme(am4themes_dark);
+// am4core.useTheme(am4themes_animated);
+// am4core.useTheme(am4themes_dark);
 
 
 looker.plugins.visualizations.add({
   create: function(element, config) {
 	  element.innerHTML = `
-      	<style>
-		body{
-			font-family:Arial, sans-serif;
-			font-size:14px;
-		}
-		table{
-			border-spacing:0;
-			padding:0;
-		}
-		th{
-		  text-align:left;
-		  font-weight:normal !important;
-		  border-top:1px solid #ddd;
-		  border-left:1px solid #ddd;
-		  border-bottom:1px solid #ddd;
-			height:25px;
-			padding-left:5px;
-			width: 50px;
-		}
-		td{
-		  border:1px solid #ddd;
-			width:30px !important;
-			height:25px;
-			padding-left:5px;
-		}
-		tr.row-odd,
-		.row-odd{
-			background: #eee;
-		}
+      <style>
+		body { background-color: #30303d; color: #fff; }
+				  .sannith {
+				  width: 100%;
+				  height: 600px;
+				}
 
-	</style>
+				.demo-theme-dark .demo-background {
+				  background: #fff;
+}
+        
+      </style>
     `;
     var container = element.appendChild(document.createElement("div"));
 	container.className = "sannith";
@@ -53,145 +34,6 @@ looker.plugins.visualizations.add({
 	//this.container = element.appendChild(document.createElement("div"));
 	
   },
-  
-  var data;
-
-var line = d3.svg.line()
-	.x(function(d){return xScale(d.year);})
-	.y(function(d){return yScale(d.value);});
-
-d3.json("data.json", function(json) {
-
-			jsonData = json;
-
-			json.forEach(function(d) {
-			  d.value = Math.round((+d.value + 0.00001) * 1000) / 1000;
-			  d.year = +d.year;
-			});
-
-			// add years for select indicator
-			var nestyr = d3.nest()
-				.key(function(d) { return d.year; })
-		 		.sortKeys(d3.ascending)
-				.map(json);
-
-			var yearstring = Object.keys(nestyr);
-
-			// //////////////////////////
-			var width = 200, height = 25;
-			var minInd = d3.min(json, function(d) { return d.value;} )
-			var maxInd = d3.max(json, function(d) { return d.value;} )
-
-			xScale = d3.scale.linear().range([0, width - 10]).domain(d3.extent(json, function(d) { return d.year; })),
-			yScale = d3.scale.linear().range([height, 0]).domain([minInd,maxInd]),
-
-			xAxis = d3.svg.axis().scale(xScale).tickFormat(d3.format('0f')),
-			yAxis = d3.svg.axis().scale(yScale).orient("left");
-
-			var type = d3.nest()
-			      .key(function(d) { return d.state; })
-			  		.sortKeys(d3.ascending)
-			      .entries(json);
-
-						console.log("type:", type);
-
-		var tableData = [],
-	    	states = {};
-			json.forEach(function (d) {
-	    	var state = states[d.state];
-	    	if (!state) {
-	        	tableData.push(state = states[d.state] = {});
-	    		}
-	     	state[d.year] = d.value,
-		   	states[d.state].State = d.state;
-		});
-
-		console.log("tableData", tableData)
-
-		yearstring.unshift("State");
-		yearstring.push("Sparkline");
-
-		updateGraph(data);
-
-		// render the table(s)
-		tabulate(tableData, yearstring);
-
-}); // close json
-
-
-function updateGraph(data) {
-
-// add years for select indicator
-	var nestyr = d3.nest()
-			.key(function(d) { return d.year; })
-	 		.sortKeys(d3.ascending)
-			.map(jsonData);
-
-	var yearstring = Object.keys(nestyr);
-
- 	minyear = d3.min(yearstring);
-	maxyear = d3.max(yearstring);
-
-};
-
-function tabulate(newData, columns) {
-
-			var type = d3.nest()
-	      .key(function(d) { return d.state; })
-	  		.sortKeys(d3.ascending)
-	      .entries(jsonData);
-
-			var table = d3.select('#indcontent').append('table')
-			var thead = table.append('thead')
-			var	tbody = table.append('tbody');
-
-			// append the header row
-			thead.append('tr')
-			  .selectAll('th')
-			  .data(columns).enter()
-			  .append('th')
-			    .text(function (column) { return column; });
-
-			// create a row for each object in the data
-			var rows = tbody.selectAll('tr')
-			  .data(newData)
-			  .enter()
-			  .append('tr');
-
-			  // add stripes to the table
-		    rows.attr("class", function(d, i){ if (i++ % 2 === 0){return 'row-even'}else {return 'row-odd'}});
-
-
-			// create a cell in each row for each column
-			var cells = rows.selectAll('td')
-			  .data(function (row) {
-			    return columns.map(function (column) {
-			      return {column: column, value: row[column]};
-			    });
-			  })
-			  .enter()
-			  .append('td')
-					.attr("class", function (d,i) { return columns[i]; })
-			    .html(function (d) { return d.value; });
-
-					rows.selectAll("td.Sparkline")
-											.selectAll(".spark")
-											.data(function(d,i){ return [type[i]]; })
-											.enter()
-					            .append("svg")
-					            .attr("class", "spark")
-											.attr("height", 25)
-											.attr("width", 200)
-											.append("path")
-											.attr("d", function(d,i){ d.line = this; return line(d.values); })
-											.attr("stroke-width", 1)
-											.attr("stroke", "#c00000")
-											.attr("fill", "none");
-
-console.log("newData", newData);
-
-		  return table;
-};
 
   updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Clear any errors from previous updates:
@@ -205,13 +47,156 @@ console.log("newData", newData);
 	
 		
 
-    // get the names of the first dimension and measure available in data
-    start_date = config.query_fields.dimensions[0].name;
-    end_date = config.query_fields.dimensions[1].name;
-	dst_name = config.query_fields.dimensions[2].name;
-	userid = config.query_fields.dimensions[3].name;
+    // // get the names of the first dimension and measure available in data
+    // start_date = config.query_fields.dimensions[0].name;
+    // end_date = config.query_fields.dimensions[1].name;
+	// dst_name = config.query_fields.dimensions[2].name;
+	// userid = config.query_fields.dimensions[3].name;
 	
 	
+    // // build data array for the chart, by iterating over the Looker data object
+    // var amData = [];
+	// var colorSet = new am4core.ColorSet();
+    // for(var row of data) {
+		// var cell = row[queryResponse.fields.dimensions[3].name]
+		// xyz = LookerCharts.Utils.htmlForCell(cell);
+        // amData.push({
+            // category: row[dst_name].value,
+			// start: row[start_date].value,
+			// end : row[end_date].value,
+			// color: colorSet.next() ,
+			// task: row[userid].value,
+			// task: xyz
+        // });
+		
+    // }
+	
+	// element.innerHTML = xyz;
+	
+	// console.log('amChart data', amData)
+
+
+
+
+	// let chart = am4core.create("amContainer", am4plugins_timeline.SerpentineChart);
+	// chart.curveContainer.padding(50, 20, 50, 20);
+	// chart.levelCount = 4;
+	// chart.yAxisRadius = am4core.percent(25);
+	// chart.yAxisInnerRadius = am4core.percent(-25);
+	// chart.maskBullets = false;
+
+	// colorSet.saturation = 0.5;
+
+	// chart.data = amData;
+
+	// chart.dateFormatter.dateFormat = "yyyy-MM-dd HH";
+	// chart.dateFormatter.inputDateFormat = "yyyy-MM-dd HH";
+	// chart.fontSize = 11;
+
+	// let categoryAxis = chart.yAxes.push(new am4charts.CategoryAxis());
+	// categoryAxis.dataFields.category = "category";
+	// categoryAxis.renderer.grid.template.disabled = true;
+	// categoryAxis.renderer.labels.template.paddingRight = 25;
+	// categoryAxis.renderer.minGridDistance = 10;
+	// categoryAxis.renderer.innerRadius = -60;
+	// categoryAxis.renderer.radius = 60;
+	// categoryAxis.labelsEnabled = false;
+
+	// let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+	// dateAxis.renderer.minGridDistance = 70;
+	// dateAxis.baseInterval = { count: 1, timeUnit: "hour" };
+	// dateAxis.renderer.tooltipLocation = 0;
+	// dateAxis.startLocation = -0.5;
+	// dateAxis.renderer.line.strokeDasharray = "1,4";
+	// dateAxis.renderer.line.strokeOpacity = 0.6;
+	// dateAxis.tooltip.background.fillOpacity = 0.2;
+	// dateAxis.tooltip.background.cornerRadius = 5;
+	// dateAxis.tooltip.label.fill = new am4core.InterfaceColorSet().getFor("alternativeBackground");
+	// dateAxis.tooltip.label.paddingTop = 7;
+
+	// let labelTemplate = dateAxis.renderer.labels.template;
+	// labelTemplate.verticalCenter = "middle";
+	// labelTemplate.fillOpacity = 0.7;
+	// labelTemplate.background.fill = new am4core.InterfaceColorSet().getFor("background");
+	// labelTemplate.background.fillOpacity = 1;
+	// labelTemplate.padding(7, 7, 7, 7);
+
+	// let series = chart.series.push(new am4plugins_timeline.CurveColumnSeries());
+	// series.columns.template.height = am4core.percent(20);
+	// series.columns.template.tooltipText = "{task}: [bold]{openDateX}[/] - [bold]{dateX}[/]";
+	// series.columns.template.tooltipHTML = '{task}: <b>{openDateX}:00</b> - <b>{dateX}:00</b>';
+        // series.tooltip.label.interactionsEnabled = true;
+        // series.tooltip.keepTargetHover = true;
+
+	// series.dataFields.openDateX = "start";
+	// series.dataFields.dateX = "end";
+	// series.dataFields.categoryY = "category";
+	// series.columns.template.propertyFields.fill = "color"; // get color from data
+	// series.columns.template.propertyFields.stroke = "color";
+	// series.columns.template.strokeOpacity = 0;
+
+	// let bullet = series.bullets.push(new am4charts.CircleBullet());
+	// bullet.circle.radius = 3;
+	// bullet.circle.strokeOpacity = 0;
+	// bullet.propertyFields.fill = "color";
+	// bullet.locationX = 0;
+
+
+	// let bullet2 = series.bullets.push(new am4charts.CircleBullet());
+	// bullet2.circle.radius = 3;
+	// bullet2.circle.strokeOpacity = 0;
+	// bullet2.propertyFields.fill = "color";
+	// bullet2.locationX = 1;
+
+
+	// let imageBullet1 = series.bullets.push(new am4plugins_bullets.PinBullet());
+	// imageBullet1.disabled = true;
+	// imageBullet1.propertyFields.disabled = "disabled1";
+	// imageBullet1.locationX = 1;
+	// imageBullet1.circle.radius = 20;
+	// imageBullet1.propertyFields.stroke = "color";
+	// imageBullet1.background.propertyFields.fill = "color";
+	// imageBullet1.image = new am4core.Image();
+	// imageBullet1.image.propertyFields.href = "image1";
+
+	// let imageBullet2 = series.bullets.push(new am4plugins_bullets.PinBullet());
+	// imageBullet2.disabled = true;
+	// imageBullet2.propertyFields.disabled = "disabled2";
+	// imageBullet2.locationX = 0;
+	// imageBullet2.circle.radius = 20;
+	// imageBullet2.propertyFields.stroke = "color";
+	// imageBullet2.background.propertyFields.fill = "color";
+	// imageBullet2.image = new am4core.Image();
+	// imageBullet2.image.propertyFields.href = "image2";
+
+   
+	// let eventSeries = chart.series.push(new am4plugins_timeline.CurveLineSeries());
+	// eventSeries.dataFields.dateX = "eventDate";
+	// eventSeries.dataFields.categoryY = "category";
+	// eventSeries.data = [
+		// { category: "", eventDate: "openDateX", letter: "", description: "" },
+		// { category: "", eventDate: "dateX", letter: "", description: "" }];
+	// eventSeries.strokeOpacity = 0;
+
+	// let flagBullet = eventSeries.bullets.push(new am4plugins_bullets.FlagBullet())
+	// flagBullet.label.propertyFields.text = "letter";
+	// flagBullet.locationX = 0;
+	// flagBullet.tooltipText = "{description}";
+
+	// chart.scrollbarX = new am4core.Scrollbar();
+	// chart.scrollbarX.align = "center"
+	// chart.scrollbarX.width = am4core.percent(85);
+
+	// let cursor = new am4plugins_timeline.CurveCursor();
+	// chart.cursor = cursor;
+	// cursor.xAxis = dateAxis;
+	// cursor.yAxis = categoryAxis;
+	// cursor.lineY.disabled = true;
+	// cursor.lineX.strokeDasharray = "1,4";
+	// cursor.lineX.strokeOpacity = 1;
+
+	// dateAxis.renderer.tooltipLocation2 = 0;
+	// categoryAxis.cursorTooltipEnabled = false;
 
 	doneRendering();
 }
