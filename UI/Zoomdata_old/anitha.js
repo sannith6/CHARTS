@@ -114,7 +114,20 @@ looker.plugins.visualizations.add({
 	// dst_name = config.query_fields.dimensions[2].name;
 	// userid = config.query_fields.dimensions[3].name;
 	
+	var amData = [];
+	// var colorSet = new am4core.ColorSet();
+    for(var row of data) {
+		var cell = row[queryResponse.fields.dimensions[1].name]
+		xyz = LookerCharts.Utils.htmlForCell(cell);
+        amData.push({
+            date: row[date].value,
+			score: row[score].value,
+			
+        });
+		
+    }
 	
+	console.log('amChart data', amData)
 	
 	// var amData = [];
 	// // var colorSet = new am4core.ColorSet();
@@ -135,7 +148,7 @@ looker.plugins.visualizations.add({
 	
 	function chartChart(response) {
 	  var echarts = require('echarts');
-	  response.map((data, i) => {
+	  response.map((amData, i) => {
 		var neCustomchart = document.createElement('div');
 		neCustomchart.style.height = '80px';
 		neCustomchart.style.width = '80px';
