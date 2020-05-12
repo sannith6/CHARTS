@@ -242,12 +242,12 @@ looker.plugins.visualizations.add({
 		console.log('reducedData >> ', reducedDataSource)
 		reducedDataSource.map((item, index) => {
 		  response.push({
-			"IP ADDRESS": item[1],
-			"SPARKLINE": {
-			  "date": item[0].split(','),
-			  "score": item[2].split(',').map(s => parseInt(s))
-			},
-			"AVERAGE SCORE": Math.round(item[3]),
+			"IP ADDRESS": item[1]
+			// "SPARKLINE": {
+			  // "date": item[0].split(','),
+			  // "score": item[2].split(',').map(s => parseInt(s))
+			// },
+			// "AVERAGE SCORE": Math.round(item[3]),
 		  })
 		})
 
