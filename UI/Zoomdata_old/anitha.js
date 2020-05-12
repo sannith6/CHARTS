@@ -114,8 +114,6 @@ looker.plugins.visualizations.add({
 	// dst_name = config.query_fields.dimensions[2].name;
 	// userid = config.query_fields.dimensions[3].name;
 	
-	console.log(name);
-	console.log(scores);
 	
 	
 	// var amData = [];
