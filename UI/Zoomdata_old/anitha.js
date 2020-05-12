@@ -240,6 +240,7 @@ looker.plugins.visualizations.add({
 		var response = []
 
 		console.log('reducedData >> ', reducedDataSource)
+		console.log(typeof(reducedDataSource));
 		reducedDataSource.map((item, index) => {
 		  response.push({
 			
