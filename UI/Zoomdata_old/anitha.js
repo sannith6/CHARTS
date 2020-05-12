@@ -121,6 +121,7 @@ looker.plugins.visualizations.add({
 		xyz = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
             date: row[date].value,
+			name: row[name].value
 			score: row[score].value,
 			
         });
@@ -160,7 +161,7 @@ looker.plugins.visualizations.add({
 		neChart.setOption({
 		  xAxis: {
 			type: 'category',
-			data: data.SPARKLINE.date,
+			data: amData.SPARKLINE.date,
 			show: false
 		  },
 		  yAxis: {
@@ -168,7 +169,7 @@ looker.plugins.visualizations.add({
 			show: false
 		  },
 		  series: [{
-			data: data.SPARKLINE.score,
+			data: amData.SPARKLINE.score,
 			type: 'line',
 			symbolSize: 0
 		  }],
@@ -233,9 +234,9 @@ looker.plugins.visualizations.add({
 	}
 
 	
-	  console.log("DATA >>>>", JSON.stringify(data))
-	  if (data.length > 0) {
-		var reducedDataSource = data
+	  console.log("DATA >>>>", JSON.stringify(amData))
+	  if (amData.length > 0) {
+		var reducedDataSource = amData
 		var response = []
 
 		console.log('reducedData >> ', reducedDataSource)
