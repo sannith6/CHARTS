@@ -104,6 +104,7 @@ looker.plugins.visualizations.add({
 	date = config.query_fields.dimensions[0].name;
     name = config.query_fields.dimensions[1].name;
 	score = config.query_fields.dimensions[2].name;
+	total = config.query_fields.dimensions[3].name;
 
 	var amData = [];
 	// var colorSet = new am4core.ColorSet();
@@ -113,7 +114,8 @@ looker.plugins.visualizations.add({
         amData.push({
             date: row[date].value,
 			name: row[name].value,
-			score: row[score].value
+			score: row[score].value,
+			total: row[total].value
 			
         });
 		
