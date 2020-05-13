@@ -1,7 +1,7 @@
 {
   "name": "anitha_spark_line_CC",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "anitha.js",
   "license": "MIT",
   "dependencies": {
     "echarts": "^4.7.0"
