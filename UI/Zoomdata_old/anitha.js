@@ -123,22 +123,6 @@ looker.plugins.visualizations.add({
 	console.log('amChart data', amData)
 	
 	
-	var amData1 = [];
-	// var colorSet = new am4core.ColorSet();
-    for(var row of data) {
-		var cell = row[queryResponse.fields.dimensions[1].name]
-		xyz = LookerCharts.Utils.htmlForCell(cell);
-        amData1.push({
-            row[date].value,
-			row[name].value,
-			row[score].value
-			
-        });
-		
-    }
-	
-	console.log("-------------------------------");
-	console.log('amChart data1', amData1)
 	
 	function chartChart(response) {
 	
