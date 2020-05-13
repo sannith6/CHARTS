@@ -247,7 +247,7 @@ looker.plugins.visualizations.add({
 		reducedDataSource.map((item, index) => {
 		  response.push({
 			
-			"IP ADDRESS": "johnwhite" 
+			"IP ADDRESS": "johnwhite" ,
 			"SPARKLINE": {
 			  "date": "2020-02-29,2020-03-05,2020-03-22,2020-03-26,2020-03-27".split(','),
 			  "score": "82.5806,49.6353,78.3649,29.2346,47.3802".split(',').map(s => parseInt(s))
