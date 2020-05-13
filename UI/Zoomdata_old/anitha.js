@@ -200,7 +200,7 @@ looker.plugins.visualizations.add({
 
 		  Object.keys(k).map((m) => {
 			if (clickableTD.includes(m)) {
-			  !SparklineTd.includes(m) && (body += `<td class="contextMenulist">${contextMenu(m, k[m])}${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td ></td>`)
 			}
 			else {
 			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important">${k[m]}</td>`)
