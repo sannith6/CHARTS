@@ -168,7 +168,7 @@ looker.plugins.visualizations.add({
 
 		var headers = ''
 		var clickableTD = ["IP ADDRESS"]
-		var SparklineTd = ["SPARKLINE "]
+		var SparklineTd = ["SPARKLINE"]
 
 		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important">${k}</th>`))
 
