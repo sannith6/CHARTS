@@ -148,7 +148,7 @@ looker.plugins.visualizations.add({
 	
 	
 	function chartChart(response) {
-	  var echarts = require('echarts');
+	  // var echarts = require('echarts');
 	  response.map((amData, i) => {
 		var neCustomchart = document.createElement('div');
 		neCustomchart.style.height = '80px';
