@@ -112,7 +112,6 @@ looker.plugins.visualizations.add({
 		var cell = row[queryResponse.fields.dimensions[1].name]
 		xyz = LookerCharts.Utils.htmlForCell(cell);
 		console.log('---inside push method------');
-		console.log(row[date].value);
 		
         amData.push({
             date: row[date].value,
@@ -227,7 +226,9 @@ looker.plugins.visualizations.add({
 		
 		reducedDataSource.map((item, index) => {
 		  response.push({
-			
+			console.log('--------cekcing valuesssssssssssss ---------');
+			console.log(Object.values(reducedDataSource));
+			console.log('--------cekcing valuesssssssssssss ---------');
 			// "IP ADDRESS": "johnwhite" ,
 			"IP ADDRESS": item[name],
 			"SPARKLINE": {
