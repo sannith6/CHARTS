@@ -172,7 +172,7 @@ looker.plugins.visualizations.add({
 
 		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important">${k}</th>`))
 
-		headers += `<th style="text-align:center !important"> SPARK LINE </th>`
+		headers += `<th style="text-align:center !important;width:100px"> SPARK  LINE </th>`
 
 		var body = ''
 		response.map((k, i) => {
