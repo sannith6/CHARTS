@@ -112,7 +112,7 @@ looker.plugins.visualizations.add({
 		var cell = row[queryResponse.fields.dimensions[1].name]
 		xyz = LookerCharts.Utils.htmlForCell(cell);
         amData.push({
-            date: row[date].value,
+            row[date].value,
 			name: row[name].value,
 			score: row[score].value,
 			total: row[total].value
