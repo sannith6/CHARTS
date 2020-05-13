@@ -113,12 +113,12 @@ looker.plugins.visualizations.add({
 		xyz = LookerCharts.Utils.htmlForCell(cell);
 		console.log('---inside push method------');
 		
-        amData.push(
+        amData.push([
             row[date].value,
 			row[name].value,
 			 row[score].value,
 			row[total].value
-			
+		]	
         );
 		
     }
