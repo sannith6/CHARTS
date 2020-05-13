@@ -101,8 +101,9 @@ looker.plugins.visualizations.add({
     console.log('updateAsync() queryResponse', queryResponse)
 	
 	
-	date = config.query_fields.dimensions[0].name.value;
-	console.log(date)
+	date = config.query_fields.dimensions[0].name;
+	console.log(date);
+	console.log(date.value);
     name = config.query_fields.dimensions[1].name;
 	score = config.query_fields.dimensions[2].name;
 	total = config.query_fields.dimensions[3].name;
@@ -112,6 +113,9 @@ looker.plugins.visualizations.add({
     for(var row of data) {
 		var cell = row[queryResponse.fields.dimensions[1].name]
 		xyz = LookerCharts.Utils.htmlForCell(cell);
+		console.log('---inside push method------');
+		console.log(row[date].value);
+		console.log(row(date).value);
         amData.push({
             date,
 			name: row[name].value,
