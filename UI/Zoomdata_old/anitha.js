@@ -242,21 +242,19 @@ looker.plugins.visualizations.add({
 		console.log('reducedData >> ', reducedDataSource)
 		console.log(typeof(reducedDataSource));
 		
-		for (var value of reducedDataSource.values()) {
-		  console.log(value)
-		}
 		
-		// reducedDataSource.map((item, index) => {
-		  // response.push({
+		
+		reducedDataSource.map((item, index) => {
+		  response.push({
 			
-			// // "IP ADDRESS": item[1][itd_threat_entity.name]
-			// // "SPARKLINE": {
-			  // // "date": item[0].split(','),
-			  // // "score": item[2].split(',').map(s => parseInt(s))
-			// // },
-			// // "AVERAGE SCORE": Math.round(item[3]),
-		  // })
-		// })
+			"IP ADDRESS": "johnwhite" 
+			"SPARKLINE": {
+			  "date": "2020-02-29,2020-03-05,2020-03-22,2020-03-26,2020-03-27".split(','),
+			  "score": "82.5806,49.6353,78.3649,29.2346,47.3802".split(',').map(s => parseInt(s))
+			},
+			"AVERAGE SCORE": Math.round("96.54"),
+		  })
+		})
 		console.log('response data is------------',response);
 		createChartTable(response)
 	  }
