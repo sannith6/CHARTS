@@ -81,8 +81,8 @@ looker.plugins.visualizations.add({
 	
 	  response.map((amData, i) => {
 		var neCustomchart = document.createElement('div');
-		neCustomchart.style.height = '80px';
-		neCustomchart.style.width = '80px';
+		neCustomchart.style.height = '90px';
+		neCustomchart.style.width = '100px';
 		neCustomchart.style.position = 'absolute';
 		neCustomchart.style.bottom = '0px'
 
@@ -175,7 +175,7 @@ looker.plugins.visualizations.add({
 		console.log(name);
 		reducedDataSource.map((item, index) => {
 			test_0bj = {}
-			test_0bj[name.split('.')[1]] = item[1];
+			test_0bj[name.split('.')[1].toUpperCase()] = item[1];
 			test_0bj['SPARKLINE'] = {
 				"date": item[0].split(','),
 				"score": item[2].split(',').map(s => parseInt(s))
