@@ -29,59 +29,7 @@ looker.plugins.visualizations.add({
 .chart-container {
     white-space: normal !important;
 }
-
-/* menu */
-
-.contextMenulist{
-    position: relative;
-    color: blue;
-    cursor: pointer;
-    }
-    
-    .menu{
-      position: absolute;
-      top: 100%;
-      z-index: 10001;
-      display: none;
-      top: 33px;
-      padding: 5px 0px;
-      margin-left:20px;
-      list-style: none;
-      background-color: #ffff;
-      border: 1px solid #cacdcf;
-      -webkit-background-clip: padding-box;
-      -moz-background-clip: padding;
-      background-clip: padding-box;
-    }
-    
-    .menu:after{
-    content: '';
-    border: 7px solid transparent;
-    border-bottom: 8px solid #E5E5E5;
-    position: absolute;
-    top: -15px;
-    left: 48%;
-    }
-    
-    .menu > li > a {
-    display: block;
-    padding: 3px 10px;
-    clear: both;
-    font-weight: normal;
-    line-height: 20px;
-    color: #333;
-    white-space: nowrap;
-    text-decoration:none;
-    text-align: left;
-    }
-    
-    #selectLinked:hover,#selectLinked.highlight {
-    text-decoration: none;
-    background-color: #E5E5E5;
-    }
-
-        
-      </style>
+   </style>
     `;
 
 	var chartContainer = element.appendChild(document.createElement("div"));
@@ -170,9 +118,9 @@ looker.plugins.visualizations.add({
 		var clickableTD = ["IP ADDRESS"]
 		var SparklineTd = ["SPARKLINE"]
 
-		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important">${k}</th>`))
+		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important;font-size: small">${k}</th>`))
 
-		headers += `<th style="text-align:center !important;width:100px"> SPARK  LINE </th>`
+		headers += `<th style="text-align:center !important;width:100px;font-size: small"> SPARK  LINE </th>`
 
 		var body = ''
 		response.map((k, i) => {
@@ -180,10 +128,10 @@ looker.plugins.visualizations.add({
 
 		  Object.keys(k).map((m) => {
 			if (clickableTD.includes(m)) {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;background-color: aliceblue">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;background-color: aliceblue;font-size: smaller">${k[m]}</td>`)
 			}
 			else {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;background-color: aliceblue">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;background-color: aliceblue;font-size: smaller">${k[m]}</td>`)
 			}
 		  })
 
