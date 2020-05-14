@@ -175,7 +175,7 @@ looker.plugins.visualizations.add({
 		console.log(name);
 		reducedDataSource.map((item, index) => {
 			test_0bj = {}
-			test_0bj[name.split('.')[0]] = item[1];
+			test_0bj[name.split('.')[1]] = item[1];
 			test_0bj['SPARKLINE'] = {
 				"date": item[0].split(','),
 				"score": item[2].split(',').map(s => parseInt(s))
