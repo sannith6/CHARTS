@@ -116,7 +116,7 @@ looker.plugins.visualizations.add({
 	  if (response.length !== 0) {
 
 		var headers = ''
-		var clickableTD = name
+		var clickableTD = ["IP ADDRESS"]
 		var SparklineTd = ["SPARKLINE"]
 
 		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important;font-size: small">${k}</th>`))
@@ -174,18 +174,16 @@ looker.plugins.visualizations.add({
 		console.log('testing inside a function');
 		console.log(name);
 		reducedDataSource.map((item, index) => {
-		  response.push({
-			
-			// "IP ADDRESS": "johnwhite" ,
-			name: item[1],
-			"SPARKLINE": {
+			test_0bj = {}
+			test_0bj[name] = item[1];
+			test_0bj['SPARKLINE'] = {
 				"date": item[0].split(','),
 				"score": item[2].split(',').map(s => parseInt(s))
 			  // "date": "2020-02-29,2020-03-05,2020-03-22,2020-03-26,2020-03-27".split(','),
 			  // "score": "82.5806,49.6353,78.3649,29.2346,47.3802".split(',').map(s => parseInt(s))
-			},
-			"AVERAGE SCORE": Math.round(item[3]),
-		  })
+			};
+			test_0bj["AVERAGE SCORE"] = Math.round(item[3]);
+		  response.push(test_0bj)
 		})
 		console.log('response data is------------',response);
 		createChartTable(response)
