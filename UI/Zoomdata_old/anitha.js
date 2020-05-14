@@ -81,7 +81,7 @@ looker.plugins.visualizations.add({
 	
 	  response.map((amData, i) => {
 		var neCustomchart = document.createElement('div');
-		neCustomchart.style.height = '90px';
+		neCustomchart.style.height = '80px';
 		neCustomchart.style.width = '100px';
 		neCustomchart.style.position = 'absolute';
 		neCustomchart.style.bottom = '0px'
