@@ -176,7 +176,7 @@ looker.plugins.visualizations.add({
 		  response.push({
 			
 			// "IP ADDRESS": "johnwhite" ,
-			"IP ADDRESS": item[1],
+			"""+name+""": item[1],
 			"SPARKLINE": {
 				"date": item[0].split(','),
 				"score": item[2].split(',').map(s => parseInt(s))
