@@ -115,7 +115,7 @@ looker.plugins.visualizations.add({
 	  if (response.length !== 0) {
 
 		var headers = ''
-		var clickableTD = ["IP ADDRESS"]
+		var clickableTD = name
 		var SparklineTd = ["SPARKLINE"]
 
 		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important;font-size: small">${k}</th>`))
@@ -176,7 +176,7 @@ looker.plugins.visualizations.add({
 		  response.push({
 			
 			// "IP ADDRESS": "johnwhite" ,
-			"IP ADDRESS": item[1],
+			name: item[1],
 			"SPARKLINE": {
 				"date": item[0].split(','),
 				"score": item[2].split(',').map(s => parseInt(s))
