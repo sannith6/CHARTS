@@ -51,6 +51,7 @@ looker.plugins.visualizations.add({
 	
 	date = config.query_fields.dimensions[0].name;
     name = config.query_fields.dimensions[1].name;
+	console.log(name);
 	score = config.query_fields.dimensions[2].name;
 	total = config.query_fields.dimensions[3].name;
 
@@ -170,8 +171,8 @@ looker.plugins.visualizations.add({
 		console.log('reducedData >> ', reducedDataSource)
 		console.log(typeof(reducedDataSource));
 		
-		
-		
+		console.log('testing inside a function');
+		console.log(name);
 		reducedDataSource.map((item, index) => {
 		  response.push({
 			
