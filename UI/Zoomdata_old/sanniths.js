@@ -98,8 +98,8 @@ looker.plugins.visualizations.add({
 	categoryAxis.renderer.grid.template.disabled = true;
 	categoryAxis.renderer.labels.template.paddingRight = 25;
 	categoryAxis.renderer.minGridDistance = 10;
-	categoryAxis.renderer.innerRadius = -60;
-	categoryAxis.renderer.radius = 60;
+	categoryAxis.renderer.innerRadius = -20;
+	categoryAxis.renderer.radius = 20;
 	categoryAxis.labelsEnabled = false;
 
 	let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
