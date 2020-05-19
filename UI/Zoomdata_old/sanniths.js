@@ -98,8 +98,8 @@ looker.plugins.visualizations.add({
 	categoryAxis.renderer.grid.template.disabled = true;
 	categoryAxis.renderer.labels.template.paddingRight = 25;
 	categoryAxis.renderer.minGridDistance = 10;
-	categoryAxis.renderer.innerRadius = -10;
-	categoryAxis.renderer.radius = 10;
+	categoryAxis.renderer.innerRadius = -60;
+	categoryAxis.renderer.radius = 60;
 	categoryAxis.labelsEnabled = false;
 
 	let dateAxis = chart.xAxes.push(new am4charts.DateAxis());
@@ -107,7 +107,7 @@ looker.plugins.visualizations.add({
 	dateAxis.baseInterval = { count: 1, timeUnit: "hour" };
 	dateAxis.renderer.tooltipLocation = 0;
 	dateAxis.startLocation = -0.5;
-	dateAxis.renderer.line.strokeDasharray = "1,4";
+	dateAxis.renderer.line.strokeDasharray = "1,1";
 	dateAxis.renderer.line.strokeOpacity = 0.6;
 	dateAxis.tooltip.background.fillOpacity = 0.2;
 	dateAxis.tooltip.background.cornerRadius = 5;
