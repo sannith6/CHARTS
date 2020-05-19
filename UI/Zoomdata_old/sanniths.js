@@ -107,10 +107,10 @@ looker.plugins.visualizations.add({
 	dateAxis.baseInterval = { count: 1, timeUnit: "hour" };
 	dateAxis.renderer.tooltipLocation = 0;
 	dateAxis.startLocation = -0.5;
-	dateAxis.renderer.line.strokeDasharray = "1,1";
+	dateAxis.renderer.line.strokeDasharray = "1,4";
 	dateAxis.renderer.line.strokeOpacity = 0.6;
 	dateAxis.tooltip.background.fillOpacity = 0.2;
-	dateAxis.tooltip.background.cornerRadius = 5;
+	dateAxis.tooltip.background.cornerRadius = 2;
 	dateAxis.tooltip.label.fill = new am4core.InterfaceColorSet().getFor("alternativeBackground");
 	dateAxis.tooltip.label.paddingTop = 7;
 
