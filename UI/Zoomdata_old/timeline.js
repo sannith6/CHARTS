@@ -59,9 +59,9 @@ for(var row of data) {
 		category: row[d].value,
         start: row[a].value,
         end: row[b].value,
-        if (row[c].value = 'VPN') {color: colorSet.getIndex(11);} else if (row[c].value = 'IIS') {color: colorSet.getIndex(14);} else if (row[c].value = 'EMAIL') {color: colorSet.getIndex(17);} else {color: colorSet.getIndex(21);},
-        if (row[c].value = 'VPN') {icon:vpn;} else if (row[c].value = 'IIS') {icon:iis;} else if (row[c].value = 'EMAIL') {icon:email;} else {icon:windows;},
-        text: row[c].value
+        if (row[c]['value'] = 'VPN') {color: colorSet.getIndex(11);} else if (row[c]['value'] = 'IIS') {color: colorSet.getIndex(14);} else if (row[c]['value'] = 'EMAIL') {color: colorSet.getIndex(17);} else {color: colorSet.getIndex(21);},
+        if (row[c]['value'] = 'VPN') {icon:vpn;} else if (row[c]['value'] = 'IIS') {icon:iis;} else if (row[c]['value'] = 'EMAIL') {icon:email;} else {icon:windows;},
+        text: row[c]['value']
 		
 	});
 	
