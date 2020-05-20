@@ -70,7 +70,7 @@ for(var row of data) {
         start: row[a].value,
         end: row[b].value,
 		color: colour,
-		icon: icons
+		icon: icons,
         text: row[c]['value']
 		
 	});
