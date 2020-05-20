@@ -124,8 +124,8 @@ am4core.ready(function() {
     dateAxis.max = new Date(2020, 4, 19, 7, 10).getTime();
     min = new Date(2019, 0, 9, 23, 55).getTime();
     max = new Date(2019, 0, 11, 7, 10).getTime();
-    console('min date',min)	
-	console('max date',max)
+    console.log('min date',min)	
+	console.log('max date',max)
 
     let labelTemplate = dateAxis.renderer.labels.template;
     labelTemplate.verticalCenter = "middle";
