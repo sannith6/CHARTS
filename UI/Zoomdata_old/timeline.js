@@ -55,10 +55,10 @@ let windows = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAwCAYAAAChS3w
 var amData = [];
 var colorSet = new am4core.ColorSet();
 for(var row of data) {
-	if (row[c]['value'] === 'VPN') {colour = colorSet.getIndex(11);}
-		else if (row[c]['value'] === 'IIS') {colour = colorSet.getIndex(14);} 
-		else if (row[c]['value'] === 'EMAIL') {colour = colorSet.getIndex(17);} 
-		else {colour = colorSet.getIndex(21);}
+	if (row[c]['value'] === 'VPN') {colour = colorSet.getIndex(1);}
+		else if (row[c]['value'] === 'IIS') {colour = colorSet.getIndex(8);} 
+		else if (row[c]['value'] === 'EMAIL') {colour = colorSet.getIndex(15);} 
+		else {colour = colorSet.getIndex(20);}
 		
     if (row[c]['value'] === 'VPN') {icons = vpn;} 
 		else if (row[c]['value'] === 'IIS') {icons =iis;} 
