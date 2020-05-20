@@ -66,7 +66,7 @@ for(var row of data) {
 		else {icons = windows;}
 	
 	amData.push({
-		category: "",
+		category: row[c]['value'],
         start: row[a].value,
         end: row[b].value,
 		color: colour,
