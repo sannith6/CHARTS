@@ -62,36 +62,6 @@ let drunk = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0ia
 let bed = "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDkwLjcgNDkwLjciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ5MC43IDQ5MC43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8Zz4NCgk8Zz4NCgkJPHBhdGggZD0iTTQzNi4yLDE1NC42SDE4Mi40Yy0xMi40LDAtMzMuMSw0LjctMzMuMSwzNi42VjI0MGgzMjB2LTQ4LjhDNDY5LjMsMTU5LjQsNDQ4LjYsMTU0LjYsNDM2LjIsMTU0LjZ6Ii8+DQoJPC9nPg0KPC9nPg0KPGc+DQoJPGc+DQoJCTxwb2x5Z29uIHBvaW50cz0iODAuMywyNTAuNiAzMiwyNTAuNiAzMiw4MCAwLDgwIDAsNDEwLjcgMzIsNDEwLjcgMzIsMzI1LjMgNDU4LjcsMzI1LjMgNDU4LjcsNDEwLjYgNDkwLjcsNDEwLjYgNDkwLjcsMjUwLjYgCQkNCgkJCSIvPg0KCTwvZz4NCjwvZz4NCjxnPg0KCTxnPg0KCQk8Y2lyY2xlIGN4PSI4NS4zIiBjeT0iMTk3LjMiIHI9IjQ0LjciLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==";
 
 
-
-// build data array for the chart, by iterating over the Looker data object
-var amData = [];
-var colorSet = new am4core.ColorSet();
-for(var row of data) {
-	if (row[c]['value'] === 'VPN') {colour = colorSet.getIndex(11);}
-		else if (row[c]['value'] === 'IIS') {colour = colorSet.getIndex(14);} 
-		else if (row[c]['value'] === 'EMAIL') {colour = colorSet.getIndex(17);} 
-		else {colour = colorSet.getIndex(21);}
-		
-    if (row[c]['value'] === 'VPN') {icons = vpn;} 
-		else if (row[c]['value'] === 'IIS') {icons =iis;} 
-		else if (row[c]['value'] === 'EMAIL') {icons = email;} 
-		else {icons = windows;}
-	
-	amData.push({
-		category: "",
-        start: row[a].value,
-        end: row[b].value,
-		color: colour,
-		icon: icons,
-        text: row[c]['value']
-		
-	});
-	
-}
-console.log('amChart data', amData)
-
-
-
 am4core.ready(function() {
     let chart = am4core.create("amContainer", am4plugins_timeline.CurveChart);
     chart.curveContainer.padding(100, 20, 50, 20);
