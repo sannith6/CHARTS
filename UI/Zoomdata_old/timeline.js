@@ -55,12 +55,22 @@ let windows = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAAAwCAYAAAChS3w
 var amData = [];
 var colorSet = new am4core.ColorSet();
 for(var row of data) {
+	if (row[c]['value'] === 'VPN') {colour = colorSet.getIndex(11);}
+		else if (row[c]['value'] === 'IIS') {colour = colorSet.getIndex(14);} 
+		else if (row[c]['value'] === 'EMAIL') {colour = colorSet.getIndex(17);} 
+		else {colour = colorSet.getIndex(21);}
+		
+    if (row[c]['value'] === 'VPN') {icons = vpn;} 
+		else if (row[c]['value'] === 'IIS') {icons =iis;} 
+		else if (row[c]['value'] === 'EMAIL') {icons = email;} 
+		else {icons = windows;}
+	
 	amData.push({
 		category: row[d].value,
         start: row[a].value,
         end: row[b].value,
-        if (row[c]['value'] = 'VPN') {color: colorSet.getIndex(11);} else if (row[c]['value'] = 'IIS') {color: colorSet.getIndex(14);} else if (row[c]['value'] = 'EMAIL') {color: colorSet.getIndex(17);} else {color: colorSet.getIndex(21);},
-        if (row[c]['value'] = 'VPN') {icon:vpn;} else if (row[c]['value'] = 'IIS') {icon:iis;} else if (row[c]['value'] = 'EMAIL') {icon:email;} else {icon:windows;},
+		color: colour,
+		icon: icons
         text: row[c]['value']
 		
 	});
