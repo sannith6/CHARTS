@@ -121,10 +121,9 @@ am4core.ready(function() {
     dateAxis.endLocation = 0;
     dateAxis.startLocation = -0.5;
 	var maximumDate=new Date(Math.max.apply(null, amData['end'])); 
-	maximumDate.setDate(maximumDate.getDate() + 1);
     var minimumDate=new Date(Math.min.apply(null, amData['start'])); 
-	minimumDate.setDate(minimumDate.getDate() - 1);
-	 
+	maximumDate.setHours( maximumDate.getHours() + 6 ); 
+	minimumDate.setHours( minimumDate.getHours() - 6 ); 
     dateAxis.min = minimumDate.getTime();
     dateAxis.max = maximumDate.getTime();
 	
