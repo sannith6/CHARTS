@@ -120,10 +120,8 @@ am4core.ready(function() {
     dateAxis.tooltip.label.paddingTop = 7;
     dateAxis.endLocation = 0;
     dateAxis.startLocation = -0.5;
-	dateAxis.dataFields.dateX = "start";
-	dateAxis.dataFields.dateY = "end";
-    dateAxis.min = dateX.getTime();
-    dateAxis.max = dateY.getTime();
+    dateAxis.min = "start".getTime();
+    dateAxis.max = "end".getTime();
 	
 	
     let labelTemplate = dateAxis.renderer.labels.template;
