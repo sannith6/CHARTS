@@ -66,6 +66,8 @@ am4core.ready(function() {
     let chart = am4core.create("amContainer", am4plugins_timeline.CurveChart);
     chart.curveContainer.padding(100, 20, 50, 20);
     chart.maskBullets = false;
+	
+	let colorSet = new am4core.ColorSet();
 
     chart.dateFormatter.inputDateFormat = "yyyy-MM-dd HH:mm";
     chart.dateFormatter.dateFormat = "HH";
