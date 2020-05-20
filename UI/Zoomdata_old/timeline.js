@@ -120,13 +120,12 @@ am4core.ready(function() {
     dateAxis.tooltip.label.paddingTop = 7;
     dateAxis.endLocation = 0;
     dateAxis.startLocation = -0.5;
-    dateAxis.min = new Date(2020, 4, 17, 23, 55).getTime();
-    dateAxis.max = new Date(2020, 4, 19, 7, 10).getTime();
-    min = new Date(2019, 0, 9, 23, 55).getTime();
-    max = new Date(2019, 0, 11, 7, 10).getTime();
-    console.log('min date',min)	
-	console.log('max date',max)
-
+	dateAxis.dataFields.dateX = "start";
+	dateAxis.dataFields.dateY = "end";
+    dateAxis.min = dateX.getTime();
+    dateAxis.max = dateY.getTime();
+	
+	
     let labelTemplate = dateAxis.renderer.labels.template;
     labelTemplate.verticalCenter = "middle";
     labelTemplate.fillOpacity = 0.6;
