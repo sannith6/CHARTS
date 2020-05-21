@@ -64,7 +64,7 @@ looker.plugins.visualizations.add({
 		
         amData.push([
             row[date].value,
-			row[name].value,
+			xyz,
 			 row[score].value,
 			row[total].value
 		]	
