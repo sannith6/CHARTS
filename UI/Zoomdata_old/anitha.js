@@ -50,10 +50,10 @@ looker.plugins.visualizations.add({
 	
 	
 	name = config.query_fields.dimensions[0].name;
-    date = config.query_fields.measure[0].name;
+    date = config.query_fields.measures[0].name;
 	console.log(name);
-	score = config.query_fields.measure[1].name;
-	total = config.query_fields.measure[2].name;
+	score = config.query_fields.measures[1].name;
+	total = config.query_fields.measures[2].name;
 
 	var amData = [];
 	// var colorSet = new am4core.ColorSet();
