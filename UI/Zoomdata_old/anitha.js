@@ -177,8 +177,8 @@ looker.plugins.visualizations.add({
 			test_0bj = {}
 			test_0bj[name.split('.')[1].toUpperCase()] = item[1];
 			test_0bj['SPARKLINE'] = {
-				"date": item[0].split(','),
-				"score": item[2].split(',').map(s => parseInt(s))
+				"date": item[0].toString().split(','),
+				"score": item[2].toString().split(',').map(s => parseInt(s))
 			  // "date": "2020-02-29,2020-03-05,2020-03-22,2020-03-26,2020-03-27".split(','),
 			  // "score": "82.5806,49.6353,78.3649,29.2346,47.3802".split(',').map(s => parseInt(s))
 			};
