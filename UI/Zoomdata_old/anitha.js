@@ -15,8 +15,8 @@ looker.plugins.visualizations.add({
 	  element.innerHTML = `
       <style>
 		.chart-container {
-    width: 100%;
-    height: 100%;
+    width: 120%;
+    height: 120%;
     overflow-y: auto;
     overflow-x: hidden;
     white-space: pre;
@@ -81,8 +81,8 @@ looker.plugins.visualizations.add({
 	
 	  response.map((amData, i) => {
 		var neCustomchart = document.createElement('div');
-		neCustomchart.style.height = '80px';
-		neCustomchart.style.width = '100px';
+		neCustomchart.style.height = '120px';
+		neCustomchart.style.width = '150px';
 		neCustomchart.style.position = 'absolute';
 		neCustomchart.style.bottom = '0px'
 
