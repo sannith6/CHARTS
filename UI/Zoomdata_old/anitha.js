@@ -49,16 +49,16 @@ looker.plugins.visualizations.add({
     console.log('updateAsync() queryResponse', queryResponse)
 	
 	
-	date = config.query_fields.dimensions[0].name;
-    name = config.query_fields.dimensions[1].name;
+	name = config.query_fields.dimensions[0].name;
+    date = config.query_fields.measure[0].name;
 	console.log(name);
-	score = config.query_fields.dimensions[2].name;
-	total = config.query_fields.dimensions[3].name;
+	score = config.query_fields.measure[1].name;
+	total = config.query_fields.measure[2].name;
 
 	var amData = [];
 	// var colorSet = new am4core.ColorSet();
     for(var row of data) {
-		var cell = row[queryResponse.fields.dimensions[1].name]
+		var cell = row[queryResponse.fields.dimensions[0].name]
 		xyz = LookerCharts.Utils.htmlForCell(cell);
 		console.log('---inside push method------');
 		
