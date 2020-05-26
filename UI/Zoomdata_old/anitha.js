@@ -82,7 +82,7 @@ looker.plugins.visualizations.add({
 	  response.map((amData, i) => {
 		var neCustomchart = document.createElement('div');
 		neCustomchart.style.height = '80px';
-		neCustomchart.style.width = '100px';
+		neCustomchart.style.width = '100%';
 		neCustomchart.style.position = 'absolute';
 		neCustomchart.style.bottom = '0px'
 
@@ -121,7 +121,7 @@ looker.plugins.visualizations.add({
 
 		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important;font-size: small">${k}</th>`))
 
-		headers += `<th style="text-align:center !important;width:100px;font-size: small"> SPARK  LINE </th>`
+		headers += `<th style="text-align:center !important;width:100%;font-size: small"> SPARK  LINE </th>`
 
 		var body = ''
 		response.map((k, i) => {
