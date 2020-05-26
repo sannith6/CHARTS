@@ -121,7 +121,7 @@ looker.plugins.visualizations.add({
 
 		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important;font-size: small">${k}</th>`))
 
-		headers += `<th style="text-align:center !important;width:100%;font-size: small"> SPARK  LINE </th>`
+		headers += `<th style="text-align:center !important;width:100px;font-size: small"> SPARK  LINE </th>`
 
 		var body = ''
 		response.map((k, i) => {
@@ -143,7 +143,7 @@ looker.plugins.visualizations.add({
 
 		var view = `
 			   <div>
-					<table class="table tabeldash" id="usertable_id" style="margin-top:20px">
+					<table class="table tabeldash" id="usertable_id" style="margin-top:20px;width:100%">
 						<thead style="background-color: #dadee7;color: darkmagenta;font-size: small;">
 							<tr class="tableHead">
 							${headers}
