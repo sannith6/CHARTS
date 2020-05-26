@@ -15,7 +15,7 @@ looker.plugins.visualizations.add({
 	  element.innerHTML = `
       <style>
 		.chart-container {
-    width: auto;
+    width: 100%;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
@@ -82,7 +82,7 @@ looker.plugins.visualizations.add({
 	  response.map((amData, i) => {
 		var neCustomchart = document.createElement('div');
 		neCustomchart.style.height = '80px';
-		neCustomchart.style.width = 'auto';
+		neCustomchart.style.width = '100px';
 		neCustomchart.style.position = 'absolute';
 		neCustomchart.style.bottom = '0px'
 
@@ -105,7 +105,7 @@ looker.plugins.visualizations.add({
 		  }],
 		  color: '#a5c78a',
 		  height: 35,
-		  width: 'auto'
+		  width: '100%'
 		});
 		document.getElementById(`graph${i}`).appendChild(neCustomchart)
 	  })
