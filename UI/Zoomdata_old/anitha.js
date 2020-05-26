@@ -82,7 +82,7 @@ looker.plugins.visualizations.add({
 	  response.map((amData, i) => {
 		var neCustomchart = document.createElement('div');
 		neCustomchart.style.height = '80px';
-		neCustomchart.style.width = '100%';
+		neCustomchart.style.width = '100px';
 		neCustomchart.style.position = 'absolute';
 		neCustomchart.style.bottom = '0px'
 
@@ -143,7 +143,7 @@ looker.plugins.visualizations.add({
 
 		var view = `
 			   <div>
-					<table class="table tabeldash" id="usertable_id" style="margin-top:20px;width:100%">
+					<table class="table tabeldash" id="usertable_id" style="margin-top:20px;width:100%;height:100%">
 						<thead style="background-color: #dadee7;color: darkmagenta;font-size: small;">
 							<tr class="tableHead">
 							${headers}
