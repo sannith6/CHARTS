@@ -150,7 +150,7 @@ table, td, th {
 
 		var view = `
 			   <div>
-					<table class="table tabeldash" id="usertable_id" style="margin-top:20px;width:100%;height:100%;">
+					<table class="table tabeldash" id="usertable_id" style="margin-top:20px;width:100%;height:100%;border-spacing: 5px;">
 						<thead style="color: black;font-size: small;">
 							<tr class="tableHead">
 							${headers}
