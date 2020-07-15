@@ -40,7 +40,7 @@ table {
 }
 
 th, td {
-  padding: 15px;
+  padding: 10px;
 }
 body {
 	font-family: "Open Sans","Noto Sans JP","Noto Sans CJK KR","Noto Sans Arabic UI","Noto Sans Devanagari UI","Noto Sans Hebrew","Noto Sans Thai UI",Helvetica,Arial,sans-serif,"Noto Sans";
