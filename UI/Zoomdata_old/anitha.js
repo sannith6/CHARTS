@@ -141,7 +141,7 @@ background-color: #fff;
 
 		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important;font-size: small">${k}</th>`))
 
-		headers += `<th style="text-align:center !important;font-size: small"> SPARK  LINE </th>`
+		headers += `<th style="text-align:center !important;font-size: small"> SparkLine </th>`
 
 		var body = ''
 		response.map((k, i) => {
@@ -163,8 +163,8 @@ background-color: #fff;
 
 		var view = `
 			   <div>
-					<table class="table tabeldash" id="usertable_id" style="margin-top:20px;width:100%;height:100%;border-spacing: 5px;">
-						<thead style="color: #3a4245;font-size: small;">
+					<table class="table tabeldash" id="usertable_id" style="margin-top:5px;width:100%;height:100%;border-spacing: 5px;">
+						<thead style="color: rgba(0,0,0,0.54);font-size: small;">
 							<tr class="tableHead">
 							${headers}
 							</tr>
@@ -195,14 +195,14 @@ background-color: #fff;
 		console.log(name);
 		reducedDataSource.map((item, index) => {
 			test_0bj = {}
-			test_0bj[name.split('.')[1].toUpperCase()] = item[1];
+			test_0bj[name.split('.')[1]] = item[1];
 			test_0bj['SPARKLINE'] = {
 				"date": item[0].toString().split(','),
 				"score": item[2].toString().split(',').map(s => parseInt(s))
 			  // "date": "2020-02-29,2020-03-05,2020-03-22,2020-03-26,2020-03-27".split(','),
 			  // "score": "82.5806,49.6353,78.3649,29.2346,47.3802".split(',').map(s => parseInt(s))
 			};
-			test_0bj["AVERAGE SCORE"] = Math.round(item[3]);
+			test_0bj["Max Score"] = Math.round(item[3]);
 		  response.push(test_0bj)
 		})
 		console.log('response data is------------',response);
