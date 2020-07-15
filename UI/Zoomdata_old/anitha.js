@@ -21,7 +21,7 @@ looker.plugins.visualizations.add({
     overflow-y: auto;
     overflow-x: hidden;
     white-space: pre;
-	overflow: auto;
+	
 }
 
 .table-row {
@@ -52,7 +52,20 @@ color: #3a4245;
 background-color: #fff;
 }
 
+table thead tr{
+    display:block;
+}
 
+table th,table td{
+    width:100px;//fixed width
+}
+
+
+table  tbody{
+  display:block;
+  height:200px;
+  overflow:auto;//set tbody to auto
+}
 
 
    </style>
