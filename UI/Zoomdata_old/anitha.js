@@ -199,7 +199,7 @@ position: fixed;
 		console.log(Name);
 		reducedDataSource.map((item, index) => {
 			test_0bj = {}
-			test_0bj[Name.split('.')[1].slice(0)] = item[1];
+			test_0bj[Name.split('.')[1]] = item[1];
 			test_0bj['SPARKLINE'] = {
 				"date": item[0].toString().split(','),
 				"score": item[2].toString().split(',').map(s => parseInt(s))
