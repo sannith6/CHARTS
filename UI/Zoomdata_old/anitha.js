@@ -17,7 +17,7 @@ looker.plugins.visualizations.add({
 		.chart-container {
     width: 100%;
     height: 100%;
-    overflow-y: auto;
+   
     overflow-x: hidden;
     white-space: pre;
 }
@@ -48,6 +48,7 @@ font-size: 12px;
 line-height: 1.53846;
 color: #3a4245;
 background-color: #fff;
+ overflow-y: auto;
 }
 
    </style>
