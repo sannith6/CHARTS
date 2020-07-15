@@ -53,20 +53,7 @@ color: #3a4245;
 background-color: #fff;
 }
 
-table thead tr{
-    display:block;
-}
 
-table th,table td, table tr{
-    width:100%;//fixed width
-}
-
-
-table  tbody{
-  display:block;
-  height:auto;
-  overflow:auto;//set tbody to auto
-}
    </style>
 
 
