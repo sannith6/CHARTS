@@ -53,9 +53,7 @@ color: #3a4245;
 background-color: #fff;
 }
 
-.top {
-	position: fixed; 
-}
+
    </style>
 
 
