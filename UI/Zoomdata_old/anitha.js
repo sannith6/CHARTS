@@ -53,34 +53,6 @@ color: #3a4245;
 background-color: #fff;
 }
 
-.usertable_id {
-  width: 750px;
-  table-layout: fixed;
-  border-collapse: collapse;
-  
-
-  
-  td:nth-child(1), th:nth-child(1) { min-width: 200px; }
-  td:nth-child(2), th:nth-child(2) { min-width: 200px; }
-  td:nth-child(3), th:nth-child(3) { width: 350px; }
-
-  thead {
-    
-    tr {
-      display: block;
-      position: relative;
-    }
-  }
-  tbody {
-    display: block;
-    overflow: auto;
-    width: 100%;
-    height: 300px;
-    tr:nth-child(even) {
-      background-color: #DDD;
-    }
-  }
-}
 
    </style>
 
@@ -176,9 +148,9 @@ background-color: #fff;
 		var clickableTD = ["IP ADDRESS"]
 		var SparklineTd = ["SPARKLINE"]
 
-		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th >${k}</th>`))
+		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important;font-size: small">${k}</th>`))
 
-		headers += `<th > SparkLine </th>`
+		headers += `<th style="text-align:center !important;font-size: small;"> SparkLine </th>`
 
 		var body = ''
 		response.map((k, i) => {
@@ -186,22 +158,22 @@ background-color: #fff;
 
 		  Object.keys(k).map((m) => {
 			if (clickableTD.includes(m)) {
-			  !SparklineTd.includes(m) && (body += `<td >${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;color: rgba(0,0,0,0.54);">${k[m]}</td>`)
 			}
 			else {
-			  !SparklineTd.includes(m) && (body += `<td>${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;color: rgba(0,0,0,0.54);">${k[m]}</td>`)
 			}
 		  })
 
-		  body += `<td  id="graph${i}"></td>`
+		  body += `<td style="padding: 4px; position: relative;" id="graph${i}"></td>`
 		  body += '</tr>'
 		})
 
 
 		var view = `
 			   <div >
-					<table class="usertable_id"  >
-						<thead >
+					<table class="table tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
+						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;">
 							<tr class="tableHead" >
 							${headers}
 							</tr>
