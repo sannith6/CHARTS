@@ -51,8 +51,20 @@ line-height: 1.53846;
 color: #3a4245;
 background-color: #fff;
 }
+
+
+table thead tr{
+    display:block;
+}
+
+table th,table td{
+    width:100%;//fixed width
+	height: 100%;
+}
+
+
 table  tbody{
-  display : block;
+  display:block;
   height:200px;
   overflow:auto;//set tbody to auto
 }
@@ -174,7 +186,7 @@ table  tbody{
 
 		var view = `
 			   <div >
-					<table class="table tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;">
+					<table class="table tabeldash" id="usertable_id" >
 						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;">
 							<tr class="tableHead" >
 							${headers}
