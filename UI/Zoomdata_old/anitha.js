@@ -34,7 +34,14 @@ table {
 }
 
 table, td, th {
-  border: 1px solid black;
+  border-style: initial;
+}
+body {
+	font-family: "Open Sans","Noto Sans JP","Noto Sans CJK KR","Noto Sans Arabic UI","Noto Sans Devanagari UI","Noto Sans Hebrew","Noto Sans Thai UI",Helvetica,Arial,sans-serif,"Noto Sans";
+font-size: 12px;
+line-height: 1.53846;
+color: #3a4245;
+background-color: #fff;
 }
    </style>
     `;
@@ -136,10 +143,10 @@ table, td, th {
 
 		  Object.keys(k).map((m) => {
 			if (clickableTD.includes(m)) {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;font-size: medium">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;">${k[m]}</td>`)
 			}
 			else {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;font-size: medium">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;">${k[m]}</td>`)
 			}
 		  })
 
