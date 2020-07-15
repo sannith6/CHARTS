@@ -129,14 +129,14 @@ looker.plugins.visualizations.add({
 
 		  Object.keys(k).map((m) => {
 			if (clickableTD.includes(m)) {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;background-color: aliceblue;font-size: smaller">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;font-size: smaller">${k[m]}</td>`)
 			}
 			else {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;background-color: aliceblue;font-size: smaller">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;font-size: smaller">${k[m]}</td>`)
 			}
 		  })
 
-		  body += `<td style="padding: 4px; position: relative;background-color: aliceblue;" id="graph${i}"></td>`
+		  body += `<td style="padding: 4px; position: relative;" id="graph${i}"></td>`
 		  body += '</tr>'
 		})
 
@@ -144,7 +144,7 @@ looker.plugins.visualizations.add({
 		var view = `
 			   <div>
 					<table class="table tabeldash" id="usertable_id" style="margin-top:20px;width:100%;height:100%;">
-						<thead style="background-color: #dadee7;color: darkmagenta;font-size: small;">
+						<thead style="color: black;font-size: small;">
 							<tr class="tableHead">
 							${headers}
 							</tr>
