@@ -136,10 +136,10 @@ table, td, th {
 
 		  Object.keys(k).map((m) => {
 			if (clickableTD.includes(m)) {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;font-size: smaller">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;font-size: medium">${k[m]}</td>`)
 			}
 			else {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;font-size: smaller">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;font-size: medium">${k[m]}</td>`)
 			}
 		  })
 
