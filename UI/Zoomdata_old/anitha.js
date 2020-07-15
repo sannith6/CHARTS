@@ -51,22 +51,11 @@ line-height: 1.53846;
 color: #3a4245;
 background-color: #fff;
 }
-
-table thead tr{
-    display:block;
-}
-
-table th,table td{
-    width:100%;//fixed width
-}
-
-
 table  tbody{
-  display:block;
-  height:200%;
+  display : block;
+  height:200px;
   overflow:auto;//set tbody to auto
 }
-
    </style>
 
 
