@@ -50,29 +50,16 @@ line-height: 1.53846;
 color: #3a4245;
 background-color: #fff;
 }
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
+table  tbody{
+ 
+  overflow:auto;
 }
 
 
 
    </style>
-	<script>
-	window.onscroll = function() {myFunction()};
 
-	var header = document.getElementById("myHeader");
-	var sticky = header.offsetTop;
 
-	function myFunction() {
-	  if (window.pageYOffset > sticky) {
-		header.classList.add("sticky");
-	  } else {
-		header.classList.remove("sticky");
-	  }
-	}
-</script>
 	`;
 
 	var chartContainer = element.appendChild(document.createElement("div"));
@@ -189,7 +176,7 @@ background-color: #fff;
 		var view = `
 			   <div >
 					<table class="table tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;">
-						<thead id="myHeader" style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;">
+						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;">
 							<tr class="tableHead" >
 							${headers}
 							</tr>
