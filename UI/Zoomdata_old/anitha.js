@@ -48,7 +48,6 @@ font-size: 12px;
 line-height: 1.53846;
 color: #3a4245;
 background-color: #fff;
- overflow-y: auto;
 }
 
    </style>
@@ -143,7 +142,7 @@ background-color: #fff;
 
 		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important;font-size: small">${k}</th>`))
 
-		headers += `<th style="text-align:center !important;font-size: small"> SparkLine </th>`
+		headers += `<th style="text-align:center !important;font-size: small;position:fixed"> SparkLine </th>`
 
 		var body = ''
 		response.map((k, i) => {
@@ -171,7 +170,7 @@ background-color: #fff;
 							${headers}
 							</tr>
 						</thead>
-						<tbody class="tableBody">
+						<tbody class="tableBody" style="overflow-y:scroll;">
 							${body}
 						</tbody>
 					</table>     
