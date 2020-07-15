@@ -54,14 +54,9 @@ background-color: #fff;
 
 
 
-table th,table td{
-    width:100%;//fixed width
-}
-
-
 table  tbody{
   
-  height:100%;
+  display : flex;
   overflow:auto;//set tbody to auto
 }
 
