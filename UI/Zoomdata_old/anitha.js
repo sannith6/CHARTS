@@ -82,13 +82,6 @@ background-color: #fff;
   }
 }
 
-.old_ie_wrapper {
-  height: @table_body_height;
-  width: @table_width;
-  overflow-x: hidden;
-  overflow-y: auto;
-  tbody { height: auto; }
-}
    </style>
 
 
@@ -183,9 +176,9 @@ background-color: #fff;
 		var clickableTD = ["IP ADDRESS"]
 		var SparklineTd = ["SPARKLINE"]
 
-		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important;font-size: small">${k}</th>`))
+		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th >${k}</th>`))
 
-		headers += `<th style="text-align:center !important;font-size: small;"> SparkLine </th>`
+		headers += `<th > SparkLine </th>`
 
 		var body = ''
 		response.map((k, i) => {
@@ -193,14 +186,14 @@ background-color: #fff;
 
 		  Object.keys(k).map((m) => {
 			if (clickableTD.includes(m)) {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;color: rgba(0,0,0,0.54);">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td >${k[m]}</td>`)
 			}
 			else {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;color: rgba(0,0,0,0.54);">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td>${k[m]}</td>`)
 			}
 		  })
 
-		  body += `<td style="padding: 4px; position: relative;" id="graph${i}"></td>`
+		  body += `<td  id="graph${i}"></td>`
 		  body += '</tr>'
 		})
 
@@ -208,7 +201,7 @@ background-color: #fff;
 		var view = `
 			   <div >
 					<table class="usertable_id"  >
-						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;">
+						<thead >
 							<tr class="tableHead" >
 							${headers}
 							</tr>
