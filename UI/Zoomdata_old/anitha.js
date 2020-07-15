@@ -187,10 +187,10 @@ background-color: #fff;
 
 
 		var view = `
-			   <div id="myHeader">
+			   <div >
 					<table class="table tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;">
 						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;">
-							<tr class="tableHead">
+							<tr class="tableHead" id="myHeader">
 							${headers}
 							</tr>
 						</thead>
