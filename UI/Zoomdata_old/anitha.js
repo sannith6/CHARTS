@@ -164,7 +164,7 @@ background-color: #fff;
 		var view = `
 			   <div>
 					<table class="table tabeldash" id="usertable_id" style="margin-top:20px;width:100%;height:100%;border-spacing: 5px;">
-						<thead style="color: black;font-size: small;">
+						<thead style="color: #3a4245;font-size: small;">
 							<tr class="tableHead">
 							${headers}
 							</tr>
