@@ -132,7 +132,7 @@ table, td, th {
 
 		var body = ''
 		response.map((k, i) => {
-		  body += `<tr id="row${i}" style="border:8px solid #f2f3f7">`
+		  body += `<tr id="row${i}" >`
 
 		  Object.keys(k).map((m) => {
 			if (clickableTD.includes(m)) {
