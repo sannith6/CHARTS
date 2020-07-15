@@ -15,7 +15,7 @@ looker.plugins.visualizations.add({
 	  element.innerHTML = `
       <style>
 		.chart-container {
-    position:fixed;			
+   		
     width: 100%;
     height: 100%;
     overflow-y: auto;
@@ -50,6 +50,13 @@ line-height: 1.53846;
 color: #3a4245;
 background-color: #fff;
 }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
 
    </style>
     `;
@@ -57,6 +64,21 @@ background-color: #fff;
 	var chartContainer = element.appendChild(document.createElement("div"));
 	chartContainer.className = 'chart-container';
 	chartContainer.id = 'chartContainer';
+	
+	<script>
+		window.onscroll = function() {myFunction()};
+
+		var header = document.getElementById("myHeader");
+		var sticky = header.offsetTop;
+
+		function myFunction() {
+		  if (window.pageYOffset > sticky) {
+			header.classList.add("sticky");
+		  } else {
+			header.classList.remove("sticky");
+		  }
+		}
+	</script>
 
 	
   },
@@ -164,7 +186,7 @@ background-color: #fff;
 
 
 		var view = `
-			   <div>
+			   <div id="myHeader">
 					<table class="table tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;">
 						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;">
 							<tr class="tableHead">
