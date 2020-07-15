@@ -21,6 +21,7 @@ looker.plugins.visualizations.add({
     overflow-y: auto;
     overflow-x: hidden;
     white-space: pre;
+	overflow: auto;
 }
 
 .table-row {
@@ -50,10 +51,7 @@ line-height: 1.53846;
 color: #3a4245;
 background-color: #fff;
 }
-table  tbody{
- 
-  overflow:auto;
-}
+
 
 
 
