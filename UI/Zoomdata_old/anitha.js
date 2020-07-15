@@ -53,7 +53,7 @@ color: #3a4245;
 background-color: #fff;
 }
 
-th {
+.top {
 	position: fixed; 
 }
    </style>
