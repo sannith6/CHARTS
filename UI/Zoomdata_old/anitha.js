@@ -58,13 +58,13 @@ table thead tr{
 }
 
 table th,table td{
-    width:100px;//fixed width
+    width:100%;//fixed width
 }
 
 
 table  tbody{
   display:block;
-  height:200px;
+  height:auto;
   overflow:auto;//set tbody to auto
 }
    </style>
