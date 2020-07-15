@@ -17,7 +17,7 @@ looker.plugins.visualizations.add({
 		.chart-container {
     width: 100%;
     height: 100%;
-   
+    overflow-y: auto;
     overflow-x: hidden;
     white-space: pre;
 }
@@ -142,7 +142,7 @@ background-color: #fff;
 
 		Object.keys(response[0]).map((k) => !SparklineTd.includes(k) && (headers += `<th style="text-align:center !important;font-size: small">${k}</th>`))
 
-		headers += `<th style="text-align:center !important;font-size: small;position:fixed"> SparkLine </th>`
+		headers += `<th style="text-align:center !important;font-size: small;"> SparkLine </th>`
 
 		var body = ''
 		response.map((k, i) => {
@@ -165,12 +165,12 @@ background-color: #fff;
 		var view = `
 			   <div>
 					<table class="table tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;">
-						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;">
+						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;position:fixed;">
 							<tr class="tableHead">
 							${headers}
 							</tr>
 						</thead>
-						<tbody class="tableBody" style="overflow-y:scroll;">
+						<tbody class="tableBody" >
 							${body}
 						</tbody>
 					</table>     
