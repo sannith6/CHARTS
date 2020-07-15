@@ -53,12 +53,18 @@ color: #3a4245;
 background-color: #fff;
 }
 
+table thead tr{
+    display:block;
+}
 
+table th,table td{
+    width:100px;//fixed width
+}
 
 
 table  tbody{
-  display : block;
-  height : 200px;   
+  display:block;
+  height:200px;
   overflow:auto;//set tbody to auto
 }
    </style>
