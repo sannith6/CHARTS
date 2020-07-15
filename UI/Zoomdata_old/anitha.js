@@ -29,12 +29,18 @@ looker.plugins.visualizations.add({
 .chart-container {
     white-space: normal !important;
 }
-table {
-  border-collapse: collapse;
+table, td, th {  
+  border: 1px solid #ddd;
+  
 }
 
-table, td, th {
-  border-style: initial;
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
 }
 body {
 	font-family: "Open Sans","Noto Sans JP","Noto Sans CJK KR","Noto Sans Arabic UI","Noto Sans Devanagari UI","Noto Sans Hebrew","Noto Sans Thai UI",Helvetica,Arial,sans-serif,"Noto Sans";
