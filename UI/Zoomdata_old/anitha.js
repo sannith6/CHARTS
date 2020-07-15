@@ -69,9 +69,9 @@ background-color: #fff;
     console.log('updateAsync() queryResponse', queryResponse)
 	
 	
-	name = config.query_fields.dimensions[0].name;
+    Name = config.query_fields.dimensions[0].name;
     date = config.query_fields.measures[0].name;
-	console.log(name);
+	console.log(Name);
 	score = config.query_fields.measures[1].name;
 	total = config.query_fields.measures[2].name;
 
@@ -149,10 +149,10 @@ background-color: #fff;
 
 		  Object.keys(k).map((m) => {
 			if (clickableTD.includes(m)) {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;color: rgba(0,0,0,0.54);">${k[m]}</td>`)
 			}
 			else {
-			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;">${k[m]}</td>`)
+			  !SparklineTd.includes(m) && (body += `<td style="text-align:center !important;color: rgba(0,0,0,0.54);">${k[m]}</td>`)
 			}
 		  })
 
@@ -163,8 +163,8 @@ background-color: #fff;
 
 		var view = `
 			   <div>
-					<table class="table tabeldash" id="usertable_id" style="margin-top:5px;width:100%;height:100%;border-spacing: 5px;">
-						<thead style="color: rgba(0,0,0,0.54);font-size: small;">
+					<table class="table tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;">
+						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold">
 							<tr class="tableHead">
 							${headers}
 							</tr>
@@ -192,17 +192,17 @@ background-color: #fff;
 		console.log(typeof(reducedDataSource));
 		
 		console.log('testing inside a function');
-		console.log(name);
+		console.log(Name);
 		reducedDataSource.map((item, index) => {
 			test_0bj = {}
-			test_0bj[name.split('.')[1]] = item[1];
+			test_0bj[Name.split('.')[1]] = item[1];
 			test_0bj['SPARKLINE'] = {
 				"date": item[0].toString().split(','),
 				"score": item[2].toString().split(',').map(s => parseInt(s))
 			  // "date": "2020-02-29,2020-03-05,2020-03-22,2020-03-26,2020-03-27".split(','),
 			  // "score": "82.5806,49.6353,78.3649,29.2346,47.3802".split(',').map(s => parseInt(s))
 			};
-			test_0bj["Max Score"] = Math.round(item[3]);
+			test_0bj["MaxScore"] = Math.round(item[3]);
 		  response.push(test_0bj)
 		})
 		console.log('response data is------------',response);
