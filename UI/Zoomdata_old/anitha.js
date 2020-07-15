@@ -21,6 +21,7 @@ looker.plugins.visualizations.add({
     overflow-y: auto;
     overflow-x: hidden;
     white-space: pre;
+	display: block;
 	
 }
 
@@ -53,14 +54,6 @@ background-color: #fff;
 }
 
 
-table thead tr{
-    display:block;
-}
-
-table th,table td{
-    width:100%;//fixed width
-	height: 100%;
-}
 
 
 table  tbody{
