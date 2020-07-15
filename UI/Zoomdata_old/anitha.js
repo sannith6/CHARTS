@@ -57,7 +57,7 @@ background-color: #fff;
 
 
 table  tbody{
- 
+  display : block;
   height : 200px;   
   overflow:auto;//set tbody to auto
 }
