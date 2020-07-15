@@ -59,26 +59,27 @@ background-color: #fff;
 
 
    </style>
-    `;
+	<script>
+	window.onscroll = function() {myFunction()};
+
+	var header = document.getElementById("myHeader");
+	var sticky = header.offsetTop;
+
+	function myFunction() {
+	  if (window.pageYOffset > sticky) {
+		header.classList.add("sticky");
+	  } else {
+		header.classList.remove("sticky");
+	  }
+	}
+</script>
+	`;
 
 	var chartContainer = element.appendChild(document.createElement("div"));
 	chartContainer.className = 'chart-container';
 	chartContainer.id = 'chartContainer';
 	
-	<script>
-		window.onscroll = function() {myFunction()};
 
-		var header = document.getElementById("myHeader");
-		var sticky = header.offsetTop;
-
-		function myFunction() {
-		  if (window.pageYOffset > sticky) {
-			header.classList.add("sticky");
-		  } else {
-			header.classList.remove("sticky");
-		  }
-		}
-	</script>
 
 	
   },
