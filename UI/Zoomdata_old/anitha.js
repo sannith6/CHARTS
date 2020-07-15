@@ -57,7 +57,7 @@ table thead tr{
     display:block;
 }
 
-table th,table td{
+table th,table td, table tr{
     width:100%;//fixed width
 }
 
