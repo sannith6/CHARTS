@@ -8,6 +8,8 @@
 
 // am4core.useTheme(am4themes_animated);
 // am4core.useTheme(am4themes_dark);
+
+
 looker.plugins.visualizations.add({
   create: function(element, config) {
 	  element.innerHTML = `
@@ -21,15 +23,6 @@ looker.plugins.visualizations.add({
     white-space: pre;
 	display: block;
 
-}
-.table.sticky.th {
-  position: sticky;
-  top: 0;
-  width: 100%;
-}
-
-.sticky + .chart-container {
-  padding-top: 102px;
 }
 
 .table-row {
