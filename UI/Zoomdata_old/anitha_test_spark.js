@@ -16,8 +16,8 @@ looker.plugins.visualizations.add({
       <style>
 		.chart-container {
    		
-    width: 100%;
-    height: 100%;
+    width: 90%;
+    height: 90%;
     overflow-y: auto;
     overflow-x: hidden;
     white-space: pre;
@@ -189,6 +189,7 @@ background-color: #fff;
 		chartChart(response)
 		
 	  }
+
 	}
 
 	
