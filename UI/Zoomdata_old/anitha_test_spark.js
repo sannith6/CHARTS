@@ -36,6 +36,9 @@ table, td, th {
   border: 1px solid #ddd;
 
 }
+thead {
+            position:fixed;
+        }
 
 table {
   border-collapse: collapse;
