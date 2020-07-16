@@ -37,24 +37,14 @@ table, td, th {
 
 }
 
-th {
-  border: 1px solid #ddd;
-  position: static;
-
-}
-
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-td {
+th, td {
   padding: 10px;
 }
-
-th {
-  border: 1px solid #ddd;
-  position: static;
 
 }
 body {
@@ -185,7 +175,7 @@ background-color: #fff;
 		var view = `
 			   <div >
 					<table class="table tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
-						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;" id="top">
+						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;position: fixed;" id="top">
 							<tr class="tableHead" >
 							${headers}
 							</tr>
