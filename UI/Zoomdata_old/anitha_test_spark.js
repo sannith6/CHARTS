@@ -175,7 +175,7 @@ background-color: #fff;
 		var view = `
 			   <div >
 					<table class="table tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
-						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;position: fixed;" id="top">
+						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;" id="top">
 							<tr class="tableHead" >
 							${headers}
 							</tr>
