@@ -37,13 +37,25 @@ table, td, th {
 
 }
 
+th {
+  border: 1px solid #ddd;
+  position: static;
+
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
 }
 
-th, td {
+td {
   padding: 10px;
+}
+
+th {
+  border: 1px solid #ddd;
+  position: static;
+
 }
 body {
 	font-family: "Open Sans","Noto Sans JP","Noto Sans CJK KR","Noto Sans Arabic UI","Noto Sans Devanagari UI","Noto Sans Hebrew","Noto Sans Thai UI",Helvetica,Arial,sans-serif,"Noto Sans";
