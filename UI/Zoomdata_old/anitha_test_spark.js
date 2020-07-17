@@ -31,6 +31,7 @@ looker.plugins.visualizations.add({
 
    .fixed_header tbody{
    display:block;
+   width: 100%;
    overflow: auto;
    height: 100px;
    }
@@ -48,6 +49,7 @@ looker.plugins.visualizations.add({
    .fixed_header th, .fixed_header td {
    padding: 10px;
    text-align: left;
+   width: 500px;
    border: 1px solid #ddd;
    }
 
@@ -58,6 +60,7 @@ body {
 font-size: 12px;
 line-height: 1.53846;
 color: #3a4245;
+width: 500px;
 background-color: #fff;
 
 }
