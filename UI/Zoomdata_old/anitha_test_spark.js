@@ -18,33 +18,42 @@ looker.plugins.visualizations.add({
 
     width: 100%;
     height: 100%;
-
+    overflow-y: auto;
+    overflow-x: hidden;
     white-space: pre;
 	display: block;
-
+ white-space: normal !important;
 }
+.fixed_header{
+   width: 400px;
+   table-layout: fixed;
+   border-collapse: collapse;
+   }
 
-.table-row {
-    background: #f5f5f5;
-}
+   .fixed_header tbody{
+   display:block;
+   width: 100%;
+   overflow: auto;
+   height: 100px;
+   }
 
-.chart-container {
-    white-space: normal !important;
-}
-table, td, th {
-  border: 1px solid #ddd;
+   .fixed_header thead tr {
+   display: block;
+   background: #f5f5f5;
+   }
 
-}
+   .fixed_header thead {
+   background: black;
+   color:#fff;
+   }
 
+   .fixed_header th, .fixed_header td {
+   padding: 10px;
+   text-align: left;
+   width: 200px;
+   border: 1px solid #ddd;
+   }
 
-table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-th, td {
-  padding: 10px;
-}
 
 }
 body {
@@ -53,7 +62,7 @@ font-size: 12px;
 line-height: 1.53846;
 color: #3a4245;
 background-color: #fff;
-overflow: auto;
+
 }
 
 
@@ -175,7 +184,7 @@ overflow: auto;
 
 		var view = `
 			   <div >
-					<table class="table tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
+					<table class="fixed_header tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
 						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;" id="top">
 							<tr class="tableHead" >
 							${headers}
