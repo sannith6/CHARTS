@@ -48,7 +48,7 @@ looker.plugins.visualizations.add({
    .fixed_header th, .fixed_header td {
    padding: 10px;
    text-align: left;
-   width: 173px;
+   width: 200px;
    border: 1px solid #ddd;
    }
 
