@@ -18,7 +18,7 @@ looker.plugins.visualizations.add({
 
     width: 100%;
     height: 100%;
-    
+
     white-space: pre;
 	display: block;
 
@@ -35,9 +35,7 @@ table, td, th {
   border: 1px solid #ddd;
 
 }
-thead {
-            position:fixed;
-        }
+
 
 table {
   border-collapse: collapse;
