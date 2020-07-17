@@ -18,11 +18,15 @@ looker.plugins.visualizations.add({
 
     width: 100%;
     height: 100%;
-
+    overflow-y: auto;
     overflow-x: hidden;
     white-space: pre;
 	display: block;
- white-space: normal !important;
+
+}
+.chart-container
+{
+  white-space: normal !important;
 }
 .fixed_header{
    table-layout: fixed;
@@ -46,6 +50,7 @@ looker.plugins.visualizations.add({
    }
 
    .fixed_header th, .fixed_header td {
+   width:100%;
    padding: 10px;
    text-align: left;
    width: 357px;
