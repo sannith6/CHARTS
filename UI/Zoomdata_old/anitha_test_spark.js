@@ -25,7 +25,6 @@ looker.plugins.visualizations.add({
  white-space: normal !important;
 }
 .fixed_header{
-   width: 400px;
    table-layout: fixed;
    border-collapse: collapse;
    }
