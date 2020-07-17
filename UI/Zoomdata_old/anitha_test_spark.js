@@ -27,7 +27,7 @@ looker.plugins.visualizations.add({
 .fixed_header{
    table-layout: fixed;
    border-collapse: collapse;
-   width=650px;
+   width=100%;
    }
 
    .fixed_header tbody{
