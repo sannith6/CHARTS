@@ -31,7 +31,6 @@ looker.plugins.visualizations.add({
 
    .fixed_header tbody{
    display:block;
-   width: 100%;
    overflow: auto;
    height: 100px;
    }
@@ -49,7 +48,7 @@ looker.plugins.visualizations.add({
    .fixed_header th, .fixed_header td {
    padding: 10px;
    text-align: left;
-   width: 173px;
+   width: auto;
    border: 1px solid #ddd;
    }
 
@@ -183,7 +182,7 @@ background-color: #fff;
 
 		var view = `
 			   <div >
-					<table class="fixed_header tabeldash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
+					<table class="fixed_header" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
 						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;" id="top">
 							<tr class="tableHead" >
 							${headers}
