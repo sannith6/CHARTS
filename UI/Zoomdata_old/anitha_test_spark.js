@@ -51,9 +51,9 @@ looker.plugins.visualizations.add({
    width: 400px;
    border: 1px solid #ddd;
    }
-
-
-}
+   th{
+	    text-decoration:underline;
+   }
 body {
 	font-family: "Open Sans","Noto Sans JP","Noto Sans CJK KR","Noto Sans Arabic UI","Noto Sans Devanagari UI","Noto Sans Hebrew","Noto Sans Thai UI",Helvetica,Arial,sans-serif,"Noto Sans";
 font-size: 12px;
