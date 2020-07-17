@@ -60,7 +60,6 @@ body {
 font-size: 12px;
 line-height: 1.53846;
 color: #3a4245;
-width: 500px;
 background-color: #fff;
 
 }
