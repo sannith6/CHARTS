@@ -48,7 +48,7 @@ looker.plugins.visualizations.add({
    .fixed_header th, .fixed_header td {
    padding: 10px;
    text-align: left;
-   width: 400px;
+   width: 358px;
    border: 1px solid #ddd;
    }
 
@@ -175,7 +175,7 @@ background-color: #fff;
 			}
 		  })
 
-		  body += `<td style= position: relative;" id="graph${i}"></td>`
+		  body += `<td id="graph${i}"></td>`
 		  body += '</tr>'
 		})
 
