@@ -29,8 +29,8 @@ looker.plugins.visualizations.add({
       width:70px;
       display:block;
        height: 70px;
-   table-layout: fixed;
-   border-collapse: collapse;
+   
+   
    }
   .fixed_header thead th {
             position:fixed;
@@ -52,7 +52,7 @@ looker.plugins.visualizations.add({
    width:100%;
    padding: 10px;
    text-align: left;
-   width: 357px;
+  
    border: 1px solid #ddd;
    }
 
