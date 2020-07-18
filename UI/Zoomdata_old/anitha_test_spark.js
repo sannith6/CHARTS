@@ -28,14 +28,14 @@ looker.plugins.visualizations.add({
 }
 .fixed_header{
 	overflow-y:auto;
-      width:300px;
+      width:100px;
       display:block;
        height: 100px;
    table-layout: fixed;
    border-collapse: collapse;
    }
   .fixed_header thead th {
-            position: sticky;
+            position:fixed;
             top: 0;
         }
    .fixed_header tbody{
