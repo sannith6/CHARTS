@@ -15,7 +15,9 @@ looker.plugins.visualizations.add({
 	  element.innerHTML = `
       <style>
 		.chart-container {
-   
+    width:100%;
+	height:100%;
+	overflow-x:hidden;
     white-space: pre;
 	display: block;
 
@@ -25,17 +27,17 @@ looker.plugins.visualizations.add({
   white-space: normal !important;
 }
 .fixed_header{
-	overflow-y:auto;
-      width:70px;
-      display:block;
-       height: 70px;
-   
+   table-layout:fixed;
+   boarder-collapse:collapse;
    
    }
-  .fixed_header thead th {
-            position:fixed;
-            top: 0;
-        }
+  .fixed_header tbody{
+	  display:block;
+	  overflow:auto;
+	  height:100px;
+  }
+           
+        
    
 
    .fixed_header thead tr {
@@ -52,9 +54,10 @@ looker.plugins.visualizations.add({
    width:100%;
    padding: 10px;
    text-align: left;
+   width:357px;
   
    border: 1px solid #ddd;
-    border-collapse: collapse;
+    
    }
 
 
