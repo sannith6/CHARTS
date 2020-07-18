@@ -33,7 +33,7 @@ looker.plugins.visualizations.add({
    border-collapse: collapse;
    }
   .fixed_header thead th {
-            position:sticky;
+            position:fixed;
             top: 0;
         }
    
