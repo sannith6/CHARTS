@@ -54,6 +54,7 @@ looker.plugins.visualizations.add({
    text-align: left;
   
    border: 1px solid #ddd;
+    border-collapse: collapse;
    }
 
 
