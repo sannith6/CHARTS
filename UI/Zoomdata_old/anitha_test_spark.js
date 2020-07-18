@@ -55,6 +55,7 @@ looker.plugins.visualizations.add({
    padding: 10px;
    text-align: left;
    width:357px;
+   boarder-collapse:collapse;
   
    border: 1px solid #ddd;
     
