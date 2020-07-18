@@ -18,8 +18,6 @@ looker.plugins.visualizations.add({
 
     width: 100%;
     height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
     white-space: pre;
 	display: block;
 
@@ -29,13 +27,19 @@ looker.plugins.visualizations.add({
   white-space: normal !important;
 }
 .fixed_header{
+	overflow-y:auto;
+      width:300px;
+      display:block;
+       height: 100px;
    table-layout: fixed;
    border-collapse: collapse;
    }
-
+  .fixed_header thead th {
+            position: sticky;
+            top: 0;
+        }
    .fixed_header tbody{
-   display:block;
-   overflow: auto;
+   
    height: 100px;
    }
 
