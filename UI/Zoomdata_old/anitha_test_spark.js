@@ -15,9 +15,7 @@ looker.plugins.visualizations.add({
 	  element.innerHTML = `
       <style>
 		.chart-container {
-
-    width: 100%;
-    height: 100%;
+   
     white-space: pre;
 	display: block;
 
@@ -28,20 +26,17 @@ looker.plugins.visualizations.add({
 }
 .fixed_header{
 	overflow-y:auto;
-      width:100px;
+      width:70px;
       display:block;
-       height: 100px;
+       height: 70px;
    table-layout: fixed;
    border-collapse: collapse;
    }
   .fixed_header thead th {
-            position:fixed;
+            position:sticky;
             top: 0;
         }
-   .fixed_header tbody{
    
-   height: 100px;
-   }
 
    .fixed_header thead tr {
    display: block;
@@ -191,7 +186,7 @@ background-color: #fff;
 
 		var view = `
 			   <div >
-					<table class="fixed_header tablebash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
+					<table class="fixed_header" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
 						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;" id="top">
 							<tr class="tableHead" >
 							${headers}
