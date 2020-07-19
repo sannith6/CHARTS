@@ -58,7 +58,7 @@ looker.plugins.visualizations.add({
   border: 1px solid #ddd;
    }
     table{
-		boarder-collapse:collapse;
+		border-collapse:collapse;
 		width:100%;
 	}
 	
