@@ -55,16 +55,15 @@ looker.plugins.visualizations.add({
    padding: 10px;
    text-align: left;
    width:357px;
-  
-  
-   border: 1px solid #ddd;
-    
+  border: 1px solid #ddd;
    }
- table,th,td{
-	 
-	 boarder-collapse:collapse;
-
-}
+    table{
+		boarder-collapse:collapse;
+		width:100%;
+	}
+	
+   
+ 
 body {
 	font-family: "Open Sans","Noto Sans JP","Noto Sans CJK KR","Noto Sans Arabic UI","Noto Sans Devanagari UI","Noto Sans Hebrew","Noto Sans Thai UI",Helvetica,Arial,sans-serif,"Noto Sans";
 font-size: 12px;
