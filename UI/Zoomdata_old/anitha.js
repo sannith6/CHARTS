@@ -110,10 +110,10 @@ background-color: #fff;
 	
 	  response.map((amData, i) => {
 		var neCustomchart = document.createElement('div');
-		neCustomchart.style.height = 'auto';
+		neCustomchart.style.height = '80px';
 		neCustomchart.style.width = '100px';
 		neCustomchart.style.position = 'absolute';
-		neCustomchart.style.bottom = 'auto'
+		neCustomchart.style.bottom = '10px'
 
 		// initialize echarts instance with prepared DOM
 		var neChart = echarts.init(neCustomchart);
@@ -165,7 +165,7 @@ background-color: #fff;
 			}
 		  })
 
-		  body += `<td style=" position: relative;" id="graph${i}"></td>`
+		  body += `<td style="padding: 4px; position: relative;" id="graph${i}"></td>`
 		  body += '</tr>'
 		})
 
