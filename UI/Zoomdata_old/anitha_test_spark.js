@@ -31,18 +31,14 @@ looker.plugins.visualizations.add({
    boarder-collapse:collapse;
 
    }
-  .fixed_header tbody{
+.fixed_header tbody{
 	  display:block;
 	  overflow:auto;
 	  height:100px;
   }
-
-
-
-
-   .fixed_header thead tr {
+.fixed_header thead tr {
    display: block;
-   background: #f5f5f5;
+   background: #ffffff;
    }
 
    .fixed_header thead {
@@ -55,7 +51,13 @@ looker.plugins.visualizations.add({
    padding: 10px;
    text-align: left;
    width:357px;
+   background: #ffffff;
   border: 1px solid #ddd;
+
+   }
+   .fixed_header td {
+     display:table-cell;
+     vertical-align: inherit;
    }
     table{
 		border-collapse:collapse;
