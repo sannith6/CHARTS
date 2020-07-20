@@ -34,7 +34,7 @@ looker.plugins.visualizations.add({
 .fixed_header tbody{
 	  display:block;
 	  overflow:auto;
-	  width:500px;
+	  
 	  
 	  height:100px;
   }
@@ -59,13 +59,13 @@ looker.plugins.visualizations.add({
    }
    .fixed_header tbody td,
    .fixed_header thead th{
-	   width:315px;
+	   width:310px;
    }
    table .fixed_header{
-	   width:961px;
+	   width:930px;
    }
    table .fixed_header thead th:lastChild{
-	   width:331px;
+	   width:326px;
    }
    
     table{
