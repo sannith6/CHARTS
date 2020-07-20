@@ -14,57 +14,77 @@ looker.plugins.visualizations.add({
   create: function(element, config) {
 	  element.innerHTML = `
       <style>
-		.chart-container {
-
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    overflow-x: hidden;
-    white-space: pre;
-	display: block;
-
+.chart-container {
+width: 100%;
+height: 200px;
+overflow-y: auto;
+overflow-x: hidden;
+white-space: pre;
+display: block;
 }
 .chart-container
 {
   white-space: normal !important;
 }
-.fixed_header{
-   table-layout: fixed;
-   border-collapse: collapse;
-   }
-
-   .fixed_header tbody{
-   display:block;
-   overflow: auto;
-   height: 100px;
-   }
-
-   .fixed_header thead tr {
-   display: block;
-   background: #f5f5f5;
-   }
-
-   .fixed_header thead {
-   background: black;
-   color:#fff;
-   }
-
-   .fixed_header th, .fixed_header td {
-   width:100%;
-   padding: 10px;
-   text-align: left;
-   width: 357px;
-   border: 1px solid #ddd;
-   }
-
-
+section {
+  position: relative;
+  border: 1px solid #333;
+  padding-top: 37px;
+  background:#ffffff;
 }
+section.positioned {
+  position: absolute;
+  top:100px;
+  left:100px;
+  width:500px;
+  box-shadow: 0 0 15px #333;
+}
+.container {
+  overflow-y: auto;
+  height: 200px;
+}
+table {
+
+  width:100%;
+}
+td + td {
+  border-left:1px solid #000;
+}
+td, th {
+  border-bottom:1px solid #000;
+  background: #ffffff;
+  color: #000;
+  padding: 10px 25px;
+}
+th {
+  height: 0;
+  line-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: transparent;
+  border-left: #000;
+  white-space: nowrap;
+}
+th div{
+  position: absolute;
+  background: #ffffff;
+  color: #000;
+  padding: 9px 25px;
+  top: 0;
+  margin-left: -25px;
+  line-height: normal;
+  border-left: 1px solid #000;
+}
+th:first-child div{
+  border: #000;
+}
+
 body {
 	font-family: "Open Sans","Noto Sans JP","Noto Sans CJK KR","Noto Sans Arabic UI","Noto Sans Devanagari UI","Noto Sans Hebrew","Noto Sans Thai UI",Helvetica,Arial,sans-serif,"Noto Sans";
-font-size: 12px;
-line-height: 1.53846;
-color: #3a4245;
-background-color: #fff;
+  margin:0;
+  padding:0;
+  height:100%;
+
 
 }
 
@@ -187,7 +207,7 @@ background-color: #fff;
 
 		var view = `
 			   <div >
-					<table class="fixed_header tablebash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
+					<table class="table tablebash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
 						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;" id="top">
 							<tr class="tableHead" >
 							${headers}
