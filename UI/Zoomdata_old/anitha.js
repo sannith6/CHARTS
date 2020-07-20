@@ -165,7 +165,7 @@ background-color: #fff;
 			}
 		  })
 
-		  body += `<td style="padding: 10px; position: relative;" id="graph${i}"></td>`
+		  body += `<td style="padding: 10px;line-height: 1.53846; position: relative;" id="graph${i}"></td>`
 		  body += '</tr>'
 		})
 
