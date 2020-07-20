@@ -64,7 +64,7 @@ looker.plugins.visualizations.add({
    table .fixed_header{
 	   width:916px;
    }
-   table .fixed_header thead th:lastChild{
+   table .fixed_header thead th:last-child{
 	   width:316px;
    }
    
