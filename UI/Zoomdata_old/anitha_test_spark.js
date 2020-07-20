@@ -47,18 +47,25 @@ looker.plugins.visualizations.add({
    }
 
    .fixed_header th, .fixed_header td {
-   width:100%;
-   padding: 10px;
+   
+   
    text-align: left;
-   width:357px;
+   
    background: #ffffff;
   border: 1px solid #ddd;
 
    }
-   .fixed_header td {
-     display:table-cell;
-     vertical-align: inherit;
+   .fixed_header tbody td,
+   .fixed_header thead th{
+	   width:140px;
    }
+   table .fixed_header{
+	   width:436px;
+   }
+   table .fixed_header thead th:lastChild{
+	   width:156px;
+   }
+   
     table{
 		border-collapse:collapse;
 		width:100%;
