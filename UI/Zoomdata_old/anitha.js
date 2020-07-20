@@ -29,13 +29,7 @@ looker.plugins.visualizations.add({
 .chart-container {
     white-space: normal !important;
 }
-table {
-  border-collapse: collapse;
-}
 
-table, td, th {
-  border: 1px solid black;
-}
    </style>
     `;
 
