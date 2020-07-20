@@ -15,20 +15,33 @@ looker.plugins.visualizations.add({
 	  element.innerHTML = `
       <style>
 .chart-container {
-  position: relative;
 width: 100%;
 height: 200px;
 overflow-y: auto;
 overflow-x: hidden;
 white-space: pre;
 display: block;
-border: 1px solid #333;
-background:#ffffff;
 }
-.chart-container-positioned
+.chart-container
 {
-  position: absolute;
   white-space: normal !important;
+}
+section {
+  position: relative;
+  border: 1px solid #333;
+  padding-top: 37px;
+  background:#ffffff;
+}
+section.positioned {
+  position: absolute;
+  top:100px;
+  left:100px;
+  width:500px;
+  box-shadow: 0 0 15px #333;
+}
+.container {
+  overflow-y: auto;
+  height: 200px;
 }
 table {
 
@@ -66,42 +79,6 @@ th:first-child div{
   border: #000;
 }
 
-=======
-.fixed_header{
-   table-layout:fixed;
-   boarder-collapse:collapse;
-
-   }
-  .fixed_header tbody{
-	  display:block;
-	  overflow:auto;
-	  height:100px;
-  }
-
-
-
-
-   .fixed_header thead tr {
-   display: block;
-   background: #f5f5f5;
-   }
-
-   .fixed_header thead {
-   background: black;
-   color:#fff;
-   }
-
-   .fixed_header th, .fixed_header td {
-   width:100%;
-   padding: 10px;
-   text-align: left;
-   width:357px;
-  border: 1px solid #ddd;
-   }
-    table{
-		border-collapse:collapse;
-		width:100%;
-	}
 body {
 	font-family: "Open Sans","Noto Sans JP","Noto Sans CJK KR","Noto Sans Arabic UI","Noto Sans Devanagari UI","Noto Sans Hebrew","Noto Sans Thai UI",Helvetica,Arial,sans-serif,"Noto Sans";
   margin:0;
@@ -230,11 +207,7 @@ body {
 
 		var view = `
 			   <div >
-<<<<<<< HEAD
 					<table class="table tablebash" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
-=======
-					<table class="fixed_header" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
->>>>>>> 7d3e55a1be512256fead3a56c87edd7cb25a3e85
 						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;" id="top">
 							<tr class="tableHead" >
 							${headers}
