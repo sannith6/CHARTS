@@ -34,7 +34,7 @@ looker.plugins.visualizations.add({
 .fixed_header tbody{
 	  display:block;
 	  overflow:auto;
-	  width:400px;
+	  width:500px;
 	  
 	  height:100px;
   }
