@@ -14,7 +14,6 @@ looker.plugins.visualizations.add({
   create: function(element, config) {
 	  element.innerHTML = `
       <style>
-<<<<<<< HEAD
 .chart-container {
   position: relative;
 width: 100%;
@@ -103,10 +102,6 @@ th:first-child div{
 		border-collapse:collapse;
 		width:100%;
 	}
-
-
-
->>>>>>> 7d3e55a1be512256fead3a56c87edd7cb25a3e85
 body {
 	font-family: "Open Sans","Noto Sans JP","Noto Sans CJK KR","Noto Sans Arabic UI","Noto Sans Devanagari UI","Noto Sans Hebrew","Noto Sans Thai UI",Helvetica,Arial,sans-serif,"Noto Sans";
   margin:0;
