@@ -63,13 +63,13 @@ looker.plugins.visualizations.add({
    }
    .fixed_header tbody td,
    .fixed_header thead th{
-	   width:309px;
+	   width:310px;
    }
    table .fixed_header{
-	   width:943px;
+	   width:946px;
    }
    table .fixed_header thead th:last-child{
-	   width:325px;
+	   width:326px;
    }
    
     table{
