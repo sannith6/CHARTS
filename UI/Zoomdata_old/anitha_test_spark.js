@@ -65,8 +65,9 @@ looker.plugins.visualizations.add({
     table{
 		border-collapse:collapse;
 		display:block;
-		overflow:auto;
-		height:200px;
+		overflow-y:auto;
+		height:100px;
+		width:16px;
 		
 	}
 
