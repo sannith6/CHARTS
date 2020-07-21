@@ -202,7 +202,7 @@ background-color: #fff;
 
 
 		var view = `
-			   <div style="border:1px;height:200px;width:200px;borderColor:black;">
+			   <div style="border:1px;height:400px;width:400px;">
 					<table class="fixed_header" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
 						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;" id="top">
 							<tr class="tableHead" >
