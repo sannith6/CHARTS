@@ -41,6 +41,16 @@ looker.plugins.visualizations.add({
    background: black;
    color:#fff;
    }
+   .fixed_header tbody{
+
+	  display:block;
+
+	  overflow:auto;
+
+	  height:100px;
+
+  }
+
 
    .fixed_header th, .fixed_header td {
    
@@ -53,23 +63,21 @@ looker.plugins.visualizations.add({
    }
    .fixed_header tbody td,
    .fixed_header thead th{
-	   width:300px;
+	   width:305px;
    }
    table .fixed_header{
-	   width:916px;
+	   width:931px;
    }
    table .fixed_header thead th:last-child{
-	   width:316px;
+	   width:321px;
    }
    
     table{
 		border-collapse:collapse;
-		display:block;
-		overflow-y:auto;
-		height:100px;
-		width:16px;
-		
 	}
+		
+		
+	
 
 
 
@@ -203,7 +211,7 @@ background-color: #fff;
 			   <div>
 					<table class="fixed_header" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
 						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;" id="top">
-							<tr class="tableHead" style="position:fixed;top:0;" >
+							<tr class="tableHead" >
 							${headers}
 							</tr>
 						</thead>
