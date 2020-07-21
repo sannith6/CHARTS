@@ -31,13 +31,7 @@ looker.plugins.visualizations.add({
    boarder-collapse:collapse;
 
    }
-.fixed_header tbody{
-	  display:block;
-	  overflow:auto;
-	  
-	  
-	  height:100px;
-  }
+
 .fixed_header thead tr {
    display: block;
    background: #ffffff;
@@ -70,6 +64,9 @@ looker.plugins.visualizations.add({
    
     table{
 		border-collapse:collapse;
+		display:block;
+		overflow:auto;
+		height:200px;
 		
 	}
 
