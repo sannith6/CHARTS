@@ -205,7 +205,7 @@ background-color: #fff;
 			   <div>
 					<table class="fixed_header" id="usertable_id" style="width:100%;height:100%;border-spacing: 5px;" >
 						<thead style="color: rgba(0,0,0,0.54);font-size: small;font-weight: bold;" id="top">
-							<tr class="tableHead" >
+							<tr class="tableHead" style="position:fixed;top:0;" >
 							${headers}
 							</tr>
 						</thead>
