@@ -68,9 +68,14 @@ looker.plugins.visualizations.add({
    table .fixed_header{
 	   width:946px;
    }
-   table .fixed_header thead th:last-child{
+   table .fixed_header thead th:nth-child(3){
 	   width:326px;
    }
+     th
+
+        {
+            text-decoration: underline;
+		}
    
     table{
 		border-collapse:collapse;
