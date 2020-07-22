@@ -68,25 +68,20 @@ looker.plugins.visualizations.add({
    table .fixed_header{
 	   width:946px;
    }
-   table .fixed_header thead th:nth-child(3){
+   table .fixed_header thead th:lastChild{
 	   width:326px;
    }
      th
 
         {
-            text-decoration: underline;
+            text-decoration:underline;
 		}
    
     table{
 		border-collapse:collapse;
 	}
 		
-		
-	
-
-
-
-body {
+		body {
 	font-family: "Open Sans","Noto Sans JP","Noto Sans CJK KR","Noto Sans Arabic UI","Noto Sans Devanagari UI","Noto Sans Hebrew","Noto Sans Thai UI",Helvetica,Arial,sans-serif,"Noto Sans";
 font-size: 12px;
 line-height: 1.53846;
