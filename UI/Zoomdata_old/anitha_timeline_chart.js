@@ -28,8 +28,18 @@ looker.plugins.visualizations.add({
 	
  
 	
-	
-	function chartChart(response) {
+
+		
+
+		var view = `
+					<div id="parent">
+					  <div id="container"></div>
+
+					</div>
+	`
+
+		chartContainer.innerHTML = view
+		console.log("-------------entered into this method-----------------------");
 		Highcharts.chart("container", {
 		  chart: {
 			zoomType: "x",
@@ -164,25 +174,8 @@ looker.plugins.visualizations.add({
 			}
 		  ]
 		});
-
-
-	}
-	
-
 		
 
-		var view = `
-					<div id="parent">
-					  <div id="container"></div>
-
-					</div>
-	`
-
-		chartContainer.innerHTML = view
-		chartChart(response)
-		
-	  }
-	}
 
 	
 
