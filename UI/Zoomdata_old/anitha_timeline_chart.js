@@ -23,15 +23,7 @@ looker.plugins.visualizations.add({
 	chartContainer.className = 'chart-container';
 	chartContainer.id = 'chartContainer';
 	
-
-
-	
- 
-	
-
-		
-
-		var view = `
+	var view = `
 					<div id="parent">
 					  <div id="container"></div>
 
@@ -179,6 +171,6 @@ looker.plugins.visualizations.add({
 
 	
 
-	doneRendering();
+	
 }
 })
