@@ -23,6 +23,40 @@ looker.plugins.visualizations.add({
 	chartContainer.className = 'chart-container';
 	chartContainer.id = 'chartContainer';
 	
+  },
+  
+   updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
+    // Clear any errors from previous updates:
+    this.clearErrors();
+
+    // Dump data and metadata to console:
+    console.log('updateAsync() data', data)
+    console.log('updateAsync() config', config)
+    console.log('updateAsync() queryResponse', queryResponse)
+	
+	
+    Name = config.query_fields.dimensions[0].name;
+    date = config.query_fields.measures[0].name;
+	console.log(Name);
+	// score = config.query_fields.measures[1].name;
+	// total = config.query_fields.measures[2].name;
+
+	var amData = [];
+	// var colorSet = new am4core.ColorSet();
+    for(var row of data) {
+		var cell = row[queryResponse.fields.dimensions[0].name]
+
+        amData.push([
+            row[date].value,
+
+		]	
+        );
+		
+    }
+	
+	console.log("-------------------------------");
+	console.log('------------amChart data------------------', amData)
+	
 	var view = `
 					<div id="parent">
 					  <div id="container"></div>
@@ -166,11 +200,11 @@ looker.plugins.visualizations.add({
 			}
 		  ]
 		});
-		
+	doneRendering();	
 
-
+   }
 	
 
 	
-}
+
 })
