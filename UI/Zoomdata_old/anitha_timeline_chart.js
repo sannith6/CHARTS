@@ -36,7 +36,7 @@ looker.plugins.visualizations.add({
 	
 	
     Name = config.query_fields.dimensions[0].name;
-    date = config.query_fields.measures[0].name;
+    // date = config.query_fields.measures[1].name;
 	console.log(Name);
 	// score = config.query_fields.measures[1].name;
 	// total = config.query_fields.measures[2].name;
