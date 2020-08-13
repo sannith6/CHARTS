@@ -47,7 +47,7 @@ looker.plugins.visualizations.add({
 		var cell = row[queryResponse.fields.dimensions[0].name]
 
         amData.push([
-            row[date].value,
+            row[Name].value,
 
 		]	
         );
