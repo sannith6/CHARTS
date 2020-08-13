@@ -32,7 +32,7 @@ looker.plugins.visualizations.add({
 
 		chartContainer.innerHTML = view
 		console.log("-------------entered into this method-----------------------");
-		Highcharts.chart("container", {
+		chart = new Highcharts.chart("container", {
 		  chart: {
 			zoomType: "x",
 			type: "timeline",
@@ -165,7 +165,17 @@ looker.plugins.visualizations.add({
 			  ]
 			}
 		  ]
-		});
+		},function(chart) {
+
+					//console.log(chart.xAxis[0].ticks[0]);
+					$.each(chart.xAxis[0].ticks, function(i, tick) {
+						tick.label.on('click', function() {
+							window.open('http://www.google.com', '_blank');
+						});
+					});
+
+        });
+
 		
 
 
