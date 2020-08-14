@@ -137,7 +137,7 @@ looker.plugins.visualizations.add({
 					{
 					  x: parseddate,
 					  name: response[i].hostname,
-					  label: "this is for hour::::"response[i].hour,
+					  label: "this is for hour::::"+response[i].hour,
 					  description:
 						"hi showing "+response[i].hour+"th hour data"
 					}
