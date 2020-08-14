@@ -212,13 +212,5 @@ looker.plugins.visualizations.add({
 				}
 			  ]
 			})
-			});
-		}
-
-
-
-	
-
-	
-
-})
+			})
+		})
