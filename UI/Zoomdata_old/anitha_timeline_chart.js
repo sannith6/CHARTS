@@ -211,11 +211,12 @@ looker.plugins.visualizations.add({
 				  ]
 				}
 			  ]
+			})
 			});
 		}
-	doneRendering();	
 
-   }
+
+
 	
 
 	
