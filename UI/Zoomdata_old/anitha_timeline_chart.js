@@ -85,71 +85,67 @@ looker.plugins.visualizations.add({
 			console.log('entered into main fucnton');
 			
 			Highcharts.chart("container", {
-				
+              
+			  chart: {
+				zoomType: "x",
+				type: "timeline",
+				inverted: true,
+				height: "800px"
+			  },
 
-				  
-				  chart: {
-					zoomType: "x",
-					type: "timeline",
-					inverted: true,
-					height: "800px"
+			  xAxis: {
+				type: "datetime",
+				visible: false
+			  },
+
+			  yAxis: {
+				gridLineWidth: 1,
+				title: null,
+				labels: {
+				  enabled: false
+				}
+			  },
+
+			  legend: {
+				enabled: false
+			  },
+
+			  title: {
+				text: "History and timeline Chart"
+			  },
+
+			 
+
+			  tooltip: {
+				style: {
+				  width: 300
+				}
+			  },
+
+			  series: [
+				{
+				  dataLabels: {
+					allowOverlap: false,
+					format:
+					  '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
+					  "{point.x:%d %b %Y}</span><br/>{point.label}"
 				  },
-
-				  xAxis: {
-					type: "datetime",
-					visible: false
+				  marker: {
+					symbol: "circle"
 				  },
-
-				  yAxis: {
-					gridLineWidth: 1,
-					title: null,
-					labels: {
-					  enabled: false
-					}
-				  },
-
-				  legend: {
-					enabled: false
-				  },
-
-				  title: {
-					text: "History and timeline Chart"
-				  },
-
-				 
-
-				  tooltip: {
-					style: {
-					  width: 300
-					}
-				  },
-					
-				  series: [
+				  data: [
 					{
-					  dataLabels: {
-						allowOverlap: false,
-						format:
-						  '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
-						  "{point.x:%d %b %Y}</span><br/>{point.label}"
-					  },
-					  marker: {
-						symbol: "circle"
-					  },
-					  data: [
-						{
-						  x: parseddate,
-						  name: response[i].hostname,
-						  label: "this is for hour::::"+response[i].hour,
-						  description:
-							"hi showing "+response[i].hour+"th hour data"
-						}
-						
-					  ]
+					  x: parseddate,
+					  name: response[i].hostname,
+					  label: "this is for hour::::"+response[i].hour,
+					  description:
+						"hi showing "+response[i].hour+"th hour data"
 					}
+					
+				  ]
+				}
 			  ]
 			})
 			})
-		};
-		
-		
+		}
 })
