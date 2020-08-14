@@ -82,8 +82,9 @@ looker.plugins.visualizations.add({
 			var date_var = response[i].date+" "+response[i].hourday;
 			var parseddate =  Date.parse(date_var);
 			console.log(parseddate);
+			console.log('entered into main fucnton');
 			Highcharts.chart("container", {
-              console.log('entered into first i iteration');
+              
 			  chart: {
 				zoomType: "x",
 				type: "timeline",
