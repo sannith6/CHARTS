@@ -131,8 +131,8 @@ looker.plugins.visualizations.add({
 				  },
 				  data: [
 					{
-					  x: timelinedata.data,
-					  name: timeline.hostname,
+					  x: timelinedata.date,
+					  name: timelinedata.hostname,
 					  label: "First ISS <br/>Segment Launches",
 					  description:
 						"The first segment of the ISS launches: a Russian proton rocket named Zarya ('sunrise')."
