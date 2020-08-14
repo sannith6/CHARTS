@@ -81,8 +81,9 @@ looker.plugins.visualizations.add({
 
 			var date_var = response[i].date+" "+response[i].hourday;
 			var parseddate =  Date.parse(date_var);
-			
+			console.log(parseddate);
 			Highcharts.chart("container", {
+              console.log('entered into first i iteration');
 			  chart: {
 				zoomType: "x",
 				type: "timeline",
@@ -108,13 +109,10 @@ looker.plugins.visualizations.add({
 			  },
 
 			  title: {
-				text: "History and timeline of the ISS"
+				text: "History and timeline Chart"
 			  },
 
-			  subtitle: {
-				text:
-				  'Source: <a href="https://www.issnationallab.org/">ISS National Lab</a>'
-			  },
+			 
 
 			  tooltip: {
 				style: {
