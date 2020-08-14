@@ -76,7 +76,8 @@ looker.plugins.visualizations.add({
 
 		chartContainer.innerHTML = view
 		console.log("-------------entered into this method-----------------------");
-		
+		console.log(typeof(timelinedata.date));
+		console.log(typeof(Date.UTC(2000, 10, 2)));
 		response.map((timelinedata, i) => { 
 			Highcharts.chart("container", {
 			  chart: {
