@@ -151,24 +151,5 @@ looker.plugins.visualizations.add({
 			})
 		};
 		
-			var series = [];
-				
-			$(function() {
-				var obj;
-				  for (obj in response) {
-					var data = [];
-					response[obj].forEach(function(el) {
-						data.push(eval(el));
-					});
-					series.push({
-						name: obj,
-						data: data
-					});
-				  }
-				  console.log(series);
-
-					series[2].yAxis = 1;
-				  options.series = series;
-				  var chart = new Highcharts.Chart(options);
-				});
+		
 })
