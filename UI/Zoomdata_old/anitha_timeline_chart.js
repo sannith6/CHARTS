@@ -83,69 +83,69 @@ looker.plugins.visualizations.add({
 				
 				response.map((timelinedata, i) => { 
 
-				var date_var = response[i].date+" "+response[i].hourday;
-				var parseddate =  Date.parse(date_var);
-				console.log(parseddate);
-				console.log('entered into main fucnton');
-              
-			  chart: {
-				zoomType: "x",
-				type: "timeline",
-				inverted: true,
-				height: "800px"
-			  },
-
-			  xAxis: {
-				type: "datetime",
-				visible: false
-			  },
-
-			  yAxis: {
-				gridLineWidth: 1,
-				title: null,
-				labels: {
-				  enabled: false
-				}
-			  },
-
-			  legend: {
-				enabled: false
-			  },
-
-			  title: {
-				text: "History and timeline Chart"
-			  },
-
-			 
-
-			  tooltip: {
-				style: {
-				  width: 300
-				}
-			  },
-
-			  series: [
-				{
-				  dataLabels: {
-					allowOverlap: false,
-					format:
-					  '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
-					  "{point.x:%d %b %Y}</span><br/>{point.label}"
+					var date_var = response[i].date+" "+response[i].hourday;
+					var parseddate =  Date.parse(date_var);
+					console.log(parseddate);
+					console.log('entered into main fucnton');
+				  
+				  chart: {
+					zoomType: "x",
+					type: "timeline",
+					inverted: true,
+					height: "800px"
 				  },
-				  marker: {
-					symbol: "circle"
+
+				  xAxis: {
+					type: "datetime",
+					visible: false
 				  },
-				  data: [
-					{
-					  x: parseddate,
-					  name: response[i].hostname,
-					  label: "this is for hour::::"+response[i].hour,
-					  description:
-						"hi showing "+response[i].hour+"th hour data"
+
+				  yAxis: {
+					gridLineWidth: 1,
+					title: null,
+					labels: {
+					  enabled: false
 					}
-					
-				  ]
-				}
+				  },
+
+				  legend: {
+					enabled: false
+				  },
+
+				  title: {
+					text: "History and timeline Chart"
+				  },
+
+				 
+
+				  tooltip: {
+					style: {
+					  width: 300
+					}
+				  },
+					console.log('entered into main fucnton 33333333333');
+				  series: [
+					{
+					  dataLabels: {
+						allowOverlap: false,
+						format:
+						  '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
+						  "{point.x:%d %b %Y}</span><br/>{point.label}"
+					  },
+					  marker: {
+						symbol: "circle"
+					  },
+					  data: [
+						{
+						  x: parseddate,
+						  name: response[i].hostname,
+						  label: "this is for hour::::"+response[i].hour,
+						  description:
+							"hi showing "+response[i].hour+"th hour data"
+						}
+						
+					  ]
+					}
 			  ]
 			})
 			})
