@@ -78,10 +78,11 @@ looker.plugins.visualizations.add({
 		console.log("-------------entered into this method-----------------------");
 
 		response.map((timelinedata, i) => { 
-			console.log("-------------entered into this method-----------------------");
-			console.log(response);
-			console.log(response[i].date);
-			console.log(timelinedata[i].date+" "+timelinedata[i].hourday)
+
+			var date_var = response[i].date+" "+response[i].hourday;
+			var parseddate =  Date.parse(date_var);
+			console.log(parseddate);
+			console.log(typeof(parseddate));
 			Highcharts.chart("container", {
 			  chart: {
 				zoomType: "x",
