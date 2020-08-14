@@ -77,16 +77,16 @@ looker.plugins.visualizations.add({
 		chartContainer.innerHTML = view
 		console.log("-------------entered into this method-----------------------");
 
+		response.map((timelinedata, i) => { 
 
+			var date_var = response[i].date+" "+response[i].hourday;
+			var parseddate =  Date.parse(date_var);
+			console.log(parseddate);
+			console.log('entered into main fucnton');
 			
 			Highcharts.chart("container", {
 				
-				response.map((timelinedata, i) => { 
 
-					var date_var = response[i].date+" "+response[i].hourday;
-					var parseddate =  Date.parse(date_var);
-					console.log(parseddate);
-					console.log('entered into main fucnton');
 				  
 				  chart: {
 					zoomType: "x",
@@ -123,7 +123,7 @@ looker.plugins.visualizations.add({
 					  width: 300
 					}
 				  },
-					console.log('entered into main fucnton 33333333333');
+					
 				  series: [
 					{
 					  dataLabels: {
@@ -149,5 +149,26 @@ looker.plugins.visualizations.add({
 			  ]
 			})
 			})
-		}
+		};
+		
+			var series = [];
+				
+			$(function() {
+				var obj;
+				  for (obj in response) {
+					var data = [];
+					response[obj].forEach(function(el) {
+						data.push(eval(el));
+					});
+					series.push({
+						name: obj,
+						data: data
+					});
+				  }
+				  console.log(series);
+
+					series[2].yAxis = 1;
+				  options.series = series;
+				  var chart = new Highcharts.Chart(options);
+				});
 })
