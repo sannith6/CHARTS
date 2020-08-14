@@ -213,4 +213,5 @@ looker.plugins.visualizations.add({
 			  ]
 			})
 			})
-		})
+		}
+})
