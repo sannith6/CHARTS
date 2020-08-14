@@ -35,9 +35,11 @@ looker.plugins.visualizations.add({
     console.log('updateAsync() queryResponse', queryResponse)
 	
 	
-    Name = config.query_fields.dimensions[0].name;
-    // date = config.query_fields.measures[1].name;
-	console.log(Name);
+    date = config.query_fields.dimensions[0].name;
+	hostname = config.query_fields.dimensions[1].name;
+	hourday = config.query_fields.dimensions[3].name;
+	hour = config.query_fields.dimensions[4].name;
+  
 	// score = config.query_fields.measures[1].name;
 	// total = config.query_fields.measures[2].name;
 
@@ -47,8 +49,10 @@ looker.plugins.visualizations.add({
 		var cell = row[queryResponse.fields.dimensions[0].name]
 
         amData.push([
-            row[Name].value,
-
+            row[date].value,
+			row[hostname].value,
+			row[hourday].value,
+			row[hour].value
 		]	
         );
 		
