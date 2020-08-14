@@ -80,13 +80,18 @@ looker.plugins.visualizations.add({
 			test_0bj['hostname'] = item[2];
 			test_0bj['hourday'] = item[3];
 			test_0bj['hour'] = item[4];
-			};
+		
 			
-		  response.push(test_0bj)
+			response.push(test_0bj)
 		})
 		console.log('-------------response data is------------',response);
 		// createChartTable(response)
 		}
+		
+
+		
+		
+		
 		
 	
 	var view = `
