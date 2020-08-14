@@ -58,8 +58,36 @@ looker.plugins.visualizations.add({
 		
     }
 	
-	console.log("-------------------------------");
-	console.log('------------amChart data------------------', amData)
+	// console.log("-------------------------------");
+	// console.log('------------timeline data------------------', amData)
+	
+	
+	//converting input data
+	console.log("<<<< DATA Checking >>>>", JSON.stringify(amData))
+	
+	if (amData.length > 0) {
+		var reducedDataSource = amData
+		var response = []
+
+		console.log('<<<< reducedData >>>> ', reducedDataSource)
+		console.log(typeof(reducedDataSource));
+
+		console.log('testing inside a function');
+		
+		reducedDataSource.map((item, index) => {
+			test_0bj = {}
+			test_0bj['date'] = item[1];
+			test_0bj['hostname'] = item[2];
+			test_0bj['hourday'] = item[3];
+			test_0bj['hour'] = item[4];
+			};
+			
+		  response.push(test_0bj)
+		})
+		console.log('-------------response data is------------',response);
+		// createChartTable(response)
+		}
+		
 	
 	var view = `
 					<div id="parent">
