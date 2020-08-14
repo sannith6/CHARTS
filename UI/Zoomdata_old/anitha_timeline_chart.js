@@ -76,9 +76,10 @@ looker.plugins.visualizations.add({
 
 		chartContainer.innerHTML = view
 		console.log("-------------entered into this method-----------------------");
-		console.log(timelinedata.date);
-		console.log(Date.UTC(2000, 10, 2));
+
 		response.map((timelinedata, i) => { 
+			console.log("-------------entered into this method-----------------------");
+			console.log(timelinedata[i].date+" "+timelinedata[i].hourday)
 			Highcharts.chart("container", {
 			  chart: {
 				zoomType: "x",
