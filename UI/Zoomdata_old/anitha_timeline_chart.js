@@ -81,8 +81,7 @@ looker.plugins.visualizations.add({
 
 			var date_var = response[i].date+" "+response[i].hourday;
 			var parseddate =  Date.parse(date_var);
-			console.log(parseddate);
-			console.log(typeof(parseddate));
+			
 			Highcharts.chart("container", {
 			  chart: {
 				zoomType: "x",
@@ -136,11 +135,11 @@ looker.plugins.visualizations.add({
 				  },
 				  data: [
 					{
-					  x: timelinedata.date,
-					  name: timelinedata.hostname,
-					  label: "First ISS <br/>Segment Launches",
+					  x: parseddate,
+					  name: response[i].hostname,
+					  label: "this is for hour::::"response[i].hour,
 					  description:
-						"The first segment of the ISS launches: a Russian proton rocket named Zarya ('sunrise')."
+						"hi showing "+response[i].hour+"th hour data"
 					}
 					// {
 					  // x: Date.UTC(1998, 11, 4),
