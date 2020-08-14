@@ -79,6 +79,8 @@ looker.plugins.visualizations.add({
 
 		response.map((timelinedata, i) => { 
 			console.log("-------------entered into this method-----------------------");
+			console.log(response);
+			console.log(response[i].date);
 			console.log(timelinedata[i].date+" "+timelinedata[i].hourday)
 			Highcharts.chart("container", {
 			  chart: {
