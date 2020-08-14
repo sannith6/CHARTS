@@ -76,10 +76,10 @@ looker.plugins.visualizations.add({
 		
 		reducedDataSource.map((item, index) => {
 			test_0bj = {}
-			test_0bj['date'] = item[1];
-			test_0bj['hostname'] = item[2];
-			test_0bj['hourday'] = item[3];
-			test_0bj['hour'] = item[4];
+			test_0bj['date'] = item[0];
+			test_0bj['hostname'] = item[1];
+			test_0bj['hourday'] = item[2];
+			test_0bj['hour'] = item[3];
 		
 			
 			response.push(test_0bj)
