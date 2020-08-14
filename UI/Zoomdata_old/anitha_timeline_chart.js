@@ -69,6 +69,7 @@ looker.plugins.visualizations.add({
 		
 	   function chartChart(response) {
 	
+		console.log("<<<<<<<< inside chartchart response method >>>>>>>>")
 		response.map((timelinedata, i) => {
 			var view = `
 						<div id="parent">
@@ -88,7 +89,7 @@ looker.plugins.visualizations.add({
 			  },
 
 			  xAxis: {
-				type: "date",
+				type: "datetime",
 				visible: false
 			  },
 
@@ -142,11 +143,11 @@ looker.plugins.visualizations.add({
 		}
 		
 
-	doneRendering();	
+
 
    }
 	
-
+	doneRendering();	
 	
 
 })
