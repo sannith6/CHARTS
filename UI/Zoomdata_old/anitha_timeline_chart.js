@@ -50,7 +50,7 @@ looker.plugins.visualizations.add({
     }
 
 	//converting input data
-	console.log("<<<< DATA Checking >>>>", JSON.stringify(timelinedata))
+	// console.log("<<<< DATA Checking >>>>", JSON.stringify(timelinedata))
 	
 	if (timelinedata.length > 0) {
 		var reducedDataSource = timelinedata
@@ -83,13 +83,10 @@ looker.plugins.visualizations.add({
 						x: Date.parse(item.date+" "+item.hourday),
 						name: item.hostname,
 						label: "this is for hour::::"+item.hour,
-						description: "hi showing "+item.hour+"th hour data"
+						description: "this is the data at the time "+item.hourday
 					};
 			});
-        console.log("---------checking final data------------");					
-		console.log(finalData);
-		console.log("---------ended final data ------------");
-	
+
 		Highcharts.chart("container", {
 		  
 		  chart: {
@@ -142,8 +139,6 @@ looker.plugins.visualizations.add({
 			  data: 
 				finalData
 				
-				
-			  
 			}
 		  ]
 		})
