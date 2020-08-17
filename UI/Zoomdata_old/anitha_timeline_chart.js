@@ -76,34 +76,16 @@ looker.plugins.visualizations.add({
 
 		chartContainer.innerHTML = view
 
-		var finalData =[{
-      x: Date.UTC(1998, 10, 20)
-    
-    }, {
-      x: Date.UTC(1998, 11, 4)
-      
-    }, {
-      x: Date.UTC(2000, 10, 2)
-     
-    }, {
-      x: Date.UTC(2001, 1, 7)
-     
-    }, {
-      x: Date.UTC(2005, 0, 1)
-    
-    }, {
-      x: Date.UTC(2008, 1, 7)
-    }, {
-      x: Date.UTC(2008, 2, 11)
-    }, {
-      x: Date.UTC(2010, 10, 2)
-    }, {
-      x: Date.UTC(2011, 1, 14)
-    }, {
-      x: Date.UTC(2011, 13, 6)
-    }, {
-      x: Date.UTC(2013, 0, 1)
-    }]
+		var finalData =
+			response &&
+				response.map((item, index) => {
+					return {
+						x: Date.parse(item.date+" "+item.hourday),
+						name: item.hostname,
+						label: "this is for hour::::"+item.hour,
+						description: "hi showing "+item.hour+"th hour data"
+					};
+			});
         console.log("---------checking final data------------");					
 		console.log(finalData);
 		console.log("---------ended final data ------------");
@@ -158,9 +140,7 @@ looker.plugins.visualizations.add({
 				symbol: "circle"
 			  },
 			  data: 
-				
-				
-				  finalData
+				finalData
 				
 				
 			  
