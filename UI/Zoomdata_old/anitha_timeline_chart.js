@@ -157,13 +157,13 @@ looker.plugins.visualizations.add({
 			  marker: {
 				symbol: "circle"
 			  },
-			  data: [
+			  data: 
 				
 				
 				  finalData
 				
 				
-			  ]
+			  
 			}
 		  ]
 		})
