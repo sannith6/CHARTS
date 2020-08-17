@@ -141,9 +141,9 @@ looker.plugins.visualizations.add({
 			  },
 			  data: [
 				
-				{
+				
 				  finalData
-				}
+				
 				
 			  ]
 			}
