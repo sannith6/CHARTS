@@ -202,7 +202,7 @@ looker.plugins.visualizations.add({
 						  },
 						  data: [
 							{
-							  x: parseddate,
+							  x: parseddata,
 							  name: parseddata,
 							  label: "this is for hour::::",
 							  description:
