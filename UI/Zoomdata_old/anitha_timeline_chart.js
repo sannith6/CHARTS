@@ -151,6 +151,68 @@ looker.plugins.visualizations.add({
 			function charts(parseddata){
 				console.log("---------");
 				console.log(parseddata);
+				Highcharts.chart("container", {
+              
+					  chart: {
+						zoomType: "x",
+						type: "timeline",
+						inverted: true,
+						height: "800px"
+					  },
+
+					  xAxis: {
+						type: "datetime",
+						visible: false
+					  },
+
+					  yAxis: {
+						gridLineWidth: 1,
+						title: null,
+						labels: {
+						  enabled: false
+						}
+					  },
+
+					  legend: {
+						enabled: false
+					  },
+
+					  title: {
+						text: "History and timeline Chart"
+					  },
+
+					 
+
+					  tooltip: {
+						style: {
+						  width: 300
+						}
+					  },
+
+					  series: [
+						{
+						  dataLabels: {
+							allowOverlap: false,
+							format:
+							  '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
+							  "{point.x:%d %b %Y}</span><br/>{point.label}"
+						  },
+						  marker: {
+							symbol: "circle"
+						  },
+						  data: [
+							{
+							  x: parseddate,
+							  name: parseddata,
+							  label: "this is for hour::::",
+							  description:
+								"hi showing "
+							}
+							
+						  ]
+						}
+					  ]
+					})
 			}
 		}
 })
