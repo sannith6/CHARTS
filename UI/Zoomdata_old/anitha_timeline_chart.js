@@ -63,7 +63,7 @@ looker.plugins.visualizations.add({
 			test_0bj['hour'] = item[3];
 		    response.push(test_0bj)
 		})
-		console.log('-------------response data is------------',response);
+		
 		
 		}
 		
@@ -82,13 +82,13 @@ looker.plugins.visualizations.add({
 					return {
 						x: Date.parse(item.date+" "+item.hourday),
 						name: item.hostname,
-						label: item.hour,
-						description: "label for testing",
+						label: "this is for hour::::"+item.hour,
+						description: "hi showing "+item.hour+"th hour data"
 					};
 			});
-        console.log("---------------------");					
+        console.log("---------checking final data------------");					
 		console.log(finalData);
-		console.log("---------------------");
+		console.log("---------ended final data ------------");
 	
 		Highcharts.chart("container", {
 		  
