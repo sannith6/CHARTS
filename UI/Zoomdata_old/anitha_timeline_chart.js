@@ -83,69 +83,74 @@ looker.plugins.visualizations.add({
 			var parseddate =  Date.parse(date_var);
 			console.log(parseddate);
 			console.log('entered into main fucnton');
+			charts(parseddate);
 			
-			Highcharts.chart("container", {
+			// Highcharts.chart("container", {
               
-			  chart: {
-				zoomType: "x",
-				type: "timeline",
-				inverted: true,
-				height: "800px"
-			  },
+			  // chart: {
+				// zoomType: "x",
+				// type: "timeline",
+				// inverted: true,
+				// height: "800px"
+			  // },
 
-			  xAxis: {
-				type: "datetime",
-				visible: false
-			  },
+			  // xAxis: {
+				// type: "datetime",
+				// visible: false
+			  // },
 
-			  yAxis: {
-				gridLineWidth: 1,
-				title: null,
-				labels: {
-				  enabled: false
-				}
-			  },
+			  // yAxis: {
+				// gridLineWidth: 1,
+				// title: null,
+				// labels: {
+				  // enabled: false
+				// }
+			  // },
 
-			  legend: {
-				enabled: false
-			  },
+			  // legend: {
+				// enabled: false
+			  // },
 
-			  title: {
-				text: "History and timeline Chart"
-			  },
+			  // title: {
+				// text: "History and timeline Chart"
+			  // },
 
 			 
 
-			  tooltip: {
-				style: {
-				  width: 300
-				}
-			  },
+			  // tooltip: {
+				// style: {
+				  // width: 300
+				// }
+			  // },
 
-			  series: [
-				{
-				  dataLabels: {
-					allowOverlap: false,
-					format:
-					  '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
-					  "{point.x:%d %b %Y}</span><br/>{point.label}"
-				  },
-				  marker: {
-					symbol: "circle"
-				  },
-				  data: [
-					{
-					  x: parseddate,
-					  name: response[i].hostname,
-					  label: "this is for hour::::"+response[i].hour,
-					  description:
-						"hi showing "+response[i].hour+"th hour data"
-					}
+			  // series: [
+				// {
+				  // dataLabels: {
+					// allowOverlap: false,
+					// format:
+					  // '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
+					  // "{point.x:%d %b %Y}</span><br/>{point.label}"
+				  // },
+				  // marker: {
+					// symbol: "circle"
+				  // },
+				  // data: [
+					// {
+					  // x: parseddate,
+					  // name: response[i].hostname,
+					  // label: "this is for hour::::"+response[i].hour,
+					  // description:
+						// "hi showing "+response[i].hour+"th hour data"
+					// }
 					
-				  ]
-				}
-			  ]
+				  // ]
+				// }
+			  // ]
+			// })
 			})
-			})
+			function charts(parseddata){
+				console,log("---------");
+				console.log(parseddata);
+			}
 		}
 })
