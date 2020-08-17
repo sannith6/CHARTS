@@ -75,147 +75,82 @@ looker.plugins.visualizations.add({
 	`
 
 		chartContainer.innerHTML = view
-		console.log("-------------entered into this method-----------------------");
 
-		response.map((timelinedata, i) => { 
-			console.log("-----------");
-			console.log(response);
-			console.log("------------");
-			var date_var = response[i].date+" "+response[i].hourday;
-			var parseddate =  Date.parse(date_var);
-			console.log(parseddate);
-			console.log('entered into main fucnton');
-			// charts(parseddate);
-			
-			Highcharts.chart("container", {
-              
-			  chart: {
-				zoomType: "x",
-				type: "timeline",
-				inverted: true,
-				height: "800px"
-			  },
+		var finalData =
+			response &&
+				response.map((item, index) => {
+					return {
+						x: Date.parse(item.date+" "+item.hourday),
+						name: item.hostname,
+						label: item.hour,
+						description: "label for testing",
+					};
+			});
+        console.log("---------------------");					
+		console.log(finalData);
+		console.log("---------------------");
+	
+		Highcharts.chart("container", {
+		  
+		  chart: {
+			zoomType: "x",
+			type: "timeline",
+			inverted: true,
+			height: "800px"
+		  },
 
-			  xAxis: {
-				type: "datetime",
-				visible: false
-			  },
+		  xAxis: {
+			type: "datetime",
+			visible: false
+		  },
 
-			  yAxis: {
-				gridLineWidth: 1,
-				title: null,
-				labels: {
-				  enabled: false
-				}
-			  },
-
-			  legend: {
-				enabled: false
-			  },
-
-			  title: {
-				text: "History and timeline Chart"
-			  },
-
-			 
-
-			  tooltip: {
-				style: {
-				  width: 300
-				}
-			  },
-
-			  series: [
-				{
-				  dataLabels: {
-					allowOverlap: false,
-					format:
-					  '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
-					  "{point.x:%d %b %Y}</span><br/>{point.label}"
-				  },
-				  marker: {
-					symbol: "circle"
-				  },
-				  data: [
-				    parseddata
-					// {
-					  // x:  ,
-					  // name: response[i].hostname,
-					  // label: "this is for hour::::"+response[i].hour,
-					  // description:
-						// "hi showing "+response[i].hour+"th hour data"
-					// }
-					
-				  ]
-				}
-			  ]
-			})
-			})
-			function charts(parseddata){
-				console.log("---------");
-				console.log(parseddata);
-				// Highcharts.chart("container", {
-              
-					  // chart: {
-						// zoomType: "x",
-						// type: "timeline",
-						// inverted: true,
-						// height: "800px"
-					  // },
-
-					  // xAxis: {
-						// type: "datetime",
-						// visible: false
-					  // },
-
-					  // yAxis: {
-						// gridLineWidth: 1,
-						// title: null,
-						// labels: {
-						  // enabled: false
-						// }
-					  // },
-
-					  // legend: {
-						// enabled: false
-					  // },
-
-					  // title: {
-						// text: "History and timeline Chart"
-					  // },
-
-					 
-
-					  // tooltip: {
-						// style: {
-						  // width: 300
-						// }
-					  // },
-
-					  // series: [
-						// {
-						  // dataLabels: {
-							// allowOverlap: false,
-							// format:
-							  // '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
-							  // "{point.x:%d %b %Y}</span><br/>{point.label}"
-						  // },
-						  // marker: {
-							// symbol: "circle"
-						  // },
-						  // data: [
-							// {
-							  // x: parseddata,
-							  // name: parseddata,
-							  // label: "this is for hour::::",
-							  // description:
-								// "hi showing "
-							// }
-							
-						  // ]
-						// }
-					  // ]
-					// })
+		  yAxis: {
+			gridLineWidth: 1,
+			title: null,
+			labels: {
+			  enabled: false
 			}
+		  },
+
+		  legend: {
+			enabled: false
+		  },
+
+		  title: {
+			text: "History and timeline Chart"
+		  },
+
+		 
+
+		  tooltip: {
+			style: {
+			  width: 300
+			}
+		  },
+
+		  series: [
+			{
+			  dataLabels: {
+				allowOverlap: false,
+				format:
+				  '<span style="color:{point.color}">● </span><span style="font-weight: bold;" > ' +
+				  "{point.x:%d %b %Y}</span><br/>{point.label}"
+			  },
+			  marker: {
+				symbol: "circle"
+			  },
+			  data: [
+				
+				{
+				  finalData
+				}
+				
+			  ]
+			}
+		  ]
+		})
+
+
+
 		}
 })
