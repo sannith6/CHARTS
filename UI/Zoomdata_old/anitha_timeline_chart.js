@@ -135,13 +135,14 @@ looker.plugins.visualizations.add({
 					symbol: "circle"
 				  },
 				  data: [
-					{
-					  x: parseddate,
-					  name: response[i].hostname,
-					  label: "this is for hour::::"+response[i].hour,
-					  description:
-						"hi showing "+response[i].hour+"th hour data"
-					}
+				    parseddata
+					// {
+					  // x:  ,
+					  // name: response[i].hostname,
+					  // label: "this is for hour::::"+response[i].hour,
+					  // description:
+						// "hi showing "+response[i].hour+"th hour data"
+					// }
 					
 				  ]
 				}
