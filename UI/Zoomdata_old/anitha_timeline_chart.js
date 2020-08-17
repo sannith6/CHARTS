@@ -78,7 +78,9 @@ looker.plugins.visualizations.add({
 		console.log("-------------entered into this method-----------------------");
 
 		response.map((timelinedata, i) => { 
-
+			console.log("-----------");
+			console.log(response);
+			console.log("------------");
 			var date_var = response[i].date+" "+response[i].hourday;
 			var parseddate =  Date.parse(date_var);
 			console.log(parseddate);
