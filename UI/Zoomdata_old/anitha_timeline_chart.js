@@ -77,60 +77,32 @@ looker.plugins.visualizations.add({
 		chartContainer.innerHTML = view
 
 		var finalData =[{
-      x: Date.UTC(1998, 10, 20),
-      name: 'First ISS Segment Launches',
-      label: 'First ISS <br/>Segment Launches',
-      description: "The first segment of the ISS launches: a Russian proton rocket named Zarya ('sunrise')."
+      x: Date.UTC(1998, 10, 20)
+    
     }, {
-      x: Date.UTC(1998, 11, 4),
-      name: 'First U.S.-built component launches',
-      label: 'First U.S.-built <br/>component launches',
-      description: "Unity, the first U.S.-built component of the International Space Station launches—the first Space Shuttle mission dedicated to assembly of the station."
+      x: Date.UTC(1998, 11, 4)
+      
     }, {
-      x: Date.UTC(2000, 10, 2),
-      name: 'First Crew to Reside on Station',
-      label: 'First Crew <br/>to Reside on Station',
-      description: "Astronaut Bill Shepherd and cosmonauts Yuri Gidzenko and Sergei Krikalev become the first crew to reside onboard the station, staying several months."
+      x: Date.UTC(2000, 10, 2)
+     
     }, {
-      x: Date.UTC(2001, 1, 7),
-      name: 'U.S. Lab Module Added',
-      label: 'U.S. Lab Module Added',
-      description: "Destiny, the U.S. Laboratory module, becomes part of the station. Destiny continues to be the primary research laboratory for U.S. payloads."
+      x: Date.UTC(2001, 1, 7)
+     
     }, {
-      x: Date.UTC(2005, 0, 1),
-      name: 'U.S. Lab Module Recognized as Newest U.S. National Laboratory',
-      label: 'U.S. Lab Module <br/>Recognized as Newest U.S.<br/> National Laboratory',
-      description: "Congress designates the U.S. portion of the ISS as the nation's newest national laboratory to maximize its use for other U.S. government agencies and for academic and private institutions."
+      x: Date.UTC(2005, 0, 1)
+    
     }, {
-      x: Date.UTC(2008, 1, 7),
-      name: 'European Lab Joins the ISS',
-      label: 'European Lab Joins the ISS',
-      description: "The European Space Agency’s Columbus Laboratory becomes part of the station."
+      x: Date.UTC(2008, 1, 7)
     }, {
-      x: Date.UTC(2008, 2, 11),
-      name: 'Japanese Lab Joins the ISS',
-      label: 'Japanese Lab Joins the ISS',
-      description: "The first Japanese Kibo laboratory module becomes part of the station."
+      x: Date.UTC(2008, 2, 11)
     }, {
-      x: Date.UTC(2010, 10, 2),
-      name: 'ISS 10-Year Anniversary',
-      label: 'ISS 10-Year Anniversary',
-      description: "The ISS celebrates its 10-year anniversary of continuous human occupation. Since Expedition 1 in the fall of 2000, 202 people had visited the station."
+      x: Date.UTC(2010, 10, 2)
     }, {
-      x: Date.UTC(2011, 1, 14),
-      name: 'NASA Issues Cooperative Agreement',
-      label: 'NASA Issues<br/> Cooperative Agreement',
-      description: "NASA issues a cooperative agreement notice for a management partner."
+      x: Date.UTC(2011, 1, 14)
     }, {
-      x: Date.UTC(2011, 13, 6),
-      name: 'NASA Selects the ISS National Lab',
-      label: 'NASA Selects<br/> the ISS National Lab',
-      description: "NASA selects the Center for the Advancement of Science in Space to manage the ISS National Lab."
+      x: Date.UTC(2011, 13, 6)
     }, {
-      x: Date.UTC(2013, 0, 1),
-      name: 'First ISS Lab Research Flight',
-      label: 'First ISS Lab Research Flight',
-      description: "Proteins can be grown as crystals in space with nearly perfect three-dimensional structures useful for the development of new drugs. The ISS National Lab's protein crystal growth (PCG) series of flights began in 2013, allowing researchers to utilize the unique environment of the ISS."
+      x: Date.UTC(2013, 0, 1)
     }]
         console.log("---------checking final data------------");					
 		console.log(finalData);
