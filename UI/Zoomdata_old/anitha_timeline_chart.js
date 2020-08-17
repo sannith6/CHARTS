@@ -149,7 +149,7 @@ looker.plugins.visualizations.add({
 			// })
 			})
 			function charts(parseddata){
-				console,log("---------");
+				console.log("---------");
 				console.log(parseddata);
 			}
 		}
