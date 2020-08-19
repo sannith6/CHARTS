@@ -31,8 +31,8 @@ looker.plugins.visualizations.add({
 	
     date = config.query_fields.dimensions[0].name;
 	hostname = config.query_fields.dimensions[1].name;
-	hourday = config.query_fields.dimensions[3].name;
-	hour = config.query_fields.dimensions[4].name;
+	hourday = config.query_fields.dimensions[2].name;
+	hour = config.query_fields.dimensions[3].name;
 
 	var timelinedata = [];
 
