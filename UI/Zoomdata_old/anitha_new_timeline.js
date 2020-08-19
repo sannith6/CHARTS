@@ -29,119 +29,182 @@ looker.plugins.visualizations.add({
     // Clear any errors from previous updates:
     this.clearErrors();
 	
-    date = config.query_fields.dimensions[0].name;
-	hostname = config.query_fields.dimensions[1].name;
-	hourday = config.query_fields.dimensions[2].name;
-	hour = config.query_fields.dimensions[3].name;
+ 
 
-	var timelinedata = [];
-
-    for(var row of data) {
-		// var cell = row[queryResponse.fields.dimensions[0].name]
-
-        timelinedata.push([
-            row[date].value,
-			row[hostname].value,
-			row[hourday].value,
-			row[hour].value
-		]	
-        );
-		
-    }
-
-	//converting input data
-	// console.log("<<<< DATA Checking >>>>", JSON.stringify(timelinedata))
 	
-	if (timelinedata.length > 0) {
-		var reducedDataSource = timelinedata
-		var response = []
-	    reducedDataSource.map((item, index) => {
-			test_0bj = {}
-			test_0bj['date'] = item[0];
-			test_0bj['hostname'] = item[1];
-			test_0bj['hourday'] = item[2];
-			test_0bj['hour'] = item[3];
-		    response.push(test_0bj)
-		})
-		
-		
-		}
 		
 		var view = `
-					<div id="parent">
-					  <div id="container"></div>
+					   <div class="container max-width-lg cd-timeline__container">
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--picture">
+          <img src="assets/img/cd-icon-picture.svg" alt="Picture">
+        </div> <!-- cd-timeline__img -->
 
-					</div>
+        <div class="cd-timeline__content text-component">
+          <h2>Title of section 1</h2>
+          <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">Jan 14</span>
+            <a href="#0" class="btn btn--subtle">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--movie">
+          <img src="assets/img/cd-icon-movie.svg" alt="Movie">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component">
+          <h2>Title of section 2</h2>
+          <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde?</p>
+          
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">Jan 18</span>
+            <a href="#0" class="btn btn--subtle">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--picture">
+          <img src="assets/img/cd-icon-picture.svg" alt="Picture">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component">
+          <h2>Title of section 3</h2>
+          <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, obcaecati, quisquam id molestias eaque asperiores voluptatibus cupiditate error assumenda delectus odit similique earum voluptatem doloremque dolorem ipsam quae rerum quis. Odit, itaque, deserunt corporis vero ipsum nisi eius odio natus ullam provident pariatur temporibus quia eos repellat consequuntur perferendis enim amet quae quasi repudiandae sed quod veniam dolore possimus rem voluptatum eveniet eligendi quis fugiat aliquam sunt similique aut adipisci.</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">Jan 24</span>
+            <a href="#0" class="btn btn--subtle">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--location">
+          <img src="assets/img/cd-icon-location.svg" alt="Location">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component">
+          <h2>Title of section 4</h2>
+          <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum aut hic quasi placeat iure tempora laudantium ipsa ad debitis unde? Iste voluptatibus minus veritatis qui ut.</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">Feb 14</span>
+            <a href="#0" class="btn btn--subtle">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--location">
+          <img src="assets/img/cd-icon-location.svg" alt="Location">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component">
+          <h2>Title of section 5</h2>
+          <p class="color-contrast-medium">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, optio, dolorum provident rerum.</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">Feb 18</span>
+            <a href="#0" class="btn btn--subtle">Read more</a>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+
+      <div class="cd-timeline__block">
+        <div class="cd-timeline__img cd-timeline__img--movie">
+          <img src="assets/img/cd-icon-movie.svg" alt="Movie">
+        </div> <!-- cd-timeline__img -->
+
+        <div class="cd-timeline__content text-component">
+          <h2>Final Section</h2>
+          <p class="color-contrast-medium">This is the content of the last section</p>
+
+          <div class="flex justify-between items-center">
+            <span class="cd-timeline__date">Feb 26</span>
+          </div>
+        </div> <!-- cd-timeline__content -->
+      </div> <!-- cd-timeline__block -->
+    </div>
 	`
 
 		chartContainer.innerHTML = view
 
-		var finalData =
-			response &&
-				response.map((item, index) => {
-					return {
-						x: Date.parse(item.date+" "+item.hourday),
-						name: item.hostname,
-						label: "this is for hour::::"+item.hour,
-						description: "this is the data at the time "+item.hourday
-					};
-			});
+	(function(){
+  // Vertical Timeline - by CodyHouse.co
+	function VerticalTimeline( element ) {
+		this.element = element;
+		this.blocks = this.element.getElementsByClassName("cd-timeline__block");
+		this.images = this.element.getElementsByClassName("cd-timeline__img");
+		this.contents = this.element.getElementsByClassName("cd-timeline__content");
+		this.offset = 0.8;
+		this.hideBlocks();
+	};
 
-		Highcharts.chart("container", {
-		  
-		  chart: {
-			zoomType: "x",
-			type: "timeline",
-			inverted: true,
-			height: "800px"
-		  },
+	VerticalTimeline.prototype.hideBlocks = function() {
+		if ( !"classList" in document.documentElement ) {
+			return; // no animation on older browsers
+		}
+		//hide timeline blocks which are outside the viewport
+		var self = this;
+		for( var i = 0; i < this.blocks.length; i++) {
+			(function(i){
+				if( self.blocks[i].getBoundingClientRect().top > window.innerHeight*self.offset ) {
+					self.images[i].classList.add("cd-timeline__img--hidden"); 
+					self.contents[i].classList.add("cd-timeline__content--hidden"); 
+				}
+			})(i);
+		}
+	};
 
-		  xAxis: {
-			type: "datetime",
-			visible: false
-		  },
+	VerticalTimeline.prototype.showBlocks = function() {
+		if ( ! "classList" in document.documentElement ) {
+			return;
+		}
+		var self = this;
+		for( var i = 0; i < this.blocks.length; i++) {
+			(function(i){
+				if( self.contents[i].classList.contains("cd-timeline__content--hidden") && self.blocks[i].getBoundingClientRect().top <= window.innerHeight*self.offset ) {
+					// add bounce-in animation
+					self.images[i].classList.add("cd-timeline__img--bounce-in");
+					self.contents[i].classList.add("cd-timeline__content--bounce-in");
+					self.images[i].classList.remove("cd-timeline__img--hidden");
+					self.contents[i].classList.remove("cd-timeline__content--hidden");
+				}
+			})(i);
+		}
+	};
 
-		  yAxis: {
-			gridLineWidth: 1,
-			title: null,
-			labels: {
-			  enabled: false
+	var verticalTimelines = document.getElementsByClassName("js-cd-timeline"),
+		verticalTimelinesArray = [],
+		scrolling = false;
+	if( verticalTimelines.length > 0 ) {
+		for( var i = 0; i < verticalTimelines.length; i++) {
+			(function(i){
+				verticalTimelinesArray.push(new VerticalTimeline(verticalTimelines[i]));
+			})(i);
+		}
+
+		//show timeline blocks on scrolling
+		window.addEventListener("scroll", function(event) {
+			if( !scrolling ) {
+				scrolling = true;
+				(!window.requestAnimationFrame) ? setTimeout(checkTimelineScroll, 250) : window.requestAnimationFrame(checkTimelineScroll);
 			}
-		  },
+		});
+	}
 
-		  legend: {
-			enabled: false
-		  },
-
-		  title: {
-			text: "History and timeline Chart"
-		  },
-
-		 
-
-		  tooltip: {
-			style: {
-			  width: 300
-			}
-		  },
-
-		  series: [
-			{
-			  dataLabels: {
-				allowOverlap: false,
-				format:
-				  
-				  "{point.x:%d %b %Y}</span><br/>{point.label}"
-			  },
-			  marker: {
-				symbol: "circle"
-			  },
-			  data: 
-				finalData
-				
-			}
-		  ]
-		})
+	function checkTimelineScroll() {
+		verticalTimelinesArray.forEach(function(timeline){
+			timeline.showBlocks();
+		});
+		scrolling = false;
+	};
+})();
 
 
 
