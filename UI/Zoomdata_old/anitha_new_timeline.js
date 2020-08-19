@@ -37,7 +37,7 @@ looker.plugins.visualizations.add({
 	var timelinedata = [];
 
     for(var row of data) {
-		var cell = row[queryResponse.fields.dimensions[0].name]
+		// var cell = row[queryResponse.fields.dimensions[0].name]
 
         timelinedata.push([
             row[date].value,
