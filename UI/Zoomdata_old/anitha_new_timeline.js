@@ -130,7 +130,7 @@ looker.plugins.visualizations.add({
 			  dataLabels: {
 				allowOverlap: false,
 				format:
-				  '<span style="color:{point.color}"> </span>' +
+				  
 				  "{point.x:%d %b %Y}</span><br/>{point.label}"
 			  },
 			  marker: {
