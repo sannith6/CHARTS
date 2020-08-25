@@ -26,27 +26,27 @@ looker.plugins.visualizations.add({
 	
   },
  
-var maxLength = 25;
- 
-function myfunction(id, dots, btn){
-	console.log('entered here');
-	console.log(id);
-	console.log(dots);
-	console.log(btn);
-	var dots = document.getElementById(dots);
-	var moreText = document.getElementById(id);
-	var btnText = document.getElementById(btn);
+	var maxLength = 25;
+	 
+	function myfunction(id, dots, btn){
+		console.log('entered here');
+		console.log(id);
+		console.log(dots);
+		console.log(btn);
+		var dots = document.getElementById(dots);
+		var moreText = document.getElementById(id);
+		var btnText = document.getElementById(btn);
 
-	if (dots.style.display === "none") {
-		dots.style.display = "inline";
-		btnText.innerHTML = "Read more";
-		moreText.style.display = "none";
-	} else {
-		dots.style.display = "none";
-		btnText.innerHTML = "Read less";
-		moreText.style.display = "inline";
+		if (dots.style.display === "none") {
+			dots.style.display = "inline";
+			btnText.innerHTML = "Read more";
+			moreText.style.display = "none";
+		} else {
+			dots.style.display = "none";
+			btnText.innerHTML = "Read less";
+			moreText.style.display = "inline";
+		}
 	}
-}
   
    updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Clear any errors from previous updates:
@@ -72,8 +72,7 @@ function myfunction(id, dots, btn){
 		
     }
 
-
-
+    var maxLength = 25;
 
 	//converting input data
 	// console.log("<<<< DATA Checking >>>>", JSON.stringify(timelinedata))
