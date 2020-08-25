@@ -86,9 +86,9 @@ looker.plugins.visualizations.add({
 					};
 			});
 			
-		var myFunction =  function myFunction() {
-			console.log("entered into a function");
-			}			
+		var getRectArea = function() {
+			console.log('enterd in to the functionnnnnnnn');
+			};			
 
 		Highcharts.chart("container", {
 		  
@@ -134,7 +134,7 @@ looker.plugins.visualizations.add({
 			  dataLabels: {
 				allowOverlap: false,
 				format:
-				  `<button onclick="myFunction()" id="myBtn">Read more</button>`,
+				  `<button onclick="getRectArea()" id="myBtn">Read more</button>`,
 				  enabled: true,
                   useHTML: true
 			  },
