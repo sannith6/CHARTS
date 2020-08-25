@@ -99,18 +99,39 @@ looker.plugins.visualizations.add({
 			});
 			
 
+		
 
-		Highcharts.chart("container", {
-		  
+		function myfunction(id, dots, btn){
+			console.log('entered here');
+			console.log(id);
+			console.log(dots);
+			console.log(btn);
+			var dots = document.getElementById(dots);
+			var moreText = document.getElementById(id);
+			var btnText = document.getElementById(btn);
+
+			if (dots.style.display === "none") {
+				dots.style.display = "inline";
+				btnText.innerHTML = "Read more";
+				moreText.style.display = "none";
+			} else {
+				dots.style.display = "none";
+				btnText.innerHTML = "Read less";
+				moreText.style.display = "inline";
+			}
+		}
+
+		Highcharts.chart('container', {
+
 		  chart: {
-			zoomType: "x",
-			type: "timeline",
+			zoomType: 'x',
+			type: 'timeline',
 			inverted: true,
-			height: "800px"
+			height: '800px'
 		  },
 
 		  xAxis: {
-			type: "datetime",
+			type: 'datetime',
 			visible: false
 		  },
 
@@ -127,10 +148,12 @@ looker.plugins.visualizations.add({
 		  },
 
 		  title: {
-			text: "History and timeline Chart"
+			text: 'History and timeline of the ISS'
 		  },
 
-		 
+		  subtitle: {
+			text: 'Source: <a href="https://www.issnationallab.org/">ISS National Lab</a>'
+		  },
 
 		  tooltip: {
 			enabled: false,
@@ -139,39 +162,22 @@ looker.plugins.visualizations.add({
 			}
 		  },
 
-		  series: [
-			{
-				dataLabels: {
-				allowOverlap: false,
-				format: `<span style="color:{point.color}">● </span><span style="font-weight: bold;" >{point.x:%d %b %Y}</span><img style="margin-left: 20px; margin-bottom: -5px;"  src="https://www.google.com/images/srpr/logo11w.png" height=15px /><br/><div>{point.label}<br/><span id='{point.abc}'></span><br\><span style="display: none;" id="{point.rf}">{point.description}<br> cccccccccccccccccccccc<br></span><br><button onclick="myfunction('{point.rf}','{point.abc}','{point.btn}')" id='{point.btn}'>Read more...</button></div>`,
-				useHTML: true
-				},
-			  marker: {
-				symbol: "circle"
-			  },
-			  data: 
-				finalData
-				
-			}
-		  ]
-		})
-		
-		function myfunction(id, dots, btn){
-			console.log('entered into a myfunction');
-			var dots = document.getElementById(dots);
-			var moreText = document.getElementById(id);
-			var btnText = document.getElementById(btn);
+		  series: [{
+			dataLabels: {
+			  allowOverlap: false,
+			  format: `<span style="color:{point.color}">● </span><span style="font-weight: bold;" >{point.x:%d %b %Y}</span><img style="margin-left: 20px; margin-bottom: -5px;"  src="https://www.google.com/images/srpr/logo11w.png" height=15px /><br/><div>{point.label}<br/><span id='{point.abc}'>...</span><br\><span style="display: none;" id="{point.rf}">erisque enim lvccc<br> cccccccccccccccccccccc<br></span><br><button onclick="myfunction('{point.rf}','{point.abc}','{point.btn}')" id='{point.btn}'>Read more...</button></div>`,
+			  useHTML: true
+			},
+			marker: {
+			  symbol: 'circle'
+			},
+			data: finalData
+		  }]
+		});
 
-			if (dots.style.display === "none") {
-				dots.style.display = "inline";
-				btnText.innerHTML = "Read more";
-				moreText.style.display = "none";
-			} else {
-				dots.style.display = "none";
-				btnText.innerHTML = "Read less";
-				moreText.style.display = "inline";
-			}
-		}
+
+		
+
 			
 
 
