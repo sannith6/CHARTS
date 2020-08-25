@@ -86,7 +86,7 @@ looker.plugins.visualizations.add({
 					};
 			});
 			
-		var myFunction =  function() {
+		var myFunction =  function myFunction() {
 			console.log("entered into a function");
 			}			
 
@@ -134,7 +134,7 @@ looker.plugins.visualizations.add({
 			  dataLabels: {
 				allowOverlap: false,
 				format:
-				  "<span style='color:{point.color};'> </span><span style='font-weight: bold;display:inline-block;float:left;' > " + "{point.x:%d %b %Y}" + "<img src='https://www.google.com/images/srpr/logo11w.png'  width='40' height='10' style='float:right;display:inline-block;'></span><br/>"+"{point.label}<br/><p>{point.description}<span id='dots'>...</span><span id='more'>erisque</span></p><button onclick='myFunction()' id='myBtn'>Read more</button>",
+				  `<button onclick="myFunction()" id="myBtn">Read more</button>`,
 				  enabled: true,
                   useHTML: true
 			  },
