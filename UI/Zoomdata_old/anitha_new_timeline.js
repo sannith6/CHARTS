@@ -86,9 +86,9 @@ looker.plugins.visualizations.add({
 					};
 			});
 			
-		var getRectArea = function() {
+		function getRectArea(){
 			console.log('enterd in to the functionnnnnnnn');
-			};			
+		};			
 
 		Highcharts.chart("container", {
 		  
