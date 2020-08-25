@@ -26,7 +26,7 @@ looker.plugins.visualizations.add({
 	
   },
  
-	var maxLength = 25;
+
 	 
 	function myfunction(id, dots, btn){
 		console.log('entered here');
