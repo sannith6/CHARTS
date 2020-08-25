@@ -105,7 +105,7 @@ looker.plugins.visualizations.add({
 			btnText.innerHTML = "Read less";
 			moreText.style.display = "inline";
 			}
-			// }			
+		}			
 
 		Highcharts.chart("container", {
 		  
