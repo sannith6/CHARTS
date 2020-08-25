@@ -142,7 +142,7 @@ looker.plugins.visualizations.add({
 			  dataLabels: {
 				allowOverlap: false,
 				format:
-				  `<button onclick="myFunction()">Read more</button><button onclick="myFunction1()">Read more1</button>`,
+				  `<button onclick="https://www.google.com/">Read more</button>`,
 				  enabled: true,
                   useHTML: true
 			  },
