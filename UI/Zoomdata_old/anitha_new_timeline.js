@@ -103,7 +103,7 @@ looker.plugins.visualizations.add({
 			
 
 		
-		function myfunction(id, dots, btn){
+		myfunction: function(id, dots, btn){
 			console.log('entered here');
 			console.log(id);
 			console.log(dots);
