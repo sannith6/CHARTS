@@ -134,7 +134,7 @@ looker.plugins.visualizations.add({
 			  dataLabels: {
 				allowOverlap: false,
 				format:
-				  `<button onclick="getRectArea()" id="myBtn">Read more</button>`,
+				  `<a onclick="getRectArea()">Read more</a>`,
 				  enabled: true,
                   useHTML: true
 			  },
