@@ -109,7 +109,7 @@ looker.plugins.visualizations.add({
 						x: Date.parse(item.date+" "+item.hourday),
 						name: item.hostname,
 						label: "this is for user::::"+item.hostname,
-						description: "data at:: "+item.hourday
+						description: "this data is at hour:::: "+item.hourday
 					};
 			});
 		console.log('---------checking final data------------');
@@ -160,7 +160,7 @@ looker.plugins.visualizations.add({
 			  dataLabels: {
 				allowOverlap: false,
 				format:
-				  `<span style="color:{point.color}">● </span><span style="font-weight: bold;" >{point.x:%d %b %Y}</span><img style="margin-left: 20px; margin-bottom: -5px;"  src="https://www.google.com/images/srpr/logo11w.png" height=15px /><br/><div>{point.label}<br/><span id='{point.abc}'>...</span><br\><span style="display: none;" id="{point.rf}">erisque enim lvccc<br> cccccccccccccccccccccc<br></span><br><button onclick="myfunction('{point.rf}','{point.abc}','{point.btn}')" id='{point.btn}'>Read more...</button></div>`,
+				  `<span style="color:{point.color}">● </span><span style="font-weight: bold;" >{point.x:%d %b %Y}</span><img style="margin-left: 20px; margin-bottom: -5px;"  src="https://www.google.com/images/srpr/logo11w.png" height=15px /><br/><div>{point.label}<br/><span id='{point.abc}'>...</span><br\><span style="display: none;" id="{point.rf}">{point.description}<br></span><br><button onclick="myfunction('{point.rf}','{point.abc}','{point.btn}')" id='{point.btn}'>Read more...</button></div>`,
       
 				  enabled: true,
                   useHTML: true
