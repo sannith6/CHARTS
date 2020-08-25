@@ -86,7 +86,7 @@ looker.plugins.visualizations.add({
 					};
 			});
 			
-		myFunction: function() {
+		var myFunction =  function() {
 			console.log("entered into a function");
 			}			
 
