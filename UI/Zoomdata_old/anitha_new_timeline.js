@@ -22,6 +22,10 @@ looker.plugins.visualizations.add({
 	
   },
   
+	function myFunction(){
+		console.log('enterd in to the functionnnnnnnn');
+	};
+  
    updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Clear any errors from previous updates:
     this.clearErrors();
@@ -86,9 +90,7 @@ looker.plugins.visualizations.add({
 					};
 			});
 			
-		function myFunction(){
-			console.log('enterd in to the functionnnnnnnn');
-		};			
+			
 
 		Highcharts.chart("container", {
 		  
@@ -148,10 +150,7 @@ looker.plugins.visualizations.add({
 		  ]
 		})
 		
-		function myFunction(){
-			console.log('enterd in to the functionnnnnnnn 222222222222222');
-		};	
-
+	
 
 
 		}
