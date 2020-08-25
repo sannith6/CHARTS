@@ -103,17 +103,12 @@ looker.plugins.visualizations.add({
 			response &&
 				response.map((item, index) => {
 					return {
-						rf: "data"+index,
-						abc: "dots"+index,
-						btn: "btn"+index,
 						x: Date.parse(item.date+" "+item.hourday),
 						name: item.hostname,
 						label: "this is for user::::"+item.hostname,
 						description: "data at:: "+item.hourday
 					};
 			});
-		console.log('---------checking final data------------');
-		console.log(finalData);
 			
 
 		Highcharts.chart("container", {
@@ -160,8 +155,7 @@ looker.plugins.visualizations.add({
 			  dataLabels: {
 				allowOverlap: false,
 				format:
-				  `<span style="color:{point.color}">● </span><span style="font-weight: bold;" >{point.x:%d %b %Y}</span><img style="margin-left: 20px; margin-bottom: -5px;"  src="https://www.google.com/images/srpr/logo11w.png" height=15px /><br/><div>{point.label}<br/><span id='{point.abc}'>...</span><br\><span style="display: none;" id="{point.rf}">erisque enim lvccc<br> cccccccccccccccccccccc<br></span><br><button onclick="myfunction('{point.rf}','{point.abc}','{point.btn}')" id='{point.btn}'>Read more...</button></div>`,
-      
+				  "<span style='color:{point.color};'> </span><span style='font-weight: bold;display:inline-block;float:left;' > " + "{point.x:%d %b %Y}" + "<img src='https://www.google.com/images/srpr/logo11w.png'  width='40' height='10' style='float:right;display:inline-block;'></span><br/>"+"{point.label}<br/><p>{point.description}<span id='dots'>...</span><span id='more'>erisque</span></p><button onclick='myFunction()' id='myBtn'>Read more</button>",
 				  enabled: true,
                   useHTML: true
 			  },
