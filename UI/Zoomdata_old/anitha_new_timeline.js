@@ -86,7 +86,7 @@ looker.plugins.visualizations.add({
 					};
 			});
 			
-		function getRectArea(){
+		function myFunction(){
 			console.log('enterd in to the functionnnnnnnn');
 		};			
 
@@ -134,7 +134,7 @@ looker.plugins.visualizations.add({
 			  dataLabels: {
 				allowOverlap: false,
 				format:
-				  `<a onclick="getRectArea()">Read more</a>`,
+				  `<button onclick="myFunction()">Read more</button>`,
 				  enabled: true,
                   useHTML: true
 			  },
@@ -147,6 +147,10 @@ looker.plugins.visualizations.add({
 			}
 		  ]
 		})
+		
+		function myFunction(){
+			console.log('enterd in to the functionnnnnnnn 222222222222222');
+		};	
 
 
 
