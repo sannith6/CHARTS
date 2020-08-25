@@ -21,10 +21,10 @@ looker.plugins.visualizations.add({
 	chartContainer.id = 'chartContainer';
 	
   },
+
   
-	function myFunction(){
-		console.log('enterd in to the functionnnnnnnn');
-	};
+
+  
   
    updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Clear any errors from previous updates:
@@ -90,7 +90,11 @@ looker.plugins.visualizations.add({
 					};
 			});
 			
-			
+		  create: function(){
+			  function myFunction(){
+				  console.log('this is the new myfunction created inside highcharts');
+			  }
+		}	
 
 		Highcharts.chart("container", {
 		  
