@@ -25,10 +25,6 @@ looker.plugins.visualizations.add({
 	chartContainer.id = 'chartContainer';
 	
   },
- 
-
-	 
-
   
    updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Clear any errors from previous updates:
@@ -54,7 +50,8 @@ looker.plugins.visualizations.add({
 		
     }
 
-    var maxLength = 25;
+
+
 
 	//converting input data
 	// console.log("<<<< DATA Checking >>>>", JSON.stringify(timelinedata))
@@ -82,59 +79,45 @@ looker.plugins.visualizations.add({
 	`
 
 		chartContainer.innerHTML = view
-		
-		
-
-
 
 		var finalData =
 			response &&
 				response.map((item, index) => {
 					return {
-						rf: "data"+index,
-						abc: "dots"+index,
-						btn: "btn"+index,
 						x: Date.parse(item.date+" "+item.hourday),
 						name: item.hostname,
-						label: "user:"+item.hostname.substring(0, maxLength) + '...',
-						description: "this data is at hour:::: "+item.hourday
+						label: "this is for user::::"+item.hostname,
+						description: "data at:: "+item.hourday
 					};
 			});
 			
-
-		
-		myfunction: function(id, dots, btn){
-			console.log('entered here');
-			console.log(id);
-			console.log(dots);
-			console.log(btn);
-			var dots = document.getElementById(dots);
-			var moreText = document.getElementById(id);
-			var btnText = document.getElementById(btn);
+		function myFunction() {
+			var dots = document.getElementById("dots");
+			var moreText = document.getElementById("more");
+			var btnText = document.getElementById("myBtn");
 
 			if (dots.style.display === "none") {
-				dots.style.display = "inline";
-				btnText.innerHTML = "Read more";
-				moreText.style.display = "none";
+			dots.style.display = "inline";
+			btnText.innerHTML = "Read more";
+			moreText.style.display = "none";
 			} else {
-				dots.style.display = "none";
-				btnText.innerHTML = "Read less";
-				moreText.style.display = "inline";
+			dots.style.display = "none";
+			btnText.innerHTML = "Read less";
+			moreText.style.display = "inline";
 			}
-		}
+			// }			
 
-
-		Highcharts.chart('container', {
-
+		Highcharts.chart("container", {
+		  
 		  chart: {
-			zoomType: 'x',
-			type: 'timeline',
+			zoomType: "x",
+			type: "timeline",
 			inverted: true,
-			height: '800px'
+			height: "800px"
 		  },
 
 		  xAxis: {
-			type: 'datetime',
+			type: "datetime",
 			visible: false
 		  },
 
@@ -151,12 +134,10 @@ looker.plugins.visualizations.add({
 		  },
 
 		  title: {
-			text: 'History and timeline of the ISS'
+			text: "History and timeline Chart"
 		  },
 
-		  subtitle: {
-			text: 'Source: <a href="https://www.issnationallab.org/">ISS National Lab</a>'
-		  },
+		 
 
 		  tooltip: {
 			enabled: false,
@@ -165,23 +146,24 @@ looker.plugins.visualizations.add({
 			}
 		  },
 
-		  series: [{
-			dataLabels: {
-			  allowOverlap: false,
-			  format: `<span style="color:{point.color}">● </span><span style="font-weight: bold;" >{point.x:%d %b %Y}</span><img style="margin-left: 20px; margin-bottom: -5px;"  src="https://www.google.com/images/srpr/logo11w.png" height=15px /><br/><div>{point.label}<br/><span id='{point.abc}'>...</span><br\><span style="display: none;" id="{point.rf}">erisque enim lvccc<br> cccccccccccccccccccccc<br></span><br><button onclick="myfunction('{point.rf}','{point.abc}','{point.btn}')" id='{point.btn}'>Read more...</button></div>`,
-			  useHTML: true
-			},
-			marker: {
-			  symbol: 'circle'
-			},
-			data: finalData
-		  }]
-		});
-
-
-		
-
-			
+		  series: [
+			{
+			  dataLabels: {
+				allowOverlap: false,
+				format:
+				  "<span style='color:{point.color};'> </span><span style='font-weight: bold;display:inline-block;float:left;' > " + "{point.x:%d %b %Y}" + "<img src='https://www.google.com/images/srpr/logo11w.png'  width='40' height='10' style='float:right;display:inline-block;'></span><br/>"+"{point.label}<br/><p>{point.description}<span id='dots'>...</span><span id='more'>erisque</span></p><button onclick='myFunction()' id='myBtn'>Read more</button>",
+				  enabled: true,
+                  useHTML: true
+			  },
+			  marker: {
+				symbol: "circle"
+			  },
+			  data: 
+				finalData
+				
+			}
+		  ]
+		})
 
 
 
