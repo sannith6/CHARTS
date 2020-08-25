@@ -6,7 +6,6 @@ looker.plugins.visualizations.add({
 			  width: 70%;
 			  display: inline-block;
 			}
-
 			@media (max-width: 576px) {
 			  #container {
 				width: 100%;
@@ -14,10 +13,7 @@ looker.plugins.visualizations.add({
 			  }
 			}
 			#more {display: none;}
-
    </style>
-
-
 	`;
 
 	var chartContainer = element.appendChild(document.createElement("div"));
@@ -74,7 +70,6 @@ looker.plugins.visualizations.add({
 		var view = `
 					<div id="parent">
 					  <div id="container"></div>
-
 					</div>
 	`
 
@@ -105,7 +100,7 @@ looker.plugins.visualizations.add({
 			btnText.innerHTML = "Read less";
 			moreText.style.display = "inline";
 			}
-		}			
+			}			
 
 		Highcharts.chart("container", {
 		  
