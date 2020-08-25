@@ -98,23 +98,7 @@ looker.plugins.visualizations.add({
 					};
 			});
 			
-		function myfunction(id, dots, btn){
-			console.log('entered into a myfunction');
-			var dots = document.getElementById(dots);
-			var moreText = document.getElementById(id);
-			var btnText = document.getElementById(btn);
 
-			if (dots.style.display === "none") {
-				dots.style.display = "inline";
-				btnText.innerHTML = "Read more";
-				moreText.style.display = "none";
-			} else {
-				dots.style.display = "none";
-				btnText.innerHTML = "Read less";
-				moreText.style.display = "inline";
-			}
-		}
-			
 
 		Highcharts.chart("container", {
 		  
@@ -171,6 +155,24 @@ looker.plugins.visualizations.add({
 			}
 		  ]
 		})
+		
+		function myfunction(id, dots, btn){
+			console.log('entered into a myfunction');
+			var dots = document.getElementById(dots);
+			var moreText = document.getElementById(id);
+			var btnText = document.getElementById(btn);
+
+			if (dots.style.display === "none") {
+				dots.style.display = "inline";
+				btnText.innerHTML = "Read more";
+				moreText.style.display = "none";
+			} else {
+				dots.style.display = "none";
+				btnText.innerHTML = "Read less";
+				moreText.style.display = "inline";
+			}
+		}
+			
 
 
 
