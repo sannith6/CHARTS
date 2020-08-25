@@ -80,10 +80,25 @@ looker.plugins.visualizations.add({
 
 		chartContainer.innerHTML = view
 		
-		var maxLength = 20;
+		var maxLength = 25;
 
+
+
+		var finalData =
+			response &&
+				response.map((item, index) => {
+					return {
+						rf: "data"+index,
+						abc: "dots"+index,
+						btn: "btn"+index,
+						x: Date.parse(item.date+" "+item.hourday),
+						name: item.hostname,
+						label: "user:"+item.hostname.substring(0, maxLength) + '...',
+						description: "this data is at hour:::: "+item.hourday
+					};
+			});
 		function myfunction(id, dots, btn){
-
+			console.log('entered into a myfunction');
 			var dots = document.getElementById(dots);
 			var moreText = document.getElementById(id);
 			var btnText = document.getElementById(btn);
@@ -98,22 +113,6 @@ looker.plugins.visualizations.add({
 				moreText.style.display = "inline";
 			}
 		}
-
-		var finalData =
-			response &&
-				response.map((item, index) => {
-					return {
-						rf: "data"+index,
-						abc: "dots"+index,
-						btn: "btn"+index,
-						x: Date.parse(item.date+" "+item.hourday),
-						name: item.hostname,
-						label: "this is for user::::"+item.hostname,
-						description: "this data is at hour:::: "+item.hourday
-					};
-			});
-		console.log('---------checking final data------------');
-		console.log(finalData);
 			
 
 		Highcharts.chart("container", {
