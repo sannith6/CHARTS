@@ -97,6 +97,7 @@ looker.plugins.visualizations.add({
 						description: "this data is at hour:::: "+item.hourday
 					};
 			});
+			
 		function myfunction(id, dots, btn){
 			console.log('entered into a myfunction');
 			var dots = document.getElementById(dots);
@@ -156,14 +157,11 @@ looker.plugins.visualizations.add({
 
 		  series: [
 			{
-			  dataLabels: {
+				dataLabels: {
 				allowOverlap: false,
-				format:
-				  `<span style="color:{point.color}">● </span><span style="font-weight: bold;" >{point.x:%d %b %Y}</span><img style="margin-left: 20px; margin-bottom: -5px;"  src="https://www.google.com/images/srpr/logo11w.png" height=15px /><br/><div>{point.label}<br/><span id='{point.abc}'>...</span><br\><span style="display: none;" id="{point.rf}">{point.description}<br></span><br><button onclick="myfunction('{point.rf}','{point.abc}','{point.btn}')" id='{point.btn}'>Read more...</button></div>`,
-      
-				  enabled: true,
-                  useHTML: true
-			  },
+				format: `<span style="color:{point.color}">● </span><span style="font-weight: bold;" >{point.x:%d %b %Y}</span><img style="margin-left: 20px; margin-bottom: -5px;"  src="https://www.google.com/images/srpr/logo11w.png" height=15px /><br/><div>{point.label}<br/><span id='{point.abc}'></span><br\><span style="display: none;" id="{point.rf}">{point.description}<br> cccccccccccccccccccccc<br></span><br><button onclick="myfunction('{point.rf}','{point.abc}','{point.btn}')" id='{point.btn}'>Read more...</button></div>`,
+				useHTML: true
+				},
 			  marker: {
 				symbol: "circle"
 			  },
