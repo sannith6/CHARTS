@@ -21,10 +21,12 @@ looker.plugins.visualizations.add({
 	chartContainer.id = 'chartContainer';
 	
   },
-
   
-
-  
+  create: function(){
+		  function myFunction1(){
+			  console.log('this is the new myfunction created inside highcharts 111111111111111111');
+		  }
+		}	,
   
    updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Clear any errors from previous updates:
@@ -90,11 +92,11 @@ looker.plugins.visualizations.add({
 					};
 			});
 			
-		  create: function(){
-			  function myFunction(){
-				  console.log('this is the new myfunction created inside highcharts');
-			  }
-		}	
+		create: function(){
+		  function myFunction(){
+			  console.log('this is the new myfunction created inside highcharts');
+		  }
+		}	;	
 
 		Highcharts.chart("container", {
 		  
@@ -140,7 +142,7 @@ looker.plugins.visualizations.add({
 			  dataLabels: {
 				allowOverlap: false,
 				format:
-				  `<button onclick="myFunction()">Read more</button>`,
+				  `<button onclick="myFunction()">Read more</button><button onclick="myFunction1()">Read more1</button>`,
 				  enabled: true,
                   useHTML: true
 			  },
