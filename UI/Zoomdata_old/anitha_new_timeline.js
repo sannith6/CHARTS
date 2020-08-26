@@ -33,7 +33,7 @@ looker.plugins.visualizations.add({
     date = config.query_fields.dimensions[0].name;
 	hostname = config.query_fields.dimensions[1].name;
 	hourday = config.query_fields.dimensions[2].name;
-	// hour = config.query_fields.dimensions[4].name;
+	logintype = config.query_fields.dimensions[3].name;
 
 	var timelinedata = [];
 
@@ -44,7 +44,7 @@ looker.plugins.visualizations.add({
             row[date].value,
 			row[hostname].value,
 			row[hourday].value
-			// row[hour].value
+			row[logintype].value
 		]	
         );
 		
@@ -64,7 +64,7 @@ looker.plugins.visualizations.add({
 			test_0bj['date'] = item[0];
 			test_0bj['hostname'] = item[1];
 			test_0bj['hourday'] = item[2];
-			// test_0bj['hour'] = item[3];
+			test_0bj['logintype'] = item[3];
 		    response.push(test_0bj)
 		})
 		
@@ -107,7 +107,8 @@ looker.plugins.visualizations.add({
 						x: Date.parse(item.date+" "+item.hourday),
 						name: item.hostname,
 						label: '<b>'+labelname.substring(0,maxLength)+'-'+'<br/>'+labelname.substring(maxLength,labelname.length)+'<b>',
-						description: "data at:: "+item.hourday
+						description: "data at:: "+item.hourday,
+						logintype: item.logintype
 					};
 			});
 			
