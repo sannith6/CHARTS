@@ -43,7 +43,7 @@ looker.plugins.visualizations.add({
         timelinedata.push([
             row[date].value,
 			row[hostname].value,
-			row[hourday].value
+			row[hourday].value,
 			row[logintype].value
 		]	
         );
