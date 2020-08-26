@@ -6,6 +6,7 @@ looker.plugins.visualizations.add({
 			  width: 70%;
 			  display: inline-block;
 			}
+
 			@media (max-width: 576px) {
 			  #container {
 				width: 100%;
@@ -13,7 +14,10 @@ looker.plugins.visualizations.add({
 			  }
 			}
 			#more {display: none;}
+
    </style>
+
+
 	`;
 
 	var chartContainer = element.appendChild(document.createElement("div"));
@@ -21,8 +25,6 @@ looker.plugins.visualizations.add({
 	chartContainer.id = 'chartContainer';
 	
   },
-  
-
   
    updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Clear any errors from previous updates:
@@ -72,23 +74,43 @@ looker.plugins.visualizations.add({
 		var view = `
 					<div id="parent">
 					  <div id="container"></div>
+
 					</div>
 	`
 
 		chartContainer.innerHTML = view
+		
+		var maxLength = 25;
+
+		// function myfunction(id, dots, btn){
+
+			// var dots = document.getElementById(dots);
+			// var moreText = document.getElementById(id);
+			// var btnText = document.getElementById(btn);
+
+			// if (dots.style.display === "none") {
+				// dots.style.display = "inline";
+				// btnText.innerHTML = "Read more";
+				// moreText.style.display = "none";
+			// } else {
+				// dots.style.display = "none";
+				// btnText.innerHTML = "Read less";
+				// moreText.style.display = "inline";
+			// }
+		// }
 
 		var finalData =
 			response &&
 				response.map((item, index) => {
+					labelname = "this is for user::::"+item.hostname
 					return {
 						x: Date.parse(item.date+" "+item.hourday),
 						name: item.hostname,
-						label: "this is for user::::"+item.hostname,
+						label: labelname.substring(0,maxLength)+'-'+<br/>+labelname.substring(maxLength,labelname.length),
 						description: "data at:: "+item.hourday
 					};
 			});
 			
-
 
 		Highcharts.chart("container", {
 		  
@@ -134,7 +156,7 @@ looker.plugins.visualizations.add({
 			  dataLabels: {
 				allowOverlap: false,
 				format:
-				  `<button onclick="https://www.google.com/">Read more</button>`,
+				  `<span style="color:{point.color}">● </span><span style="font-weight: bold;" >{point.x:%d %b %Y}</span><img style="margin-left: 20px; margin-bottom: -5px;"  src="https://www.google.com/images/srpr/logo11w.png" height=15px /><br/><div>{point.label}<br/><span id='{point.abc}'>...</span><br\><span style="display: none;" id="{point.rf}">erisque enim lvccc<br> cccccccccccccccccccccc<br></span><br><button onclick="myfunction('{point.rf}','{point.abc}','{point.btn}')" id='{point.btn}'>Read more...</button></div>`,
 				  enabled: true,
                   useHTML: true
 			  },
@@ -147,8 +169,7 @@ looker.plugins.visualizations.add({
 			}
 		  ]
 		})
-		
-	
+
 
 
 		}
