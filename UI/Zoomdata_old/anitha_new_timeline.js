@@ -106,7 +106,7 @@ looker.plugins.visualizations.add({
 					return {
 						x: Date.parse(item.date+" "+item.hourday),
 						name: item.hostname,
-						label: labelname.substring(0,maxLength)+'-'+<br/>+labelname.substring(maxLength,labelname.length),
+						label: labelname.substring(0,maxLength)+'-'+'<br/>'+labelname.substring(maxLength,labelname.length),
 						description: "data at:: "+item.hourday
 					};
 			});
