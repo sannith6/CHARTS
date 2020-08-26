@@ -111,7 +111,8 @@ looker.plugins.visualizations.add({
 						logintype: item.logintype
 					};
 			});
-			
+		console.log('---------checking final data-----------');
+		console.log(finalData);
 
 		Highcharts.chart("container", {
 		  
