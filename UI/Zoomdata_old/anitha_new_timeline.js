@@ -102,11 +102,11 @@ looker.plugins.visualizations.add({
 		var finalData =
 			response &&
 				response.map((item, index) => {
-					labelname = "this is for user::::"+item.hostname
+					labelname = "This is for user::::"+item.hostname
 					return {
 						x: Date.parse(item.date+" "+item.hourday),
 						name: item.hostname,
-						label: labelname.substring(0,maxLength)+'-'+'<br/>'+labelname.substring(maxLength,labelname.length),
+						label: '<b>'+labelname.substring(0,maxLength)+'-'+'<br/>'+labelname.substring(maxLength,labelname.length)+'<b>',
 						description: "data at:: "+item.hourday
 					};
 			});
