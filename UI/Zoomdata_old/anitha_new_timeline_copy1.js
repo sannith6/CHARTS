@@ -33,7 +33,7 @@ looker.plugins.visualizations.add({
     date = config.query_fields.dimensions[0].name;
 	hostname = config.query_fields.dimensions[1].name;
 	hourday = config.query_fields.dimensions[2].name;
-	// hour = config.query_fields.dimensions[4].name;
+	logintype = config.query_fields.dimensions[3].name;
 
 	var timelinedata = [];
 
@@ -43,8 +43,8 @@ looker.plugins.visualizations.add({
         timelinedata.push([
             row[date].value,
 			row[hostname].value,
-			row[hourday].value
-			// row[hour].value
+			row[hourday].value,
+			row[logintype].value
 		]	
         );
 		
@@ -64,7 +64,7 @@ looker.plugins.visualizations.add({
 			test_0bj['date'] = item[0];
 			test_0bj['hostname'] = item[1];
 			test_0bj['hourday'] = item[2];
-			// test_0bj['hour'] = item[3];
+			test_0bj['logintype'] = item[3];
 		    response.push(test_0bj)
 		})
 		
@@ -80,36 +80,38 @@ looker.plugins.visualizations.add({
 
 		chartContainer.innerHTML = view
 		
-		var maxLength = 20;
+		var maxLength = 25;
 
-		function myfunction(id, dots, btn){
+		// function myfunction(id, dots, btn){
 
-			var dots = document.getElementById(dots);
-			var moreText = document.getElementById(id);
-			var btnText = document.getElementById(btn);
+			// var dots = document.getElementById(dots);
+			// var moreText = document.getElementById(id);
+			// var btnText = document.getElementById(btn);
 
-			if (dots.style.display === "none") {
-				dots.style.display = "inline";
-				btnText.innerHTML = "Read more";
-				moreText.style.display = "none";
-			} else {
-				dots.style.display = "none";
-				btnText.innerHTML = "Read less";
-				moreText.style.display = "inline";
-			}
-		}
+			// if (dots.style.display === "none") {
+				// dots.style.display = "inline";
+				// btnText.innerHTML = "Read more";
+				// moreText.style.display = "none";
+			// } else {
+				// dots.style.display = "none";
+				// btnText.innerHTML = "Read less";
+				// moreText.style.display = "inline";
+			// }
+		// }
 
 		var finalData =
 			response &&
 				response.map((item, index) => {
+					labelname = "This is for user::::"+item.hostname
 					return {
 						x: Date.parse(item.date+" "+item.hourday),
 						name: item.hostname,
-						label: "this is for user::::"+item.hostname,
-						description: "data at:: "+item.hourday
+						label: '<b>'+labelname.substring(0,maxLength)+'-'+'<br/>'+labelname.substring(maxLength,labelname.length)+'<b>',
+						description: "data at:: "+item.hourday,
+						logintype: item.logintype
 					};
 			});
-			
+
 
 		Highcharts.chart("container", {
 		  
@@ -155,7 +157,7 @@ looker.plugins.visualizations.add({
 			  dataLabels: {
 				allowOverlap: false,
 				format:
-				  "<span style='color:{point.color};'> </span><span style='font-weight: bold;display:inline-block;float:left;' > " + "{point.x:%d %b %Y}" + "<img src='https://www.google.com/images/srpr/logo11w.png'  width='40' height='10' style='float:right;display:inline-block;'></span><br/>"+"{point.label}<br/><p>{point.description}<span id='dots'>...</span><span id='more'>erisque</span></p><button onclick='myFunction()' id='myBtn'>Read more</button>",
+				  `<span style="color:{point.color}">● </span><span style="font-weight: bold;" >{point.x:%d %b %Y}</span><img style="margin-left: 20px; margin-bottom: -5px;"  src="https://www.google.com/images/srpr/logo11w.png" height=15px /><br/><div>{point.label}<br/><span id='{point.abc}'></span><span style="display: none;" id="{point.rf}">{point.description}</span><br><button onclick="myfunction('{point.rf}','{point.abc}','{point.btn}')" id='{point.btn}'>Read more...</button></div>`,
 				  enabled: true,
                   useHTML: true
 			  },
