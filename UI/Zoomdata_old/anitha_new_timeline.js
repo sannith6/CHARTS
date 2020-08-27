@@ -169,16 +169,8 @@ looker.plugins.visualizations.add({
 				useHTML: true,
 				formatter: function () {
 				var image2;
-				for(var i=0;i<type.length;i++){
-				  
-				  if(type[i]='FILE'){
-					var image2 = file;
-				  }
-				  
-				  else{
-					console.log('no von daata');
-				  }
-				}
+				console.log('========================');
+				console.log(this.point.logintype);
 				
 				
 				return "<span style='color:"+this.point.color+"'>● </span><span style='font-weight: bold;' >"+Highcharts.dateFormat('%d %b %Y',new Date(this.point.x))+"</span>"+"<img  style='margin-left: 20px; margin-bottom: -5px;background-color:#00ffff'    src='"+image2+"' height=20 />"+"<br/><div>"+this.point.label+"<br/><span id='"+this.point.abc+"'>...</span><br\><span style='display: none;' id='"+this.point.rf+"'>erisque enim lvccc<br> cccccccccccccccccccccc<br></span><br>"+`<button onclick="myfunction(`+"'"+this.point.rf+"','"+this.point.abc+"','"+this.point.btn+"'"+")"+'"'+"id='"+this.point.btn+"'>Read more..."+"</button></div>"
