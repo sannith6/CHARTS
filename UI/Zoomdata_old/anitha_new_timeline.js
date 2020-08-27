@@ -194,7 +194,7 @@ looker.plugins.visualizations.add({
 				else if(this.point.logintype == "EMAIL"){
 					console.log('enterd into email session');
 					var image2 = email;  
-				// }
+				}
 				else{
 					console.log('no image for this file type');
 				}
