@@ -175,27 +175,37 @@ looker.plugins.visualizations.add({
 				if(this.point.logintype == "FILE"){
 					console.log('enterd into file session');
 					var image2 = filemanager;
+					var colorset = "#FFF700"; //yellow
 				}
 				else if(this.point.logintype == "WINDOWS_SESSION"){
 					console.log('enterd into windows session');
 					var image2 = windows;
+					var colorset = "#1C39BB";  //persian blue
 				}
 				else if(this.point.logintype == "IIS"){
 					console.log('enterd into iis session');
 					var image2 = iis;
+					var colorset = "#FF007F";   //rose color
 				}
 				else if(this.point.logintype == "VPN"){
 					console.log('enterd into vpn session');
 					var image2 = vpn;
+					var colorset = "#3F00FF"   //ultramarine
 				}
 				else if(this.point.logintype == "multi"){
 					console.log('enterd into multimedia session');
 					var image2 = multi;
+					var colorset = "#708090";  //gray
 				}
 				else if(this.point.logintype == "EMAIL"){
 					console.log('enterd into email session');
 					var image2 = email;  
-					var colorset = "#008000	";
+					var colorset = "#008000	"; //green
+				}
+				else if(this.point.logintype == "ALERT"){
+					console.log('enterd into alerts session');
+					var image2 = alert;  
+					var colorset = "#FF0000"; //red
 				}
 				else{
 					console.log('no image for this file type');
