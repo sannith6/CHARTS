@@ -187,13 +187,13 @@ looker.plugins.visualizations.add({
 					console.log('enterd into vpn session');
 					var image2 = vpn;
 				}
-				else if(this.point.logintype='multi'){
+				else if(this.point.logintype == "multi"){
 					console.log('enterd into multimedia session');
 					var image2 = multi;
 				}
-				else if(this.point.logintype='EMAIL'){
+				else if(this.point.logintype == "EMAIL"){
 					console.log('enterd into email session');
-					var image2 = email;
+					var image2 = email;  
 				// }
 				else{
 					console.log('no image for this file type');
