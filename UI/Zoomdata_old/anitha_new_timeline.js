@@ -171,7 +171,7 @@ looker.plugins.visualizations.add({
 				var image2;
 				console.log('========================');
 				console.log(this.point.logintype);
-				if(this.point.logintype='FILE'){
+				if(this.point.logintype == "FILE"){
 					console.log('enterd into file session');
 					var image2 = filemanager;
 				}
