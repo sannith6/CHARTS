@@ -171,7 +171,33 @@ looker.plugins.visualizations.add({
 				var image2;
 				console.log('========================');
 				console.log(this.point.logintype);
-				
+				if(this.point.logintype='FILE'){
+					console.log('enterd into file session');
+					var image2 = filemanager;
+				}
+				// else if(this.point.logintype='WINDOWS_SESSION'){
+					// console.log('enterd into final session');
+					// var image2 = filemanager;
+				// }
+				// else if(this.point.logintype='FILE'){
+					// console.log('enterd into final session');
+					// var image2 = filemanager;
+				// }
+				// else if(this.point.logintype='FILE'){
+					// console.log('enterd into final session');
+					// var image2 = filemanager;
+				// }
+				// else if(this.point.logintype='FILE'){
+					// console.log('enterd into final session');
+					// var image2 = filemanager;
+				// }
+				// else if(this.point.logintype='FILE'){
+					// console.log('enterd into final session');
+					// var image2 = filemanager;
+				// }
+				else{
+					console.log('no image for this file type');
+				}
 				
 				return "<span style='color:"+this.point.color+"'>● </span><span style='font-weight: bold;' >"+Highcharts.dateFormat('%d %b %Y',new Date(this.point.x))+"</span>"+"<img  style='margin-left: 20px; margin-bottom: -5px;background-color:#00ffff'    src='"+image2+"' height=20 />"+"<br/><div>"+this.point.label+"<br/><span id='"+this.point.abc+"'>...</span><br\><span style='display: none;' id='"+this.point.rf+"'>erisque enim lvccc<br> cccccccccccccccccccccc<br></span><br>"+`<button onclick="myfunction(`+"'"+this.point.rf+"','"+this.point.abc+"','"+this.point.btn+"'"+")"+'"'+"id='"+this.point.btn+"'>Read more..."+"</button></div>"
 				}
