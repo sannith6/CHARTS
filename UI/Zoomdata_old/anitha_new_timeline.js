@@ -175,25 +175,25 @@ looker.plugins.visualizations.add({
 					console.log('enterd into file session');
 					var image2 = filemanager;
 				}
-				// else if(this.point.logintype='WINDOWS_SESSION'){
-					// console.log('enterd into final session');
-					// var image2 = filemanager;
-				// }
-				// else if(this.point.logintype='FILE'){
-					// console.log('enterd into final session');
-					// var image2 = filemanager;
-				// }
-				// else if(this.point.logintype='FILE'){
-					// console.log('enterd into final session');
-					// var image2 = filemanager;
-				// }
-				// else if(this.point.logintype='FILE'){
-					// console.log('enterd into final session');
-					// var image2 = filemanager;
-				// }
-				// else if(this.point.logintype='FILE'){
-					// console.log('enterd into final session');
-					// var image2 = filemanager;
+				else if(this.point.logintype == "WINDOWS_SESSION"){
+					console.log('enterd into windows session');
+					var image2 = windows;
+				}
+				else if(this.point.logintype == "IIS"){
+					console.log('enterd into iis session');
+					var image2 = iis;
+				}
+				else if(this.point.logintype == "VPN"){
+					console.log('enterd into vpn session');
+					var image2 = vpn;
+				}
+				else if(this.point.logintype='multi'){
+					console.log('enterd into multimedia session');
+					var image2 = multi;
+				}
+				else if(this.point.logintype='EMAIL'){
+					console.log('enterd into email session');
+					var image2 = email;
 				// }
 				else{
 					console.log('no image for this file type');
