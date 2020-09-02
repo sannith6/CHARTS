@@ -291,10 +291,10 @@ looker.plugins.visualizations.add({
 			});
 		
 		console.log("+++++++++++++++");
-		// console.log(finalData);
-		console.log(typeof(finalData)); 
-		console.log("================");
-		console.log(finalData['logintype']);
+		console.log(finalData);
+		// console.log(typeof(finalData)); 
+		// console.log("================");
+		// console.log(finalData['logintype']);
 		
 
 		var view = `
