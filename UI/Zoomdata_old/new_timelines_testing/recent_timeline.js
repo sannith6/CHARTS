@@ -313,6 +313,88 @@ looker.plugins.visualizations.add({
 			}
 			
 		})
+		
+		 var items = document.querySelectorAll(".timeline li");
+
+		  // check if an element is in viewport
+		  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+		  function isElementInViewport(el) {
+			var rect = el.getBoundingClientRect();
+			return (
+			  rect.top >= 0 &&
+			  rect.left >= 0 &&
+			  rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+			  rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		  }
+
+		  function callbackFunc() {
+			for (var i = 0; i < items.length; i++) {
+			  if (isElementInViewport(items[i])) {
+				items[i].classList.add("in-view");
+			  }
+			}
+		  }
+		  
+		  
+		  $("#toggle1").click(function() {
+			var elem = $("#toggle1").text();
+			if (elem == "Read More") {
+			  //Stuff to do when btn is in the read more state
+			  $("#toggle1").text("Read Less");
+			  $("#text1").slideDown();
+			} else {
+			  //Stuff to do when btn is in the read less state
+			  $("#toggle1").text("Read More");
+			  $("#text1").slideUp();
+			}
+		  });
+		  
+			$("#toggle2").click(function() {
+			var elem = $("#toggle2").text();
+			if (elem == "Read More") {
+			  //Stuff to do when btn is in the read more state
+			  $("#toggle2").text("Read Less");
+			  $("#text2").slideDown();
+			} else {
+			  //Stuff to do when btn is in the read less state
+			  $("#toggle2").text("Read More");
+			  $("#text2").slideUp();
+			}
+		  });
+
+
+		  $("#toggle3").click(function() {
+			var elem = $("#toggle3").text();
+			if (elem == "Read More") {
+			  //Stuff to do when btn is in the read more state
+			  $("#toggle3").text("Read Less");
+			  $("#text3").slideDown();
+			} else {
+			  //Stuff to do when btn is in the read less state
+			  $("#toggle3").text("Read More");
+			  $("#text3").slideUp();
+			}
+		  });
+		  
+			$("#toggle4").click(function() {
+			var elem = $("#toggle4").text();
+			if (elem == "Read More") {
+			  //Stuff to do when btn is in the read more state
+			  $("#toggle4").text("Read Less");
+			  $("#text4").slideDown();
+			} else {
+			  //Stuff to do when btn is in the read less state
+			  $("#toggle4").text("Read More");
+			  $("#text4").slideUp();
+			}
+		  });
+		  
+		  
+		  // listen for events
+		  window.addEventListener("load", callbackFunc);
+		  window.addEventListener("resize", callbackFunc);
+		  window.addEventListener("scroll", callbackFunc);
 
 
 		
