@@ -292,8 +292,8 @@ looker.plugins.visualizations.add({
 		
 		console.log("+++++++++++++++");
 		console.log(finalData);
-		  
-
+		console.log(finalData.logintype);  
+		
 
 		var view = `
 			<section class="intro">
