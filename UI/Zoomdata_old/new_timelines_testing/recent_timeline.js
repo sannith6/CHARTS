@@ -290,8 +290,23 @@ looker.plugins.visualizations.add({
 					};
 			});
 		
-		console.log("+++++++++++++++");
-		console.log(finalData);
+	
+		
+		response && response.map((item, index) => {
+			
+			if(item.logintype == "EMAIL"){
+				console.log("+++++ EMAIL DATES++++++++");
+				console.log(item.date);
+			}
+			else if(item.logintype == "FILE"){
+				console.log("+++++ FILE DATES++++++++");
+				console.log(item.date);				
+			}
+			else{
+				console.log("no data");
+			}
+			
+		})
 		// console.log(typeof(finalData)); 
 		// console.log("================");
 		// console.log(finalData['logintype']);
