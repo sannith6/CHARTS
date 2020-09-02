@@ -278,38 +278,6 @@ looker.plugins.visualizations.add({
 		var alerts = "https://when2pray.net/wp-content/uploads/2018/03/newimage-600x300.jpg";
 		
 
-		var finalData =
-			response &&
-				response.map((item, index) => {
-					labelname = "This is for user::::"+item.username
-					return {
-						x: item.date+" "+item.hourday,
-						name: item.username,
-						description: "this data is for user: "+item.username+"on the day: "+item.date+"at time: "+item.hourday,
-						logintype: item.logintype
-					};
-			});
-		
-	
-		
-		response && response.map((item, index) => {
-			
-			if(item.logintype == "EMAIL"){
-				console.log("+++++ EMAIL DATES++++++++");
-				console.log(item.date);
-			}
-			else if(item.logintype == "FILE"){
-				console.log("+++++ FILE DATES++++++++");
-				console.log(item.date);				
-			}
-			else{
-				console.log("no data");
-			}
-			
-		})
-		// console.log(typeof(finalData)); 
-		// console.log("================");
-		// console.log(finalData['logintype']);
 		
 
 		var view = `
@@ -326,6 +294,26 @@ looker.plugins.visualizations.add({
 `
 
 		chartContainer.innerHTML = view
+		
+		
+		response.map((item, index) => {
+			
+			if(item.logintype == "EMAIL"){
+				console.log("+++++ EMAIL DATES++++++++");
+				console.log(item.date);
+			}
+			else if(item.logintype == "FILE"){
+				console.log("+++++ FILE DATES++++++++");
+				console.log(item.date);	
+				t = item.date+" "+item.hourday;
+				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+t+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'this is for tetsing purpose.so we added data dynamically to some of these events'+"<br><span id='text1' style='display:none;'>CSS is designed primarily to enable the separation of document content from document presentation, including aspects such. </span>"+"<br/><button id='toggle1'>Read More</button>"+'</div></li>'); 
+			}
+			else{
+				console.log("no data");
+			}
+			
+		})
+
 
 		
 
