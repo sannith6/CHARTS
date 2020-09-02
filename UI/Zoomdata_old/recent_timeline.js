@@ -2,7 +2,7 @@ looker.plugins.visualizations.add({
   create: function(element, config) {
 	  element.innerHTML = `
       <style>
-						*,
+			*,
 			*::before,
 			*::after {
 			  margin: 0;
@@ -13,11 +13,10 @@ looker.plugins.visualizations.add({
 			body {
 			  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
 			  background: #456990;
-			 /* color: #fff; */
+			
 			  overflow-x: hidden;
 			  padding-bottom: 50px;
-			}  /* INTRO SECTION
-			–––––––––––––––––––––––––––––––––––––––––––––––––– */
+			}  
 
 
 
@@ -28,9 +27,6 @@ looker.plugins.visualizations.add({
 			  text-align: center;
 			}
 
-
-			/* TIMELINE
-			–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 			.timeline ul {
 			  background: #456990;
@@ -103,8 +99,6 @@ looker.plugins.visualizations.add({
 			}
 
 
-			/* EFFECTS
-			–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 			.timeline ul li::after {
 			  transition: background .5s ease-in-out;
@@ -136,13 +130,6 @@ looker.plugins.visualizations.add({
 			}
 
 
-
-
-
-
-			/* GENERAL MEDIA QUERIES
-			–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
 			@media screen and (max-width: 900px) {
 			  .timeline ul li div {
 				width: 250px;
@@ -170,13 +157,7 @@ looker.plugins.visualizations.add({
 			  }
 			}
 
-
-
-
-
-			/* changed my own css
-			–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
+		
 			.timeline ul li.in-view1::after {
 			  background: #0ebeff;
 			}
@@ -230,8 +211,7 @@ looker.plugins.visualizations.add({
 			  border:none;
 			  padding:3px;
 			  font-size:15px;
-			/*   background:linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-			  color:white; */
+			
 			  font-family:cursive;
 			  box-sizing:border-box;
 			}
@@ -249,29 +229,14 @@ looker.plugins.visualizations.add({
   
    updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Clear any errors from previous updates:
-    this.clearErrors();
-	
+		this.clearErrors();
 
 		
-		var view = `
-					<section class="intro">
-					  <div class="container">
-					   
-					  </div>
-					</section>
-					<section class="timeline">
-					  <ul id="test1">  
-					  </ul>
-					</section>
-	`
 
-		chartContainer.innerHTML = view
-		
-		//defining our own variables
 	
 	// (function() {
 
-		  'use strict';
+		 
 		var x;
 		var y;
 		var email = "data:image/png;base64,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"; 
@@ -284,7 +249,22 @@ looker.plugins.visualizations.add({
 		  
 		var dates1 = ['19 October 2016','20 October 2016','21 October 2016','22 October 2016','24 november 2020','25 december 2020','19 december 2020','20 december 2020'];
 		  
-		var types = ['email', 'vpn', 'alerts', 'windows']  ; 
+		var types = ['email', 'vpn', 'alerts', 'windows']  ;
+
+		var view = `
+			<section class="intro">
+			  <div class="container">
+			   
+			  </div>
+			</section>
+
+			<section class="timeline">
+			  <ul id="test1">  
+			  </ul>
+			</section>
+`
+
+		chartContainer.innerHTML = view
 
 		for(var i = 0; i< dates1.length; i++){
 		   x= dates1[i];
