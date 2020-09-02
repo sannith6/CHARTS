@@ -259,7 +259,6 @@ looker.plugins.visualizations.add({
 					   
 					  </div>
 					</section>
-
 					<section class="timeline">
 					  <ul id="test1">  
 					  </ul>
@@ -270,7 +269,7 @@ looker.plugins.visualizations.add({
 		
 		//defining our own variables
 	
-	(function() {
+	// (function() {
 
 		  'use strict';
 		var x;
@@ -404,7 +403,7 @@ looker.plugins.visualizations.add({
 		  window.addEventListener("resize", callbackFunc);
 		  window.addEventListener("scroll", callbackFunc);
 
-		})();
+		// })();
 				
 
 
