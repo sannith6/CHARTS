@@ -230,11 +230,41 @@ looker.plugins.visualizations.add({
    updateAsync: function(data, element, config, queryResponse, details, doneRendering) {
     // Clear any errors from previous updates:
 		this.clearErrors();
-
 		
+		date = config.query_fields.dimensions[0].name;
+		hourday = config.query_fields.dimensions[1].name;
+		username = config.query_fields.dimensions[2].name;
+		logintype = config.query_fields.dimensions[3].name;
 
-	
-	// (function() {
+		var timelinedata = [];
+
+		for(var row of data) {
+			var cell = row[queryResponse.fields.dimensions[0].name]
+
+			timelinedata.push([
+				row[date].value,
+				row[hourday].value,
+				row[username].value,
+				row[logintype].value
+			]	
+			);
+			
+		}
+		
+		if (timelinedata.length > 0) {
+			var reducedDataSource = timelinedata
+			var response = []
+			reducedDataSource.map((item, index) => {
+				test_0bj = {}
+				test_0bj['date'] = item[0];
+				test_0bj['hourday'] = item[1];
+				test_0bj['username'] = item[2];
+				test_0bj['logintype'] = item[3];
+				response.push(test_0bj)
+			})
+			
+			
+		}
 
 		 
 		var x;
@@ -246,10 +276,24 @@ looker.plugins.visualizations.add({
 		var windows = "data:image/png;base64,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";
 
 		var alerts = "https://when2pray.net/wp-content/uploads/2018/03/newimage-600x300.jpg";
+		
+
+		var finalData =
+			response &&
+				response.map((item, index) => {
+					labelname = "This is for user::::"+item.username
+					return {
+						x: item.date+" "+item.hourday,
+						name: item.username,
+						description: "this data is for user: "+item.username+"on the day: "+item.date+"at time: "+item.hourday,
+						logintype: item.logintype
+					};
+			});
+		
+		console.log("+++++++++++++++");
+		console.log(finalData);
 		  
-		var dates1 = ['19 October 2016','20 October 2016','21 October 2016','22 October 2016','24 november 2020','25 december 2020','19 december 2020','20 december 2020'];
-		  
-		var types = ['email', 'vpn', 'alerts', 'windows']  ;
+
 
 		var view = `
 			<section class="intro">
@@ -266,126 +310,9 @@ looker.plugins.visualizations.add({
 
 		chartContainer.innerHTML = view
 
-		for(var i = 0; i< dates1.length; i++){
-		   x= dates1[i];
-		   for(var j = 0;j < types.length; j++){
-			 y = types[j];
-			 
-			if(y == "email"){
-			  
-			  $("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+x+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'this is for tetsing purpose.so we added data dynamically to some of these events'+"<br><span id='text1' style='display:none;'>CSS is designed primarily to enable the separation of document content from document presentation, including aspects such. </span>"+"<br/><button id='toggle1'>Read More</button>"+'</div></li>'); 
-			  
-			  // $('.in-view-div').css('background', 'darkmagenta');
-			  // $('.timeline ul li:nth-child(odd) div::before').css({"left": "-15px","border-width": "8px 16px 8px 0","border-color": "transparent darkmagenta transparent transparent"})      
+		
 
-			}
-			else if(y == "vpn"){
-			  
-			  $("#test1").append("<li class='in-view2'><div><time>"+x+"<img src='"+vpn+"' height=20/ style='float:right;'>"+'</time>'+'this is for tetsing purpose...so we added data dynamically to some of these events'+"<br><span id='text2' style='display:none;'>CSS is designed primarily to enable the separation of document content from document presentation, including aspects such. </span>"+"<br/><button id='toggle2'>Read More</button>"+'</div></li>'); 
-
-			}
-			else if(y == "alerts"){
-			  
-			  $("#test1").append("<li class='in-view3'><div><time>"+x+"<img src='"+alerts+"' height=20/ style='float:right;'>"+'</time>'+'this is for tetsing purpose...so we added data dynamically to some of these events'+"<br><span id='text3' style='display:none;'>CSS is designed primarily to enable the separation of document content from document presentation, including aspects such. </span>"+"<br/><button id='toggle3'>Read More</button>"+'</div></li>'); 
-
-			}
-			else if(y == "windows"){
-			  
-			  $("#test1").append("<li class='in-view4'><div><time>"+x+"<img src='"+windows+"' height=20/ style='float:right;'>"+'</time>'+'this is for tetsing purpose...so we added data dynamically to some of these events'+"<br><span id='text4' style='display:none;'>CSS is designed primarily to enable the separation of document content from document presentation, including aspects such. </span>"+"<br/><button id='toggle4'>Read More</button>"+'</div></li>'); 
-
-			}
-			else{
-				console.log("nothing is tehre to display");
-			}
-
-		 }
-		}
-		  // define variables
-		  var items = document.querySelectorAll(".timeline li");
-
-		  // check if an element is in viewport
-		  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
-		  function isElementInViewport(el) {
-			var rect = el.getBoundingClientRect();
-			return (
-			  rect.top >= 0 &&
-			  rect.left >= 0 &&
-			  rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-			  rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-			);
-		  }
-
-		  function callbackFunc() {
-			for (var i = 0; i < items.length; i++) {
-			  if (isElementInViewport(items[i])) {
-				items[i].classList.add("in-view");
-			  }
-			}
-		  }
-		  
-		  
-		  $("#toggle1").click(function() {
-			var elem = $("#toggle1").text();
-			if (elem == "Read More") {
-			  //Stuff to do when btn is in the read more state
-			  $("#toggle1").text("Read Less");
-			  $("#text1").slideDown();
-			} else {
-			  //Stuff to do when btn is in the read less state
-			  $("#toggle1").text("Read More");
-			  $("#text1").slideUp();
-			}
-		  });
-		  
-			$("#toggle2").click(function() {
-			var elem = $("#toggle2").text();
-			if (elem == "Read More") {
-			  //Stuff to do when btn is in the read more state
-			  $("#toggle2").text("Read Less");
-			  $("#text2").slideDown();
-			} else {
-			  //Stuff to do when btn is in the read less state
-			  $("#toggle2").text("Read More");
-			  $("#text2").slideUp();
-			}
-		  });
-
-
-		  $("#toggle3").click(function() {
-			var elem = $("#toggle3").text();
-			if (elem == "Read More") {
-			  //Stuff to do when btn is in the read more state
-			  $("#toggle3").text("Read Less");
-			  $("#text3").slideDown();
-			} else {
-			  //Stuff to do when btn is in the read less state
-			  $("#toggle3").text("Read More");
-			  $("#text3").slideUp();
-			}
-		  });
-		  
-			$("#toggle4").click(function() {
-			var elem = $("#toggle4").text();
-			if (elem == "Read More") {
-			  //Stuff to do when btn is in the read more state
-			  $("#toggle4").text("Read Less");
-			  $("#text4").slideDown();
-			} else {
-			  //Stuff to do when btn is in the read less state
-			  $("#toggle4").text("Read More");
-			  $("#text4").slideUp();
-			}
-		  });
-		  
-		  
-		  // listen for events
-		  window.addEventListener("load", callbackFunc);
-		  window.addEventListener("resize", callbackFunc);
-		  window.addEventListener("scroll", callbackFunc);
-
-		// })();
-				
-
+		
 
 		}
 })
