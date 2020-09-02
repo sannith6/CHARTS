@@ -312,13 +312,14 @@ looker.plugins.visualizations.add({
 			
 			if(item.logintype == "EMAIL"){
 				console.log("+++++ EMAIL DATES++++++++");
-				console.log(item.date);
+				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'<b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><button id='toggle2'>Read More</button>"+'</div></li>'); 
+				
 			}
 			else if(item.logintype == "FILE"){
 				console.log("+++++ FILE DATES++++++++");
 				console.log(item.date);	
 				
-				$("#test1").append("<li class='in-view5'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user::'+item.username+'on the day::'+"<br><span id='text1' style='display:none;'>"+item.date+'at an hour'+item.hourday+"</span>"+"<br/><button id='toggle1'>Read More</button>"+'</div></li>'); 
+				$("#test1").append("<li class='in-view5'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'<b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><button id='toggle1'>Read More</button>"+'</div></li>'); 
 			}
 			else{
 				console.log("no data");
