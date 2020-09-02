@@ -291,8 +291,8 @@ looker.plugins.visualizations.add({
 			});
 		
 		console.log("+++++++++++++++");
-		console.log(finalData);
-		console.log(finalData.logintype);  
+		// console.log(finalData);
+		console.log(typeof(finalData));  
 		
 
 		var view = `
