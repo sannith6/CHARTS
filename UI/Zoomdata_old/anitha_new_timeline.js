@@ -200,7 +200,7 @@ looker.plugins.visualizations.add({
 				else if(this.point.logintype == "EMAIL"){
 					console.log('enterd into email session');
 					var image2 = email;  
-					var colorset = "#008000	"; //green
+					var colorset = "#008000"; //green
 				}
 				else if(this.point.logintype == "ALERT"){
 					console.log('enterd into alerts session');
