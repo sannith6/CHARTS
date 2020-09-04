@@ -312,14 +312,14 @@ looker.plugins.visualizations.add({
 			
 			if(item.logintype == "EMAIL"){
 				console.log("+++++ EMAIL DATES++++++++");
-				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><button id='toggle2'>Read More</button>"+'</div></li>'); 
+				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br><span class='toggle-text' style='display:none;'>CSS is designed primarily to enable the separation of document content from document presentation, including aspects such. </span>"+"<br/><a href='#' class='toggle-text-button'>Read More</a>"+'</div></li>'); 
 				
 			}
 			else if(item.logintype == "FILE"){
 				console.log("+++++ FILE DATES++++++++");
 				console.log(item.date);	
 				
-				$("#test1").append("<li class='in-view5'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><button id='toggle1'>Read More</button>"+'</div></li>'); 
+				$("#test1").append("<li class='in-view5'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br><span class='toggle-text' style='display:none;'>CSS is designed primarily to enable the separation of document content from document presentation, including aspects such. </span>"+"<br/><a href='#' class='toggle-text-button'>Read More</a>"+'</div></li>'); 
 			}
 			else{
 				console.log("no data");
@@ -349,59 +349,21 @@ looker.plugins.visualizations.add({
 		  }
 		  
 		  
-		  $("#toggle1").click(function() {
-			var elem = $("#toggle1").text();
-			if (elem == "Read More") {
-			  //Stuff to do when btn is in the read more state
-			  $("#toggle1").text("Read Less");
-			  $("#text1").slideDown();
-			} else {
-			  //Stuff to do when btn is in the read less state
-			  $("#toggle1").text("Read More");
-			  $("#text1").slideUp();
-			}
-		  });
-		  
-			$("#toggle2").click(function() {
-			var elem = $("#toggle2").text();
-			if (elem == "Read More") {
-			  //Stuff to do when btn is in the read more state
-			  $("#toggle2").text("Read Less");
-			  $("#text2").slideDown();
-			} else {
-			  //Stuff to do when btn is in the read less state
-			  $("#toggle2").text("Read More");
-			  $("#text2").slideUp();
-			}
-		  });
+		  var readMore = jQuery(document).ready(function () {
 
-
-		  $("#toggle3").click(function() {
-			var elem = $("#toggle3").text();
-			if (elem == "Read More") {
-			  //Stuff to do when btn is in the read more state
-			  $("#toggle3").text("Read Less");
-			  $("#text3").slideDown();
-			} else {
-			  //Stuff to do when btn is in the read less state
-			  $("#toggle3").text("Read More");
-			  $("#text3").slideUp();
-			}
-		  });
-		  
-			$("#toggle4").click(function() {
-			var elem = $("#toggle4").text();
-			if (elem == "Read More") {
-			  //Stuff to do when btn is in the read more state
-			  $("#toggle4").text("Read Less");
-			  $("#text4").slideDown();
-			} else {
-			  //Stuff to do when btn is in the read less state
-			  $("#toggle4").text("Read More");
-			  $("#text4").slideUp();
-			}
-		  });
-		  
+            $(".toggle-text-button").click(function () {
+                var elem = $(this).text();
+                if (elem == "Read More") {
+                    //Stuff to do when btn is in the read more state
+                    $(this).text("Read Less");
+                    $(this).parent().find('.toggle-text').slideDown();
+                } else {
+                    //Stuff to do when btn is in the read less state
+                    $(this).text("Read More");
+                    $(this).parent().find('.toggle-text').slideUp();
+                }
+            });
+        });
 		  
 		  // listen for events
 		  window.addEventListener("load", callbackFunc);
