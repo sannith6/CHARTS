@@ -411,7 +411,7 @@ looker.plugins.visualizations.add({
 				console.log("+++++ very low loop++++++++");
 				
 				
-				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#' id='toggle1'>For More Information</a>"+'</div></li>'); 
+				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--'+item.username+' on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#' id='toggle1'>For More Information</a>"+'</div></li>'); 
 				
 			}
 			else if(item.scoretype == "medium" && item.logintype == "EMAIL"){
