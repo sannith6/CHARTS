@@ -2,312 +2,230 @@ looker.plugins.visualizations.add({
   create: function(element, config) {
 	  element.innerHTML = `
       <style>
-		*,
-		*::before,
-		*::after {
-		  margin: 0;
-		  padding: 0;
-		  box-sizing: border-box;
-		}
+			*,
+			*::before,
+			*::after {
+			  margin: 0;
+			  padding: 0;
+			  box-sizing: border-box;
+			}
 
-		body {
-		  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
-		  background:  #f8fcff;
-		 /* color: #fff; */
-		  overflow-x: hidden;
-		  padding-bottom: 50px;
-		}  /* INTRO SECTION
-		–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-
-
-		.container {
-		  width: 90%;
-		  max-width: 1200px;
-		  margin: 0 auto;
-		  text-align: center;
-		}
-
-
-		/* TIMELINE
-		–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-		.timeline ul {
-		  background: #f8fcff;
-		  padding: 50px 0;
-		}
-
-		/* .timeline ul li {
-		  list-style-type: none;
-		  position: relative;
-		  width: 6px;
-		  margin: 0 auto;
-		  padding-top: 50px;
-		  background: #417deb;
-		} */
-
-
-		.timeline ul li {
-		  list-style-type: none;
-		  position: relative;
-		  width: 6px;
-		  margin: 0 auto;
-		  padding-top: 50px;
-		  background: #417deb;
-		  border-radius: 10px;
-		}
-
-		.timeline ul li::after {
-		  content: '';
-		  position: absolute;
-		  left: 50%;
-		  bottom: 0;
-		  transform: translateX(-50%);
-		  width: 30px;
-		  height: 30px;
-		  border-radius: 50%;
-		  background: inherit;
-		}
-
-		/* .timeline ul li div {
-		  position: relative;
-		  bottom: 0;
-		  width: 400px;
-		  padding: 15px;
-		  background: #c7c9d3;
-		} */
-
-		.timeline ul li div {
-		  position: relative;
-		  bottom: 0;
-		  width: 400px;
-		  padding: 15px;
-		/*   background: #FFFFFF; */
-		  border-radius: 10px;
-		/*   border-color: #b9bad5; */
-		/*   -webkit-text-stroke-color: #b9bad5; */
-		  box-sizing:10px;
-		/*   box-shadow: #d0d2e5; */
-		   box-shadow: 5px 0 5px 5px  #d0d2e5;;
-		  color: #71758f;
-		  font-family: Roboto;
-		 
-		}
-
-
-		.timeline ul li div::before {
-		  content: '';
-		  position: absolute;
-		  bottom: 7px;
-		  width: 0;
-		  height: 0;
-		  border-style: solid;
-		}
-
-		.timeline ul li:nth-child(odd) div {
-		  left: 45px;
-		}
-
-		/* .timeline ul li:nth-child(odd) div::before {
-		  left: -15px;
-		  border-width: 8px 16px 8px 0;
-		  border-color: transparent #c7c9d3 transparent transparent;
-		} */
-
-		.timeline ul li:nth-child(odd) div::before {
-		  left: -15px;
-		  border-width: 8px 16px 8px 0 ;
-		/*   border: 2px solid black; */
-		  border-color: transparent #FFFFFF transparent transparent;
-		}
-
-		.timeline ul li:nth-child(even) div {
-		  left: -439px;
-		}
-
-		/* .timeline ul li:nth-child(even) div::before {
-		  right: -15px;
-		  border-width: 8px 0 8px 16px;
-		  border-color: transparent transparent transparent #c7c9d3;
-		}
-		 */
-
-		.timeline ul li:nth-child(even) div::before {
-		  right: -15px;
-		  border-width: 8px 0 8px 16px;
-		  border-color: transparent transparent transparent #FFFFFF;
-		}
-		 
-		/* time {
-		  display: block;
-		  font-size: 1.2rem;
-		  font-weight: bold;
-		  margin-bottom: 8px;
-		} */
-
-
-		time {
-		  display: block;
-		  font-size: 1.2rem;
-		  font-weight: bold;
-		  margin-bottom: 8px;
-		  font-family: Roboto;
-		  font-color: #71758f;
-		}
-
-
-		/* EFFECTS
-		–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-		.timeline ul li::after {
-		  transition: background .5s ease-in-out;
-		}
-
-
-		.timeline ul li.in-view::after {
-		  background: #F45B69;
-		}
-
-		.timeline ul li div {
-		  visibility: hidden;
-		  opacity: 0;
-		  transition: all .5s ease-in-out;
-		}
-
-		.timeline ul li:nth-child(odd) div {
-		  transform: translate3d(200px, 0, 0);
-		}
-
-		.timeline ul li:nth-child(even) div {
-		  transform: translate3d(-200px, 0, 0);
-		}
-
-		.timeline ul li.in-view div {
-		  transform: none;
-		  visibility: visible;
-		  opacity: 1;
-		}
-
-
-
-
-
-
-		/* GENERAL MEDIA QUERIES
-		–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-		@media screen and (max-width: 900px) {
-		  .timeline ul li div {
-			width: 250px;
-		  }
-		  .timeline ul li:nth-child(even) div {
-			left: -289px;
-			/*250+45-6*/
-		  }
-		}
-
-		@media screen and (max-width: 600px) {
-		  .timeline ul li {
-			margin-left: 20px;
-		  }
-		  .timeline ul li div {
-			width: calc(100vw - 91px);
-		  }
-		  .timeline ul li:nth-child(even) div {
-			left: 45px;
-		  }
-		  .timeline ul li:nth-child(even) div::before {
-			left: -15px;
-			border-width: 8px 16px 8px 0;
-			border-color: transparent #FFFFFF transparent transparent;
-		  }
-		}
-
-
-
-
-
-		/* changed my own css
-		–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-		.timeline ul li.in-view1::after {
-		  background: #0ebeff;
-		}
-
-		.timeline ul li.in-view1 div {
-		  transform: none;
-		  visibility: visible;
-		  opacity: 1;
-		}
-
-
-		.timeline ul li.in-view2::after {
-		  background: #ffdd40;
-		}
-
-		.timeline ul li.in-view2 div {
-		  transform: none;
-		  visibility: visible;
-		  opacity: 1;
-		}
-
-
-		.timeline ul li.in-view3::after {
-		  background: red;
-		}
-
-		.timeline ul li.in-view3 div {
-		  transform: none;
-		  visibility: visible;
-		  opacity: 1;
-		}
-
-
-		.timeline ul li.in-view4::after {
-		  background: #47cf73;
-		}
-
-		.timeline ul li.in-view4 div {
-		  transform: none;
-		  visibility: visible;
-		  opacity: 1;
-		}
-
-
-		button{
-		  user-select:none;
-		  -webkit-user-select:none;
-		  -moz-user-select:none;
-		  -ms-user-select:none;
-		  cursor:pointer;
-		  border:none;
-		  padding:3px;
-		  font-size:15px;
-		/*   background:linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
-		  color:white; */
-		  font-family:cursive;
-		  box-sizing:border-box;
-		}
-
-
-		/* basic positioning */
-		/* .legend { list-style: none; } */
-		/* basic positioning */
-		.legend { list-style: none; }
-		.legend #test { float: left; margin-right: 20px; }
-		.legend span {  height: 25px;
-		  width: 25px;
-		/*   background-color: #bbb; */
-		  border-radius: 60%;
-		  display: inline-block; }
-		/* your colors */
-		.legend .medium { background-color: #f7a35c;margin: -8px 5px; color:#1f1f2d;font-family: Roboto;font-style: normal;}
-		.legend .high { background-color: #ee0340;margin: -8px 5px;color:#1f1f2d;font-family: Roboto;font-style: normal; }
-		.legend .low { background-color: #0dc363; margin: -8px 5px;color:#1f1f2d;font-family: Roboto;font-style: normal;}
-		.legend .verylow { background-color: #0e7ff2; margin: -5px 4px;color:#1f1f2d;font-family: Roboto;font-style: normal;}
-		.legend .verylow { background-color: #0e7ff2; margin: -8px 5px;color:#1f1f2d;font-family: Roboto;font-style: normal;}
-
+			body {
+			  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+			  background: #456990;
 			
+			  overflow-x: hidden;
+			  padding-bottom: 50px;
+			}  
+
+
+
+			.container {
+			  width: 90%;
+			  max-width: 1200px;
+			  margin: 0 auto;
+			  text-align: center;
+			}
+
+
+			.timeline ul {
+			  background: #456990;
+			  padding: 50px 0;
+			}
+
+			.timeline ul li {
+			  list-style-type: none;
+			  position: relative;
+			  width: 6px;
+			  margin: 0 auto;
+			  padding-top: 50px;
+			  background: #fff;
+			}
+
+			.timeline ul li::after {
+			  content: '';
+			  position: absolute;
+			  left: 50%;
+			  bottom: 0;
+			  transform: translateX(-50%);
+			  width: 30px;
+			  height: 30px;
+			  border-radius: 50%;
+			  background: inherit;
+			}
+
+			.timeline ul li div {
+			  position: relative;
+			  bottom: 0;
+			  width: 400px;
+			  padding: 15px;
+			  background: #c7c9d3;
+			}
+
+			.timeline ul li div::before {
+			  content: '';
+			  position: absolute;
+			  bottom: 7px;
+			  width: 0;
+			  height: 0;
+			  border-style: solid;
+			}
+
+			.timeline ul li:nth-child(odd) div {
+			  left: 45px;
+			}
+
+			.timeline ul li:nth-child(odd) div::before {
+			  left: -15px;
+			  border-width: 8px 16px 8px 0;
+			  border-color: transparent #c7c9d3 transparent transparent;
+			}
+
+			.timeline ul li:nth-child(even) div {
+			  left: -439px;
+			}
+
+			.timeline ul li:nth-child(even) div::before {
+			  right: -15px;
+			  border-width: 8px 0 8px 16px;
+			  border-color: transparent transparent transparent #c7c9d3;
+			}
+
+			time {
+			  display: block;
+			  font-size: 1.2rem;
+			  font-weight: bold;
+			  margin-bottom: 8px;
+			}
+
+
+
+			.timeline ul li::after {
+			  transition: background .5s ease-in-out;
+			}
+
+
+			.timeline ul li.in-view::after {
+			  background: #F45B69;
+			}
+
+			.timeline ul li div {
+			  visibility: hidden;
+			  opacity: 0;
+			  transition: all .5s ease-in-out;
+			}
+
+			.timeline ul li:nth-child(odd) div {
+			  transform: translate3d(200px, 0, 0);
+			}
+
+			.timeline ul li:nth-child(even) div {
+			  transform: translate3d(-200px, 0, 0);
+			}
+
+			.timeline ul li.in-view div {
+			  transform: none;
+			  visibility: visible;
+			  opacity: 1;
+			}
+
+
+			@media screen and (max-width: 900px) {
+			  .timeline ul li div {
+				width: 250px;
+			  }
+			  .timeline ul li:nth-child(even) div {
+				left: -289px;
+				/*250+45-6*/
+			  }
+			}
+
+			@media screen and (max-width: 600px) {
+			  .timeline ul li {
+				margin-left: 20px;
+			  }
+			  .timeline ul li div {
+				width: calc(100vw - 91px);
+			  }
+			  .timeline ul li:nth-child(even) div {
+				left: 45px;
+			  }
+			  .timeline ul li:nth-child(even) div::before {
+				left: -15px;
+				border-width: 8px 16px 8px 0;
+				border-color: transparent #F45B69 transparent transparent;
+			  }
+			}
+
+		
+			.timeline ul li.in-view1::after {
+			  background: #0ebeff;
+			}
+
+			.timeline ul li.in-view1 div {
+			  transform: none;
+			  visibility: visible;
+			  opacity: 1;
+			}
+
+
+			.timeline ul li.in-view2::after {
+			  background: #ffdd40;
+			}
+
+			.timeline ul li.in-view2 div {
+			  transform: none;
+			  visibility: visible;
+			  opacity: 1;
+			}
+
+
+			.timeline ul li.in-view3::after {
+			  background: red;
+			}
+
+			.timeline ul li.in-view3 div {
+			  transform: none;
+			  visibility: visible;
+			  opacity: 1;
+			}
+
+
+			.timeline ul li.in-view4::after {
+			  background: #47cf73;
+			}
+
+			.timeline ul li.in-view4 div {
+			  transform: none;
+			  visibility: visible;
+			  opacity: 1;
+			}
+			
+			
+			.timeline ul li.in-view5::after {
+			  background: yellow;
+			}
+
+			.timeline ul li.in-view5 div {
+			  transform: none;
+			  visibility: visible;
+			  opacity: 1;
+			}
+
+
+			button{
+			  user-select:none;
+			  -webkit-user-select:none;
+			  -moz-user-select:none;
+			  -ms-user-select:none;
+			  cursor:pointer;
+			  border:none;
+			  padding:3px;
+			  font-size:15px;
+			
+			  font-family:cursive;
+			  box-sizing:border-box;
+			}
 
    </style>
 
@@ -328,7 +246,6 @@ looker.plugins.visualizations.add({
 		hourday = config.query_fields.dimensions[1].name;
 		username = config.query_fields.dimensions[2].name;
 		logintype = config.query_fields.dimensions[3].name;
-		scoretype = config.query_fields.dimensions[4].name;
 
 		var timelinedata = [];
 
@@ -339,8 +256,7 @@ looker.plugins.visualizations.add({
 				row[date].value,
 				row[hourday].value,
 				row[username].value,
-				row[logintype].value,
-				row[scoretype].value
+				row[logintype].value
 			]	
 			);
 			
@@ -355,7 +271,6 @@ looker.plugins.visualizations.add({
 				test_0bj['hourday'] = item[1];
 				test_0bj['username'] = item[2];
 				test_0bj['logintype'] = item[3];
-				test_0bj['scoretype'] = item[4];
 				response.push(test_0bj)
 			})
 			
@@ -387,29 +302,17 @@ looker.plugins.visualizations.add({
 			<section class="timeline">
 			  <ul id="test1">  
 			  </ul>
-			</section
-			<div style="box-sizing:10px;padding: 8px 20px;
-				margin: 10px -20px;
-				box-shadow: none!important;background-color: #e6ebf5;height: 40px;display:inline-block;margin-left:20px;">
-
-
-			<ul class="legend">
-				<li id='test'><span class="medium"></span> Medium</li>
-				<li id='test'><span class="high"></span> High</li>
-				<li id='test'><span class="low"></span> Low</li>
-				<li id='test'><span class="verylow"></span> Very low</li>
-			</ul>
-			</div>
-`	
+			</section>
+`
 
 		chartContainer.innerHTML = view
 		
 		
 		response.map((item, index) => {
 			
-			if(item.scoretype == "very low" && item.logintype == "FILE"){
-				console.log("+++++ very low loop++++++++");
-				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br><span class='toggle-text' style='display:none;'>CSS is designed primarily to enable the separation of document content from document presentation, including aspects such. </span>"+"<br/><a href='#' class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>'); 
+			if(item.logintype == "EMAIL"){
+				console.log("+++++ EMAIL DATES++++++++");
+				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br><span class='toggle-text' style='display:none;'>CSS is designed primarily to enable the separation of document content from document presentation, including aspects such. </span>"+"<br/><a href='#' class='toggle-text-button'>Read More</a>"+'</div></li>'); 
 				
 			}
 			else if(item.logintype == "FILE"){
