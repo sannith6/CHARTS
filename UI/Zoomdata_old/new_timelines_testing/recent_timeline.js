@@ -409,14 +409,16 @@ looker.plugins.visualizations.add({
 			
 			if(item.scoretype == "very low" && item.logintype == "FILE"){
 				console.log("+++++ very low loop++++++++");
-				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#' class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>'); 
+				
+				
+				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#' id='toggle1'>For More Information</a>"+'</div></li>'); 
 				
 			}
 			else if(item.logintype == "FILE"){
 				console.log("+++++ FILE DATES++++++++");
 				console.log(item.date);	
 				
-				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><button id='toggle2'>Read More</button>"+'</div></li>'); 
+				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#' class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>'); 
 			}
 			else{
 				console.log("no data");
@@ -460,6 +462,21 @@ looker.plugins.visualizations.add({
 				$(this).parent().find('.toggle-text').slideUp();
 			}
 		});
+		
+		
+		  $("#toggle1").click(function() {
+			var elem = $("#toggle1").text();
+			if (elem == "For More Information") {
+			  //Stuff to do when btn is in the read more state
+			  $("#toggle1").text("Read Less");
+			  $("#text1").slideDown();
+			} else {
+			  //Stuff to do when btn is in the read less state
+			  $("#toggle1").text("For More Information");
+			  $("#text1").slideUp();
+			}
+		  });
+		  
         
 		  
 		  // listen for events
