@@ -449,7 +449,7 @@ looker.plugins.visualizations.add({
 		  
 
         $(".toggle-text-button").click(function () {
-			var elem = $(this).text();
+			var elem = $(this).text;
 			if (elem == "Read More") {
 				//Stuff to do when btn is in the read more state
 				$(this).text("Read Less");
