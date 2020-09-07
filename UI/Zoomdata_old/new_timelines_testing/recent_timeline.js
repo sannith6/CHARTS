@@ -242,7 +242,7 @@ looker.plugins.visualizations.add({
 
 
 		.timeline ul li.in-view2::after {
-		  background: #ffdd40;
+		  background: #f7a35c;
 		}
 
 		.timeline ul li.in-view2 div {
@@ -417,7 +417,7 @@ looker.plugins.visualizations.add({
 			else if(item.scoretype == "medium" && item.logintype == "EMAIL"){
 				console.log("+++++ medium email loop++++++++");
 							
-				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#' class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>'); 
+				$("#test1").append("<li class='in-view2'><div class='in-view2-div'><time>"+item.date+" "+item.hourday+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#' class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>'); 
 			}
 			else{
 				console.log("no data");
