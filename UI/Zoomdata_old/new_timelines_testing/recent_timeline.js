@@ -417,7 +417,7 @@ looker.plugins.visualizations.add({
 			else if(item.scoretype == "medium" && item.logintype == "EMAIL"){
 				console.log("+++++ medium email loop++++++++");
 							
-				$("#test1").append("<li class='in-view2'><div class='in-view2-div'><time>"+item.date+" "+item.hourday+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--'+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#' class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>'); 
+				$("#test1").append("<li class='in-view2'><div class='in-view2-div'><time>"+item.date+" "+item.hourday+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--'+item.username+' on the day: '+"<br><span  id='text2' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#' class='toggle2' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>'); 
 			}
 			else{
 				console.log("no data");
@@ -475,6 +475,19 @@ looker.plugins.visualizations.add({
 			  $("#text1").slideUp();
 			}
 		  });
+		  
+		  $("#toggle2").click(function() {
+			var elem = $("#toggle1").text();
+			if (elem == "For More Information") {
+			  //Stuff to do when btn is in the read more state
+			  $("#toggle2").text("Read Less");
+			  $("#text2").slideDown();
+			} else {
+			  //Stuff to do when btn is in the read less state
+			  $("#toggle2").text("For More Information");
+			  $("#text2").slideUp();
+			}
+		  });		  
 		  
         
 		  
