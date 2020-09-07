@@ -231,7 +231,7 @@ looker.plugins.visualizations.add({
 		–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 		.timeline ul li.in-view1::after {
-		  background: #0ebeff;
+		  background: #0e7ff2;
 		}
 
 		.timeline ul li.in-view1 div {
@@ -409,14 +409,14 @@ looker.plugins.visualizations.add({
 			
 			if(item.scoretype == "very low" && item.logintype == "FILE"){
 				console.log("+++++ very low loop++++++++");
-				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br><span class='toggle-text' style='display:none;'>CSS is designed primarily to enable the separation of document content from document presentation, including aspects such. </span>"+"<br/><a href='#' class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>'); 
+				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#' class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>'); 
 				
 			}
 			else if(item.logintype == "FILE"){
 				console.log("+++++ FILE DATES++++++++");
 				console.log(item.date);	
 				
-				$("#test1").append("<li class='in-view5'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+filemanager+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br><span class='toggle-text' style='display:none;'>CSS is designed primarily to enable the separation of document content from document presentation, including aspects such. </span>"+"<br/><a href='#' class='toggle-text-button'>Read More</a>"+'</div></li>'); 
+				$("#test1").append("<li class='in-view1'><div class='in-view-div'><time>"+item.date+" "+item.hourday+"<img src='"+email+"' height=20/ style='float:right;'>"+'</time>'+'This data is for user--<b>'+item.username+'</b> on the day: '+"<br><span id='text1' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><button id='toggle2'>Read More</button>"+'</div></li>'); 
 			}
 			else{
 				console.log("no data");
@@ -446,21 +446,21 @@ looker.plugins.visualizations.add({
 		  }
 		  
 		  
-		  var readMore = jQuery(document).ready(function () {
+		  
 
-            $(".toggle-text-button").click(function () {
-                var elem = $(this).text();
-                if (elem == "Read More") {
-                    //Stuff to do when btn is in the read more state
-                    $(this).text("Read Less");
-                    $(this).parent().find('.toggle-text').slideDown();
-                } else {
-                    //Stuff to do when btn is in the read less state
-                    $(this).text("Read More");
-                    $(this).parent().find('.toggle-text').slideUp();
-                }
-            });
-        });
+        $(".toggle-text-button").click(function () {
+			var elem = $(this).text();
+			if (elem == "Read More") {
+				//Stuff to do when btn is in the read more state
+				$(this).text("Read Less");
+				$(this).parent().find('.toggle-text').slideDown();
+			} else {
+				//Stuff to do when btn is in the read less state
+				$(this).text("Read More");
+				$(this).parent().find('.toggle-text').slideUp();
+			}
+		});
+        
 		  
 		  // listen for events
 		  window.addEventListener("load", callbackFunc);
