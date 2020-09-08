@@ -422,6 +422,8 @@ looker.plugins.visualizations.add({
 				return x1;
 			}
 			
+			console.log(x1);
+			
 			$("#test1").append("<li class='in-view1'><div><time>"+item.date+" "+item.hourday+"<img src='"+x1+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>');
 			
 			// if(item.scoretype == "very low" && item.logintype == "FILE"){
