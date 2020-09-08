@@ -425,7 +425,18 @@ looker.plugins.visualizations.add({
 			
 			if(item.scoretype == "medium"){
 				var data_color = "#f7a35c";
-				
+			}
+			if(item.scoretype == "high"){
+				var data_color = "#ee0340";
+			}
+			if(item.scoretype == "low"){
+				var data_color = "#0dc363";
+			}
+			if(item.scoretype == "very low"){
+				var data_color = "#0e7ff2";
+			}
+			else{
+				console.log("no color is defined for this score");
 			}
 			
 			
