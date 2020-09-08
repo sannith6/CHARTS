@@ -450,7 +450,7 @@ looker.plugins.visualizations.add({
 
 					$(".toggle-text-button").click(function (event) {
 						var elem = $(this).text();
-						if (elem == "Read More") {
+						if (elem == "For More Information") {
 						  event.preventDefault();
 							//Stuff to do when btn is in the read more state
 							$(this).text("Read Less");
@@ -458,7 +458,7 @@ looker.plugins.visualizations.add({
 						} else {
 						  event.preventDefault();
 							//Stuff to do when btn is in the read less state
-							$(this).text("Read More");
+							$(this).text("For More Information");
 							$(this).parent().find('.toggle-text').slideUp();
 						}
 					});
