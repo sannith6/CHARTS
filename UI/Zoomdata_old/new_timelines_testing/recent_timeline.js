@@ -233,34 +233,6 @@ looker.plugins.visualizations.add({
 
 		/* changed my own css
 		–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-		.timeline ul li.in-view1::after {
-		  background: #0e7ff2;
-		}
-
-	
-
-
-		.timeline ul li.in-view2::after {
-		  background: #f7a35c;
-		}
-
-	
-
-
-		.timeline ul li.in-view3::after {
-		  background: red;
-		}
-
-	
-
-
-		.timeline ul li.in-view4::after {
-		  background: #47cf73;
-		}
-
-
-
 		button{
 		  user-select:none;
 		  -webkit-user-select:none;
