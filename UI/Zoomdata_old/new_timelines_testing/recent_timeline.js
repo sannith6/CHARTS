@@ -411,12 +411,18 @@ looker.plugins.visualizations.add({
 		
 		response.map((item, index) => {
 			
+			
+			
 			if(item.logintype == "EMAIL"){
-				return email;
+				var x1 = email;
+				return x1;
+			}
+			else if(item.logintype == "FILE"){
+				var x1 = filemanager;
+				return x1;
 			}
 			
-			console.log("-------email image checking--------");
-			console.log(email);
+			$("#test1").append("<li class='in-view1'><div><time>"+item.date+" "+item.hourday+"<img src='"+x1+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>');
 			
 			// if(item.scoretype == "very low" && item.logintype == "FILE"){
 				// console.log("+++++ very low loop++++++++");
