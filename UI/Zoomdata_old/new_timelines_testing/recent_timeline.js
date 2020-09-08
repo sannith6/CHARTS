@@ -449,7 +449,7 @@ looker.plugins.visualizations.add({
                 } else {
                   event.preventDefault();
                     //Stuff to do when btn is in the read less state
-                    $(this).html("For More Information"+'<i class="fas fa-chevron-down" style="font-size:12px">');
+                    $(this).html("For More Information"+'<i class="fas fa-chevron-down">');
                     $(this).parent().find('.toggle-text').slideUp();
                 }
             });
