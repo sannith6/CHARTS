@@ -429,7 +429,7 @@ looker.plugins.visualizations.add({
 			}
 			
 			
-			$("#test1").append("<li class='in-view' style='background:'"+data_color+" ><div><time>"+item.date+" "+item.hourday+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>');
+			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+" "+item.hourday+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>');
 			
 		})
 		
