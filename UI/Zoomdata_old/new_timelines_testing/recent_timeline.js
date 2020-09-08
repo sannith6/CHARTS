@@ -14,11 +14,15 @@ looker.plugins.visualizations.add({
 		  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
 		  background:  #f8fcff;
 		 /* color: #fff; */
-		  overflow-x: hidden;
+		  overflow : auto;
 		  padding-bottom: 50px;
 		}  /* INTRO SECTION
 		–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
+		::-webkit-scrollbar {
+			width: 0px;
+			background: transparent; /* make scrollbar transparent */
+		}
 
 
 		.container {
