@@ -415,11 +415,11 @@ looker.plugins.visualizations.add({
 			
 			if(item.logintype == "EMAIL"){
 				var x1 = email;
-				return x1;
+				// return x1;
 			}
 			else if(item.logintype == "FILE"){
 				var x1 = filemanager;
-				return x1;
+				// return x1;
 			}
 			
 			console.log(x1);
