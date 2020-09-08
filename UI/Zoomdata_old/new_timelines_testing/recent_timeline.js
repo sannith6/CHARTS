@@ -412,7 +412,7 @@ looker.plugins.visualizations.add({
 			}
 			
 			
-			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+" "+item.hourday+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>');
+			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+" "+item.hourday+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
 			
 		})
 		
@@ -437,24 +437,23 @@ looker.plugins.visualizations.add({
 			}
 		  }
 
-			var readMore = jQuery(document).ready(function () {
+		var readMore = jQuery(document).ready(function () {
 
-					$(".toggle-text-button").click(function (event) {
-						var elem = $(this).text();
-						if (elem == "For More Information") {
-						  event.preventDefault();
-							//Stuff to do when btn is in the read more state
-							$(this).text("Read Less");
-							$(this).parent().find('.toggle-text').slideDown();
-						} else {
-						  event.preventDefault();
-							//Stuff to do when btn is in the read less state
-							$(this).text("For More Information");
-							$(this).parent().find('.toggle-text').slideUp();
-						}
-					});
-				}); 
-
+            $(".toggle-text-button").click(function (event) {
+                var elem = $(this).text();
+                if (elem == "For More Information") {
+                  event.preventDefault();
+                    //Stuff to do when btn is in the read more state
+                    $(this).html("Read Less"+'<i class="fas fa-chevron-up" style="font-size:12px">');
+                    $(this).parent().find('.toggle-text').slideDown();
+                } else {
+                  event.preventDefault();
+                    //Stuff to do when btn is in the read less state
+                    $(this).html("For More Information"+'<i class="fas fa-chevron-down" style="font-size:12px">');
+                    $(this).parent().find('.toggle-text').slideUp();
+                }
+            });
+        }); 
 		  // listen for events
 		  window.addEventListener("load", callbackFunc);
 		  window.addEventListener("resize", callbackFunc);
