@@ -169,7 +169,7 @@ looker.plugins.visualizations.add({
 
 
 		.timeline ul li.in-view::after {
-		  background: #F45B69;
+		  
 		}
 
 		.timeline ul li div {
@@ -397,9 +397,11 @@ looker.plugins.visualizations.add({
 		response.map((item, index) => {
 			
 			var image_type = "";
+			var data_color = "";
 			
 			if(item.logintype == "EMAIL"){
 				var image_type = email;
+				
 			}
 			else if(item.logintype == "FILE"){
 				var image_type = filemanager;
@@ -420,7 +422,14 @@ looker.plugins.visualizations.add({
 				console.log("no proper image for this type of data");
 			}
 			
-			$("#test1").append("<li class='in-view'><div><time>"+item.date+" "+item.hourday+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>');
+			
+			if(item.scoretype == "medium"){
+				var data_color = "#f7a35c";
+				
+			}
+			
+			
+			$("#test1").append("<li class='in-view' style='background:'"+data_color+" ><div><time>"+item.date+" "+item.hourday+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information</a>"+'</div></li>');
 			
 		})
 		
