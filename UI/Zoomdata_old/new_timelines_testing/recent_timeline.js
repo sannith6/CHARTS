@@ -411,14 +411,14 @@ looker.plugins.visualizations.add({
 		
 		response.map((item, index) => {
 			
-			var x1;
+			var x1 = "";
 			
 			if(item.logintype == "EMAIL"){
-				x1 = email;
-				return email;
+				var x1 = email;
+				return x1;
 			}
 			else if(item.logintype == "FILE"){
-				x1 = filemanager;
+				var x1 = filemanager;
 				return x1;
 			}
 			
