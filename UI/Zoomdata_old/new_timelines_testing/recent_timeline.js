@@ -381,7 +381,7 @@ looker.plugins.visualizations.add({
 			}
 			else if(item.logintype == "WINDOWS"){
 				var image_type = windows;
-				var description = 'This data point is of type: '+item.logintype+"<br><span class='toggle-text' style='display:none;'>"+item.info+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"
+				// var description = 'This data point is of type: '+item.logintype+"<br><span class='toggle-text' style='display:none;'>"+item.info+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"
 			}
 			else if(item.logintype == "IIS"){
 				var image_type = iis;
@@ -415,8 +415,11 @@ looker.plugins.visualizations.add({
 				console.log("no color is defined for this score");
 			}
 			
+			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data point is of type: '+item.logintype+"<br><span class='toggle-text' style='display:none;'>"+item.info+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
 			
-			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
+			
+			// $("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
+			
 			
 		})
 		
