@@ -370,7 +370,6 @@ looker.plugins.visualizations.add({
 			
 			var image_type = "";
 			var data_color = "";
-			var description = "";
 			
 			if(item.logintype == "EMAIL"){
 				var image_type = email;
@@ -381,7 +380,7 @@ looker.plugins.visualizations.add({
 			}
 			else if(item.logintype == "WINDOWS"){
 				var image_type = windows;
-				// var description = 'This data point is of type: '+item.logintype+"<br><span class='toggle-text' style='display:none;'>"+item.info+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"
+				
 			}
 			else if(item.logintype == "IIS"){
 				var image_type = iis;
@@ -396,8 +395,7 @@ looker.plugins.visualizations.add({
 				console.log("no proper image for this type of data");
 			}
 			
-			console.log("+++++++++++++++");
-			console.log(description);
+			
 			
 			if(item.scoretype == "MEDIUM"){
 				var data_color = "#f7a35c";
@@ -415,7 +413,18 @@ looker.plugins.visualizations.add({
 				console.log("no color is defined for this score");
 			}
 			
-			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data point is of type: '+item.logintype+"<br><span class='toggle-text' style='display:none;'>"+item.info+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
+			
+			var str1 = item.info
+			var result = '';
+			while (str1.length > 0) {
+				result += str1.substring(0, 25) + '\n';
+				str1 = str1.substring(25);
+
+			}
+
+			console.log(result);
+			
+			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data point is of type: '+item.logintype+"<br><span class='toggle-text' style='display:none;'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
 			
 			
 			// $("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
