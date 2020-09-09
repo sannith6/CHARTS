@@ -284,10 +284,10 @@ looker.plugins.visualizations.add({
 		this.clearErrors();
 		
 		date = config.query_fields.dimensions[0].name;
-		hourday = config.query_fields.dimensions[1].name;
-		username = config.query_fields.dimensions[2].name;
-		logintype = config.query_fields.dimensions[3].name;
-		scoretype = config.query_fields.dimensions[4].name;
+		username = config.query_fields.dimensions[1].name;
+		logintype = config.query_fields.dimensions[2].name;
+		scoretype = config.query_fields.dimensions[3].name;
+		info = config.query_fields.dimensions[4].name;
 
 		var timelinedata = [];
 
@@ -296,10 +296,10 @@ looker.plugins.visualizations.add({
 
 			timelinedata.push([
 				row[date].value,
-				row[hourday].value,
 				row[username].value,
 				row[logintype].value,
-				row[scoretype].value
+				row[scoretype].value,
+				row[info].value
 			]	
 			);
 			
@@ -311,10 +311,10 @@ looker.plugins.visualizations.add({
 			reducedDataSource.map((item, index) => {
 				test_0bj = {}
 				test_0bj['date'] = item[0];
-				test_0bj['hourday'] = item[1];
-				test_0bj['username'] = item[2];
-				test_0bj['logintype'] = item[3];
-				test_0bj['scoretype'] = item[4];
+				test_0bj['username'] = item[1];
+				test_0bj['logintype'] = item[2];
+				test_0bj['scoretype'] = item[3];
+				test_0bj['info'] = item[4];
 				response.push(test_0bj)
 			})
 			
@@ -370,6 +370,7 @@ looker.plugins.visualizations.add({
 			
 			var image_type = "";
 			var data_color = "";
+			var description = "";
 			
 			if(item.logintype == "EMAIL"){
 				var image_type = email;
@@ -378,8 +379,9 @@ looker.plugins.visualizations.add({
 			else if(item.logintype == "FILE"){
 				var image_type = filemanager;
 			}
-			else if(item.logintype == "WINDOWS_SESSION"){
+			else if(item.logintype == "WINDOWS"){
 				var image_type = windows;
+				var description = 'This data point is of type: '+item.logintype+"<br><span class='toggle-text' style='display:none;'>"+item.info+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"
 			}
 			else if(item.logintype == "IIS"){
 				var image_type = iis;
@@ -394,17 +396,19 @@ looker.plugins.visualizations.add({
 				console.log("no proper image for this type of data");
 			}
 			
+			console.log("+++++++++++++++");
+			console.log(description);
 			
-			if(item.scoretype == "medium"){
+			if(item.scoretype == "MEDIUM"){
 				var data_color = "#f7a35c";
 			}
-			if(item.scoretype == "high"){
+			if(item.scoretype == "HIGH"){
 				var data_color = "#ee0340";
 			}
-			if(item.scoretype == "low"){
+			if(item.scoretype == "LOW"){
 				var data_color = "#0dc363";
 			}
-			if(item.scoretype == "very low"){
+			if(item.scoretype == "VERY LOW"){
 				var data_color = "#0e7ff2";
 			}
 			else{
@@ -412,7 +416,7 @@ looker.plugins.visualizations.add({
 			}
 			
 			
-			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+" "+item.hourday+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
+			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
 			
 		})
 		
