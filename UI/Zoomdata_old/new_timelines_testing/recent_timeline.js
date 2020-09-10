@@ -203,7 +203,7 @@ looker.plugins.visualizations.add({
 
 		@media screen and (max-width: 900px) {
 		  .timeline ul li div {
-			width: 300px;
+			width: 250px;
 		  }
 		  .timeline ul li:nth-child(even) div {
 			left: -289px;
