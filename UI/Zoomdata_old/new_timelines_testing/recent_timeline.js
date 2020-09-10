@@ -67,8 +67,8 @@ looker.plugins.visualizations.add({
 		  left: 50%;
 		  bottom: 0;
 		  transform: translateX(-50%);
-		  width: 30px;
-		  height: 30px;
+		  width: 25px;
+		  height: 25px;
 		  border-radius: 50%;
 		  background: inherit;
 		}
