@@ -170,8 +170,10 @@ looker.plugins.visualizations.add({
 
 
 		.timeline ul li.in-view::after {
+			background: red;
 		  
 		}
+		
 
 		
 		.timeline ul li.in-view::after div {
