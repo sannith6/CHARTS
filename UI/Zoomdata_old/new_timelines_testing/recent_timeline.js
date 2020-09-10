@@ -417,11 +417,18 @@ looker.plugins.visualizations.add({
 			
 			var str1 = item.info
 			var result = '';
-			while (str1.length > 0) {
-				result += str1.substring(0, 25) + '\n';
-				str1 = str1.substring(25);
-
+			if (str1 == null || str1 == 'null'){
+				console.log('no data')
 			}
+			else{
+				while (str1.length > 0) {
+					result += str1.substring(0, 25) + '\n';
+					str1 = str1.substring(25);
+
+				}
+			}
+			
+			
 
 			console.log(result);
 			
