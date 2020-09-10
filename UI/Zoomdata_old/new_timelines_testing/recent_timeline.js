@@ -85,7 +85,7 @@ looker.plugins.visualizations.add({
 		  position: relative;
 		  bottom: 0;
 		  width: 400px;
-		  padding: 15px;
+		  padding: 3px;
 		/*   background: #FFFFFF; */
 		  border-radius: 10px;
 		/*   border-color: #b9bad5; */
@@ -351,7 +351,8 @@ looker.plugins.visualizations.add({
 			</section
 			<div style="box-sizing:10px;padding: 8px 20px;
 				margin: 10px -20px;
-				box-shadow: none!important;background-color: #e6ebf5;height: 40px;display:inline-block;margin-left:20px;">
+				box-shadow: none!important;background-color: #e6ebf5;height: 40px;display:inline-block;margin-left:20px;font-size:15%
+				">
 
 
 			<ul class="legend">
@@ -424,7 +425,7 @@ looker.plugins.visualizations.add({
 
 			console.log(result);
 			
-			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time style='font-family:Roboto;color:#71758f'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
+			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time style='font-family:Roboto;color:#71758f;font-size:12%'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12%'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12%'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12%'>For More Information<i class='fas fa-chevron-down' style='font-size:12%'></i></a>"+'</div></li>');
 			
 			
 			// $("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
@@ -458,14 +459,14 @@ looker.plugins.visualizations.add({
             $(".toggle-text-button").click(function (event) {
                 var elem = $(this).text();
                 if (elem == "For More Information") {
-                  event.preventDefault();
+					event.preventDefault();
                     //Stuff to do when btn is in the read more state
-                    $(this).html("Read Less"+'<i class="fas fa-chevron-up" style="font-size:13px">');
+                    $(this).html("Read Less"+'<i class="fas fa-chevron-up" style="font-size:12%">');
                     $(this).parent().find('.toggle-text').slideDown();
                 } else {
-                  event.preventDefault();
+					event.preventDefault();
                     //Stuff to do when btn is in the read less state
-                    $(this).html("For More Information"+'<i class="fas fa-chevron-down" style="font-size:13px">');
+                    $(this).html("For More Information"+'<i class="fas fa-chevron-down" style="font-size:12%">');
                     $(this).parent().find('.toggle-text').slideUp();
                 }
             });
