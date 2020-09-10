@@ -11,7 +11,7 @@ looker.plugins.visualizations.add({
 		}
 
 		body {
-		  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
+		 /* font: normal 16px/1.5 "Helvetica Neue", sans-serif;*/
 		  background:  #f8fcff;
 		 /* color: #fff; */
 		  overflow : auto;
@@ -379,7 +379,7 @@ looker.plugins.visualizations.add({
 			else if(item.logintype == "FILE"){
 				var image_type = filemanager;
 			}
-			else if(item.logintype == "WINDOWS"){
+			else if(item.logintype == "WINDOWS_SESSION"){
 				var image_type = windows;
 				
 			}
@@ -432,7 +432,7 @@ looker.plugins.visualizations.add({
 
 			console.log(result);
 			
-			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
+			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<li style='list-style-type: none;font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</li><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
 			
 			
 			// $("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
