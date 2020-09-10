@@ -85,7 +85,7 @@ looker.plugins.visualizations.add({
 		  position: relative;
 		  bottom: 0;
 		  width: 400px;
-		  padding: 3px;
+		  padding: 2px;
 		/*   background: #FFFFFF; */
 		  border-radius: 10px;
 		/*   border-color: #b9bad5; */
@@ -152,11 +152,12 @@ looker.plugins.visualizations.add({
 
 		time {
 		  display: block;
-		  font-size: 1.2rem;
+		  /*font-size: 1.2rem;*/
 		  font-weight: bold;
 		  margin-bottom: 8px;
 		  font-family: Roboto;
 		  font-color: #71758f;
+		  font-size: 12px;
 		}
 
 
@@ -202,7 +203,7 @@ looker.plugins.visualizations.add({
 
 		@media screen and (max-width: 900px) {
 		  .timeline ul li div {
-			width: 250px;
+			width: 300px;
 		  }
 		  .timeline ul li:nth-child(even) div {
 			left: -289px;
