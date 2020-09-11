@@ -477,6 +477,18 @@ looker.plugins.visualizations.add({
 			}
 			
 			
+			var str1 = item.info
+			var result = '';
+			if (str1 == null || str1 == 'null'){
+				console.log('no data')
+			}
+			else{
+				while (str1.length > 0) {
+					result += str1.substring(0, 25) + '\n';
+					str1 = str1.substring(25);
+
+				}
+			}
 			
 			if(item.scoretype == "MEDIUM"){
 				var data_color = "#f7a35c";
@@ -485,6 +497,7 @@ looker.plugins.visualizations.add({
 			}
 			if(item.scoretype == "HIGH"){
 				var data_color = "#ee0340";
+				console.log("entered into high loop");
 				$("#test1").append("<li class='in-view2::after'><div><time style='font-family:Roboto;color:#71758f;font-size:12pt'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12pt'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12pt'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12pt'>For More Information<i class='fas fa-chevron-down' style='font-size:12pt'></i></a>"+'</div></li>');
 			}
 			if(item.scoretype == "LOW"){
@@ -502,18 +515,6 @@ looker.plugins.visualizations.add({
 			}
 			
 			
-			var str1 = item.info
-			var result = '';
-			if (str1 == null || str1 == 'null'){
-				console.log('no data')
-			}
-			else{
-				while (str1.length > 0) {
-					result += str1.substring(0, 25) + '\n';
-					str1 = str1.substring(25);
-
-				}
-			}
 			
 			
 
