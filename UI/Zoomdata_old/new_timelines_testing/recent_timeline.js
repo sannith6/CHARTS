@@ -58,7 +58,7 @@ looker.plugins.visualizations.add({
 		  margin: 0 auto;
 		  padding-top: 50px;
 		  background: #417deb;
-		  border-radius: 10px;
+		  // border-radius: 10px;
 		}
 
 		.timeline ul li::after {
@@ -67,11 +67,11 @@ looker.plugins.visualizations.add({
 		  left: 50%;
 		  bottom: 0;
 		  transform: translateX(-50%);
-		  width: 25px;
-		  height: 25px;
+		  width: 20px;
+		  height: 20px;
 		  border-radius: 50%;
 		  background: inherit;
-		  margin-bottom: 65px;
+		  margin-bottom: 34px;
 		}
 
 		/* .timeline ul li div {
