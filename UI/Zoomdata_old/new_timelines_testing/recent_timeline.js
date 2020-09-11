@@ -89,6 +89,7 @@ looker.plugins.visualizations.add({
 		  padding: 2px;
 		  background: #FFFFFF;
 		  border-radius: 10px;
+		  radius: 10px;
 		/*   border-color: #b9bad5; */
 		/*   -webkit-text-stroke-color: #b9bad5; */
 		  box-sizing:10px;
@@ -130,9 +131,9 @@ looker.plugins.visualizations.add({
 			left: -40px;
 			width: 38px;
 			height: 7px;
-			border-top: 2px solid darkgrey;
+			border-top: 2px solid #d0d2e5;
 			/* border-left: 10px solid transparent; */
-			border-bottom: 2px solid darkgrey;
+			border-bottom: 2px solid #d0d2e5;
 			border-right: 0px solid transparent;
 			/* border-color: black; */
 			top: 50%;
