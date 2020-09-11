@@ -208,7 +208,7 @@ looker.plugins.visualizations.add({
 
 
 		.timeline ul li.in-view::after {
-			background: red;
+			background: yellow;
 		  
 		}
 		
@@ -282,6 +282,19 @@ looker.plugins.visualizations.add({
 
 		/* changed my own css
 		–––––––––––––––––––––––––––––––––––––––––––––––––– */
+		.timeline ul li.in-view1::after {
+			background: #ee0340;
+		  
+		}
+		
+
+		
+		.timeline ul li.in-view1 div {
+		  transform: none;
+		  visibility: visible;
+		  opacity: 1;
+		}
+		
 		button{
 		  user-select:none;
 		  -webkit-user-select:none;
@@ -452,7 +465,9 @@ looker.plugins.visualizations.add({
 				
 			}
 			if(item.scoretype == "HIGH"){
-				var data_color = "#ee0340";
+				// var data_color = "#ee0340";
+				$("#test1").append("<li class='in-view1'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12pt'></i></a>"+'</div></li>');
+				
 			}
 			if(item.scoretype == "LOW"){
 				var data_color = "#0dc363";
@@ -482,7 +497,7 @@ looker.plugins.visualizations.add({
 
 			// console.log(result);
 			
-			$("#test1").append("<li class='in-view::after' style='background:"+data_color+"'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12pt'></i></a>"+'</div></li>');
+			// $("#test1").append("<li class='in-view::after' style='background:"+data_color+"'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12pt'></i></a>"+'</div></li>');
 			
 			
 			// $("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
