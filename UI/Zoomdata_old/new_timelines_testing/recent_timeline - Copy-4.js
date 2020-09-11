@@ -11,7 +11,7 @@ looker.plugins.visualizations.add({
 		}
 
 		body {
-		 /* font: normal 16px/1.5 "Helvetica Neue", sans-serif;*/
+		  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
 		  background:  #f8fcff;
 		 /* color: #fff; */
 		  overflow : auto;
@@ -67,8 +67,8 @@ looker.plugins.visualizations.add({
 		  left: 50%;
 		  bottom: 0;
 		  transform: translateX(-50%);
-		  width: 25px;
-		  height: 25px;
+		  width: 30px;
+		  height: 30px;
 		  border-radius: 50%;
 		  background: inherit;
 		}
@@ -85,7 +85,7 @@ looker.plugins.visualizations.add({
 		  position: relative;
 		  bottom: 0;
 		  width: 400px;
-		  padding: 2px;
+		  padding: 15px;
 		/*   background: #FFFFFF; */
 		  border-radius: 10px;
 		/*   border-color: #b9bad5; */
@@ -157,7 +157,6 @@ looker.plugins.visualizations.add({
 		  margin-bottom: 8px;
 		  font-family: Roboto;
 		  font-color: #71758f;
-		  
 		}
 
 
@@ -170,19 +169,9 @@ looker.plugins.visualizations.add({
 
 
 		.timeline ul li.in-view::after {
-			background: red;
 		  
 		}
-		
 
-		
-		.timeline ul li.in-view::after div {
-		  transform: none;
-		  visibility: visible;
-		  opacity: 1;
-		}
-		
-		
 		.timeline ul li div {
 		  visibility: hidden;
 		  opacity: 0;
@@ -295,10 +284,10 @@ looker.plugins.visualizations.add({
 		this.clearErrors();
 		
 		date = config.query_fields.dimensions[0].name;
-		username = config.query_fields.dimensions[1].name;
-		logintype = config.query_fields.dimensions[2].name;
-		scoretype = config.query_fields.dimensions[3].name;
-		info = config.query_fields.dimensions[4].name;
+		hourday = config.query_fields.dimensions[1].name;
+		username = config.query_fields.dimensions[2].name;
+		logintype = config.query_fields.dimensions[3].name;
+		scoretype = config.query_fields.dimensions[4].name;
 
 		var timelinedata = [];
 
@@ -307,10 +296,10 @@ looker.plugins.visualizations.add({
 
 			timelinedata.push([
 				row[date].value,
+				row[hourday].value,
 				row[username].value,
 				row[logintype].value,
-				row[scoretype].value,
-				row[info].value
+				row[scoretype].value
 			]	
 			);
 			
@@ -322,10 +311,10 @@ looker.plugins.visualizations.add({
 			reducedDataSource.map((item, index) => {
 				test_0bj = {}
 				test_0bj['date'] = item[0];
-				test_0bj['username'] = item[1];
-				test_0bj['logintype'] = item[2];
-				test_0bj['scoretype'] = item[3];
-				test_0bj['info'] = item[4];
+				test_0bj['hourday'] = item[1];
+				test_0bj['username'] = item[2];
+				test_0bj['logintype'] = item[3];
+				test_0bj['scoretype'] = item[4];
 				response.push(test_0bj)
 			})
 			
@@ -362,8 +351,7 @@ looker.plugins.visualizations.add({
 			</section
 			<div style="box-sizing:10px;padding: 8px 20px;
 				margin: 10px -20px;
-				box-shadow: none!important;background-color: #e6ebf5;height: 40px;display:inline-block;margin-left:20px;font-size:15%
-				">
+				box-shadow: none!important;background-color: #e6ebf5;height: 40px;display:inline-block;margin-left:20px;">
 
 
 			<ul class="legend">
@@ -392,7 +380,6 @@ looker.plugins.visualizations.add({
 			}
 			else if(item.logintype == "WINDOWS_SESSION"){
 				var image_type = windows;
-				
 			}
 			else if(item.logintype == "IIS"){
 				var image_type = iis;
@@ -408,18 +395,16 @@ looker.plugins.visualizations.add({
 			}
 			
 			
-			
-			if(item.scoretype == "MEDIUM"){
+			if(item.scoretype == "medium"){
 				var data_color = "#f7a35c";
-				
 			}
-			if(item.scoretype == "HIGH"){
+			if(item.scoretype == "high"){
 				var data_color = "#ee0340";
 			}
-			if(item.scoretype == "LOW"){
+			if(item.scoretype == "low"){
 				var data_color = "#0dc363";
 			}
-			if(item.scoretype == "VERY LOW"){
+			if(item.scoretype == "very low"){
 				var data_color = "#0e7ff2";
 			}
 			else{
@@ -427,28 +412,7 @@ looker.plugins.visualizations.add({
 			}
 			
 			
-			var str1 = item.info
-			var result = '';
-			if (str1 == null || str1 == 'null'){
-				console.log('no data')
-			}
-			else{
-				while (str1.length > 0) {
-					result += str1.substring(0, 25) + '\n';
-					str1 = str1.substring(25);
-
-				}
-			}
-			
-			
-
-			console.log(result);
-			
-			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
-			
-			
-			// $("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
-			
+			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+" "+item.hourday+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+' at an hour:'+item.hourday+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
 			
 		})
 		
@@ -478,14 +442,14 @@ looker.plugins.visualizations.add({
             $(".toggle-text-button").click(function (event) {
                 var elem = $(this).text();
                 if (elem == "For More Information") {
-					event.preventDefault();
+                  event.preventDefault();
                     //Stuff to do when btn is in the read more state
-                    $(this).html("Read Less"+'<i class="fas fa-chevron-up" style="font-size:12%">');
+                    $(this).html("Read Less"+'<i class="fas fa-chevron-up" style="font-size:13px">');
                     $(this).parent().find('.toggle-text').slideDown();
                 } else {
-					event.preventDefault();
+                  event.preventDefault();
                     //Stuff to do when btn is in the read less state
-                    $(this).html("For More Information"+'<i class="fas fa-chevron-down" style="font-size:12%">');
+                    $(this).html("For More Information"+'<i class="fas fa-chevron-down" style="font-size:13px">');
                     $(this).parent().find('.toggle-text').slideUp();
                 }
             });

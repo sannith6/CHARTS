@@ -71,6 +71,7 @@ looker.plugins.visualizations.add({
 		  height: 25px;
 		  border-radius: 50%;
 		  background: inherit;
+		  margin-bottom: 65px;
 		}
 
 		/* .timeline ul li div {
@@ -86,14 +87,14 @@ looker.plugins.visualizations.add({
 		  bottom: 0;
 		  width: 400px;
 		  padding: 2px;
-		/*   background: #FFFFFF; */
+		  background: #FFFFFF;
 		  border-radius: 10px;
 		/*   border-color: #b9bad5; */
 		/*   -webkit-text-stroke-color: #b9bad5; */
 		  box-sizing:10px;
 		/*   box-shadow: #d0d2e5; */
 		   box-shadow: 5px 0 5px 5px  #d0d2e5;;
-		  color: #71758f;
+		  /* color: #71758f;*/
 		  font-family: Roboto;
 		 
 		}
@@ -119,11 +120,24 @@ looker.plugins.visualizations.add({
 		} */
 
 		.timeline ul li:nth-child(odd) div::before {
-		  left: -15px;
-		  border-width: 8px 16px 8px 0 ;
-		/*   border: 2px solid black; */
-		  border-color: transparent #FFFFFF transparent transparent;
+			left: -15px;
+			border-width: 8px 16px 8px 0;
+			/* border: 2px solid black; */
+			border-color: transparent #FFFFFF transparent transparent;
+			content: '';
+			position: absolute;
+			bottom: 7px;
+			left: -40px;
+			width: 38px;
+			height: 7px;
+			border-top: 2px solid darkgrey;
+			/* border-left: 10px solid transparent; */
+			border-bottom: 2px solid darkgrey;
+			border-right: 0px solid transparent;
+			/* border-color: black; */
+			top: 50%;
 		}
+
 
 		.timeline ul li:nth-child(even) div {
 		  left: -439px;
@@ -137,10 +151,31 @@ looker.plugins.visualizations.add({
 		 */
 
 		.timeline ul li:nth-child(even) div::before {
-		  right: -15px;
-		  border-width: 8px 0 8px 16px;
-		  border-color: transparent transparent transparent #FFFFFF;
-		}
+			  right: -15px;
+			  border-width: 8px 0 8px 16px;
+			/*   border-color: transparent transparent transparent #FFFFFF; */
+			  content: '';
+			position: absolute;
+			bottom: 7px;
+			/* left: 248px; */
+			  right:-40px;
+			width: 38px;
+			height: 7px;
+			/* / border-style: solid; / */
+			border-top: 2px solid #d0d2e5;
+			border-left: 0px solid transparent;
+			border-bottom: 2px solid #d0d2e5;
+			/* border-right: 10px solid transparent; */
+			/*   border-color: black; */
+				  border-top: 2px solid darkgrey;
+				border-left: 0px solid transparent;
+				border-bottom: 2px solid #aaaebc;
+				/* border-right: 10px solid transparent; */
+				/* border-color: black; */
+				top: 50%;
+				/* width: 50%; */
+				left: 100%;
+			}
 		 
 		/* time {
 		  display: block;
@@ -411,6 +446,7 @@ looker.plugins.visualizations.add({
 			
 			if(item.scoretype == "MEDIUM"){
 				var data_color = "#f7a35c";
+				
 			}
 			if(item.scoretype == "HIGH"){
 				var data_color = "#ee0340";
@@ -443,7 +479,7 @@ looker.plugins.visualizations.add({
 
 			console.log(result);
 			
-			$("#test1").append("<li class='in-view::after' style='background:"+data_color+"'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
+			$("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
 			
 			
 			// $("#test1").append("<li class='in-view' style='background:"+data_color+"'><div><time>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+'This data is for user: '+item.username+' on the day: '+"<br><span class='toggle-text' style='display:none;'>"+item.date+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb'>For More Information<i class='fas fa-chevron-down' style='font-size:13px'></i></a>"+'</div></li>');
