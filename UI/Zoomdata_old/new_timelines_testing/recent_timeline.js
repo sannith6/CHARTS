@@ -207,10 +207,10 @@ looker.plugins.visualizations.add({
 		}
 
 
-		// .timeline ul li.in-view::after {
-			// background: red;
+		.timeline ul li.in-view::after {
+			background: red;
 		  
-		// }
+		}
 		
 
 		
@@ -282,37 +282,6 @@ looker.plugins.visualizations.add({
 
 		/* changed my own css
 		–––––––––––––––––––––––––––––––––––––––––––––––––– */
-		.timeline ul li.in-view1::after div {
-		  transform: none;
-		  visibility: visible;
-		  opacity: 1;
-		}
-		.timeline ul li.in-view2::after div {
-		  transform: none;
-		  visibility: visible;
-		  opacity: 1;
-		}
-		.timeline ul li.in-view3::after div {
-		  transform: none;
-		  visibility: visible;
-		  opacity: 1;
-		}
-		.timeline ul li.in-view4::after div {
-		  transform: none;
-		  visibility: visible;
-		  opacity: 1;
-		}
-		
-		.timeline ul li.in-view2::after {
-			background: #ee0340;
-		  
-		}
-		
-		.timeline ul li.in-view4::after {
-			background: #0e7ff2;
-		  
-		}
-
 		button{
 		  user-select:none;
 		  -webkit-user-select:none;
@@ -476,7 +445,6 @@ looker.plugins.visualizations.add({
 				console.log("no proper image for this type of data");
 			}
 			
-			
 			var str1 = item.info
 			var result = '';
 			if (str1 == null || str1 == 'null'){
@@ -490,6 +458,7 @@ looker.plugins.visualizations.add({
 				}
 			}
 			
+			
 			if(item.scoretype == "MEDIUM"){
 				var data_color = "#f7a35c";
 				$("#test1").append("<li class='in-view1::after'><div><time style='font-family:Roboto;color:#71758f;font-size:12pt'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12pt'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12pt'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12pt'>For More Information<i class='fas fa-chevron-down' style='font-size:12pt'></i></a>"+'</div></li>');
@@ -497,8 +466,7 @@ looker.plugins.visualizations.add({
 			}
 			if(item.scoretype == "HIGH"){
 				var data_color = "#ee0340";
-				console.log("entered into high loop");
-				$("#test1").append("<li class='in-view2::after'><div><time style='font-family:Roboto;color:#71758f;font-size:12pt'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12pt'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12pt'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12pt'>For More Information<i class='fas fa-chevron-down' style='font-size:12pt'></i></a>"+'</div></li>');
+				$("#test1").append("<li class='in-view::after'><div><time style='font-family:Roboto;color:#71758f;font-size:12pt'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12pt'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12pt'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12pt'>For More Information<i class='fas fa-chevron-down' style='font-size:12pt'></i></a>"+'</div></li>');
 			}
 			if(item.scoretype == "LOW"){
 				var data_color = "#0dc363";
@@ -507,12 +475,11 @@ looker.plugins.visualizations.add({
 			}
 			if(item.scoretype == "VERY LOW"){
 				var data_color = "#0e7ff2";
-				var data_color = "#ee0340";
-				$("#test1").append("<li class='in-view4::after'><div><time style='font-family:Roboto;color:#71758f;font-size:12pt'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12pt'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12pt'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12pt'>For More Information<i class='fas fa-chevron-down' style='font-size:12pt'></i></a>"+'</div></li>');
 			}
 			else{
 				console.log("no color is defined for this score");
 			}
+			
 			
 			
 			
