@@ -89,13 +89,11 @@ looker.plugins.visualizations.add({
 		  padding: 2px;
 		  background: #FFFFFF;
 		  border-radius: 10px;
-		  radius: 10px;
-		/*   border-color: #b9bad5; */
-		/*   -webkit-text-stroke-color: #b9bad5; */
 		  box-sizing:10px;
-		/*   box-shadow: #d0d2e5; */
-		   box-shadow: 5px 0 5px 5px  #d0d2e5;;
-		  /* color: #71758f;*/
+		  box-shadow: 5px 0 5px 5px  #d0d2e5;;
+		  stroke: #b9bad5;
+		  stroke-width: 1px;
+		  transform:rotate(90deg);
 		  font-family: Roboto;
 		 
 		}
@@ -137,6 +135,8 @@ looker.plugins.visualizations.add({
 			border-right: 0px solid transparent;
 			/* border-color: black; */
 			top: 50%;
+			stroke: #b9bad5;
+			stroke-width: 1px;
 		}
 
 
@@ -168,14 +168,16 @@ looker.plugins.visualizations.add({
 			border-bottom: 2px solid #d0d2e5;
 			/* border-right: 10px solid transparent; */
 			/*   border-color: black; */
-				  border-top: 2px solid darkgrey;
+				  border-top: 2px solid #d0d2e5;
 				border-left: 0px solid transparent;
-				border-bottom: 2px solid #aaaebc;
+				border-bottom: 2px solid #d0d2e5;
 				/* border-right: 10px solid transparent; */
 				/* border-color: black; */
 				top: 50%;
 				/* width: 50%; */
 				left: 100%;
+				stroke: #b9bad5;
+				stroke-width: 1px;
 			}
 		 
 		/* time {
