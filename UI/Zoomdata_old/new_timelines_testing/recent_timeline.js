@@ -71,13 +71,13 @@ looker.plugins.visualizations.add({
 		  height: 20px;
 		  border-radius: 50%;
 		  background: inherit;
-		  margin-bottom: 37px;
+		  margin-bottom: 30px;
 		}
 
 		/* .timeline ul li div {
 		  position: relative;
 		  bottom: 0;
-		  width: 400px;
+		  width: 350px;
 		  padding: 15px;
 		  background: #c7c9d3;
 		} */
@@ -85,8 +85,8 @@ looker.plugins.visualizations.add({
 		.timeline ul li div {
 		  position: relative;
 		  bottom: 0;
-		  width: 400px;
-		  padding: 2px;
+		  width: 350px;
+		  padding: 3px;
 		  background: #FFFFFF;
 		  border-radius: 10px;
 		  box-sizing:10px;
@@ -109,7 +109,7 @@ looker.plugins.visualizations.add({
 		}
 
 		.timeline ul li:nth-child(odd) div {
-		  left: 45px;
+		  left: 70px;
 		}
 
 		/* .timeline ul li:nth-child(odd) div::before {
@@ -130,7 +130,7 @@ looker.plugins.visualizations.add({
 
 
 		.timeline ul li:nth-child(even) div {
-		  left: -439px;
+		  left: -470px;
 		}
 
 		/* .timeline ul li:nth-child(even) div::before {
