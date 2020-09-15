@@ -121,20 +121,9 @@ looker.plugins.visualizations.add({
 		.timeline ul li:nth-child(odd) div::before {
 			left: -15px;
 			border-width: 8px 16px 8px 0;
-			/* border: 2px solid black; */
 			border-color: transparent #FFFFFF transparent transparent;
-			content: '';
-			position: absolute;
-			bottom: 7px;
-			left: -40px;
-			width: 38px;
-			height: 5px;
-			border-top: 2px solid #d0d2e5;
-			/* border-left: 10px solid transparent; */
-			border-bottom: 2px solid #d0d2e5;
-			border-right: 0px solid transparent;
-			/* border-color: black; */
 			top: 50%;
+			left: 100%
 			stroke: #b9bad5;
 			stroke-width: 1px;
 		}
@@ -154,28 +143,9 @@ looker.plugins.visualizations.add({
 		.timeline ul li:nth-child(even) div::before {
 			  right: -15px;
 			  border-width: 8px 0 8px 16px;
-			/*   border-color: transparent transparent transparent #FFFFFF; */
-			  content: '';
-			position: absolute;
-			bottom: 7px;
-			/* left: 248px; */
-			  right:-40px;
-			width: 38px;
-			height: 5px;
-			/* / border-style: solid; / */
-			border-top: 2px solid #d0d2e5;
-			border-left: 0px solid transparent;
-			border-bottom: 2px solid #d0d2e5;
-			/* border-right: 10px solid transparent; */
-			/*   border-color: black; */
-				  border-top: 2px solid #d0d2e5;
-				border-left: 0px solid transparent;
-				border-bottom: 2px solid #d0d2e5;
-				/* border-right: 10px solid transparent; */
-				/* border-color: black; */
-				top: 50%;
-				/* width: 50%; */
-				left: 100%;
+			  border-color: transparent transparent transparent #FFFFFF;
+			  top: 50%;
+			  left: 100%;
 				stroke: #b9bad5;
 				stroke-width: 1px;
 			}
@@ -305,20 +275,36 @@ looker.plugins.visualizations.add({
 		
 		.timeline ul li.in-view1::after {
 			background: #f7a35c;
+			height: 25px;
+			width: 25px;
+			border: 5px solid white;
+			box-shadow: 0px 10px 10px -10px #000000;
 		  
 		}
 		
 		.timeline ul li.in-view2::after {
 			background: #ee0340;
+			height: 25px;
+			width: 25px;
+			border: 5px solid white;
+			box-shadow: 0px 10px 10px -10px #000000;
 		  
 		}
 		.timeline ul li.in-view3::after {
 			background: #0dc363;
+			height: 25px;
+			width: 25px;
+			border: 5px solid white;
+			box-shadow: 0px 10px 10px -10px #000000;
 		  
 		}
 		
 		.timeline ul li.in-view4::after {
 			background: #0e7ff2;
+			height: 25px;
+			width: 25px;
+			border: 5px solid white;
+			box-shadow: 0px 10px 10px -10px #000000;
 		  
 		}
 
