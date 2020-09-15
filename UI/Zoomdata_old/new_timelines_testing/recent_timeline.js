@@ -85,7 +85,7 @@ looker.plugins.visualizations.add({
 		.timeline ul li div {
 		  position: relative;
 		  bottom: 0;
-		  width: 350px;
+		  width: 300px;
 		  padding: 3px;
 		  background: #FFFFFF;
 		  border-radius: 10px;
@@ -109,7 +109,7 @@ looker.plugins.visualizations.add({
 		}
 
 		.timeline ul li:nth-child(odd) div {
-		  left: 70px;
+		  left: 45px;
 		}
 
 		/* .timeline ul li:nth-child(odd) div::before {
@@ -130,7 +130,7 @@ looker.plugins.visualizations.add({
 
 
 		.timeline ul li:nth-child(even) div {
-		  left: -470px;
+		  left: -439px;
 		}
 
 		/* .timeline ul li:nth-child(even) div::before {
