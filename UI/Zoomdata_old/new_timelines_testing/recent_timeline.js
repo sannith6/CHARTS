@@ -85,7 +85,7 @@ looker.plugins.visualizations.add({
 		.timeline ul li div {
 		  position: relative;
 		  bottom: 0;
-		  width: 300px;
+		  width: 400px;
 		  padding: 3px;
 		  background: #FFFFFF;
 		  border-radius: 10px;
@@ -252,22 +252,22 @@ looker.plugins.visualizations.add({
 
 		/* changed my own css
 		–––––––––––––––––––––––––––––––––––––––––––––––––– */
-		.timeline ul li.in-view1 div {
+		.timeline ul li.in-view1::after div {
 		  transform: none;
 		  visibility: visible;
 		  opacity: 1;
 		}
-		.timeline ul li.in-view2 div {
+		.timeline ul li.in-view2::after div {
 		  transform: none;
 		  visibility: visible;
 		  opacity: 1;
 		}
-		.timeline ul li.in-view3 div {
+		.timeline ul li.in-view3::after div {
 		  transform: none;
 		  visibility: visible;
 		  opacity: 1;
 		}
-		.timeline ul li.in-view4 div {
+		.timeline ul li.in-view4::after div {
 		  transform: none;
 		  visibility: visible;
 		  opacity: 1;
@@ -497,23 +497,23 @@ looker.plugins.visualizations.add({
 			
 			if(check_score_type == "MEDIUM"){
 				var data_color = "#f7a35c";
-				$("#test1").append("<li class='in-view1'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
+				$("#test1").append("<li class='in-view1::after'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
 				
 			}
 			else if(check_score_type == "HIGH"){
 				var data_color = "#ee0340";
 				
-				$("#test1").append("<li class='in-view2'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
+				$("#test1").append("<li class='in-view2::after'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
 			}
 			else if(check_score_type == "LOW"){
 				var data_color = "#0dc363";
-				$("#test1").append("<li class='in-view3'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
+				$("#test1").append("<li class='in-view3::after'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
 				
 			}
 			else if(check_score_type == "VERY LOW"){
 				var data_color = "#0e7ff2";
 				var data_color = "#ee0340";
-				$("#test1").append("<li class='in-view4'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
+				$("#test1").append("<li class='in-view4::after'><div><time style='font-family:Roboto;color:#71758f;font-size:12px'>"+item.date+"<img src='"+image_type+"' height=20 style='float:right;'>"+'</time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
 			}
 			else{
 				console.log("no color is defined for this score");
