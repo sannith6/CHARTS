@@ -85,7 +85,7 @@ looker.plugins.visualizations.add({
 		.timeline ul li div {
 		  position: relative;
 		  bottom: 0;
-		  width: 400px;
+		  width: 350px;
 		  padding: 3px;
 		  background: #FFFFFF;
 		  border-radius: 10px;
@@ -130,7 +130,7 @@ looker.plugins.visualizations.add({
 
 
 		.timeline ul li:nth-child(even) div {
-		  left: -439px;
+		  left: -407px;
 		}
 
 		/* .timeline ul li:nth-child(even) div::before {
@@ -273,7 +273,7 @@ looker.plugins.visualizations.add({
 		  opacity: 1;
 		}
 		
-		.timeline ul li.in-view1::after {
+		.timeline ul li.in-view1::after::after {
 			background: #f7a35c;
 			height: 25px;
 			width: 25px;
@@ -282,7 +282,7 @@ looker.plugins.visualizations.add({
 		  
 		}
 		
-		.timeline ul li.in-view2::after {
+		.timeline ul li.in-view2::after::after {
 			background: #ee0340;
 			height: 25px;
 			width: 25px;
@@ -290,7 +290,7 @@ looker.plugins.visualizations.add({
 			box-shadow: 0px 10px 10px -10px #000000;
 		  
 		}
-		.timeline ul li.in-view3::after {
+		.timeline ul li.in-view3::after::after {
 			background: #0dc363;
 			height: 25px;
 			width: 25px;
@@ -299,7 +299,7 @@ looker.plugins.visualizations.add({
 		  
 		}
 		
-		.timeline ul li.in-view4::after {
+		.timeline ul li.in-view4::after::after {
 			background: #0e7ff2;
 			height: 25px;
 			width: 25px;
