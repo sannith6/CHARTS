@@ -252,28 +252,28 @@ looker.plugins.visualizations.add({
 
 		/* changed my own css
 		–––––––––––––––––––––––––––––––––––––––––––––––––– */
-		.timeline ul li.in-view1::after div {
+		.timeline ul li.in-view1 div {
 		  transform: none;
 		  visibility: visible;
 		  opacity: 1;
 		}
-		.timeline ul li.in-view2::after div {
+		.timeline ul li.in-view2 div {
 		  transform: none;
 		  visibility: visible;
 		  opacity: 1;
 		}
-		.timeline ul li.in-view3::after div {
+		.timeline ul li.in-view3 div {
 		  transform: none;
 		  visibility: visible;
 		  opacity: 1;
 		}
-		.timeline ul li.in-view4::after div {
+		.timeline ul li.in-view4 div {
 		  transform: none;
 		  visibility: visible;
 		  opacity: 1;
 		}
 		
-		.timeline ul li.in-view1::after::after {
+		.timeline ul li.in-view1::after {
 			background: #f7a35c;
 			height: 25px;
 			width: 25px;
@@ -282,7 +282,7 @@ looker.plugins.visualizations.add({
 		  
 		}
 		
-		.timeline ul li.in-view2::after::after {
+		.timeline ul li.in-view2::after {
 			background: #ee0340;
 			height: 25px;
 			width: 25px;
@@ -290,7 +290,7 @@ looker.plugins.visualizations.add({
 			box-shadow: 0px 10px 10px -10px #000000;
 		  
 		}
-		.timeline ul li.in-view3::after::after {
+		.timeline ul li.in-view3::after {
 			background: #0dc363;
 			height: 25px;
 			width: 25px;
@@ -299,7 +299,7 @@ looker.plugins.visualizations.add({
 		  
 		}
 		
-		.timeline ul li.in-view4::after::after {
+		.timeline ul li.in-view4::after {
 			background: #0e7ff2;
 			height: 25px;
 			width: 25px;
