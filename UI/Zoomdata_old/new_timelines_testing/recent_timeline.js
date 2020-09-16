@@ -120,12 +120,17 @@ looker.plugins.visualizations.add({
 
 		.timeline ul li:nth-child(odd) div::before {
 			left: -15px;
-			border-width: 8px 16px 8px 0;
+			// border-width: 8px 16px 8px 0;
 			border-color: transparent #FFFFFF transparent transparent;
 			top: 50%;
 			left: 100%
 			stroke: #b9bad5;
 			stroke-width: 1px;
+			content: '';
+			position: absolute;
+			width: 35px;
+			height: 8px;
+			background: #FFFFFF;
 		}
 
 
@@ -142,7 +147,7 @@ looker.plugins.visualizations.add({
 
 		.timeline ul li:nth-child(even) div::before {
 			  right: -15px;
-			  border-width: 8px 0 8px 16px;
+			  // border-width: 8px 0 8px 16px;
 			  border-color: transparent transparent transparent #FFFFFF;
 			  top: 50%;
 			  left: 100%;
@@ -152,7 +157,7 @@ looker.plugins.visualizations.add({
 				content: '';
 				position: absolute;
 				width: 35px;
-				height: 5;
+				height: 8px;
 				background: #FFFFFF;
 						  
 			}
