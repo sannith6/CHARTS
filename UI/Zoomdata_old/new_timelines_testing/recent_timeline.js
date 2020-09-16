@@ -119,7 +119,7 @@ looker.plugins.visualizations.add({
 		} */
 
 		.timeline ul li:nth-child(odd) div::before {
-			left: -15px;
+			left: -31px;
 			// border-width: 8px 16px 8px 0;
 			border-color: transparent #FFFFFF transparent transparent;
 			top: 50%;
@@ -128,7 +128,7 @@ looker.plugins.visualizations.add({
 			stroke-width: 1px;
 			content: '';
 			position: absolute;
-			width: 35px;
+			width: 31px;
 			height: 8px;
 			background: #FFFFFF;
 		}
