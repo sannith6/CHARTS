@@ -130,7 +130,7 @@ looker.plugins.visualizations.add({
 
 
 		.timeline ul li:nth-child(even) div {
-		  left: -407px;
+		  left: -439px;
 		}
 
 		/* .timeline ul li:nth-child(even) div::before {
@@ -146,8 +146,15 @@ looker.plugins.visualizations.add({
 			  border-color: transparent transparent transparent #FFFFFF;
 			  top: 50%;
 			  left: 100%;
-				stroke: #b9bad5;
-				stroke-width: 1px;
+			  stroke: #b9bad5;
+			  stroke-width: 1px;
+			   // border-color: transparent transparent transparent #FFFFFF;
+				content: '';
+				position: absolute;
+				width: 35px;
+				height: 5;
+				background: #FFFFFF;
+						  
 			}
 		 
 		/* time {
