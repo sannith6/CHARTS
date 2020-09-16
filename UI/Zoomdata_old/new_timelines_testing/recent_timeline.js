@@ -85,7 +85,7 @@ looker.plugins.visualizations.add({
 		.timeline ul li div {
 		  position: relative;
 		  bottom: 0;
-		  width: 341;
+		  width: 341px;
 		  padding: 3px;
 		  background: #FFFFFF;
 		  border-radius: 10px;
