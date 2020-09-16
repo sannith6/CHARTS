@@ -471,7 +471,7 @@ looker.plugins.visualizations.add({
 			else if(check_logon == "FILE"){
 				var image_type = filemanager;
 			}
-			else if(check_logon == "WINDOWS_SESSION"){
+			else if(check_logon == "WINDOWS_SESSION" || check_logon == "WINDOWS"){
 				var image_type = windows;
 				
 			}
