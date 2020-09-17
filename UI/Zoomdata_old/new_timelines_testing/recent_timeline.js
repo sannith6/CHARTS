@@ -517,7 +517,7 @@ looker.plugins.visualizations.add({
 			
 			if(check_score_type == "MEDIUM"){
 				var data_color = "#f7a35c";
-				$("#test1").append("<li class='in-view1'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='font-family:Roboto;color:#71758f;font-size:12px'>"+str_data+'</time></time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12px'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12px'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12px'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
+				$("#test1").append("<li class='in-view1'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='font-family:Roboto;color:#71758f;font-size:12px'>"+str_data+'</time></time>'+"<p style='font-family:Roboto;color:#71758f;font-size:12pt'>This data point is of type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;font-family:Roboto;color:#71758f;font-size:12pt'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='font-family:Roboto;color:#417deb;font-size:12pt'>For More Information<i class='fas fa-chevron-down' style='font-size:12px'></i></a>"+'</div></li>');
 				
 			}
 			else if(check_score_type == "HIGH"){
