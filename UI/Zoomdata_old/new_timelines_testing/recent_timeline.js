@@ -129,7 +129,7 @@ looker.plugins.visualizations.add({
 			content: '';
 			position: absolute;
 			width: 31px;
-			height: 8px;
+			height: 6px;
 			background: #FFFFFF;
 		}
 
@@ -157,7 +157,7 @@ looker.plugins.visualizations.add({
 				content: '';
 				position: absolute;
 				width: 88px;
-				height: 8px;
+				height: 6px;
 				background: #FFFFFF;
 						  
 			}
