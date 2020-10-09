@@ -1,7 +1,5 @@
-looker.plugins.visualizations.add({
-  create: function(element, config) {
-	  element.innerHTML = `
-      <style>
+
+   
 		*,
 		*::before,
 		*::after {
@@ -56,7 +54,7 @@ looker.plugins.visualizations.add({
 		  position: relative;
 		  width: 6px;
 		  margin: 0 auto;
-		  padding-top: 50px;
+		  padding-top: 50p
 		  background: #D3D3D3;
 		  border-radius: 6px;
 		}
