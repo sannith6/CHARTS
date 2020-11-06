@@ -1,8 +1,4 @@
-looker.plugins.visualizations.add({
-  create: function(element, config) {
-	  element.innerHTML = `
-      <style>
-		*,
+
    
 		
 		*::before,
