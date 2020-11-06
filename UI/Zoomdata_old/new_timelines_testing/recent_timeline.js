@@ -59,7 +59,7 @@ looker.plugins.visualizations.add({
 		  width: 6px;
 		  margin: 0 auto;
 		  padding-top: 50p
-		  background: #D3D3D3;
+		  background: #417deb;
 		  border-radius: 6px;
 		}
 
