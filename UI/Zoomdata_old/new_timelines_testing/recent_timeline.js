@@ -43,9 +43,9 @@ looker.plugins.visualizations.add({
 			  margin: 0 auto;
 			  padding-top: 50px;
 			  background: #fff;
-        background: #c6c9d5;
-        width: 10px;
-/*         border-radius: 5px; */
+			  background: #c6c9d5;
+			  width: 8px;
+/*            border-radius: 5px; */
 			}
 
 			.timeline ul li::after {
@@ -251,6 +251,7 @@ looker.plugins.visualizations.add({
 			
 			.timeline ul li.in-view5::after {
 			  background: yellow;
+			  border: 3px solid #fff;
 			}
 
 			.timeline ul li.in-view5 div {
