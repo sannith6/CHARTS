@@ -85,9 +85,51 @@ looker.plugins.visualizations.add({
 			  left: 45px;
 			}
 
-			
+			.timeline ul li:nth-child(odd) div::before {
+			  left: -31px;
+/* 			  border-width: 8px 16px 8px 0; */
+			  border-color: transparent transparent transparent transparent;
+        
+        right: 100%;
+        bottom: 64px;
+        width: 31px;
+        height: 5px;
+        background: #fff;
+        border-top: 1px solid #e7e7f0;
+        border-bottom: 1px solid #e7e7f0;   
+			}
 
-			
+			.timeline ul li:nth-child(even) div {
+			  left: -439px;
+			}
+
+			.timeline ul li:nth-child(even) div::before {
+			  right: -15px;
+/* 			  border-width: 8px 0 8px 16px; */
+/*         border-top: 2px solid #d0d2e5; */
+        left: 100%;
+        
+        right: -15px;
+    /* border-width: 8px 0 8px 16px; */
+    /* border-top: 2px solid #d0d2e5; */
+
+        bottom: 64px;
+    left: 100%;
+    /* border-color: black; */
+    /* width: 150px; */
+    border-color: transparent transparent transparent #FFFFFF;
+    content: '';
+    position: absolute;
+    width: 33px;
+    height: 5px;
+    background: #fff;
+    border-top: 1px solid #e7e7f0;
+    border-bottom: 1px solid #e7e7f0;       
+/*         border-color: black; */
+/*          width: 150px; */
+/* 			  border-color: transparent transparent transparent #c7c9d3; */
+			}
+
 			time {
 			  display: block;
 			  font-size: 1.2rem;
