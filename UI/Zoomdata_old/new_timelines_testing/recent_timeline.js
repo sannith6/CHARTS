@@ -128,18 +128,20 @@ looker.plugins.visualizations.add({
 						border-bottom: 1px solid #e7e7f0;       
 						}
 						
-				timeline ul li:nth-child(even) div::before {
+                .timeline ul li:nth-child(even) div::before {
 					right: -15px;
 					bottom: 59px;
 					left: 100%;
 					border-color: transparent transparent transparent transparent;
-					
+					content: '';
+				  /*  position: absolute; */
 					width: 39px;
 					height: 10px;
 					background: #fff;
 					border-top: 3px solid #e7e7f0;
 					border-bottom: 3px solid #e7e7f0;       
-				}
+			}						
+						
 				
 			time {
 			  display: block;
