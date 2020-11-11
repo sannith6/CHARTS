@@ -290,16 +290,7 @@ looker.plugins.visualizations.add({
 		  margin: 10px 10px 10px 10px;
 		}
 		
-		.timeline ul li div {
-			position: relative;
-			bottom: 0;
-			width: 400px;
-			padding: 15px;
-			background: #fff;
-			border: 4px solid #e7e7f0;
-			box-shadow: 1px 0px 1px 0px #e7e7f0;
-			border-radius: 10px;
-}
+		
 	
    </style>
 	`;
