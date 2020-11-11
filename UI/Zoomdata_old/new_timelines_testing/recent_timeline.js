@@ -62,6 +62,19 @@ looker.plugins.visualizations.add({
         box-shadow: 1px 1px 1px 1px #e7e7f0;
         border-radius: 10px;
 			}
+			
+			.timeline ul li div {
+			  position: relative;
+			  bottom: 0;
+			  width: 400px;
+			  padding: 15px;
+			  background: #fff;
+				border: 1px solid #e7e7f0;
+				box-shadow: 1px 1px 1px 1px #e7e7f0;
+				border-radius: 10px;
+			}
+			
+			
 			.timeline ul li div::before {
 			  content: '';
 			  position: absolute;
