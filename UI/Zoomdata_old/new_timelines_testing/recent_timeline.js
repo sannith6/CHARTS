@@ -129,7 +129,7 @@ looker.plugins.visualizations.add({
 /*          width: 150px; */
 /* 			  border-color: transparent transparent transparent #c7c9d3; */
 			}
-
+angerag
 			time {
 			  display: block;
 			  font-size: 1.2rem;
