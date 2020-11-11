@@ -9,7 +9,6 @@ looker.plugins.visualizations.add({
 			  padding: 0;
 			  box-sizing: border-box;
 			}
-
 			body {
 			  font: normal 16px/1.5 "Helvetica Neue", sans-serif;
 			  background: #456990;
@@ -20,22 +19,16 @@ looker.plugins.visualizations.add({
 				  font-weight: 400;
 				  background-color: #f7fcfe;
 			}  
-
-
-
 			.container {
 			  width: 90%;
 			  max-width: 1200px;
 			  margin: 0 auto;
 			  text-align: center;
 			}
-
-
 			.timeline ul {
 /* 			  background: #456990; */
 			  padding: 50px 0;
 			}
-
 			.timeline ul li {
 			  list-style-type: none;
 			  position: relative;
@@ -47,7 +40,6 @@ looker.plugins.visualizations.add({
 			  width: 8px;
 /*            border-radius: 5px; */
 			}
-
 			.timeline ul li::after {
 			  content: '';
 			  position: absolute;
@@ -60,7 +52,6 @@ looker.plugins.visualizations.add({
 			  background: inherit;
         margin-bottom: 55px;
 			}
-
 			.timeline ul li div {
 			  position: relative;
 			  bottom: 0;
@@ -71,7 +62,6 @@ looker.plugins.visualizations.add({
         box-shadow: 1px 1px 1px 1px #e7e7f0;
         border-radius: 10px;
 			}
-
 			.timeline ul li div::before {
 			  content: '';
 			  position: absolute;
@@ -80,11 +70,9 @@ looker.plugins.visualizations.add({
 			  height: 0;
 			  border-style: solid;
 			}
-
 			.timeline ul li:nth-child(odd) div {
 			  left: 45px;
 			}
-
 			.timeline ul li:nth-child(odd) div::before {
 			  left: -31px;
 /* 			  border-width: 8px 16px 8px 0; */
@@ -98,11 +86,9 @@ looker.plugins.visualizations.add({
         border-top: 1px solid #e7e7f0;
         border-bottom: 1px solid #e7e7f0;   
 			}
-
 			.timeline ul li:nth-child(even) div {
 			  left: -439px;
 			}
-
 			.timeline ul li:nth-child(even) div::before {
 			  right: -15px;
 /* 			  border-width: 8px 0 8px 16px; */
@@ -112,7 +98,6 @@ looker.plugins.visualizations.add({
         right: -15px;
     /* border-width: 8px 0 8px 16px; */
     /* border-top: 2px solid #d0d2e5; */
-
         bottom: 64px;
     left: 100%;
     /* border-color: black; */
@@ -129,47 +114,35 @@ looker.plugins.visualizations.add({
 /*          width: 150px; */
 /* 			  border-color: transparent transparent transparent #c7c9d3; */
 			}
-angerag
 			time {
 			  display: block;
 			  font-size: 1.2rem;
 			  font-weight: bold;
 			  margin-bottom: 8px;
 			}
-
-
-
 			.timeline ul li::after {
 			  transition: background .5s ease-in-out;
 			}
-
-
 			.timeline ul li.in-view::after {
 			  background: #F45B69;
 			  border: 3px solid #fff;
 			}
-
 			.timeline ul li div {
 			  visibility: hidden;
 			  opacity: 0;
 			  transition: all .5s ease-in-out;
 			}
-
 			.timeline ul li:nth-child(odd) div {
 			  transform: translate3d(200px, 0, 0);
 			}
-
 			.timeline ul li:nth-child(even) div {
 			  transform: translate3d(-200px, 0, 0);
 			}
-
 			.timeline ul li.in-view div {
 			  transform: none;
 			  visibility: visible;
 			  opacity: 1;
 			}
-
-
 			@media screen and (max-width: 900px) {
 			  .timeline ul li div {
 				width: 250px;
@@ -179,7 +152,6 @@ angerag
 				/*250+45-6*/
 			  }
 			}
-
 			@media screen and (max-width: 600px) {
 			  .timeline ul li {
 				margin-left: 20px;
@@ -194,43 +166,34 @@ angerag
 				left: -33px;
 			  }
 			}
-
 		
 			.timeline ul li.in-view1::after {
 			  background: #0ebeff;
 			  border: 3px solid #fff;
 			}
-
 			.timeline ul li.in-view1 div {
 			  transform: none;
 			  visibility: visible;
 			  opacity: 1;
 			}
-
-
 			.timeline ul li.in-view2::after {
 			  background: #ffdd40;
 			  border: 3px solid #fff;
 			}
-
 			.timeline ul li.in-view2 div {
 			  transform: none;
 			  visibility: visible;
 			  opacity: 1;
 			}
-
-
 			.timeline ul li.in-view3::after {
 			  background: red;
 			  border: 3px solid #fff;
 			}
-
 			.timeline ul li.in-view3 div {
 			  transform: none;
 			  visibility: visible;
 			  opacity: 1;
 			}
-
 .timeline ul li:first-child {
   border-radius: 5px 5px 0px 0px;
 }
@@ -241,7 +204,6 @@ angerag
 			  background: #47cf73;
 			  border: 3px solid #fff;
 			}
-
 			.timeline ul li.in-view4 div {
 			  transform: none;
 			  visibility: visible;
@@ -253,14 +215,11 @@ angerag
 			  background: yellow;
 			  border: 3px solid #fff;
 			}
-
 			.timeline ul li.in-view5 div {
 			  transform: none;
 			  visibility: visible;
 			  opacity: 1;
 			}
-
-
 			button{
 			  user-select:none;
 			  -webkit-user-select:none;
@@ -274,14 +233,11 @@ angerag
 			  font-family:cursive;
 			  box-sizing:border-box;
 			}
-
 		.toggle-text-button {
 		  color: blue;
 		  text-decoration: underline;
 		  cursor: pointer;
 		}
-
-
 		.footerleft {
 		  background: #e6ebf5;
 		  width: 430px;
@@ -290,7 +246,6 @@ angerag
 		  left: 100px;
 		  left: 6%;
 		}
-
 		.mediumfooter {
 		  background: #f7a35c;
 		  border: 3px solid #fff;
@@ -302,7 +257,6 @@ angerag
 		  top: 90px;
 		  margin: 10px 10px 10px 10px;
 		}
-
 		.highfooter {
 		  background: #ee0340;
 		  border: 3px solid #fff;
@@ -313,7 +267,6 @@ angerag
 		  float: left;
 		  margin: 10px 10px 10px 10px;
 		}
-
 		.lowfooter {
 		  background: #0dc363;
 		  border: 3px solid #fff;
@@ -324,7 +277,6 @@ angerag
 		  float: left;
 		  margin: 10px 10px 10px 10px;
 		}
-
 		.verylowfooter {
 		  background: #0e7ff2;
 		  border: 3px solid #fff;
@@ -360,7 +312,6 @@ angerag
     background: #fff;
     border-top: 3px solid #e7e7f0;
     border-bottom: 3px solid #e7e7f0;       
-
 			}
 			
 			
@@ -377,12 +328,8 @@ angerag
     border-bottom: 3px solid #e7e7f0;
 }			
 		
-
 		
-
    </style>
-
-
 	`;
 
 	var chartContainer = element.appendChild(document.createElement("div"));
@@ -455,14 +402,12 @@ angerag
 		var view = `
 			<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&display=swap" rel="stylesheet">
   
-
 		
 		<section class="intro">
 		  <div class="container">
 		   
 		  </div>
 		</section>
-
 		<section class="timeline">
 		  <ul id="test1">  
 		  </ul>
