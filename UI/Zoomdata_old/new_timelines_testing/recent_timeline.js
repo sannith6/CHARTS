@@ -133,8 +133,7 @@ looker.plugins.visualizations.add({
 					bottom: 59px;
 					left: 100%;
 					border-color: transparent transparent transparent transparent;
-					content: '';
-				  /*  position: absolute; */
+					
 					width: 39px;
 					height: 10px;
 					background: #fff;
