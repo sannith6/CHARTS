@@ -348,7 +348,34 @@ looker.plugins.visualizations.add({
 		}
 		
 		
+.timeline ul li:nth-child(even) div::before {
+	right: -15px;
+    bottom: 59px;
+    left: 100%;
+    border-color: transparent transparent transparent transparent;
+    content: '';
+  /*  position: absolute; */
+    width: 39px;
+    height: 10px;
+    background: #fff;
+    border-top: 3px solid #e7e7f0;
+    border-bottom: 3px solid #e7e7f0;       
 
+			}
+			
+			
+.timeline ul li:nth-child(odd) div::before {
+    left: -38px;
+    /* border-width: 8px 16px 8px 0; */
+    border-color: transparent transparent transparent transparent;
+    right: 100%;
+    bottom: 59px;
+    width: 39px;
+    height: 10px;
+    background: #fff;
+    border-top: 3px solid #e7e7f0;
+    border-bottom: 3px solid #e7e7f0;
+}			
 		
 
 		
