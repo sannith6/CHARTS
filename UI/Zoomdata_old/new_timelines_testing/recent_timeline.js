@@ -301,20 +301,7 @@ looker.plugins.visualizations.add({
 			border-radius: 10px;
 		}
 		
-		
-.timeline ul li:nth-child(even) div::before {
-	right: -15px;
-    bottom: 59px;
-    left: 100%;
-    border-color: transparent transparent transparent transparent;
-    content: '';
-  /*  position: absolute; */
-    width: 39px;
-    height: 10px;
-    background: #fff;
-    border-top: 3px solid #e7e7f0;
-    border-bottom: 3px solid #e7e7f0;       
-			}
+
 			
 			
 .timeline ul li:nth-child(odd) div::before {
