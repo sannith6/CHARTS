@@ -482,31 +482,43 @@ looker.plugins.visualizations.add({
 			var  scoretype1 = item.scoretype;
 			var check_score_type = scoretype1.toUpperCase();
 			
-			if(check_score_type == "MEDIUM"){
-				var data_color = "#f7a35c";
-				$("#test1").append("<li class='in-view1'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+			
+			if(check_logon == "VPN"){
 				
-			}
-			else if(check_score_type == "HIGH"){
-				var data_color = "#ee0340";
+				console.log('entered into vpnsssssssssss loop ');
 				
-				$("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>VPN login from: </b>"+"Hyderabad and nijamabad to test this application </br><b>VPN login from: </b>"+"Hyderabad  and nijamabad to test this application"+"</span></br>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
-				
-				// $("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
-			}
-			else if(check_score_type == "LOW"){
-				var data_color = "#0dc363";
-				$("#test1").append("<li class='in-view3'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
-				
-			}
-			else if(check_score_type == "VERY LOW"){
-				var data_color = "#0e7ff2";
-				
-				$("#test1").append("<li class='in-view4'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+				if(check_score_type == "MEDIUM"){
+					var data_color = "#f7a35c";
+					$("#test1").append("<li class='in-view1'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					
+				}
+				else if(check_score_type == "HIGH"){
+					var data_color = "#ee0340";
+					
+					$("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>VPN login from: </b>"+"Hyderabad and nijamabad to test this application </br><b>VPN login from: </b>"+"Hyderabad  and nijamabad to test this application"+"</span></br>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					
+					// $("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+				}
+				else if(check_score_type == "LOW"){
+					var data_color = "#0dc363";
+					$("#test1").append("<li class='in-view3'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					
+				}
+				else if(check_score_type == "VERY LOW"){
+					var data_color = "#0e7ff2";
+					
+					$("#test1").append("<li class='in-view4'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+				}
+				else{
+					console.log("no color is defined for this score");
+				}
+					
 			}
 			else{
-				console.log("no color is defined for this score");
+				console.log('there is no the rogon type.........');
 			}
+			
+			
 			
 			
 			
