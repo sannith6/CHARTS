@@ -62,19 +62,6 @@ looker.plugins.visualizations.add({
         box-shadow: 1px 1px 1px 1px #e7e7f0;
         border-radius: 10px;
 			}
-			
-			.timeline ul li div {
-				position: relative;
-				bottom: 0;
-				width: 400px;
-				padding: 15px;
-				background: #fff;
-				border: 4px solid #e7e7f0;
-				box-shadow: 1px 0px 1px 0px #e7e7f0;
-				border-radius: 10px;
-			}
-						
-			
 			.timeline ul li div::before {
 			  content: '';
 			  position: absolute;
@@ -87,62 +74,46 @@ looker.plugins.visualizations.add({
 			  left: 45px;
 			}
 			.timeline ul li:nth-child(odd) div::before {
-			  		left: -31px;
-					border-color: transparent transparent transparent transparent;
-					right: 100%;
-					bottom: 64px;
-					width: 31px;
-					height: 5px;
-					background: #fff;
-					border-top: 1px solid #e7e7f0;
-					border-bottom: 1px solid #e7e7f0;   
+			  left: -31px;
+/* 			  border-width: 8px 16px 8px 0; */
+			  border-color: transparent transparent transparent transparent;
+        
+        right: 100%;
+        bottom: 64px;
+        width: 31px;
+        height: 5px;
+        background: #fff;
+        border-top: 1px solid #e7e7f0;
+        border-bottom: 1px solid #e7e7f0;   
 			}
-			
-			.timeline ul li:nth-child(odd) div::before {
-				left: -38px;
-				border-color: transparent transparent transparent transparent;
-				right: 100%;
-				bottom: 59px;
-				width: 39px;
-				height: 10px;
-				background: #fff;
-				border-top: 3px solid #e7e7f0;
-				border-bottom: 3px solid #e7e7f0;
+			.timeline ul li:nth-child(even) div {
+			  left: -439px;
 			}
-			
-					.timeline ul li:nth-child(even) div {
-					  left: -439px;
-					}
-				.timeline ul li:nth-child(even) div::before {
-						right: -15px;
-						left: 100%;
-						bottom: 64px;
-						left: 100%;
-						border-color: transparent transparent transparent #FFFFFF;
-						content: '';
-						position: absolute;
-						width: 33px;
-						height: 5px;
-						background: #fff;
-						border-top: 1px solid #e7e7f0;
-						border-bottom: 1px solid #e7e7f0;       
-						}
-						
-                .timeline ul li:nth-child(even) div::before {
-					right: -15px;
-					bottom: 59px;
-					left: 100%;
-					border-color: transparent transparent transparent transparent;
-					content: '';
-				  /*  position: absolute; */
-					width: 39px;
-					height: 10px;
-					background: #fff;
-					border-top: 3px solid #e7e7f0;
-					border-bottom: 3px solid #e7e7f0;       
-			}						
-						
-				
+			.timeline ul li:nth-child(even) div::before {
+			  right: -15px;
+/* 			  border-width: 8px 0 8px 16px; */
+/*         border-top: 2px solid #d0d2e5; */
+        left: 100%;
+        
+        right: -15px;
+    /* border-width: 8px 0 8px 16px; */
+    /* border-top: 2px solid #d0d2e5; */
+        bottom: 64px;
+    left: 100%;
+    /* border-color: black; */
+    /* width: 150px; */
+    border-color: transparent transparent transparent #FFFFFF;
+    content: '';
+    position: absolute;
+    width: 33px;
+    height: 5px;
+    background: #fff;
+    border-top: 1px solid #e7e7f0;
+    border-bottom: 1px solid #e7e7f0;       
+/*         border-color: black; */
+/*          width: 150px; */
+/* 			  border-color: transparent transparent transparent #c7c9d3; */
+			}
 			time {
 			  display: block;
 			  font-size: 1.2rem;
@@ -266,8 +237,6 @@ looker.plugins.visualizations.add({
 		  color: blue;
 		  text-decoration: underline;
 		  cursor: pointer;
-		  padding-top: 10px;
-		  display: inline-block;
 		}
 		.footerleft {
 		  background: #e6ebf5;
@@ -319,10 +288,50 @@ looker.plugins.visualizations.add({
 		  margin: 10px 10px 10px 10px;
 		}
 		
+		.timeline ul li div {
+			position: relative;
+			bottom: 0;
+			width: 400px;
+			padding: 15px;
+			background: #fff;
+			border: 4px solid #e7e7f0;
+			box-shadow: 1px 0px 1px 0px #e7e7f0;
+			border-radius: 10px;
+		}
 		
-	
+		
+.timeline ul li:nth-child(even) div::before {
+	right: -15px;
+    bottom: 59px;
+    left: 100%;
+    border-color: transparent transparent transparent transparent;
+    content: '';
+  /*  position: absolute; */
+    width: 39px;
+    height: 10px;
+    background: #fff;
+    border-top: 3px solid #e7e7f0;
+    border-bottom: 3px solid #e7e7f0;       
+			}
+			
+			
+.timeline ul li:nth-child(odd) div::before {
+    left: -38px;
+    /* border-width: 8px 16px 8px 0; */
+    border-color: transparent transparent transparent transparent;
+    right: 100%;
+    bottom: 59px;
+    width: 39px;
+    height: 10px;
+    background: #fff;
+    border-top: 3px solid #e7e7f0;
+    border-bottom: 3px solid #e7e7f0;
+}			
+		
+		
    </style>
 	`;
+
 	var chartContainer = element.appendChild(document.createElement("div"));
 	chartContainer.className = 'chart-container';
 	chartContainer.id = 'chartContainer';
@@ -455,8 +464,7 @@ looker.plugins.visualizations.add({
 			else{
 				console.log("no proper image for this type of data");
 			}
-
-            
+			
 			var str1 = item.info
 			var result = '';
 			if (str1 == null || str1 == 'null'){
@@ -484,25 +492,23 @@ looker.plugins.visualizations.add({
 			
 			if(check_score_type == "MEDIUM"){
 				var data_color = "#f7a35c";
-				$("#test1").append("<li class='in-view1'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+				$("#test1").append("<li class='in-view1'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 				
 			}
 			else if(check_score_type == "HIGH"){
 				var data_color = "#ee0340";
 				
-				$("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>VPN login from: </b>"+"Hyderabad"+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
-				
-				// $("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+				$("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 			}
 			else if(check_score_type == "LOW"){
 				var data_color = "#0dc363";
-				$("#test1").append("<li class='in-view3'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+				$("#test1").append("<li class='in-view3'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 				
 			}
 			else if(check_score_type == "VERY LOW"){
 				var data_color = "#0e7ff2";
 				
-				$("#test1").append("<li class='in-view4'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+				$("#test1").append("<li class='in-view4'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><br><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<br/><a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 			}
 			else{
 				console.log("no color is defined for this score");
