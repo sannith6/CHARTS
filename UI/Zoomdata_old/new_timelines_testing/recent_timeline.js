@@ -337,7 +337,17 @@ looker.plugins.visualizations.add({
 		username = config.query_fields.dimensions[1].name;
 		logintype = config.query_fields.dimensions[2].name;
 		scoretype = config.query_fields.dimensions[3].name;
-		info = config.query_fields.dimensions[4].name;
+		dstemailaddr = config.query_fields.dimensions[4].name;
+		emailsize = config.query_fields.dimensions[5].name;
+		fileaccessed = config.query_fields.dimensions[6].name;
+		rpthost = config.query_fields.dimensions[7].name;
+		srcgeocity = config.query_fields.dimensions[8].name;
+		sessiontime = config.query_fields.dimensions[9].name;
+		alertdesc = config.query_fields.dimensions[10].name;
+		hostname = config.query_fields.dimensions[11].name;
+		catwebname = config.query_fields.dimensions[12].name;
+		dstdomain = config.query_fields.dimensions[13].name;
+		// info = config.query_fields.dimensions[4].name;
 
 		var timelinedata = [];
 
@@ -349,7 +359,18 @@ looker.plugins.visualizations.add({
 				row[username].value,
 				row[logintype].value,
 				row[scoretype].value,
-				row[info].value
+				row[dstemailaddr].value,
+				row[emailsize].value,
+				row[fileaccessed].value,
+				row[rpthost].value,
+				row[srcgeocity].value,
+				row[sessiontime].value,
+				row[alertdesc].value,
+				row[hostname].value,
+				row[catwebname].value,
+				row[dstdomain].value
+				
+				// row[info].value
 			]	
 			);
 			
@@ -359,13 +380,22 @@ looker.plugins.visualizations.add({
 			var reducedDataSource = timelinedata
 			var response = []
 			reducedDataSource.map((item, index) => {
-				test_0bj = {}
-				test_0bj['date'] = item[0];
-				test_0bj['username'] = item[1];
-				test_0bj['logintype'] = item[2];
-				test_0bj['scoretype'] = item[3];
-				test_0bj['info'] = item[4];
-				response.push(test_0bj)
+				test_obj = {}
+				test_obj['date'] = item[0];
+				test_obj['username'] = item[1];
+				test_obj['logintype'] = item[2];
+				test_obj['scoretype'] = item[3];
+				test_obj['dstemailaddr'] = item[4];
+				test_obj['emailsize'] = item[5];
+				test_obj['fileaccessed'] = item[6];
+				test_obj['rpthost'] = item[7];
+				test_obj['srcgeocity'] = item[8];
+				test_obj['sessiontime'] = item[9];
+				test_obj['alertdesc'] = item[10];
+				test_obj['hostname'] = item[11];
+				test_obj['catwebname'] = item[12];
+				test_obj['dstdomain'] = item[13];
+				response.push(test_obj)
 			})
 			
 			
@@ -425,19 +455,28 @@ looker.plugins.visualizations.add({
 			
 			var image_type = "";
 			var data_color = "";
+			var dict = {};
 			
 			var logintype1 = item.logintype;
 			var check_logon = logintype1.toUpperCase();
 			
 			if(check_logon == "EMAIL"){
 				var image_type = email;
-				
+				dict.key1 =   "Email Sent to: ";
+				dict.key2 =   "Email size is: ";
+				dict.value1 =  item.dstemailaddr;
+				dict.value2 = item.emailsize;
+						
 			}
 			else if(check_logon == "FILE"){
 				var image_type = filemanager;
+				dict.key1 = "File name that was accessed: ";
+				dict.value1 = item.fileaccessed;
 			}
 			else if(check_logon == "WINDOWS_SESSION" || check_logon == "WINDOWS"){
 				var image_type = windows;
+				dict.key1 = "Login into Windows System: ";
+				dict.value1 = item.rpthost;
 				
 			}
 			else if(check_logon == "IIS"){
@@ -445,30 +484,42 @@ looker.plugins.visualizations.add({
 			}
 			else if(check_logon == "VPN"){
 				var image_type = vpn;
+				dict.key1 =   "VPN Login from: ";
+				dict.key2 =   "Session End Time is: ";
+				dict.value1 =  item.srcgeocity;
+				dict.value2 = item.sessiontime;
 			}
 			else if(check_logon == "ALERTS"){
 				var image_type = alerts;
+				dict.key1 =   "Alert is: ";
+				dict.key2 =   "Hostname: ";
+				dict.value1 =  item.alertdesc;
+				dict.value2 = item.hostname;
 			}
-			else if(check_logon == "STREAMING MEDIA"){
+			else if(check_logon == "STREAMING MEDIA" || check_logon == "STREAMING_MEDIA"){
 				var image_type = multi;
+				dict.key1 =   "Multimedia accessed: ";
+				dict.key2 =   "Destination domain: ";
+				dict.value1 =  item.catwebname;
+				dict.value2 = item.dstdomain;
 			}
 			else{
 				console.log("no proper image for this type of data");
 			}
 
             
-			var str1 = item.info
-			var result = '';
-			if (str1 == null || str1 == 'null'){
-				console.log('no data')
-			}
-			else{
-				while (str1.length > 0) {
-					result += str1.substring(0, 25) + '\n';
-					str1 = str1.substring(25);
+			// var str1 = dict['value1']
+			// var result = '';
+			// if (str1 == null || str1 == 'null'){
+				// console.log('no data')
+			// }
+			// else{
+				// while (str1.length > 0) {
+					// result += str1.substring(0, 25) + '\n';
+					// str1 = str1.substring(25);
 
-				}
-			}
+				// }
+			// }
 			
 			
 			var a = new Date(item.date);
@@ -483,64 +534,62 @@ looker.plugins.visualizations.add({
 			var check_score_type = scoretype1.toUpperCase();
 			
 			
-			if(check_logon == "VPN"){
+			if(check_logon == "VPN" || check_logon == "ALERTS" || check_logon == "EMAIL" || check_logon == "STREAMING MEDIA" || check_logon == "STREAMING_MEDIA"){
 				
 				console.log('entered into vpnsssssssssss loop ');
 				console.log(image_type);
 				
 				if(check_score_type == "MEDIUM"){
 					var data_color = "#f7a35c";
-					$("#test1").append("<li class='in-view1'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					$("#test1").append("<li class='in-view1'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>"+dict['key1']+"</b>"+dict['value1']+"</br><b>"+dict['key2']+"</b>"+dict['value2']+"</br></span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 					
 				}
 				else if(check_score_type == "HIGH"){
 					console.log("high risk score data pointtttttttt");
 					
-					$("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>VPN login from: </b>"+"Hyderabad and nijamabad to test this application </br><b>Session End Time is: </b>"+"Hyderabad  and nijamabad to test this application"+"</span></br>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					$("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>"+dict['key1']+"</b>"+dict['value1']+"</br><b>"+dict['key2']+"</b>"+dict['value2']+"</br></span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 					
-					// $("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 				}
 				else if(check_score_type == "LOW"){
 					var data_color = "#0dc363";
-					$("#test1").append("<li class='in-view3'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					$("#test1").append("<li class='in-view3'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>"+dict['key1']+"</b>"+dict['value1']+"</br><b>"+dict['key2']+"</b>"+dict['value2']+"</br></span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 					
 				}
 				else if(check_score_type == "VERY LOW"){
 					var data_color = "#0e7ff2";
 					
-					$("#test1").append("<li class='in-view4'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					$("#test1").append("<li class='in-view4'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>"+dict['key1']+"</b>"+dict['value1']+"</br><b>"+dict['key2']+"</b>"+dict['value2']+"</br></span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 				}
 				else{
 					console.log("no color is defined for this score");
 				}
 					
 			}
-			else if(check_logon == "ALERTS"){
+			else if(check_logon == "WINDOWS_SESSION" || check_logon == "WINDOWS" || check_logon == "FILE" ){
 				
-				console.log('entered into vpnsssssssssss loop ');
+				console.log('entered into sincle key loop');
 				console.log(image_type);
 				
 				if(check_score_type == "MEDIUM"){
 					var data_color = "#f7a35c";
-					$("#test1").append("<li class='in-view1'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					$("#test1").append("<li class='in-view1'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>"+dict['key1']+"</b>"+dict['value1']+"</br></span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 					
 				}
 				else if(check_score_type == "HIGH"){
 					console.log("high risk score data pointtttttttt");
 					
-					$("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>Alert is :  </b>"+"Hyderabad and nijamabad to test this application </br><b>Hostname is : </b>"+"Hyderabad  and nijamabad to test this application"+"</span></br>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					$("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>"+dict['key1']+"</b>"+dict['value1']+"</br></span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 					
-					// $("#test1").append("<li class='in-view2'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 				}
 				else if(check_score_type == "LOW"){
 					var data_color = "#0dc363";
-					$("#test1").append("<li class='in-view3'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					$("#test1").append("<li class='in-view3'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>"+dict['key1']+"</b>"+dict['value1']+"</br></span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 					
 				}
 				else if(check_score_type == "VERY LOW"){
 					var data_color = "#0e7ff2";
 					
-					$("#test1").append("<li class='in-view4'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+result+"</span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					$("#test1").append("<li class='in-view4'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>"+dict['key1']+"</b>"+dict['value1']+"</br></span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 				}
 				else{
 					console.log("no color is defined for this score");
