@@ -55,7 +55,8 @@ looker.plugins.visualizations.add({
 			.timeline ul li div {
 			  position: relative;
 			  bottom: 0;
-			  width: 400px;
+			  /*width : 400px;*/
+			  width: 500px;
 			  padding: 15px;
 			  background: #fff;
         border: 1px solid #e7e7f0;
@@ -111,7 +112,10 @@ looker.plugins.visualizations.add({
 			}
 			
 					.timeline ul li:nth-child(even) div {
-					  left: -439px;
+					  /*left: -439px;*/
+					  left: -540px;
+
+					  
 					}
 				.timeline ul li:nth-child(even) div::before {
 						right: -15px;
@@ -552,7 +556,7 @@ looker.plugins.visualizations.add({
 				}
 				else if(check_score_type == "LOW"){
 					var data_color = "#0dc363";
-					$("#test1").append("<li class='in-view3'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:#71758f;font-size:12pt'>Data Event Type: "+item.logintype+"</p><span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>"+dict['key1']+"</b>"+dict['value1']+"</br><b>"+dict['key2']+"</b>"+dict['value2']+"</br></span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
+					$("#test1").append("<li class='in-view3'><div><time>"+"<img src='"+image_type+"' height=20/>"+"<time style='color:#71758f;font-size:12pt;float:right;'>"+str_data+'</time></time>'+"<p style='color:rgb(38, 45, 51);font-size:12pt;font-weight: bold;'>Data Event Type: </p>"+item.logintype+"<span class='toggle-text' style='display:none;color:#71758f;font-size:12pt'>"+"<b>"+dict['key1']+"</b>"+dict['value1']+"</br><b>"+dict['key2']+"</b>"+dict['value2']+"</br></span>"+"<a href='#'  class='toggle-text-button' style='color:#417deb;font-size:12pt'>For More Information</a>"+'</div></li>');
 					
 				}
 				else if(check_score_type == "VERY LOW"){
