@@ -35,7 +35,7 @@
     "load-grunt-tasks": "~0.2",
     "style-loader": "0.21.0",
     "webpack": "4.12.0",
-    "webpack-cli": "3.0.3"
+    "webpack-cli": "3.3.12"
   },
   "dependencies": {
     "angular": "^1.7.5",
